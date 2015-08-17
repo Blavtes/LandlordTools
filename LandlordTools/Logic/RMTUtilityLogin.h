@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "RMTUserData.h"
+#import "AddBuildModleData.h"
 
 typedef enum _RMTRegisterCode{
     RMTRegisterCodeErr = -1,// error
@@ -77,5 +78,11 @@ typedef enum _RMTVerificationCode {
 - (BOOL)isLogined;
 
 - (RMTUserData *)getUserData;
+
+//获取楼宇
+- (void)requestGetMyBuildingsWithLogicId:(NSString*)logid
+                                complete:(void (^)(NSError *error,AddBuildModleData*))handler;
+
+
 
 @end

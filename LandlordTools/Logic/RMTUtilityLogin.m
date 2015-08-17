@@ -10,8 +10,9 @@
 #import "RMTURLSession.h"
 #import "RMTUtilityBaseInfo.h"
 #import <CommonCrypto/CommonDigest.h>
+#import "AddBuildModleData.h"
 
-static const NSString *kUCBaseUrl = @"http://112.74.26.14:8080/rentcloud/user";
+static const NSString *kUCBaseUrl = @"http://112.74.26.14:8080/rentcloud";
 static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countryCode/getlist";
 
 @interface RMTUtilityLogin()
@@ -55,7 +56,7 @@ static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countr
     NSMutableDictionary *dic = [NSMutableDictionary new];
     [dic setValue:mobile forKey:@"mobile"];
     
-    NSString *url = [NSString stringWithFormat:@"%@/isRegisterUser", kUCBaseUrl];
+    NSString *url = [NSString stringWithFormat:@"%@/user/isRegisterUser", kUCBaseUrl];
     NSDictionary *headerFields = [self getHTTPHeaderFields];
     [[RMTURLSession sharedInstance] requestApiWithUrl:url
                                            parameters:dic
@@ -115,7 +116,7 @@ static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countr
 //        [parameterDic setValue:verifyToken forKey:@"verifytoken"];
 //    }
     
-    NSString *url = [NSString stringWithFormat:@"%@/userLogin", kUCBaseUrl];
+    NSString *url = [NSString stringWithFormat:@"%@/user/userLogin", kUCBaseUrl];
     NSDictionary *headerFields = [self getHTTPHeaderFields];
     [[RMTURLSession sharedInstance] requestApiWithUrl:url
                                            parameters:parameterDic
@@ -184,7 +185,7 @@ static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countr
 //    [reqDic setValue:[self getMD5String:data.password] forKey:@"password"];
     [reqDic setValue:data.token forKey:@"token"];
      [reqDic setValue:data.password forKey:@"password"];
-    NSString *url = [NSString stringWithFormat:@"%@/userRegister", kUCBaseUrl];
+    NSString *url = [NSString stringWithFormat:@"%@/user/userRegister", kUCBaseUrl];
     NSDictionary *headerFields = [self getHTTPHeaderFields];
     [[RMTURLSession sharedInstance] requestApiWithUrl:url
                                            parameters:reqDic
@@ -237,7 +238,7 @@ static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countr
     [dic setValue:@(2) forKey:@"findType"];
     [dic setValue:countryCode forKey:@"countrycode"];
     
-    NSString *url = [NSString stringWithFormat:@"%@/findpassword", kUCBaseUrl];
+    NSString *url = [NSString stringWithFormat:@"%@/user/findpassword", kUCBaseUrl];
     NSDictionary *headerFields = [self getHTTPHeaderFields];
     [[RMTURLSession sharedInstance] requestApiWithUrl:url
                                            parameters:dic
@@ -291,7 +292,7 @@ static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countr
     [reqDic setValue:[self getMD5String:password] forKey:@"password"];
     [reqDic setValue:verifyCode forKey:@"verifycode"];
     
-    NSString *url = [NSString stringWithFormat:@"%@/updatePwd", kUCBaseUrl];
+    NSString *url = [NSString stringWithFormat:@"%@/user/updatePwd", kUCBaseUrl];
     NSDictionary *headerFields = [self getHTTPHeaderFields];
     [[RMTURLSession sharedInstance] requestApiWithUrl:url
                                            parameters:reqDic
@@ -342,7 +343,7 @@ static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countr
     [reqDic setValue:password forKey:@"password"];
     [reqDic setValue:token forKey:@"token"];
     
-    NSString *url = [NSString stringWithFormat:@"%@/resetPassword", kUCBaseUrl];
+    NSString *url = [NSString stringWithFormat:@"%@/user/resetPassword", kUCBaseUrl];
     NSDictionary *headerFields = [self getHTTPHeaderFields];
     [[RMTURLSession sharedInstance] requestApiWithUrl:url
                                            parameters:reqDic
@@ -391,7 +392,7 @@ static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countr
     [dic setValue:phoneNumber forKey:@"mobile"];
     [dic setValue:verify forKey:@"vcodeType"];
     
-    NSString *url = [NSString stringWithFormat:@"%@/sendVerificationCode", kUCBaseUrl];
+    NSString *url = [NSString stringWithFormat:@"%@/user/sendVerificationCode", kUCBaseUrl];
     NSDictionary *headerFields = [self getHTTPHeaderFields];
     [[RMTURLSession sharedInstance] requestApiWithUrl:url
                                            parameters:dic
@@ -441,7 +442,7 @@ static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countr
     [dic setValue:@(vcode) forKey:@"vcodeType"];
     [dic setValue:checkVerify forKey:@"vcode"];
     
-    NSString *url = [NSString stringWithFormat:@"%@/checkVerificationCode", kUCBaseUrl];
+    NSString *url = [NSString stringWithFormat:@"%@/user/checkVerificationCode", kUCBaseUrl];
     NSDictionary *headerFields = [self getHTTPHeaderFields];
     [[RMTURLSession sharedInstance] requestApiWithUrl:url
                                            parameters:dic
@@ -486,7 +487,7 @@ static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countr
 //注销请求
 -(void)requestLogout:(void (^)(NSError *error))handler
 {
-    NSString *url = [NSString stringWithFormat:@"%@/home/logout?token=%@", kUCBaseUrl, userData.token];
+    NSString *url = [NSString stringWithFormat:@"%@/user/home/logout?token=%@", kUCBaseUrl, userData.token];
     NSDictionary *headerFields = [self getHTTPHeaderFields];
     [[RMTURLSession sharedInstance] requestApiWithUrl:url customHTTPHeaderFields:headerFields completionHandler:^(NSError *error, NSDictionary *dic){
         if (error || !dic) {
@@ -675,6 +676,35 @@ static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countr
             result[8], result[9], result[10], result[11],
             result[12], result[13], result[14], result[15]
             ];
+}
+
+- (void)requestGetMyBuildingsWithLogicId:(NSString *)logid complete:(void (^)(NSError *, AddBuildModleData *))handler
+{
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    [dic setValue:logid forKey:@"loginId"];
+    
+    NSString *url = [NSString stringWithFormat:@"%@/building/getMyBuildings", kUCBaseUrl];
+    NSDictionary *headerFields = [self getHTTPHeaderFields];
+    [[RMTURLSession sharedInstance] requestApiWithUrl:url
+                                           parameters:dic
+                               customHTTPHeaderFields:headerFields
+                                    completionHandler:^(NSError *error, NSDictionary *dic) {
+                                        if (error || !dic) {
+                                            NSLog(@"<%s : %d : %s> error:%@", __FILE__, __LINE__, __FUNCTION__, error);
+                                            NSDictionary *userInfo = @{NSLocalizedDescriptionKey: NSLocalizedString(@"网络错误", nil)};
+                                            NSError *customError = [NSError errorWithDomain:error.domain
+                                                                                       code:error.code
+                                                                                   userInfo:userInfo];
+                                            handler(customError,nil);
+                                            return;
+                                        }
+                                        NSError *jsonError = nil;
+                                        AddBuildModleData *data = [[AddBuildModleData alloc] initWithDictionary:dic error:&jsonError];
+                                        
+                                        handler(jsonError,data);
+                                        return;
+                                    }];
+    
 }
 
 @end

@@ -65,13 +65,13 @@
 */
 - (IBAction)logicClick:(id)sender
 {
-//    RMTLoginViewController *vc = [[RMTLoginViewController alloc] init];
-//    [self.navigationController pushViewController:vc animated:YES];
+    RMTLoginViewController *vc = [[RMTLoginViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)menuClick:(id)sender
 {
-//    [self presentLeftMenuViewController:self];
+    [self presentLeftMenuViewController:self];
 }
 
 - (IBAction)getWaterClick:(id)sender
@@ -82,8 +82,8 @@
 
 - (IBAction)getAmmeterClick:(id)sender
 {
-//    GetAmmeterViewController *vc = [[GetAmmeterViewController alloc] init];
-//    [self.navigationController pushViewController:vc animated:YES];
+    GetAmmeterViewController *vc = [[GetAmmeterViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 
@@ -95,8 +95,8 @@
 
 - (IBAction)addRoomClcik:(id)sender
 {
-//    AddHouseViewController *vc = [[AddHouseViewController alloc] init];
-//    [self.navigationController pushViewController:vc animated:YES];
+    AddHouseViewController *vc = [[AddHouseViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

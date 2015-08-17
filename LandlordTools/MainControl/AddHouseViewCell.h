@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddBuildModleData.h"
+
 @protocol AddHouseChangeCellHeightDelegate <NSObject>
 
 - (void)changeAddHouseCellHeigt:(BOOL)sender andRow:(int)row;
@@ -27,6 +29,6 @@
 @property (nonatomic, strong) NSString *data;
 @property (nonatomic, assign) int cellRow;
 - (void) changeDataViewFrame;
-- (void) setCellData:(BOOL)show andCellRow:(int)row;
+- (void) setCellData:(AddBuildArrayData*)data andCellRow:(int)row;
 
 @end

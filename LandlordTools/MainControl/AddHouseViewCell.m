@@ -51,9 +51,12 @@
       [_dataAllView setFrame:CGRectMake(_dataAllView.frame.origin.x, 0, _dataAllView.frame.size.width, height)];
 }
 
-- (void) setCellData:(BOOL)show andCellRow:(int)row
+- (void) setCellData:(AddBuildArrayData*)data andCellRow:(int)row
 {
-    _showData = show;
+    _showData = YES;
+    _titleTextField.text = data.buildingName;
+    _waterTextField.text = [NSString stringWithFormat:@"%.1f",data.waterPrice];
+    _ammterTextField.text = [NSString stringWithFormat:@"%.1f",data.electricPrice];
     _cellRow = row;
 }
 

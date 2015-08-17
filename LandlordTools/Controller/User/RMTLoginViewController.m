@@ -120,7 +120,7 @@ NSString * const RMTLoginFinishedNotification = @"RMTLoginFinishedNotification";
                 [self showAlertWithMessage:error.localizedDescription];
                 return ;
             }
-            NSLog(@"login");
+            NSLog(@"login %@",data.loginId);
             [self showAlertWithMessage:@"登录成功"];
             [[RMTUserShareData sharedInstance] updataUserData:data];
             //        if (self.delegate) {

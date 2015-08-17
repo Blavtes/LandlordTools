@@ -125,6 +125,7 @@
 		C174CB7F1B82207300694C9B /* ConfigHouseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CB6D1B82207300694C9B /* ConfigHouseViewController.xib */; };
 		C174CB801B82207300694C9B /* ConfigLastMothControllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CB6F1B82207300694C9B /* ConfigLastMothControllViewController.m */; };
 		C174CB811B82207300694C9B /* ConfigLastMothControllViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CB701B82207300694C9B /* ConfigLastMothControllViewController.xib */; };
+		C174CB881B82273200694C9B /* AddBuildModleData.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CB871B82273200694C9B /* AddBuildModleData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -325,6 +326,8 @@
 		C174CB6E1B82207300694C9B /* ConfigLastMothControllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigLastMothControllViewController.h; sourceTree = "<group>"; };
 		C174CB6F1B82207300694C9B /* ConfigLastMothControllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigLastMothControllViewController.m; sourceTree = "<group>"; };
 		C174CB701B82207300694C9B /* ConfigLastMothControllViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfigLastMothControllViewController.xib; sourceTree = "<group>"; };
+		C174CB861B82273200694C9B /* AddBuildModleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBuildModleData.h; sourceTree = "<group>"; };
+		C174CB871B82273200694C9B /* AddBuildModleData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBuildModleData.m; sourceTree = "<group>"; };
 		E59BEDF2FF6B761CCC47BCB1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FA3467288651B61433E13F22 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -389,6 +392,7 @@
 		C174C9731B82182B00694C9B /* LandlordTools */ = {
 			isa = PBXGroup;
 			children = (
+				C174CB851B82273200694C9B /* Model */,
 				C174CB531B82207300694C9B /* AddCofing */,
 				C174CAB41B82202F00694C9B /* AmmeterControl */,
 				C174CAB81B82202F00694C9B /* Category */,
@@ -824,6 +828,15 @@
 			path = ConfigData;
 			sourceTree = "<group>";
 		};
+		C174CB851B82273200694C9B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C174CB861B82273200694C9B /* AddBuildModleData.h */,
+				C174CB871B82273200694C9B /* AddBuildModleData.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1026,6 +1039,7 @@
 				C174CB7B1B82207300694C9B /* ConfigEditCellForButton.m in Sources */,
 				C174CB511B82202F00694C9B /* RESideMenu.m in Sources */,
 				C174CB7C1B82207300694C9B /* ConfigHouseEditCell.m in Sources */,
+				C174CB881B82273200694C9B /* AddBuildModleData.m in Sources */,
 				C174CB3B1B82202F00694C9B /* RMTUtilityBaseInfo.m in Sources */,
 				C174CB501B82202F00694C9B /* RECommonFunctions.m in Sources */,
 				C174CB441B82202F00694C9B /* MainContentControlViewController.m in Sources */,
