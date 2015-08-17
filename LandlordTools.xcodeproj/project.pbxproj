@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF0B97ABCF12C131065984F4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 968AF5976CDFCA8CD97FE1D5 /* libPods.a */; };
 		C174C9771B82182B00694C9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C174C9761B82182B00694C9B /* main.m */; };
 		C174C97A1B82182B00694C9B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C174C9791B82182B00694C9B /* AppDelegate.m */; };
 		C174C97D1B82182B00694C9B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174C97C1B82182B00694C9B /* ViewController.m */; };
@@ -14,6 +15,116 @@
 		C174C9821B82182B00694C9B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C174C9811B82182B00694C9B /* Images.xcassets */; };
 		C174C9851B82182B00694C9B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174C9831B82182B00694C9B /* LaunchScreen.xib */; };
 		C174C9911B82182C00694C9B /* LandlordToolsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C174C9901B82182C00694C9B /* LandlordToolsTests.m */; };
+		C174CA871B8218F100694C9B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C174CA0D1B8218F100694C9B /* .gitignore */; };
+		C174CA881B8218F100694C9B /* ComboBox.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CA101B8218F100694C9B /* ComboBox.m */; };
+		C174CA891B8218F100694C9B /* EqualizerSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CA131B8218F100694C9B /* EqualizerSlider.m */; };
+		C174CA8A1B8218F100694C9B /* EqualizerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CA151B8218F100694C9B /* EqualizerView.m */; };
+		C174CA8B1B8218F100694C9B /* ImagePlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CA171B8218F100694C9B /* ImagePlayerView.m */; };
+		C174CA8C1B8218F100694C9B /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CA1A1B8218F100694C9B /* JBChartView.m */; };
+		C174CA8D1B8218F100694C9B /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CA1C1B8218F100694C9B /* JBLineChartView.m */; };
+		C174CA8E1B8218F100694C9B /* slider-default-handle-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = C174CA1F1B8218F100694C9B /* slider-default-handle-highlighted.png */; };
+		C174CA8F1B8218F100694C9B /* slider-default-handle-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C174CA201B8218F100694C9B /* slider-default-handle-highlighted@2x.png */; };
+		C174CA901B8218F100694C9B /* slider-default-handle.png in Resources */ = {isa = PBXBuildFile; fileRef = C174CA211B8218F100694C9B /* slider-default-handle.png */; };
+		C174CA911B8218F100694C9B /* slider-default-handle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C174CA221B8218F100694C9B /* slider-default-handle@2x.png */; };
+		C174CA921B8218F100694C9B /* slider-default-track.png in Resources */ = {isa = PBXBuildFile; fileRef = C174CA231B8218F100694C9B /* slider-default-track.png */; };
+		C174CA931B8218F100694C9B /* slider-default-track@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C174CA241B8218F100694C9B /* slider-default-track@2x.png */; };
+		C174CA941B8218F100694C9B /* slider-default-trackBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = C174CA251B8218F100694C9B /* slider-default-trackBackground.png */; };
+		C174CA951B8218F100694C9B /* slider-default-trackCrossedOver.png in Resources */ = {isa = PBXBuildFile; fileRef = C174CA261B8218F100694C9B /* slider-default-trackCrossedOver.png */; };
+		C174CA961B8218F100694C9B /* slider-default-trackCrossedOver@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C174CA271B8218F100694C9B /* slider-default-trackCrossedOver@2x.png */; };
+		C174CA971B8218F100694C9B /* slider-default_trackBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C174CA281B8218F100694C9B /* slider-default_trackBackground@2x.png */; };
+		C174CA981B8218F100694C9B /* slider-default7-handle.png in Resources */ = {isa = PBXBuildFile; fileRef = C174CA2A1B8218F100694C9B /* slider-default7-handle.png */; };
+		C174CA991B8218F100694C9B /* slider-default7-handle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C174CA2B1B8218F100694C9B /* slider-default7-handle@2x.png */; };
+		C174CA9A1B8218F100694C9B /* slider-default7-track.png in Resources */ = {isa = PBXBuildFile; fileRef = C174CA2C1B8218F100694C9B /* slider-default7-track.png */; };
+		C174CA9B1B8218F100694C9B /* slider-default7-track@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C174CA2D1B8218F100694C9B /* slider-default7-track@2x.png */; };
+		C174CA9C1B8218F100694C9B /* slider-default7-trackBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = C174CA2E1B8218F100694C9B /* slider-default7-trackBackground.png */; };
+		C174CA9D1B8218F100694C9B /* slider-default7-trackBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C174CA2F1B8218F100694C9B /* slider-default7-trackBackground@2x.png */; };
+		C174CA9E1B8218F100694C9B /* slider-default7-trackCrossedOver.png in Resources */ = {isa = PBXBuildFile; fileRef = C174CA301B8218F100694C9B /* slider-default7-trackCrossedOver.png */; };
+		C174CA9F1B8218F100694C9B /* slider-default7-trackCrossedOver@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C174CA311B8218F100694C9B /* slider-default7-trackCrossedOver@2x.png */; };
+		C174CAA01B8218F100694C9B /* slider-metal-handle-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = C174CA331B8218F100694C9B /* slider-metal-handle-highlighted.png */; };
+		C174CAA11B8218F100694C9B /* slider-metal-handle-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C174CA341B8218F100694C9B /* slider-metal-handle-highlighted@2x.png */; };
+		C174CAA21B8218F100694C9B /* slider-metal-handle.png in Resources */ = {isa = PBXBuildFile; fileRef = C174CA351B8218F100694C9B /* slider-metal-handle.png */; };
+		C174CAA31B8218F100694C9B /* slider-metal-handle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C174CA361B8218F100694C9B /* slider-metal-handle@2x.png */; };
+		C174CAA41B8218F100694C9B /* slider-metal-track.png in Resources */ = {isa = PBXBuildFile; fileRef = C174CA371B8218F100694C9B /* slider-metal-track.png */; };
+		C174CAA51B8218F100694C9B /* slider-metal-track@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C174CA381B8218F100694C9B /* slider-metal-track@2x.png */; };
+		C174CAA61B8218F100694C9B /* slider-metal-trackBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = C174CA391B8218F100694C9B /* slider-metal-trackBackground.png */; };
+		C174CAA71B8218F100694C9B /* slider-metal-trackBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C174CA3A1B8218F100694C9B /* slider-metal-trackBackground@2x.png */; };
+		C174CAA81B8218F100694C9B /* NMRangeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CA3C1B8218F100694C9B /* NMRangeSlider.m */; };
+		C174CAA91B8218F100694C9B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CA3F1B8218F100694C9B /* Reachability.m */; };
+		C174CAAA1B8218F100694C9B /* RMTPopoverSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CA421B8218F100694C9B /* RMTPopoverSlider.m */; };
+		C174CAAB1B8218F100694C9B /* RMTPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CA441B8218F100694C9B /* RMTPopoverView.m */; };
+		C174CAAC1B8218F100694C9B /* libUPPayPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C174CA461B8218F100694C9B /* libUPPayPlugin.a */; };
+		C174CAAD1B8218F100694C9B /* WaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CA4B1B8218F100694C9B /* WaterViewController.m */; };
+		C174CAAE1B8218F100694C9B /* WaterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CA4C1B8218F100694C9B /* WaterViewController.xib */; };
+		C174CB1D1B82202F00694C9B /* GetAmmeterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CAB61B82202F00694C9B /* GetAmmeterViewController.m */; };
+		C174CB1E1B82202F00694C9B /* GetAmmeterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CAB71B82202F00694C9B /* GetAmmeterViewController.xib */; };
+		C174CB1F1B82202F00694C9B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C174CAB91B82202F00694C9B /* .gitignore */; };
+		C174CB201B82202F00694C9B /* NSString+RMT.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CABB1B82202F00694C9B /* NSString+RMT.m */; };
+		C174CB211B82202F00694C9B /* UIColor+Hexadecimal.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CABD1B82202F00694C9B /* UIColor+Hexadecimal.m */; };
+		C174CB221B82202F00694C9B /* UIImage+RMT.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CABF1B82202F00694C9B /* UIImage+RMT.m */; };
+		C174CB231B82202F00694C9B /* avatar@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C174CAC11B82202F00694C9B /* avatar@2x.jpg */; };
+		C174CB241B82202F00694C9B /* DEMOFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CAC31B82202F00694C9B /* DEMOFirstViewController.m */; };
+		C174CB251B82202F00694C9B /* DEMOLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CAC51B82202F00694C9B /* DEMOLeftMenuViewController.m */; };
+		C174CB261B82202F00694C9B /* DEMORightMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CAC71B82202F00694C9B /* DEMORightMenuViewController.m */; };
+		C174CB271B82202F00694C9B /* DEMOSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CAC91B82202F00694C9B /* DEMOSecondViewController.m */; };
+		C174CB281B82202F00694C9B /* TableViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CACB1B82202F00694C9B /* TableViewViewController.m */; };
+		C174CB291B82202F00694C9B /* TableViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CACC1B82202F00694C9B /* TableViewViewController.xib */; };
+		C174CB2A1B82202F00694C9B /* TabTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CACE1B82202F00694C9B /* TabTableViewCell.m */; };
+		C174CB2B1B82202F00694C9B /* TabTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CACF1B82202F00694C9B /* TabTableViewCell.xib */; };
+		C174CB2C1B82202F00694C9B /* RMTAgreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CAD21B82202F00694C9B /* RMTAgreementViewController.m */; };
+		C174CB2D1B82202F00694C9B /* RMTAgreementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CAD31B82202F00694C9B /* RMTAgreementViewController.xib */; };
+		C174CB2E1B82202F00694C9B /* RMTCountryPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CAD51B82202F00694C9B /* RMTCountryPickerView.m */; };
+		C174CB2F1B82202F00694C9B /* RMTFindPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CAD71B82202F00694C9B /* RMTFindPasswordViewController.m */; };
+		C174CB301B82202F00694C9B /* RMTFindPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CAD81B82202F00694C9B /* RMTFindPasswordViewController.xib */; };
+		C174CB311B82202F00694C9B /* RMTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CADA1B82202F00694C9B /* RMTLoginViewController.m */; };
+		C174CB321B82202F00694C9B /* RMTLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CADB1B82202F00694C9B /* RMTLoginViewController.xib */; };
+		C174CB331B82202F00694C9B /* RMTRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CADD1B82202F00694C9B /* RMTRegisterViewController.m */; };
+		C174CB341B82202F00694C9B /* RMTRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CADE1B82202F00694C9B /* RMTRegisterViewController.xib */; };
+		C174CB351B82202F00694C9B /* RMTNetworkKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CAE11B82202F00694C9B /* RMTNetworkKit.m */; };
+		C174CB361B82202F00694C9B /* RMTUPPayBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = C174CAE31B82202F00694C9B /* RMTUPPayBridge.mm */; };
+		C174CB371B82202F00694C9B /* RMTURLSession.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CAE51B82202F00694C9B /* RMTURLSession.m */; };
+		C174CB381B82202F00694C9B /* RMTUserData.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CAE71B82202F00694C9B /* RMTUserData.m */; };
+		C174CB391B82202F00694C9B /* RMTUserLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CAE91B82202F00694C9B /* RMTUserLogic.m */; };
+		C174CB3A1B82202F00694C9B /* RMTUserShareData.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CAEB1B82202F00694C9B /* RMTUserShareData.m */; };
+		C174CB3B1B82202F00694C9B /* RMTUtilityBaseInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CAEE1B82202F00694C9B /* RMTUtilityBaseInfo.m */; };
+		C174CB3C1B82202F00694C9B /* RMTUtilityFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CAF01B82202F00694C9B /* RMTUtilityFeedback.m */; };
+		C174CB3D1B82202F00694C9B /* RMTUtilityLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CAF21B82202F00694C9B /* RMTUtilityLogin.m */; };
+		C174CB3E1B82202F00694C9B /* RMTUtilityReport.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CAF41B82202F00694C9B /* RMTUtilityReport.m */; };
+		C174CB3F1B82202F00694C9B /* RMTUtilityUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CAF61B82202F00694C9B /* RMTUtilityUpdate.m */; };
+		C174CB401B82202F00694C9B /* AddHouseViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CAF91B82202F00694C9B /* AddHouseViewCell.m */; };
+		C174CB411B82202F00694C9B /* AddHouseViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CAFA1B82202F00694C9B /* AddHouseViewCell.xib */; };
+		C174CB421B82202F00694C9B /* AddHouseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CAFC1B82202F00694C9B /* AddHouseViewController.m */; };
+		C174CB431B82202F00694C9B /* AddHouseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CAFD1B82202F00694C9B /* AddHouseViewController.xib */; };
+		C174CB441B82202F00694C9B /* MainContentControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CAFF1B82202F00694C9B /* MainContentControlViewController.m */; };
+		C174CB451B82202F00694C9B /* MainContentControlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CB001B82202F00694C9B /* MainContentControlViewController.xib */; };
+		C174CB461B82202F00694C9B /* MenuLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CB031B82202F00694C9B /* MenuLeftViewController.m */; };
+		C174CB471B82202F00694C9B /* MenuLeftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CB041B82202F00694C9B /* MenuLeftViewController.xib */; };
+		C174CB481B82202F00694C9B /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CB071B82202F00694C9B /* RECommonFunctions.m */; };
+		C174CB491B82202F00694C9B /* REFrostedContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CB091B82202F00694C9B /* REFrostedContainerViewController.m */; };
+		C174CB4A1B82202F00694C9B /* REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CB0B1B82202F00694C9B /* REFrostedViewController.m */; };
+		C174CB4B1B82202F00694C9B /* UIImage+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CB0D1B82202F00694C9B /* UIImage+REFrostedViewController.m */; };
+		C174CB4C1B82202F00694C9B /* UIView+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CB0F1B82202F00694C9B /* UIView+REFrostedViewController.m */; };
+		C174CB4D1B82202F00694C9B /* UIViewController+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CB111B82202F00694C9B /* UIViewController+REFrostedViewController.m */; };
+		C174CB4E1B82202F00694C9B /* RentMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CB141B82202F00694C9B /* RentMainViewController.m */; };
+		C174CB4F1B82202F00694C9B /* RentMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CB151B82202F00694C9B /* RentMainViewController.xib */; };
+		C174CB501B82202F00694C9B /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CB181B82202F00694C9B /* RECommonFunctions.m */; };
+		C174CB511B82202F00694C9B /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CB1A1B82202F00694C9B /* RESideMenu.m */; };
+		C174CB521B82202F00694C9B /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CB1C1B82202F00694C9B /* UIViewController+RESideMenu.m */; };
+		C174CB721B82207300694C9B /* AddFloorWaterDataViewControll.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CB561B82207300694C9B /* AddFloorWaterDataViewControll.m */; };
+		C174CB731B82207300694C9B /* AddFloorWaterDataViewControll.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CB571B82207300694C9B /* AddFloorWaterDataViewControll.xib */; };
+		C174CB741B82207300694C9B /* AddLastMonthDataControll.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CB5A1B82207300694C9B /* AddLastMonthDataControll.m */; };
+		C174CB751B82207300694C9B /* AddLastMonthDataControll.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CB5B1B82207300694C9B /* AddLastMonthDataControll.xib */; };
+		C174CB761B82207300694C9B /* AddLastMothDataTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CB5D1B82207300694C9B /* AddLastMothDataTableViewCell.m */; };
+		C174CB771B82207300694C9B /* AddLastMothDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CB5E1B82207300694C9B /* AddLastMothDataTableViewCell.xib */; };
+		C174CB781B82207300694C9B /* AddLastMothWaterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CB601B82207300694C9B /* AddLastMothWaterTableViewCell.m */; };
+		C174CB791B82207300694C9B /* AddLastMothWaterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CB611B82207300694C9B /* AddLastMothWaterTableViewCell.xib */; };
+		C174CB7A1B82207300694C9B /* ConfigEditHouseData.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CB651B82207300694C9B /* ConfigEditHouseData.m */; };
+		C174CB7B1B82207300694C9B /* ConfigEditCellForButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CB671B82207300694C9B /* ConfigEditCellForButton.m */; };
+		C174CB7C1B82207300694C9B /* ConfigHouseEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CB691B82207300694C9B /* ConfigHouseEditCell.m */; };
+		C174CB7D1B82207300694C9B /* ConfigHouseEditCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CB6A1B82207300694C9B /* ConfigHouseEditCell.xib */; };
+		C174CB7E1B82207300694C9B /* ConfigHouseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CB6C1B82207300694C9B /* ConfigHouseViewController.m */; };
+		C174CB7F1B82207300694C9B /* ConfigHouseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CB6D1B82207300694C9B /* ConfigHouseViewController.xib */; };
+		C174CB801B82207300694C9B /* ConfigLastMothControllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CB6F1B82207300694C9B /* ConfigLastMothControllViewController.m */; };
+		C174CB811B82207300694C9B /* ConfigLastMothControllViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CB701B82207300694C9B /* ConfigLastMothControllViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +138,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		968AF5976CDFCA8CD97FE1D5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C174C9711B82182B00694C9B /* LandlordTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LandlordTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C174C9751B82182B00694C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C174C9761B82182B00694C9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +152,181 @@
 		C174C98A1B82182C00694C9B /* LandlordToolsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LandlordToolsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C174C98F1B82182C00694C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C174C9901B82182C00694C9B /* LandlordToolsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LandlordToolsTests.m; sourceTree = "<group>"; };
+		C174CA0D1B8218F100694C9B /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		C174CA0F1B8218F100694C9B /* ComboBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComboBox.h; sourceTree = "<group>"; };
+		C174CA101B8218F100694C9B /* ComboBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComboBox.m; sourceTree = "<group>"; };
+		C174CA121B8218F100694C9B /* EqualizerSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EqualizerSlider.h; sourceTree = "<group>"; };
+		C174CA131B8218F100694C9B /* EqualizerSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EqualizerSlider.m; sourceTree = "<group>"; };
+		C174CA141B8218F100694C9B /* EqualizerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EqualizerView.h; sourceTree = "<group>"; };
+		C174CA151B8218F100694C9B /* EqualizerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EqualizerView.m; sourceTree = "<group>"; };
+		C174CA161B8218F100694C9B /* ImagePlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePlayerView.h; sourceTree = "<group>"; };
+		C174CA171B8218F100694C9B /* ImagePlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePlayerView.m; sourceTree = "<group>"; };
+		C174CA191B8218F100694C9B /* JBChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartView.h; sourceTree = "<group>"; };
+		C174CA1A1B8218F100694C9B /* JBChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartView.m; sourceTree = "<group>"; };
+		C174CA1B1B8218F100694C9B /* JBLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLineChartView.h; sourceTree = "<group>"; };
+		C174CA1C1B8218F100694C9B /* JBLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLineChartView.m; sourceTree = "<group>"; };
+		C174CA1F1B8218F100694C9B /* slider-default-handle-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default-handle-highlighted.png"; sourceTree = "<group>"; };
+		C174CA201B8218F100694C9B /* slider-default-handle-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default-handle-highlighted@2x.png"; sourceTree = "<group>"; };
+		C174CA211B8218F100694C9B /* slider-default-handle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default-handle.png"; sourceTree = "<group>"; };
+		C174CA221B8218F100694C9B /* slider-default-handle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default-handle@2x.png"; sourceTree = "<group>"; };
+		C174CA231B8218F100694C9B /* slider-default-track.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default-track.png"; sourceTree = "<group>"; };
+		C174CA241B8218F100694C9B /* slider-default-track@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default-track@2x.png"; sourceTree = "<group>"; };
+		C174CA251B8218F100694C9B /* slider-default-trackBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default-trackBackground.png"; sourceTree = "<group>"; };
+		C174CA261B8218F100694C9B /* slider-default-trackCrossedOver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default-trackCrossedOver.png"; sourceTree = "<group>"; };
+		C174CA271B8218F100694C9B /* slider-default-trackCrossedOver@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default-trackCrossedOver@2x.png"; sourceTree = "<group>"; };
+		C174CA281B8218F100694C9B /* slider-default_trackBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default_trackBackground@2x.png"; sourceTree = "<group>"; };
+		C174CA2A1B8218F100694C9B /* slider-default7-handle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default7-handle.png"; sourceTree = "<group>"; };
+		C174CA2B1B8218F100694C9B /* slider-default7-handle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default7-handle@2x.png"; sourceTree = "<group>"; };
+		C174CA2C1B8218F100694C9B /* slider-default7-track.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default7-track.png"; sourceTree = "<group>"; };
+		C174CA2D1B8218F100694C9B /* slider-default7-track@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default7-track@2x.png"; sourceTree = "<group>"; };
+		C174CA2E1B8218F100694C9B /* slider-default7-trackBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default7-trackBackground.png"; sourceTree = "<group>"; };
+		C174CA2F1B8218F100694C9B /* slider-default7-trackBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default7-trackBackground@2x.png"; sourceTree = "<group>"; };
+		C174CA301B8218F100694C9B /* slider-default7-trackCrossedOver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default7-trackCrossedOver.png"; sourceTree = "<group>"; };
+		C174CA311B8218F100694C9B /* slider-default7-trackCrossedOver@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default7-trackCrossedOver@2x.png"; sourceTree = "<group>"; };
+		C174CA331B8218F100694C9B /* slider-metal-handle-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-metal-handle-highlighted.png"; sourceTree = "<group>"; };
+		C174CA341B8218F100694C9B /* slider-metal-handle-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-metal-handle-highlighted@2x.png"; sourceTree = "<group>"; };
+		C174CA351B8218F100694C9B /* slider-metal-handle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-metal-handle.png"; sourceTree = "<group>"; };
+		C174CA361B8218F100694C9B /* slider-metal-handle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-metal-handle@2x.png"; sourceTree = "<group>"; };
+		C174CA371B8218F100694C9B /* slider-metal-track.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-metal-track.png"; sourceTree = "<group>"; };
+		C174CA381B8218F100694C9B /* slider-metal-track@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-metal-track@2x.png"; sourceTree = "<group>"; };
+		C174CA391B8218F100694C9B /* slider-metal-trackBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-metal-trackBackground.png"; sourceTree = "<group>"; };
+		C174CA3A1B8218F100694C9B /* slider-metal-trackBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-metal-trackBackground@2x.png"; sourceTree = "<group>"; };
+		C174CA3B1B8218F100694C9B /* NMRangeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMRangeSlider.h; sourceTree = "<group>"; };
+		C174CA3C1B8218F100694C9B /* NMRangeSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMRangeSlider.m; sourceTree = "<group>"; };
+		C174CA3E1B8218F100694C9B /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		C174CA3F1B8218F100694C9B /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		C174CA411B8218F100694C9B /* RMTPopoverSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTPopoverSlider.h; sourceTree = "<group>"; };
+		C174CA421B8218F100694C9B /* RMTPopoverSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTPopoverSlider.m; sourceTree = "<group>"; };
+		C174CA431B8218F100694C9B /* RMTPopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTPopoverView.h; sourceTree = "<group>"; };
+		C174CA441B8218F100694C9B /* RMTPopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTPopoverView.m; sourceTree = "<group>"; };
+		C174CA461B8218F100694C9B /* libUPPayPlugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUPPayPlugin.a; sourceTree = "<group>"; };
+		C174CA471B8218F100694C9B /* UPPayPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPPayPlugin.h; sourceTree = "<group>"; };
+		C174CA481B8218F100694C9B /* UPPayPluginDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPPayPluginDelegate.h; sourceTree = "<group>"; };
+		C174CA4A1B8218F100694C9B /* WaterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterViewController.h; sourceTree = "<group>"; };
+		C174CA4B1B8218F100694C9B /* WaterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterViewController.m; sourceTree = "<group>"; };
+		C174CA4C1B8218F100694C9B /* WaterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterViewController.xib; sourceTree = "<group>"; };
+		C174CAB51B82202F00694C9B /* GetAmmeterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetAmmeterViewController.h; sourceTree = "<group>"; };
+		C174CAB61B82202F00694C9B /* GetAmmeterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetAmmeterViewController.m; sourceTree = "<group>"; };
+		C174CAB71B82202F00694C9B /* GetAmmeterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GetAmmeterViewController.xib; sourceTree = "<group>"; };
+		C174CAB91B82202F00694C9B /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		C174CABA1B82202F00694C9B /* NSString+RMT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RMT.h"; sourceTree = "<group>"; };
+		C174CABB1B82202F00694C9B /* NSString+RMT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RMT.m"; sourceTree = "<group>"; };
+		C174CABC1B82202F00694C9B /* UIColor+Hexadecimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hexadecimal.h"; sourceTree = "<group>"; };
+		C174CABD1B82202F00694C9B /* UIColor+Hexadecimal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hexadecimal.m"; sourceTree = "<group>"; };
+		C174CABE1B82202F00694C9B /* UIImage+RMT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RMT.h"; sourceTree = "<group>"; };
+		C174CABF1B82202F00694C9B /* UIImage+RMT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RMT.m"; sourceTree = "<group>"; };
+		C174CAC11B82202F00694C9B /* avatar@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "avatar@2x.jpg"; sourceTree = "<group>"; };
+		C174CAC21B82202F00694C9B /* DEMOFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMOFirstViewController.h; sourceTree = "<group>"; };
+		C174CAC31B82202F00694C9B /* DEMOFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMOFirstViewController.m; sourceTree = "<group>"; };
+		C174CAC41B82202F00694C9B /* DEMOLeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMOLeftMenuViewController.h; sourceTree = "<group>"; };
+		C174CAC51B82202F00694C9B /* DEMOLeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMOLeftMenuViewController.m; sourceTree = "<group>"; };
+		C174CAC61B82202F00694C9B /* DEMORightMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMORightMenuViewController.h; sourceTree = "<group>"; };
+		C174CAC71B82202F00694C9B /* DEMORightMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMORightMenuViewController.m; sourceTree = "<group>"; };
+		C174CAC81B82202F00694C9B /* DEMOSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMOSecondViewController.h; sourceTree = "<group>"; };
+		C174CAC91B82202F00694C9B /* DEMOSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMOSecondViewController.m; sourceTree = "<group>"; };
+		C174CACA1B82202F00694C9B /* TableViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewViewController.h; sourceTree = "<group>"; };
+		C174CACB1B82202F00694C9B /* TableViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewViewController.m; sourceTree = "<group>"; };
+		C174CACC1B82202F00694C9B /* TableViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewViewController.xib; sourceTree = "<group>"; };
+		C174CACD1B82202F00694C9B /* TabTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabTableViewCell.h; sourceTree = "<group>"; };
+		C174CACE1B82202F00694C9B /* TabTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabTableViewCell.m; sourceTree = "<group>"; };
+		C174CACF1B82202F00694C9B /* TabTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabTableViewCell.xib; sourceTree = "<group>"; };
+		C174CAD11B82202F00694C9B /* RMTAgreementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTAgreementViewController.h; sourceTree = "<group>"; };
+		C174CAD21B82202F00694C9B /* RMTAgreementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTAgreementViewController.m; sourceTree = "<group>"; };
+		C174CAD31B82202F00694C9B /* RMTAgreementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMTAgreementViewController.xib; sourceTree = "<group>"; };
+		C174CAD41B82202F00694C9B /* RMTCountryPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTCountryPickerView.h; sourceTree = "<group>"; };
+		C174CAD51B82202F00694C9B /* RMTCountryPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTCountryPickerView.m; sourceTree = "<group>"; };
+		C174CAD61B82202F00694C9B /* RMTFindPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTFindPasswordViewController.h; sourceTree = "<group>"; };
+		C174CAD71B82202F00694C9B /* RMTFindPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTFindPasswordViewController.m; sourceTree = "<group>"; };
+		C174CAD81B82202F00694C9B /* RMTFindPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMTFindPasswordViewController.xib; sourceTree = "<group>"; };
+		C174CAD91B82202F00694C9B /* RMTLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTLoginViewController.h; sourceTree = "<group>"; };
+		C174CADA1B82202F00694C9B /* RMTLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTLoginViewController.m; sourceTree = "<group>"; };
+		C174CADB1B82202F00694C9B /* RMTLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMTLoginViewController.xib; sourceTree = "<group>"; };
+		C174CADC1B82202F00694C9B /* RMTRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTRegisterViewController.h; sourceTree = "<group>"; };
+		C174CADD1B82202F00694C9B /* RMTRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTRegisterViewController.m; sourceTree = "<group>"; };
+		C174CADE1B82202F00694C9B /* RMTRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMTRegisterViewController.xib; sourceTree = "<group>"; };
+		C174CAE01B82202F00694C9B /* RMTNetworkKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTNetworkKit.h; sourceTree = "<group>"; };
+		C174CAE11B82202F00694C9B /* RMTNetworkKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTNetworkKit.m; sourceTree = "<group>"; };
+		C174CAE21B82202F00694C9B /* RMTUPPayBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTUPPayBridge.h; sourceTree = "<group>"; };
+		C174CAE31B82202F00694C9B /* RMTUPPayBridge.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RMTUPPayBridge.mm; sourceTree = "<group>"; };
+		C174CAE41B82202F00694C9B /* RMTURLSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTURLSession.h; sourceTree = "<group>"; };
+		C174CAE51B82202F00694C9B /* RMTURLSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTURLSession.m; sourceTree = "<group>"; };
+		C174CAE61B82202F00694C9B /* RMTUserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTUserData.h; sourceTree = "<group>"; };
+		C174CAE71B82202F00694C9B /* RMTUserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTUserData.m; sourceTree = "<group>"; };
+		C174CAE81B82202F00694C9B /* RMTUserLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTUserLogic.h; sourceTree = "<group>"; };
+		C174CAE91B82202F00694C9B /* RMTUserLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTUserLogic.m; sourceTree = "<group>"; };
+		C174CAEA1B82202F00694C9B /* RMTUserShareData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTUserShareData.h; sourceTree = "<group>"; };
+		C174CAEB1B82202F00694C9B /* RMTUserShareData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTUserShareData.m; sourceTree = "<group>"; };
+		C174CAEC1B82202F00694C9B /* RMTUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTUtility.h; sourceTree = "<group>"; };
+		C174CAED1B82202F00694C9B /* RMTUtilityBaseInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTUtilityBaseInfo.h; sourceTree = "<group>"; };
+		C174CAEE1B82202F00694C9B /* RMTUtilityBaseInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTUtilityBaseInfo.m; sourceTree = "<group>"; };
+		C174CAEF1B82202F00694C9B /* RMTUtilityFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTUtilityFeedback.h; sourceTree = "<group>"; };
+		C174CAF01B82202F00694C9B /* RMTUtilityFeedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTUtilityFeedback.m; sourceTree = "<group>"; };
+		C174CAF11B82202F00694C9B /* RMTUtilityLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTUtilityLogin.h; sourceTree = "<group>"; };
+		C174CAF21B82202F00694C9B /* RMTUtilityLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTUtilityLogin.m; sourceTree = "<group>"; };
+		C174CAF31B82202F00694C9B /* RMTUtilityReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTUtilityReport.h; sourceTree = "<group>"; };
+		C174CAF41B82202F00694C9B /* RMTUtilityReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTUtilityReport.m; sourceTree = "<group>"; };
+		C174CAF51B82202F00694C9B /* RMTUtilityUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTUtilityUpdate.h; sourceTree = "<group>"; };
+		C174CAF61B82202F00694C9B /* RMTUtilityUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTUtilityUpdate.m; sourceTree = "<group>"; };
+		C174CAF81B82202F00694C9B /* AddHouseViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddHouseViewCell.h; sourceTree = "<group>"; };
+		C174CAF91B82202F00694C9B /* AddHouseViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddHouseViewCell.m; sourceTree = "<group>"; };
+		C174CAFA1B82202F00694C9B /* AddHouseViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddHouseViewCell.xib; sourceTree = "<group>"; };
+		C174CAFB1B82202F00694C9B /* AddHouseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddHouseViewController.h; sourceTree = "<group>"; };
+		C174CAFC1B82202F00694C9B /* AddHouseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddHouseViewController.m; sourceTree = "<group>"; };
+		C174CAFD1B82202F00694C9B /* AddHouseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddHouseViewController.xib; sourceTree = "<group>"; };
+		C174CAFE1B82202F00694C9B /* MainContentControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainContentControlViewController.h; sourceTree = "<group>"; };
+		C174CAFF1B82202F00694C9B /* MainContentControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainContentControlViewController.m; sourceTree = "<group>"; };
+		C174CB001B82202F00694C9B /* MainContentControlViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainContentControlViewController.xib; sourceTree = "<group>"; };
+		C174CB021B82202F00694C9B /* MenuLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuLeftViewController.h; sourceTree = "<group>"; };
+		C174CB031B82202F00694C9B /* MenuLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuLeftViewController.m; sourceTree = "<group>"; };
+		C174CB041B82202F00694C9B /* MenuLeftViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuLeftViewController.xib; sourceTree = "<group>"; };
+		C174CB061B82202F00694C9B /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
+		C174CB071B82202F00694C9B /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
+		C174CB081B82202F00694C9B /* REFrostedContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REFrostedContainerViewController.h; sourceTree = "<group>"; };
+		C174CB091B82202F00694C9B /* REFrostedContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REFrostedContainerViewController.m; sourceTree = "<group>"; };
+		C174CB0A1B82202F00694C9B /* REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REFrostedViewController.h; sourceTree = "<group>"; };
+		C174CB0B1B82202F00694C9B /* REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REFrostedViewController.m; sourceTree = "<group>"; };
+		C174CB0C1B82202F00694C9B /* UIImage+REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+REFrostedViewController.h"; sourceTree = "<group>"; };
+		C174CB0D1B82202F00694C9B /* UIImage+REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+REFrostedViewController.m"; sourceTree = "<group>"; };
+		C174CB0E1B82202F00694C9B /* UIView+REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+REFrostedViewController.h"; sourceTree = "<group>"; };
+		C174CB0F1B82202F00694C9B /* UIView+REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+REFrostedViewController.m"; sourceTree = "<group>"; };
+		C174CB101B82202F00694C9B /* UIViewController+REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+REFrostedViewController.h"; sourceTree = "<group>"; };
+		C174CB111B82202F00694C9B /* UIViewController+REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+REFrostedViewController.m"; sourceTree = "<group>"; };
+		C174CB131B82202F00694C9B /* RentMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RentMainViewController.h; sourceTree = "<group>"; };
+		C174CB141B82202F00694C9B /* RentMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RentMainViewController.m; sourceTree = "<group>"; };
+		C174CB151B82202F00694C9B /* RentMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RentMainViewController.xib; sourceTree = "<group>"; };
+		C174CB171B82202F00694C9B /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
+		C174CB181B82202F00694C9B /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
+		C174CB191B82202F00694C9B /* RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESideMenu.h; sourceTree = "<group>"; };
+		C174CB1A1B82202F00694C9B /* RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESideMenu.m; sourceTree = "<group>"; };
+		C174CB1B1B82202F00694C9B /* UIViewController+RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RESideMenu.h"; sourceTree = "<group>"; };
+		C174CB1C1B82202F00694C9B /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
+		C174CB551B82207300694C9B /* AddFloorWaterDataViewControll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFloorWaterDataViewControll.h; sourceTree = "<group>"; };
+		C174CB561B82207300694C9B /* AddFloorWaterDataViewControll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFloorWaterDataViewControll.m; sourceTree = "<group>"; };
+		C174CB571B82207300694C9B /* AddFloorWaterDataViewControll.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddFloorWaterDataViewControll.xib; sourceTree = "<group>"; };
+		C174CB591B82207300694C9B /* AddLastMonthDataControll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddLastMonthDataControll.h; sourceTree = "<group>"; };
+		C174CB5A1B82207300694C9B /* AddLastMonthDataControll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddLastMonthDataControll.m; sourceTree = "<group>"; };
+		C174CB5B1B82207300694C9B /* AddLastMonthDataControll.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddLastMonthDataControll.xib; sourceTree = "<group>"; };
+		C174CB5C1B82207300694C9B /* AddLastMothDataTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddLastMothDataTableViewCell.h; sourceTree = "<group>"; };
+		C174CB5D1B82207300694C9B /* AddLastMothDataTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddLastMothDataTableViewCell.m; sourceTree = "<group>"; };
+		C174CB5E1B82207300694C9B /* AddLastMothDataTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddLastMothDataTableViewCell.xib; sourceTree = "<group>"; };
+		C174CB5F1B82207300694C9B /* AddLastMothWaterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddLastMothWaterTableViewCell.h; sourceTree = "<group>"; };
+		C174CB601B82207300694C9B /* AddLastMothWaterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddLastMothWaterTableViewCell.m; sourceTree = "<group>"; };
+		C174CB611B82207300694C9B /* AddLastMothWaterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddLastMothWaterTableViewCell.xib; sourceTree = "<group>"; };
+		C174CB641B82207300694C9B /* ConfigEditHouseData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigEditHouseData.h; sourceTree = "<group>"; };
+		C174CB651B82207300694C9B /* ConfigEditHouseData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigEditHouseData.m; sourceTree = "<group>"; };
+		C174CB661B82207300694C9B /* ConfigEditCellForButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigEditCellForButton.h; sourceTree = "<group>"; };
+		C174CB671B82207300694C9B /* ConfigEditCellForButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigEditCellForButton.m; sourceTree = "<group>"; };
+		C174CB681B82207300694C9B /* ConfigHouseEditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigHouseEditCell.h; sourceTree = "<group>"; };
+		C174CB691B82207300694C9B /* ConfigHouseEditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigHouseEditCell.m; sourceTree = "<group>"; };
+		C174CB6A1B82207300694C9B /* ConfigHouseEditCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfigHouseEditCell.xib; sourceTree = "<group>"; };
+		C174CB6B1B82207300694C9B /* ConfigHouseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigHouseViewController.h; sourceTree = "<group>"; };
+		C174CB6C1B82207300694C9B /* ConfigHouseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigHouseViewController.m; sourceTree = "<group>"; };
+		C174CB6D1B82207300694C9B /* ConfigHouseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfigHouseViewController.xib; sourceTree = "<group>"; };
+		C174CB6E1B82207300694C9B /* ConfigLastMothControllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigLastMothControllViewController.h; sourceTree = "<group>"; };
+		C174CB6F1B82207300694C9B /* ConfigLastMothControllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigLastMothControllViewController.m; sourceTree = "<group>"; };
+		C174CB701B82207300694C9B /* ConfigLastMothControllViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfigLastMothControllViewController.xib; sourceTree = "<group>"; };
+		E59BEDF2FF6B761CCC47BCB1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		FA3467288651B61433E13F22 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +334,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C174CAAC1B8218F100694C9B /* libUPPayPlugin.a in Frameworks */,
+				AF0B97ABCF12C131065984F4 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +349,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29D3865DF95D177E33D7BAE0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FA3467288651B61433E13F22 /* Pods.debug.xcconfig */,
+				E59BEDF2FF6B761CCC47BCB1 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		67F2004145D7FCC66E988809 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				968AF5976CDFCA8CD97FE1D5 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C174C9681B82182B00694C9B = {
 			isa = PBXGroup;
 			children = (
 				C174C9731B82182B00694C9B /* LandlordTools */,
 				C174C98D1B82182C00694C9B /* LandlordToolsTests */,
 				C174C9721B82182B00694C9B /* Products */,
+				29D3865DF95D177E33D7BAE0 /* Pods */,
+				67F2004145D7FCC66E988809 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +389,19 @@
 		C174C9731B82182B00694C9B /* LandlordTools */ = {
 			isa = PBXGroup;
 			children = (
+				C174CB531B82207300694C9B /* AddCofing */,
+				C174CAB41B82202F00694C9B /* AmmeterControl */,
+				C174CAB81B82202F00694C9B /* Category */,
+				C174CAC01B82202F00694C9B /* Controller */,
+				C174CADF1B82202F00694C9B /* Logic */,
+				C174CAF71B82202F00694C9B /* MainControl */,
+				C174CB011B82202F00694C9B /* Menu */,
+				C174CB051B82202F00694C9B /* REFrostedViewController */,
+				C174CB121B82202F00694C9B /* RentControl */,
+				C174CB161B82202F00694C9B /* RESideMenu */,
+				C174CA0C1B8218F100694C9B /* ThirdParty */,
+				C174CA451B8218F100694C9B /* UPPay */,
+				C174CA491B8218F100694C9B /* WaterControl */,
 				C174C9781B82182B00694C9B /* AppDelegate.h */,
 				C174C9791B82182B00694C9B /* AppDelegate.m */,
 				C174C97B1B82182B00694C9B /* ViewController.h */,
@@ -119,6 +440,390 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C174CA0C1B8218F100694C9B /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				C174CA0D1B8218F100694C9B /* .gitignore */,
+				C174CA0E1B8218F100694C9B /* ComboBox */,
+				C174CA111B8218F100694C9B /* EqualizerView */,
+				C174CA161B8218F100694C9B /* ImagePlayerView.h */,
+				C174CA171B8218F100694C9B /* ImagePlayerView.m */,
+				C174CA181B8218F100694C9B /* JBLineChartView */,
+				C174CA1D1B8218F100694C9B /* NMRangeSlider */,
+				C174CA3D1B8218F100694C9B /* Reachability */,
+				C174CA401B8218F100694C9B /* slider */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		C174CA0E1B8218F100694C9B /* ComboBox */ = {
+			isa = PBXGroup;
+			children = (
+				C174CA0F1B8218F100694C9B /* ComboBox.h */,
+				C174CA101B8218F100694C9B /* ComboBox.m */,
+			);
+			path = ComboBox;
+			sourceTree = "<group>";
+		};
+		C174CA111B8218F100694C9B /* EqualizerView */ = {
+			isa = PBXGroup;
+			children = (
+				C174CA121B8218F100694C9B /* EqualizerSlider.h */,
+				C174CA131B8218F100694C9B /* EqualizerSlider.m */,
+				C174CA141B8218F100694C9B /* EqualizerView.h */,
+				C174CA151B8218F100694C9B /* EqualizerView.m */,
+			);
+			path = EqualizerView;
+			sourceTree = "<group>";
+		};
+		C174CA181B8218F100694C9B /* JBLineChartView */ = {
+			isa = PBXGroup;
+			children = (
+				C174CA191B8218F100694C9B /* JBChartView.h */,
+				C174CA1A1B8218F100694C9B /* JBChartView.m */,
+				C174CA1B1B8218F100694C9B /* JBLineChartView.h */,
+				C174CA1C1B8218F100694C9B /* JBLineChartView.m */,
+			);
+			path = JBLineChartView;
+			sourceTree = "<group>";
+		};
+		C174CA1D1B8218F100694C9B /* NMRangeSlider */ = {
+			isa = PBXGroup;
+			children = (
+				C174CA1E1B8218F100694C9B /* DefaultTheme */,
+				C174CA291B8218F100694C9B /* DefaultTheme7 */,
+				C174CA321B8218F100694C9B /* MetalTheme */,
+				C174CA3B1B8218F100694C9B /* NMRangeSlider.h */,
+				C174CA3C1B8218F100694C9B /* NMRangeSlider.m */,
+			);
+			path = NMRangeSlider;
+			sourceTree = "<group>";
+		};
+		C174CA1E1B8218F100694C9B /* DefaultTheme */ = {
+			isa = PBXGroup;
+			children = (
+				C174CA1F1B8218F100694C9B /* slider-default-handle-highlighted.png */,
+				C174CA201B8218F100694C9B /* slider-default-handle-highlighted@2x.png */,
+				C174CA211B8218F100694C9B /* slider-default-handle.png */,
+				C174CA221B8218F100694C9B /* slider-default-handle@2x.png */,
+				C174CA231B8218F100694C9B /* slider-default-track.png */,
+				C174CA241B8218F100694C9B /* slider-default-track@2x.png */,
+				C174CA251B8218F100694C9B /* slider-default-trackBackground.png */,
+				C174CA261B8218F100694C9B /* slider-default-trackCrossedOver.png */,
+				C174CA271B8218F100694C9B /* slider-default-trackCrossedOver@2x.png */,
+				C174CA281B8218F100694C9B /* slider-default_trackBackground@2x.png */,
+			);
+			path = DefaultTheme;
+			sourceTree = "<group>";
+		};
+		C174CA291B8218F100694C9B /* DefaultTheme7 */ = {
+			isa = PBXGroup;
+			children = (
+				C174CA2A1B8218F100694C9B /* slider-default7-handle.png */,
+				C174CA2B1B8218F100694C9B /* slider-default7-handle@2x.png */,
+				C174CA2C1B8218F100694C9B /* slider-default7-track.png */,
+				C174CA2D1B8218F100694C9B /* slider-default7-track@2x.png */,
+				C174CA2E1B8218F100694C9B /* slider-default7-trackBackground.png */,
+				C174CA2F1B8218F100694C9B /* slider-default7-trackBackground@2x.png */,
+				C174CA301B8218F100694C9B /* slider-default7-trackCrossedOver.png */,
+				C174CA311B8218F100694C9B /* slider-default7-trackCrossedOver@2x.png */,
+			);
+			path = DefaultTheme7;
+			sourceTree = "<group>";
+		};
+		C174CA321B8218F100694C9B /* MetalTheme */ = {
+			isa = PBXGroup;
+			children = (
+				C174CA331B8218F100694C9B /* slider-metal-handle-highlighted.png */,
+				C174CA341B8218F100694C9B /* slider-metal-handle-highlighted@2x.png */,
+				C174CA351B8218F100694C9B /* slider-metal-handle.png */,
+				C174CA361B8218F100694C9B /* slider-metal-handle@2x.png */,
+				C174CA371B8218F100694C9B /* slider-metal-track.png */,
+				C174CA381B8218F100694C9B /* slider-metal-track@2x.png */,
+				C174CA391B8218F100694C9B /* slider-metal-trackBackground.png */,
+				C174CA3A1B8218F100694C9B /* slider-metal-trackBackground@2x.png */,
+			);
+			path = MetalTheme;
+			sourceTree = "<group>";
+		};
+		C174CA3D1B8218F100694C9B /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				C174CA3E1B8218F100694C9B /* Reachability.h */,
+				C174CA3F1B8218F100694C9B /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		C174CA401B8218F100694C9B /* slider */ = {
+			isa = PBXGroup;
+			children = (
+				C174CA411B8218F100694C9B /* RMTPopoverSlider.h */,
+				C174CA421B8218F100694C9B /* RMTPopoverSlider.m */,
+				C174CA431B8218F100694C9B /* RMTPopoverView.h */,
+				C174CA441B8218F100694C9B /* RMTPopoverView.m */,
+			);
+			path = slider;
+			sourceTree = "<group>";
+		};
+		C174CA451B8218F100694C9B /* UPPay */ = {
+			isa = PBXGroup;
+			children = (
+				C174CA461B8218F100694C9B /* libUPPayPlugin.a */,
+				C174CA471B8218F100694C9B /* UPPayPlugin.h */,
+				C174CA481B8218F100694C9B /* UPPayPluginDelegate.h */,
+			);
+			path = UPPay;
+			sourceTree = "<group>";
+		};
+		C174CA491B8218F100694C9B /* WaterControl */ = {
+			isa = PBXGroup;
+			children = (
+				C174CA4A1B8218F100694C9B /* WaterViewController.h */,
+				C174CA4B1B8218F100694C9B /* WaterViewController.m */,
+				C174CA4C1B8218F100694C9B /* WaterViewController.xib */,
+			);
+			path = WaterControl;
+			sourceTree = "<group>";
+		};
+		C174CAB41B82202F00694C9B /* AmmeterControl */ = {
+			isa = PBXGroup;
+			children = (
+				C174CAB51B82202F00694C9B /* GetAmmeterViewController.h */,
+				C174CAB61B82202F00694C9B /* GetAmmeterViewController.m */,
+				C174CAB71B82202F00694C9B /* GetAmmeterViewController.xib */,
+			);
+			path = AmmeterControl;
+			sourceTree = "<group>";
+		};
+		C174CAB81B82202F00694C9B /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				C174CAB91B82202F00694C9B /* .gitignore */,
+				C174CABA1B82202F00694C9B /* NSString+RMT.h */,
+				C174CABB1B82202F00694C9B /* NSString+RMT.m */,
+				C174CABC1B82202F00694C9B /* UIColor+Hexadecimal.h */,
+				C174CABD1B82202F00694C9B /* UIColor+Hexadecimal.m */,
+				C174CABE1B82202F00694C9B /* UIImage+RMT.h */,
+				C174CABF1B82202F00694C9B /* UIImage+RMT.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		C174CAC01B82202F00694C9B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C174CAC11B82202F00694C9B /* avatar@2x.jpg */,
+				C174CAC21B82202F00694C9B /* DEMOFirstViewController.h */,
+				C174CAC31B82202F00694C9B /* DEMOFirstViewController.m */,
+				C174CAC41B82202F00694C9B /* DEMOLeftMenuViewController.h */,
+				C174CAC51B82202F00694C9B /* DEMOLeftMenuViewController.m */,
+				C174CAC61B82202F00694C9B /* DEMORightMenuViewController.h */,
+				C174CAC71B82202F00694C9B /* DEMORightMenuViewController.m */,
+				C174CAC81B82202F00694C9B /* DEMOSecondViewController.h */,
+				C174CAC91B82202F00694C9B /* DEMOSecondViewController.m */,
+				C174CACA1B82202F00694C9B /* TableViewViewController.h */,
+				C174CACB1B82202F00694C9B /* TableViewViewController.m */,
+				C174CACC1B82202F00694C9B /* TableViewViewController.xib */,
+				C174CACD1B82202F00694C9B /* TabTableViewCell.h */,
+				C174CACE1B82202F00694C9B /* TabTableViewCell.m */,
+				C174CACF1B82202F00694C9B /* TabTableViewCell.xib */,
+				C174CAD01B82202F00694C9B /* User */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C174CAD01B82202F00694C9B /* User */ = {
+			isa = PBXGroup;
+			children = (
+				C174CAD11B82202F00694C9B /* RMTAgreementViewController.h */,
+				C174CAD21B82202F00694C9B /* RMTAgreementViewController.m */,
+				C174CAD31B82202F00694C9B /* RMTAgreementViewController.xib */,
+				C174CAD41B82202F00694C9B /* RMTCountryPickerView.h */,
+				C174CAD51B82202F00694C9B /* RMTCountryPickerView.m */,
+				C174CAD61B82202F00694C9B /* RMTFindPasswordViewController.h */,
+				C174CAD71B82202F00694C9B /* RMTFindPasswordViewController.m */,
+				C174CAD81B82202F00694C9B /* RMTFindPasswordViewController.xib */,
+				C174CAD91B82202F00694C9B /* RMTLoginViewController.h */,
+				C174CADA1B82202F00694C9B /* RMTLoginViewController.m */,
+				C174CADB1B82202F00694C9B /* RMTLoginViewController.xib */,
+				C174CADC1B82202F00694C9B /* RMTRegisterViewController.h */,
+				C174CADD1B82202F00694C9B /* RMTRegisterViewController.m */,
+				C174CADE1B82202F00694C9B /* RMTRegisterViewController.xib */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		C174CADF1B82202F00694C9B /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				C174CAE01B82202F00694C9B /* RMTNetworkKit.h */,
+				C174CAE11B82202F00694C9B /* RMTNetworkKit.m */,
+				C174CAE21B82202F00694C9B /* RMTUPPayBridge.h */,
+				C174CAE31B82202F00694C9B /* RMTUPPayBridge.mm */,
+				C174CAE41B82202F00694C9B /* RMTURLSession.h */,
+				C174CAE51B82202F00694C9B /* RMTURLSession.m */,
+				C174CAE61B82202F00694C9B /* RMTUserData.h */,
+				C174CAE71B82202F00694C9B /* RMTUserData.m */,
+				C174CAE81B82202F00694C9B /* RMTUserLogic.h */,
+				C174CAE91B82202F00694C9B /* RMTUserLogic.m */,
+				C174CAEA1B82202F00694C9B /* RMTUserShareData.h */,
+				C174CAEB1B82202F00694C9B /* RMTUserShareData.m */,
+				C174CAEC1B82202F00694C9B /* RMTUtility.h */,
+				C174CAED1B82202F00694C9B /* RMTUtilityBaseInfo.h */,
+				C174CAEE1B82202F00694C9B /* RMTUtilityBaseInfo.m */,
+				C174CAEF1B82202F00694C9B /* RMTUtilityFeedback.h */,
+				C174CAF01B82202F00694C9B /* RMTUtilityFeedback.m */,
+				C174CAF11B82202F00694C9B /* RMTUtilityLogin.h */,
+				C174CAF21B82202F00694C9B /* RMTUtilityLogin.m */,
+				C174CAF31B82202F00694C9B /* RMTUtilityReport.h */,
+				C174CAF41B82202F00694C9B /* RMTUtilityReport.m */,
+				C174CAF51B82202F00694C9B /* RMTUtilityUpdate.h */,
+				C174CAF61B82202F00694C9B /* RMTUtilityUpdate.m */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		C174CAF71B82202F00694C9B /* MainControl */ = {
+			isa = PBXGroup;
+			children = (
+				C174CAF81B82202F00694C9B /* AddHouseViewCell.h */,
+				C174CAF91B82202F00694C9B /* AddHouseViewCell.m */,
+				C174CAFA1B82202F00694C9B /* AddHouseViewCell.xib */,
+				C174CAFB1B82202F00694C9B /* AddHouseViewController.h */,
+				C174CAFC1B82202F00694C9B /* AddHouseViewController.m */,
+				C174CAFD1B82202F00694C9B /* AddHouseViewController.xib */,
+				C174CAFE1B82202F00694C9B /* MainContentControlViewController.h */,
+				C174CAFF1B82202F00694C9B /* MainContentControlViewController.m */,
+				C174CB001B82202F00694C9B /* MainContentControlViewController.xib */,
+			);
+			path = MainControl;
+			sourceTree = "<group>";
+		};
+		C174CB011B82202F00694C9B /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				C174CB021B82202F00694C9B /* MenuLeftViewController.h */,
+				C174CB031B82202F00694C9B /* MenuLeftViewController.m */,
+				C174CB041B82202F00694C9B /* MenuLeftViewController.xib */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		C174CB051B82202F00694C9B /* REFrostedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C174CB061B82202F00694C9B /* RECommonFunctions.h */,
+				C174CB071B82202F00694C9B /* RECommonFunctions.m */,
+				C174CB081B82202F00694C9B /* REFrostedContainerViewController.h */,
+				C174CB091B82202F00694C9B /* REFrostedContainerViewController.m */,
+				C174CB0A1B82202F00694C9B /* REFrostedViewController.h */,
+				C174CB0B1B82202F00694C9B /* REFrostedViewController.m */,
+				C174CB0C1B82202F00694C9B /* UIImage+REFrostedViewController.h */,
+				C174CB0D1B82202F00694C9B /* UIImage+REFrostedViewController.m */,
+				C174CB0E1B82202F00694C9B /* UIView+REFrostedViewController.h */,
+				C174CB0F1B82202F00694C9B /* UIView+REFrostedViewController.m */,
+				C174CB101B82202F00694C9B /* UIViewController+REFrostedViewController.h */,
+				C174CB111B82202F00694C9B /* UIViewController+REFrostedViewController.m */,
+			);
+			path = REFrostedViewController;
+			sourceTree = "<group>";
+		};
+		C174CB121B82202F00694C9B /* RentControl */ = {
+			isa = PBXGroup;
+			children = (
+				C174CB131B82202F00694C9B /* RentMainViewController.h */,
+				C174CB141B82202F00694C9B /* RentMainViewController.m */,
+				C174CB151B82202F00694C9B /* RentMainViewController.xib */,
+			);
+			path = RentControl;
+			sourceTree = "<group>";
+		};
+		C174CB161B82202F00694C9B /* RESideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				C174CB171B82202F00694C9B /* RECommonFunctions.h */,
+				C174CB181B82202F00694C9B /* RECommonFunctions.m */,
+				C174CB191B82202F00694C9B /* RESideMenu.h */,
+				C174CB1A1B82202F00694C9B /* RESideMenu.m */,
+				C174CB1B1B82202F00694C9B /* UIViewController+RESideMenu.h */,
+				C174CB1C1B82202F00694C9B /* UIViewController+RESideMenu.m */,
+			);
+			path = RESideMenu;
+			sourceTree = "<group>";
+		};
+		C174CB531B82207300694C9B /* AddCofing */ = {
+			isa = PBXGroup;
+			children = (
+				C174CB541B82207300694C9B /* AddFloorData */,
+				C174CB581B82207300694C9B /* AddLastMonthData */,
+				C174CB621B82207300694C9B /* ConfigControll */,
+				C174CB711B82207300694C9B /* ConfigData */,
+			);
+			path = AddCofing;
+			sourceTree = "<group>";
+		};
+		C174CB541B82207300694C9B /* AddFloorData */ = {
+			isa = PBXGroup;
+			children = (
+				C174CB551B82207300694C9B /* AddFloorWaterDataViewControll.h */,
+				C174CB561B82207300694C9B /* AddFloorWaterDataViewControll.m */,
+				C174CB571B82207300694C9B /* AddFloorWaterDataViewControll.xib */,
+			);
+			path = AddFloorData;
+			sourceTree = "<group>";
+		};
+		C174CB581B82207300694C9B /* AddLastMonthData */ = {
+			isa = PBXGroup;
+			children = (
+				C174CB591B82207300694C9B /* AddLastMonthDataControll.h */,
+				C174CB5A1B82207300694C9B /* AddLastMonthDataControll.m */,
+				C174CB5B1B82207300694C9B /* AddLastMonthDataControll.xib */,
+				C174CB5C1B82207300694C9B /* AddLastMothDataTableViewCell.h */,
+				C174CB5D1B82207300694C9B /* AddLastMothDataTableViewCell.m */,
+				C174CB5E1B82207300694C9B /* AddLastMothDataTableViewCell.xib */,
+				C174CB5F1B82207300694C9B /* AddLastMothWaterTableViewCell.h */,
+				C174CB601B82207300694C9B /* AddLastMothWaterTableViewCell.m */,
+				C174CB611B82207300694C9B /* AddLastMothWaterTableViewCell.xib */,
+			);
+			path = AddLastMonthData;
+			sourceTree = "<group>";
+		};
+		C174CB621B82207300694C9B /* ConfigControll */ = {
+			isa = PBXGroup;
+			children = (
+				C174CB631B82207300694C9B /* ConfigData */,
+				C174CB661B82207300694C9B /* ConfigEditCellForButton.h */,
+				C174CB671B82207300694C9B /* ConfigEditCellForButton.m */,
+				C174CB681B82207300694C9B /* ConfigHouseEditCell.h */,
+				C174CB691B82207300694C9B /* ConfigHouseEditCell.m */,
+				C174CB6A1B82207300694C9B /* ConfigHouseEditCell.xib */,
+				C174CB6B1B82207300694C9B /* ConfigHouseViewController.h */,
+				C174CB6C1B82207300694C9B /* ConfigHouseViewController.m */,
+				C174CB6D1B82207300694C9B /* ConfigHouseViewController.xib */,
+				C174CB6E1B82207300694C9B /* ConfigLastMothControllViewController.h */,
+				C174CB6F1B82207300694C9B /* ConfigLastMothControllViewController.m */,
+				C174CB701B82207300694C9B /* ConfigLastMothControllViewController.xib */,
+			);
+			path = ConfigControll;
+			sourceTree = "<group>";
+		};
+		C174CB631B82207300694C9B /* ConfigData */ = {
+			isa = PBXGroup;
+			children = (
+				C174CB641B82207300694C9B /* ConfigEditHouseData.h */,
+				C174CB651B82207300694C9B /* ConfigEditHouseData.m */,
+			);
+			path = ConfigData;
+			sourceTree = "<group>";
+		};
+		C174CB711B82207300694C9B /* ConfigData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ConfigData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +831,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C174C9941B82182C00694C9B /* Build configuration list for PBXNativeTarget "LandlordTools" */;
 			buildPhases = (
+				9C602BD24ACB3C80C9520DBF /* Check Pods Manifest.lock */,
 				C174C96D1B82182B00694C9B /* Sources */,
 				C174C96E1B82182B00694C9B /* Frameworks */,
 				C174C96F1B82182B00694C9B /* Resources */,
+				45130458D55B63FB22FBFEB6 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,9 +906,58 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C174CA941B8218F100694C9B /* slider-default-trackBackground.png in Resources */,
+				C174CA9E1B8218F100694C9B /* slider-default7-trackCrossedOver.png in Resources */,
+				C174CA871B8218F100694C9B /* .gitignore in Resources */,
+				C174CA901B8218F100694C9B /* slider-default-handle.png in Resources */,
+				C174CB1F1B82202F00694C9B /* .gitignore in Resources */,
+				C174CB291B82202F00694C9B /* TableViewViewController.xib in Resources */,
 				C174C9801B82182B00694C9B /* Main.storyboard in Resources */,
+				C174CB751B82207300694C9B /* AddLastMonthDataControll.xib in Resources */,
+				C174CA931B8218F100694C9B /* slider-default-track@2x.png in Resources */,
+				C174CAA31B8218F100694C9B /* slider-metal-handle@2x.png in Resources */,
 				C174C9851B82182B00694C9B /* LaunchScreen.xib in Resources */,
+				C174CA961B8218F100694C9B /* slider-default-trackCrossedOver@2x.png in Resources */,
+				C174CA9F1B8218F100694C9B /* slider-default7-trackCrossedOver@2x.png in Resources */,
+				C174CB4F1B82202F00694C9B /* RentMainViewController.xib in Resources */,
+				C174CB411B82202F00694C9B /* AddHouseViewCell.xib in Resources */,
+				C174CB811B82207300694C9B /* ConfigLastMothControllViewController.xib in Resources */,
+				C174CA911B8218F100694C9B /* slider-default-handle@2x.png in Resources */,
+				C174CB341B82202F00694C9B /* RMTRegisterViewController.xib in Resources */,
+				C174CA9C1B8218F100694C9B /* slider-default7-trackBackground.png in Resources */,
+				C174CA8F1B8218F100694C9B /* slider-default-handle-highlighted@2x.png in Resources */,
+				C174CB431B82202F00694C9B /* AddHouseViewController.xib in Resources */,
+				C174CB451B82202F00694C9B /* MainContentControlViewController.xib in Resources */,
+				C174CA981B8218F100694C9B /* slider-default7-handle.png in Resources */,
+				C174CA971B8218F100694C9B /* slider-default_trackBackground@2x.png in Resources */,
+				C174CA921B8218F100694C9B /* slider-default-track.png in Resources */,
+				C174CA9A1B8218F100694C9B /* slider-default7-track.png in Resources */,
+				C174CA8E1B8218F100694C9B /* slider-default-handle-highlighted.png in Resources */,
+				C174CAA21B8218F100694C9B /* slider-metal-handle.png in Resources */,
+				C174CB791B82207300694C9B /* AddLastMothWaterTableViewCell.xib in Resources */,
 				C174C9821B82182B00694C9B /* Images.xcassets in Resources */,
+				C174CB471B82202F00694C9B /* MenuLeftViewController.xib in Resources */,
+				C174CAA51B8218F100694C9B /* slider-metal-track@2x.png in Resources */,
+				C174CAA61B8218F100694C9B /* slider-metal-trackBackground.png in Resources */,
+				C174CB731B82207300694C9B /* AddFloorWaterDataViewControll.xib in Resources */,
+				C174CA9D1B8218F100694C9B /* slider-default7-trackBackground@2x.png in Resources */,
+				C174CB321B82202F00694C9B /* RMTLoginViewController.xib in Resources */,
+				C174CB1E1B82202F00694C9B /* GetAmmeterViewController.xib in Resources */,
+				C174CAA11B8218F100694C9B /* slider-metal-handle-highlighted@2x.png in Resources */,
+				C174CAA01B8218F100694C9B /* slider-metal-handle-highlighted.png in Resources */,
+				C174CA991B8218F100694C9B /* slider-default7-handle@2x.png in Resources */,
+				C174CB771B82207300694C9B /* AddLastMothDataTableViewCell.xib in Resources */,
+				C174CAA71B8218F100694C9B /* slider-metal-trackBackground@2x.png in Resources */,
+				C174CB231B82202F00694C9B /* avatar@2x.jpg in Resources */,
+				C174CAAE1B8218F100694C9B /* WaterViewController.xib in Resources */,
+				C174CB2D1B82202F00694C9B /* RMTAgreementViewController.xib in Resources */,
+				C174CA9B1B8218F100694C9B /* slider-default7-track@2x.png in Resources */,
+				C174CB301B82202F00694C9B /* RMTFindPasswordViewController.xib in Resources */,
+				C174CB7D1B82207300694C9B /* ConfigHouseEditCell.xib in Resources */,
+				C174CB7F1B82207300694C9B /* ConfigHouseViewController.xib in Resources */,
+				C174CAA41B8218F100694C9B /* slider-metal-track.png in Resources */,
+				C174CA951B8218F100694C9B /* slider-default-trackCrossedOver.png in Resources */,
+				C174CB2B1B82202F00694C9B /* TabTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,14 +970,107 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		45130458D55B63FB22FBFEB6 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C602BD24ACB3C80C9520DBF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C174C96D1B82182B00694C9B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C174CB4D1B82202F00694C9B /* UIViewController+REFrostedViewController.m in Sources */,
+				C174CB401B82202F00694C9B /* AddHouseViewCell.m in Sources */,
+				C174CB481B82202F00694C9B /* RECommonFunctions.m in Sources */,
+				C174CA8B1B8218F100694C9B /* ImagePlayerView.m in Sources */,
+				C174CB351B82202F00694C9B /* RMTNetworkKit.m in Sources */,
+				C174CAAB1B8218F100694C9B /* RMTPopoverView.m in Sources */,
+				C174CB391B82202F00694C9B /* RMTUserLogic.m in Sources */,
+				C174CB741B82207300694C9B /* AddLastMonthDataControll.m in Sources */,
+				C174CB2C1B82202F00694C9B /* RMTAgreementViewController.m in Sources */,
+				C174CAA81B8218F100694C9B /* NMRangeSlider.m in Sources */,
+				C174CB421B82202F00694C9B /* AddHouseViewController.m in Sources */,
+				C174CA8D1B8218F100694C9B /* JBLineChartView.m in Sources */,
 				C174C97D1B82182B00694C9B /* ViewController.m in Sources */,
+				C174CB491B82202F00694C9B /* REFrostedContainerViewController.m in Sources */,
+				C174CB281B82202F00694C9B /* TableViewViewController.m in Sources */,
+				C174CB7B1B82207300694C9B /* ConfigEditCellForButton.m in Sources */,
+				C174CB511B82202F00694C9B /* RESideMenu.m in Sources */,
+				C174CB7C1B82207300694C9B /* ConfigHouseEditCell.m in Sources */,
+				C174CB3B1B82202F00694C9B /* RMTUtilityBaseInfo.m in Sources */,
+				C174CB501B82202F00694C9B /* RECommonFunctions.m in Sources */,
+				C174CB441B82202F00694C9B /* MainContentControlViewController.m in Sources */,
 				C174C97A1B82182B00694C9B /* AppDelegate.m in Sources */,
+				C174CB361B82202F00694C9B /* RMTUPPayBridge.mm in Sources */,
+				C174CB3D1B82202F00694C9B /* RMTUtilityLogin.m in Sources */,
+				C174CB2A1B82202F00694C9B /* TabTableViewCell.m in Sources */,
+				C174CAA91B8218F100694C9B /* Reachability.m in Sources */,
+				C174CB3F1B82202F00694C9B /* RMTUtilityUpdate.m in Sources */,
+				C174CB311B82202F00694C9B /* RMTLoginViewController.m in Sources */,
+				C174CB381B82202F00694C9B /* RMTUserData.m in Sources */,
+				C174CB7E1B82207300694C9B /* ConfigHouseViewController.m in Sources */,
+				C174CB331B82202F00694C9B /* RMTRegisterViewController.m in Sources */,
+				C174CB2F1B82202F00694C9B /* RMTFindPasswordViewController.m in Sources */,
+				C174CB721B82207300694C9B /* AddFloorWaterDataViewControll.m in Sources */,
+				C174CB1D1B82202F00694C9B /* GetAmmeterViewController.m in Sources */,
+				C174CB261B82202F00694C9B /* DEMORightMenuViewController.m in Sources */,
+				C174CA891B8218F100694C9B /* EqualizerSlider.m in Sources */,
+				C174CB221B82202F00694C9B /* UIImage+RMT.m in Sources */,
+				C174CB3C1B82202F00694C9B /* RMTUtilityFeedback.m in Sources */,
+				C174CA8C1B8218F100694C9B /* JBChartView.m in Sources */,
+				C174CB4B1B82202F00694C9B /* UIImage+REFrostedViewController.m in Sources */,
+				C174CB521B82202F00694C9B /* UIViewController+RESideMenu.m in Sources */,
+				C174CB4E1B82202F00694C9B /* RentMainViewController.m in Sources */,
+				C174CB371B82202F00694C9B /* RMTURLSession.m in Sources */,
+				C174CA881B8218F100694C9B /* ComboBox.m in Sources */,
+				C174CB761B82207300694C9B /* AddLastMothDataTableViewCell.m in Sources */,
+				C174CAAA1B8218F100694C9B /* RMTPopoverSlider.m in Sources */,
+				C174CB2E1B82202F00694C9B /* RMTCountryPickerView.m in Sources */,
+				C174CB7A1B82207300694C9B /* ConfigEditHouseData.m in Sources */,
+				C174CB4A1B82202F00694C9B /* REFrostedViewController.m in Sources */,
+				C174CB3A1B82202F00694C9B /* RMTUserShareData.m in Sources */,
+				C174CB211B82202F00694C9B /* UIColor+Hexadecimal.m in Sources */,
 				C174C9771B82182B00694C9B /* main.m in Sources */,
+				C174CB251B82202F00694C9B /* DEMOLeftMenuViewController.m in Sources */,
+				C174CB271B82202F00694C9B /* DEMOSecondViewController.m in Sources */,
+				C174CB461B82202F00694C9B /* MenuLeftViewController.m in Sources */,
+				C174CA8A1B8218F100694C9B /* EqualizerView.m in Sources */,
+				C174CAAD1B8218F100694C9B /* WaterViewController.m in Sources */,
+				C174CB801B82207300694C9B /* ConfigLastMothControllViewController.m in Sources */,
+				C174CB241B82202F00694C9B /* DEMOFirstViewController.m in Sources */,
+				C174CB3E1B82202F00694C9B /* RMTUtilityReport.m in Sources */,
+				C174CB4C1B82202F00694C9B /* UIView+REFrostedViewController.m in Sources */,
+				C174CB201B82202F00694C9B /* NSString+RMT.m in Sources */,
+				C174CB781B82207300694C9B /* AddLastMothWaterTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +1129,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wang Dandan (CLP74LF2ZX)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wang Dandan (CLP74LF2ZX)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -345,20 +1195,31 @@
 		};
 		C174C9951B82182C00694C9B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA3467288651B61433E13F22 /* Pods.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wang Dandan (CLP74LF2ZX)";
 				INFOPLIST_FILE = LandlordTools/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LandlordTools/UPPay",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		C174C9961B82182C00694C9B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E59BEDF2FF6B761CCC47BCB1 /* Pods.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LandlordTools/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LandlordTools/UPPay",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -416,6 +1277,7 @@
 				C174C9961B82182C00694C9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C174C9971B82182C00694C9B /* Build configuration list for PBXNativeTarget "LandlordToolsTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +1286,7 @@
 				C174C9991B82182C00694C9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

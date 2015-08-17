@@ -2,8 +2,8 @@
 //  main.m
 //  LandlordTools
 //
-//  Created by yangyong on 8/17/15.
-//  Copyright (c) 2015 yangyong. All rights reserved.
+//  Created by yong on 5/8/15.
+//  Copyright (c) 2015年 yong. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

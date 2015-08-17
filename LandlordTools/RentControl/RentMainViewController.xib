@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RentMainViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="4QK-Z6-WVm">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5M-Pr-FkT">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TzW-ns-ife" userLabel="topView">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTA-HV-hnd">
+                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                    <state key="normal" image="rmt_video_backbutton_blue">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="backClidk:" destination="-1" eventType="touchUpInside" id="FjO-xG-AXy"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.98039215690000003" green="0.59999999999999998" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="800" id="C84-UY-i8K">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="64"/>
+                                </constraint>
+                                <constraint firstItem="aTA-HV-hnd" firstAttribute="top" secondItem="TzW-ns-ife" secondAttribute="top" constant="17" id="iVj-vH-O25">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="22"/>
+                                </constraint>
+                                <constraint firstItem="aTA-HV-hnd" firstAttribute="leading" secondItem="TzW-ns-ife" secondAttribute="leading" constant="16" id="ruZ-Li-hml"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="subviews">
+                                    <exclude reference="aTA-HV-hnd"/>
+                                </mask>
+                                <mask key="constraints">
+                                    <exclude reference="C84-UY-i8K"/>
+                                    <exclude reference="iVj-vH-O25"/>
+                                    <exclude reference="ruZ-Li-hml"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=regular-widthClass=compact">
+                                <mask key="subviews">
+                                    <include reference="aTA-HV-hnd"/>
+                                </mask>
+                                <mask key="constraints">
+                                    <include reference="C84-UY-i8K"/>
+                                    <include reference="iVj-vH-O25"/>
+                                    <include reference="ruZ-Li-hml"/>
+                                </mask>
+                            </variation>
+                        </view>
+                        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLe-uV-XJN" userLabel="middleView">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                <rect key="frame" x="0.0" y="80" width="400" height="800"/>
+                            </variation>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="mLe-uV-XJN" secondAttribute="bottom" id="AjK-ve-1pl"/>
+                        <constraint firstItem="TzW-ns-ife" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="KX6-kx-ZT3"/>
+                        <constraint firstAttribute="trailing" secondItem="TzW-ns-ife" secondAttribute="trailing" id="QWa-q1-Lvn"/>
+                        <constraint firstAttribute="trailing" secondItem="mLe-uV-XJN" secondAttribute="trailing" id="aBw-ZJ-SN6"/>
+                        <constraint firstItem="mLe-uV-XJN" firstAttribute="top" secondItem="TzW-ns-ife" secondAttribute="bottom" id="fVT-ib-X9y"/>
+                        <constraint firstItem="TzW-ns-ife" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="wMb-DU-nWf"/>
+                        <constraint firstItem="mLe-uV-XJN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yQU-Rh-1dx"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="TzW-ns-ife"/>
+                            <exclude reference="mLe-uV-XJN"/>
+                        </mask>
+                        <mask key="constraints">
+                            <exclude reference="KX6-kx-ZT3"/>
+                            <exclude reference="QWa-q1-Lvn"/>
+                            <exclude reference="wMb-DU-nWf"/>
+                            <exclude reference="AjK-ve-1pl"/>
+                            <exclude reference="aBw-ZJ-SN6"/>
+                            <exclude reference="fVT-ib-X9y"/>
+                            <exclude reference="yQU-Rh-1dx"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="subviews">
+                            <include reference="TzW-ns-ife"/>
+                            <include reference="mLe-uV-XJN"/>
+                        </mask>
+                        <mask key="constraints">
+                            <include reference="KX6-kx-ZT3"/>
+                            <include reference="QWa-q1-Lvn"/>
+                            <include reference="wMb-DU-nWf"/>
+                            <include reference="AjK-ve-1pl"/>
+                            <include reference="aBw-ZJ-SN6"/>
+                            <include reference="fVT-ib-X9y"/>
+                            <include reference="yQU-Rh-1dx"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="VCo-L5-V4J"/>
+                <constraint firstItem="i5M-Pr-FkT" firstAttribute="leading" secondItem="4QK-Z6-WVm" secondAttribute="leading" id="beH-RY-vSG"/>
+                <constraint firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="n8x-eR-QbC"/>
+                <constraint firstItem="i5M-Pr-FkT" firstAttribute="top" secondItem="4QK-Z6-WVm" secondAttribute="top" id="pFB-s8-r5r"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="i5M-Pr-FkT"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="VCo-L5-V4J"/>
+                    <exclude reference="beH-RY-vSG"/>
+                    <exclude reference="n8x-eR-QbC"/>
+                    <exclude reference="pFB-s8-r5r"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="i5M-Pr-FkT"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="VCo-L5-V4J"/>
+                    <include reference="beH-RY-vSG"/>
+                    <include reference="n8x-eR-QbC"/>
+                    <include reference="pFB-s8-r5r"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+    <resources>
+        <image name="rmt_video_backbutton_blue" width="40" height="40"/>
+    </resources>
+</document>

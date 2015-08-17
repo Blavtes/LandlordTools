@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="84" id="KGk-i7-Jjw" customClass="TabTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="84"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Flm-Er-dFI" userLabel="1">
+                        <rect key="frame" x="75" y="27" width="46" height="30"/>
+                        <state key="normal" title="Button">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="romClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fzM-uc-ng7"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0t9-qO-icg" userLabel="2">
+                        <rect key="frame" x="172" y="27" width="46" height="30"/>
+                        <state key="normal" title="Button">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="romClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Cc3-k6-ahf"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0FU-4z-x6z" userLabel="3">
+                        <rect key="frame" x="270" y="27" width="46" height="30"/>
+                        <state key="normal" title="Button">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="romClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3VJ-mo-5Q1"/>
+                        </connections>
+                    </button>
+                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="en6-qO-YE4">
+                        <rect key="frame" x="246" y="27" width="94" height="29"/>
+                        <connections>
+                            <action selector="control:" destination="KGk-i7-Jjw" eventType="valueChanged" id="Af3-Ae-aVt"/>
+                        </connections>
+                    </stepper>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="centerY" secondItem="0FU-4z-x6z" secondAttribute="centerY" id="3Sv-rn-kyx"/>
+                    <constraint firstItem="Flm-Er-dFI" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.5" id="Wiw-9N-0qx"/>
+                    <constraint firstItem="Flm-Er-dFI" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="c2V-0J-v1i"/>
+                    <constraint firstAttribute="centerY" secondItem="0t9-qO-icg" secondAttribute="centerY" id="dIV-2b-Lts"/>
+                    <constraint firstAttribute="centerY" secondItem="en6-qO-YE4" secondAttribute="centerY" id="pQa-Ea-8OU"/>
+                    <constraint firstItem="0t9-qO-icg" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="wpw-WV-eah"/>
+                    <constraint firstItem="0FU-4z-x6z" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.5" id="yVm-Dl-s8z"/>
+                    <constraint firstItem="en6-qO-YE4" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.5" id="zsN-Sy-LHG"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="romControl" destination="en6-qO-YE4" id="RgT-zI-yY5"/>
+                <outlet property="romOne" destination="Flm-Er-dFI" id="y9S-W6-QWh"/>
+                <outlet property="romThre" destination="0FU-4z-x6z" id="KeQ-n9-7es"/>
+                <outlet property="romTow" destination="0t9-qO-icg" id="Twg-Yz-PTr"/>
+            </connections>
+            <point key="canvasLocation" x="414" y="335"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GetAmmeterViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N8X-ae-szB">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ocO-Xg-VVB" userLabel="topView">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6X-7f-udy">
+                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                    <state key="normal" image="rmt_video_backbutton_blue">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                        <rect key="frame" x="11" y="23" width="40" height="40"/>
+                                    </variation>
+                                    <connections>
+                                        <action selector="backClick:" destination="-1" eventType="touchUpInside" id="spw-GA-fXP"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.98039215690000003" green="0.59999999999999998" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="Y6X-7f-udy" firstAttribute="leading" secondItem="ocO-Xg-VVB" secondAttribute="leading" constant="8" id="E30-K2-yeq">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="10"/>
+                                </constraint>
+                                <constraint firstItem="Y6X-7f-udy" firstAttribute="top" secondItem="ocO-Xg-VVB" secondAttribute="top" constant="17" id="FBY-0X-AB7">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="22"/>
+                                </constraint>
+                                <constraint firstAttribute="height" constant="64" id="fSF-Ri-Iah"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="subviews">
+                                    <exclude reference="Y6X-7f-udy"/>
+                                </mask>
+                                <mask key="constraints">
+                                    <exclude reference="fSF-Ri-Iah"/>
+                                    <exclude reference="E30-K2-yeq"/>
+                                    <exclude reference="FBY-0X-AB7"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=regular-widthClass=compact">
+                                <mask key="subviews">
+                                    <include reference="Y6X-7f-udy"/>
+                                </mask>
+                                <mask key="constraints">
+                                    <include reference="fSF-Ri-Iah"/>
+                                    <include reference="E30-K2-yeq"/>
+                                    <include reference="FBY-0X-AB7"/>
+                                </mask>
+                            </variation>
+                        </view>
+                        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S3B-ZS-gJL">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                <rect key="frame" x="0.0" y="64" width="400" height="800"/>
+                            </variation>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="S3B-ZS-gJL" secondAttribute="bottom" id="AvU-IE-CQM"/>
+                        <constraint firstItem="ocO-Xg-VVB" firstAttribute="leading" secondItem="N8X-ae-szB" secondAttribute="leading" id="OPJ-sc-HIY"/>
+                        <constraint firstItem="ocO-Xg-VVB" firstAttribute="top" secondItem="N8X-ae-szB" secondAttribute="top" id="SJT-ZP-ych"/>
+                        <constraint firstItem="S3B-ZS-gJL" firstAttribute="top" secondItem="ocO-Xg-VVB" secondAttribute="bottom" id="djK-Rs-Dnb"/>
+                        <constraint firstAttribute="trailing" secondItem="ocO-Xg-VVB" secondAttribute="trailing" id="fF8-Ae-63E"/>
+                        <constraint firstAttribute="trailing" secondItem="S3B-ZS-gJL" secondAttribute="trailing" id="gBp-H2-sye"/>
+                        <constraint firstItem="S3B-ZS-gJL" firstAttribute="leading" secondItem="N8X-ae-szB" secondAttribute="leading" id="hkE-ph-ftF"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="ocO-Xg-VVB"/>
+                            <exclude reference="S3B-ZS-gJL"/>
+                        </mask>
+                        <mask key="constraints">
+                            <exclude reference="OPJ-sc-HIY"/>
+                            <exclude reference="SJT-ZP-ych"/>
+                            <exclude reference="fF8-Ae-63E"/>
+                            <exclude reference="AvU-IE-CQM"/>
+                            <exclude reference="djK-Rs-Dnb"/>
+                            <exclude reference="gBp-H2-sye"/>
+                            <exclude reference="hkE-ph-ftF"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="subviews">
+                            <include reference="ocO-Xg-VVB"/>
+                            <include reference="S3B-ZS-gJL"/>
+                        </mask>
+                        <mask key="constraints">
+                            <include reference="OPJ-sc-HIY"/>
+                            <include reference="SJT-ZP-ych"/>
+                            <include reference="fF8-Ae-63E"/>
+                            <include reference="AvU-IE-CQM"/>
+                            <include reference="djK-Rs-Dnb"/>
+                            <include reference="gBp-H2-sye"/>
+                            <include reference="hkE-ph-ftF"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="N8X-ae-szB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="HZk-QG-ivD"/>
+                <constraint firstItem="N8X-ae-szB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Jmw-53-39o"/>
+                <constraint firstAttribute="bottom" secondItem="N8X-ae-szB" secondAttribute="bottom" id="j4A-fi-ozO"/>
+                <constraint firstAttribute="trailing" secondItem="N8X-ae-szB" secondAttribute="trailing" id="qj0-Xk-03q"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="N8X-ae-szB"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="HZk-QG-ivD"/>
+                    <exclude reference="Jmw-53-39o"/>
+                    <exclude reference="j4A-fi-ozO"/>
+                    <exclude reference="qj0-Xk-03q"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="N8X-ae-szB"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="HZk-QG-ivD"/>
+                    <include reference="Jmw-53-39o"/>
+                    <include reference="j4A-fi-ozO"/>
+                    <include reference="qj0-Xk-03q"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+    <resources>
+        <image name="rmt_video_backbutton_blue" width="40" height="40"/>
+    </resources>
+</document>
