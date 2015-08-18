@@ -1228,6 +1228,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E59BEDF2FF6B761CCC47BCB1 /* Pods.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = LandlordTools/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
