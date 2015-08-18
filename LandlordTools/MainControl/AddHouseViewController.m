@@ -74,19 +74,6 @@
     return 360;
 }
 
-- (void) addBuildDta:(id)sender
-{
-    AddBuildArrayData *data = [[AddBuildArrayData alloc] init];
-    data._id = 1;
-    data.buildingName = @"我的1号楼";
-    data.electricPrice = 1;
-    data.waterPrice = 6;
-    data.payRentDay = 10;
-    data.isShowDataList = NO;
-    [_buildArr addObject:data];
-    [_tableView reloadData];
-}
-
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == _buildArr.count) {
@@ -123,6 +110,54 @@
     return cell;
 }
 
+- (void) addBuildDta:(id)sender
+{
+    
+    AddBuildArrayData *data = [[AddBuildArrayData alloc] init];
+    data._id = 1;
+    data.buildingName = @"我的1号楼";
+    data.electricPrice = 1;
+    data.waterPrice = 6;
+    data.payRentDay = 10;
+    data.isShowDataList = NO;
+    data.oprType = RMTUpdataMyBuildAddType;
+    
+    UpdateBuildData   *updata = [[UpdateBuildData alloc] init];
+    updata.id = data._id;
+    updata.buildingName = data.buildingName;
+    updata.waterPrice = data.waterPrice;
+    updata.electricPrice = data.waterPrice;
+    updata.oprType = data.oprType;
+    updata.payRentDay = data.payRentDay;
+    
+    NSString *str = [updata toJSONString];
+    NSArray *arr = [NSArray arrayWithObjects:str,str, nil];
+    [[RMTUtilityLogin sharedInstance] requestUpdateMyBuilingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId] whithBuildData:arr complete:^(NSError *error, BackOject *object) {
+        if (object.code == RMTRequestBackCodeSucceed) {
+            [_buildArr addObject:data];
+            [_tableView reloadData];
+        }
+        NSLog(@"add code %d %@",object.code,object.message);
+    }];
+   
+}
+
+- (void)reflashData:(AddBuildArrayData *)data adnRow:(int)row
+{
+    if (row > _buildArr.count) {
+        return;
+    }
+    [_buildArr replaceObjectAtIndex:row withObject:data];
+}
+
+- (void)deletBuildData:(int)row
+{
+    if (row < _buildArr.count) {
+        [_buildArr removeObjectAtIndex:row];
+        [_tableView reloadData];
+    }
+    NSLog(@"delete build index %d",row);
+}
 
 - (void) changeAddHouseCellHeigt:(BOOL)sender andRow:(int)row
 {
@@ -148,6 +183,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 //    [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:NO];
+}
+
+- (IBAction)saveClick:(id)sender {
 }
 
 

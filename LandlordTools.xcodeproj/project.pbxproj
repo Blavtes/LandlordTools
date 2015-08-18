@@ -127,6 +127,8 @@
 		C174CB801B82207300694C9B /* ConfigLastMothControllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CB6F1B82207300694C9B /* ConfigLastMothControllViewController.m */; };
 		C174CB811B82207300694C9B /* ConfigLastMothControllViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CB701B82207300694C9B /* ConfigLastMothControllViewController.xib */; };
 		C174CB881B82273200694C9B /* AddBuildModleData.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CB871B82273200694C9B /* AddBuildModleData.m */; };
+		C174CB8B1B836E2900694C9B /* RMTJsonModelAndDictionnary.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CB8A1B836E2900694C9B /* RMTJsonModelAndDictionnary.m */; };
+		C174CB911B837D4400694C9B /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CB901B837D4400694C9B /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -331,6 +333,10 @@
 		C174CB701B82207300694C9B /* ConfigLastMothControllViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfigLastMothControllViewController.xib; sourceTree = "<group>"; };
 		C174CB861B82273200694C9B /* AddBuildModleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBuildModleData.h; sourceTree = "<group>"; };
 		C174CB871B82273200694C9B /* AddBuildModleData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBuildModleData.m; sourceTree = "<group>"; };
+		C174CB891B836E2900694C9B /* RMTJsonModelAndDictionnary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTJsonModelAndDictionnary.h; sourceTree = "<group>"; };
+		C174CB8A1B836E2900694C9B /* RMTJsonModelAndDictionnary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTJsonModelAndDictionnary.m; sourceTree = "<group>"; };
+		C174CB8F1B837D4400694C9B /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		C174CB901B837D4400694C9B /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		E59BEDF2FF6B761CCC47BCB1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FA3467288651B61433E13F22 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -608,6 +614,8 @@
 		C174CAB81B82202F00694C9B /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				C174CB8F1B837D4400694C9B /* JSONKit.h */,
+				C174CB901B837D4400694C9B /* JSONKit.m */,
 				C174CAB91B82202F00694C9B /* .gitignore */,
 				C174CABA1B82202F00694C9B /* NSString+RMT.h */,
 				C174CABB1B82202F00694C9B /* NSString+RMT.m */,
@@ -615,6 +623,8 @@
 				C174CABD1B82202F00694C9B /* UIColor+Hexadecimal.m */,
 				C174CABE1B82202F00694C9B /* UIImage+RMT.h */,
 				C174CABF1B82202F00694C9B /* UIImage+RMT.m */,
+				C174CB891B836E2900694C9B /* RMTJsonModelAndDictionnary.h */,
+				C174CB8A1B836E2900694C9B /* RMTJsonModelAndDictionnary.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1040,6 +1050,7 @@
 				C174CA8D1B8218F100694C9B /* JBLineChartView.m in Sources */,
 				C174C97D1B82182B00694C9B /* ViewController.m in Sources */,
 				C174CB491B82202F00694C9B /* REFrostedContainerViewController.m in Sources */,
+				C174CB8B1B836E2900694C9B /* RMTJsonModelAndDictionnary.m in Sources */,
 				C174CB281B82202F00694C9B /* TableViewViewController.m in Sources */,
 				C174CB7B1B82207300694C9B /* ConfigEditCellForButton.m in Sources */,
 				C174CB511B82202F00694C9B /* RESideMenu.m in Sources */,
@@ -1062,6 +1073,7 @@
 				C174CB721B82207300694C9B /* AddFloorWaterDataViewControll.m in Sources */,
 				C174CB1D1B82202F00694C9B /* GetAmmeterViewController.m in Sources */,
 				C174CB261B82202F00694C9B /* DEMORightMenuViewController.m in Sources */,
+				C174CB911B837D4400694C9B /* JSONKit.m in Sources */,
 				C174CA891B8218F100694C9B /* EqualizerSlider.m in Sources */,
 				C174CB221B82202F00694C9B /* UIImage+RMT.m in Sources */,
 				C174CB3C1B82202F00694C9B /* RMTUtilityFeedback.m in Sources */,

@@ -29,18 +29,40 @@
     // Configure the view for the selected state
 }
 - (IBAction)deleteClcik:(id)sender {
+    if ([_delegate respondsToSelector:@selector(deletBuildData:)]) {
+        [_delegate deletBuildData:_cellRow];
+    }
 }
 
-- (IBAction)titleTextFieldEnd:(id)sender {
-    
-    
+- (IBAction)titleTextFieldEnd:(UITextField*)sender {
+    if (sender.text.length == 0) {
+        return;
+    }
+    _modelData.buildingName = sender.text;
+    [self changeDataWithReflash];
 }
 
-- (IBAction)waterTextFieldEnd:(id)sender {
+- (void)changeDataWithReflash
+{
+    if ([_delegate respondsToSelector:@selector(reflashData:adnRow:)]) {
+        [_delegate reflashData:_modelData adnRow:_cellRow];
+    }
 }
 
-- (IBAction)ammeterTextFieldEnd:(id)sender {
-    
+- (IBAction)waterTextFieldEnd:(UITextField*)sender {
+    if (sender.text.length == 0) {
+        return;
+    }
+    _modelData.waterPrice = [sender.text floatValue];
+        [self changeDataWithReflash];
+}
+
+- (IBAction)ammeterTextFieldEnd:(UITextField*)sender {
+    if (sender.text.length == 0) {
+        return;
+    }
+    _modelData.electricPrice = [sender.text floatValue];
+    [self changeDataWithReflash];
 }
 
 - (void) changeDataViewFrame
@@ -59,6 +81,7 @@
     _waterTextField.text = [NSString stringWithFormat:@"%.1f",data.waterPrice];
     _ammterTextField.text = [NSString stringWithFormat:@"%.1f",data.electricPrice];
     _cellRow = row;
+    _modelData = data;
 }
 
 - (void)setHideView

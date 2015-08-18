@@ -37,6 +37,9 @@
                                     <state key="normal" title="保存">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="saveClick:" destination="-1" eventType="touchUpInside" id="vJW-Ps-32s"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" red="0.91764705879999997" green="0.76862745099999996" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>

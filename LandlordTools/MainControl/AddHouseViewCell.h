@@ -13,6 +13,7 @@
 
 - (void)changeAddHouseCellHeigt:(BOOL)sender andRow:(int)row;
 - (void)deletBuildData:(int)row;
+- (void)reflashData:(AddBuildArrayData*)data adnRow:(int)row;
 @end
 
 
@@ -26,6 +27,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *dataAllView;
 @property (weak, nonatomic) IBOutlet UIButton *dataBt;
+@property (nonatomic, strong) AddBuildArrayData *modelData;
 @property (nonatomic, assign) BOOL showData;
 @property (nonatomic, strong) NSString *data;
 @property (nonatomic, assign) int cellRow;

@@ -8,6 +8,16 @@
 
 #import "AddBuildModleData.h"
 
+@implementation UpdateBuildData
+
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
+
+
+@end
+
 @implementation AddBuildArrayData
 
 +(JSONKeyMapper*)keyMapper
@@ -27,4 +37,13 @@
 {
     return YES;
 }
+@end
+
+@implementation BackOject
+
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
+
 @end

@@ -11,6 +11,11 @@
 #import "RMTUtilityBaseInfo.h"
 #import <CommonCrypto/CommonDigest.h>
 #import "AddBuildModleData.h"
+#import "RMTUserShareData.h"
+#import "RMTJsonModelAndDictionnary.h"
+#import "NSString+RMT.h"
+#import "JSONKit.h"
+
 
 static const NSString *kUCBaseUrl = @"http://112.74.26.14:8080/rentcloud";
 static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countryCode/getlist";
@@ -50,6 +55,11 @@ static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countr
     return instance;
 }
 
+- (NSString*)getLogId
+{
+//    return [[RMTUserShareData sharedInstance] userData].loginId;
+    return @"F30645C539BC8B8E5A8293F1A2C7E767";
+}
 
 - (void)requestIsRegisterUserWith:(NSString *)mobile complete:(void (^)(NSError *,int code))handler
 {
@@ -458,6 +468,8 @@ static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countr
                                             return;
                                         }
                                         
+                                        
+                                        
                                         NSNumber *rtnObject = [dic valueForKey:@"code"];
                                         if (!rtnObject) {
                                             NSDictionary *userInfo = @{NSLocalizedDescriptionKey: NSLocalizedString(@"服务器错误，请重试", nil)};
@@ -705,6 +717,45 @@ static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countr
                                         return;
                                     }];
     
+}
+
+- (void)requestUpdateMyBuilingsWithLogicId:(NSString *)logicId
+                            whithBuildData:(NSArray *)data
+                                  complete:(void (^)(NSError *, BackOject *))handler
+{
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    [dic setValue:logicId forKey:@"loginId"];
+//    UpdateBuildData *updata = [[UpdateBuildData alloc] init];
+//    updata.id = data._id;
+//    updata.buildingName = data.buildingName;
+//    updata.waterPrice = data.waterPrice;
+//    updata.electricPrice = data.electricPrice;
+//    updata.payRentDay = data.payRentDay;
+//    updata.oprType = data.oprType;
+    NSString *str = [data JSONString];
+    [dic setValue:str forKey:@"buildings"];
+    NSLog(@"dict %@",dic);
+    NSString *url = [NSString stringWithFormat:@"%@/building/editBuildings", kUCBaseUrl];
+    NSDictionary *headerFields = [self getHTTPHeaderFields];
+    [[RMTURLSession sharedInstance] requestApiWithUrl:url
+                                           parameters:dic
+                               customHTTPHeaderFields:headerFields
+                                    completionHandler:^(NSError *error, NSDictionary *dic) {
+                                        if (error || !dic) {
+                                            NSLog(@"<%s : %d : %s> error:%@", __FILE__, __LINE__, __FUNCTION__, error);
+                                            NSDictionary *userInfo = @{NSLocalizedDescriptionKey: NSLocalizedString(@"网络错误", nil)};
+                                            NSError *customError = [NSError errorWithDomain:error.domain
+                                                                                       code:error.code
+                                                                                   userInfo:userInfo];
+                                            handler(customError,nil);
+                                            return;
+                                        }
+                                        NSError *jsonError = nil;
+                                        BackOject *data = [[BackOject alloc] initWithDictionary:dic error:&jsonError];
+                                        
+                                        handler(jsonError,data);
+                                        return;
+                                    }];
 }
 
 @end

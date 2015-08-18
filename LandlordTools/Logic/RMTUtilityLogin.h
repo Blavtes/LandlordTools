@@ -10,6 +10,12 @@
 #import "RMTUserData.h"
 #import "AddBuildModleData.h"
 
+typedef enum _RMTRequestBackCode{
+    RMTRequestBackCodeException = -1,
+    RMTRequestBackCodeFailure = 0,
+    RMTRequestBackCodeSucceed = 1
+}RMTRequestBackCode;
+
 typedef enum _RMTRegisterCode{
     RMTRegisterCodeErr = -1,// error
     RMTRegisterCodeNotRegist = 0, // no regist
@@ -21,6 +27,12 @@ typedef enum _RMTVerificationCode {
     RMTVerificationCodeRegister = 1, //  regist
     RMTVerificationCodeFindWorld = 2 //  find
 }RMTVerificationCode;
+
+typedef enum _RMTUpdataMyBuildType {
+    RMTUpdataMyBuildAddType = 1,
+    RMTUpdataMyBuildUpdataType = 2,
+    RMTUpdataMyBuildDeletedType = 3
+}RMTUpdataMyBuildType;
 
 @interface RMTUtilityLogin : NSObject
 
@@ -78,11 +90,15 @@ typedef enum _RMTVerificationCode {
 - (BOOL)isLogined;
 
 - (RMTUserData *)getUserData;
+- (NSString *)getLogId;
+
 
 //获取楼宇
 - (void)requestGetMyBuildingsWithLogicId:(NSString*)logid
                                 complete:(void (^)(NSError *error,AddBuildModleData*))handler;
-
-
+//更新楼宇
+- (void)requestUpdateMyBuilingsWithLogicId:(NSString*)logicId
+                          whithBuildData:(NSArray*)data
+                                complete:(void (^)(NSError *error,BackOject *object))handler;
 
 @end
