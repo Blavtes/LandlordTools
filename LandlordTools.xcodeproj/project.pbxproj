@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AF0B97ABCF12C131065984F4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 968AF5976CDFCA8CD97FE1D5 /* libPods.a */; };
+		C158DA051B83178500795B62 /* ConfigSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = C158DA041B83178500795B62 /* ConfigSystem.m */; };
 		C174C9771B82182B00694C9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C174C9761B82182B00694C9B /* main.m */; };
 		C174C97A1B82182B00694C9B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C174C9791B82182B00694C9B /* AppDelegate.m */; };
 		C174C97D1B82182B00694C9B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174C97C1B82182B00694C9B /* ViewController.m */; };
@@ -140,6 +141,8 @@
 
 /* Begin PBXFileReference section */
 		968AF5976CDFCA8CD97FE1D5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C158DA031B83178500795B62 /* ConfigSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigSystem.h; sourceTree = "<group>"; };
+		C158DA041B83178500795B62 /* ConfigSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigSystem.m; sourceTree = "<group>"; };
 		C174C9711B82182B00694C9B /* LandlordTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LandlordTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C174C9751B82182B00694C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C174C9761B82182B00694C9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -410,6 +413,8 @@
 				C174C9791B82182B00694C9B /* AppDelegate.m */,
 				C174C97B1B82182B00694C9B /* ViewController.h */,
 				C174C97C1B82182B00694C9B /* ViewController.m */,
+				C158DA031B83178500795B62 /* ConfigSystem.h */,
+				C158DA041B83178500795B62 /* ConfigSystem.m */,
 				C174C97E1B82182B00694C9B /* Main.storyboard */,
 				C174C9811B82182B00694C9B /* Images.xcassets */,
 				C174C9831B82182B00694C9B /* LaunchScreen.xib */,
@@ -1068,6 +1073,7 @@
 				C174CA881B8218F100694C9B /* ComboBox.m in Sources */,
 				C174CB761B82207300694C9B /* AddLastMothDataTableViewCell.m in Sources */,
 				C174CAAA1B8218F100694C9B /* RMTPopoverSlider.m in Sources */,
+				C158DA051B83178500795B62 /* ConfigSystem.m in Sources */,
 				C174CB2E1B82202F00694C9B /* RMTCountryPickerView.m in Sources */,
 				C174CB7A1B82207300694C9B /* ConfigEditHouseData.m in Sources */,
 				C174CB4A1B82202F00694C9B /* REFrostedViewController.m in Sources */,
@@ -1143,8 +1149,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wang Dandan (CLP74LF2ZX)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wang Dandan (CLP74LF2ZX)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1187,8 +1193,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wang Dandan (CLP74LF2ZX)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wang Dandan (CLP74LF2ZX)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1212,7 +1218,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FA3467288651B61433E13F22 /* Pods.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wang Dandan (CLP74LF2ZX)";
 				INFOPLIST_FILE = LandlordTools/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1228,7 +1234,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E59BEDF2FF6B761CCC47BCB1 /* Pods.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wang Dandan (CLP74LF2ZX)";
 				INFOPLIST_FILE = LandlordTools/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1244,7 +1250,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wang Dandan (CLP74LF2ZX)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1264,7 +1270,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wang Dandan (CLP74LF2ZX)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

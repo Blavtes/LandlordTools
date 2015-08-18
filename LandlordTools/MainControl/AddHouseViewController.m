@@ -10,8 +10,9 @@
 #import "AddHouseViewCell.h"
 #import "UIColor+Hexadecimal.h"
 #import "RMTUtilityLogin.h"
+#import <Masonry/Masonry.h>
 
-
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 @interface AddHouseViewController () <UITableViewDataSource,UITableViewDelegate,AddHouseChangeCellHeightDelegate>
 @property (nonatomic, assign) BOOL showData;
 @property (nonatomic, strong) NSMutableArray *buildArr;
@@ -56,22 +57,58 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _buildArr.count;
+    return _buildArr.count + 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 //      UITableViewCell *deqCell = [_tableView cellForRowAtIndexPath:indexPath];
 //    AddHouseViewCell *cell = (AddHouseViewCell*)deqCell;
-    if (!((AddBuildArrayData*)[_buildArr objectAtIndex:indexPath.row]).isShowDataList) {
-        return 140;
+    if (indexPath.row == _buildArr.count) {
+        return 40;
     }
-    return 320;
+    
+    if (!((AddBuildArrayData*)[_buildArr objectAtIndex:indexPath.row]).isShowDataList) {
+        return 100;
+    }
+    return 360;
 }
 
+- (void) addBuildDta:(id)sender
+{
+    AddBuildArrayData *data = [[AddBuildArrayData alloc] init];
+    data._id = 1;
+    data.buildingName = @"我的1号楼";
+    data.electricPrice = 1;
+    data.waterPrice = 6;
+    data.payRentDay = 10;
+    data.isShowDataList = NO;
+    [_buildArr addObject:data];
+    [_tableView reloadData];
+}
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.row == _buildArr.count) {
+
+        UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"AdddefaultCell"];
+        UIButton *btn = [UIButton new];
+        [btn setTitle:@"add" forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [btn addTarget:self action:@selector(addBuildDta:) forControlEvents:UIControlEventTouchUpInside];
+        [btn setBackgroundColor:[UIColor yellowColor]];
+        [cell addSubview:btn];
+        
+        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(cell.mas_top);
+            make.left.mas_equalTo(cell.mas_left);
+            make.right.mas_equalTo(cell.mas_right);
+            make.bottom.mas_equalTo(cell.mas_bottom);
+            
+        }];
+       
+        return cell;
+    }
     UITableViewCell *deqCell = [_tableView dequeueReusableCellWithIdentifier:@"AddHouseViewCell"];
     AddHouseViewCell *cell = (AddHouseViewCell*)deqCell;
     cell.delegate = self;
@@ -79,6 +116,7 @@
 //    cell.selectedBackgroundView.backgroundColor = [UIColor grayColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     [cell changeDataViewFrame];
+    [cell setHideView];
     [cell setCellData:((AddBuildArrayData*)[_buildArr objectAtIndex:indexPath.row]) andCellRow:(int)indexPath.row];
     
     
@@ -92,7 +130,11 @@
     for (int i = 0 ; i < _buildArr.count; i++) {
         AddBuildArrayData *data = [_buildArr objectAtIndex:i];
         data.isShowDataList = NO;
+        
     }
+
+    
+       [_tableView reloadData];
     AddBuildArrayData *data = [_buildArr objectAtIndex:row];
     data.isShowDataList = sender;
     [_buildArr replaceObjectAtIndex:row withObject:data];

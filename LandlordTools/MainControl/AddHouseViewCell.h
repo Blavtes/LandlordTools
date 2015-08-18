@@ -12,6 +12,7 @@
 @protocol AddHouseChangeCellHeightDelegate <NSObject>
 
 - (void)changeAddHouseCellHeigt:(BOOL)sender andRow:(int)row;
+- (void)deletBuildData:(int)row;
 @end
 
 
@@ -30,5 +31,6 @@
 @property (nonatomic, assign) int cellRow;
 - (void) changeDataViewFrame;
 - (void) setCellData:(AddBuildArrayData*)data andCellRow:(int)row;
-
+- (void)setHideView;
+- (void)setShowData:(BOOL)showData;
 @end
