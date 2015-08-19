@@ -17,3 +17,11 @@
 @property (nonatomic, strong) NSString *message;
 @property (nonatomic, strong) NSString *loginId;
 @end
+
+
+@interface LoginCheckoutVerifyData : JSONModel
+@property (nonatomic, assign) int code;
+@property (nonatomic, strong) NSString *message;
+@property (nonatomic, strong) NSString *token;
+
+@end

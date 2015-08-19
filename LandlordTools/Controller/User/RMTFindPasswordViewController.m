@@ -255,7 +255,7 @@
         [[RMTUtilityLogin sharedInstance] requestCheckVerifyWithPhoneNumber:mobile
                                                                 checkVerify:_verifycodeTextField.text
                                                                   vcodeType:RMTVerificationCodeFindWorld
-                                                                   complete:^(NSError *error,NSString*tokens) {
+                                                                   complete:^(NSError *error,LoginCheckoutVerifyData *tokens) {
               if (error || !tokens) {
                 [self showAlertWithMessage:error.localizedDescription];
                 [self hideHUDView];
@@ -263,8 +263,8 @@
             }
             [[RMTUtilityLogin sharedInstance] requestUpdatePasswordWithPhoneNumber:_accountTextField.text
                                                                           password:_passwordTextField.text
-                                                                             token:tokens
-                                                                          complete:^(NSError *error) {
+                                                                             token:tokens.token
+                                                                          complete:^(NSError *error,LoginCheckoutVerifyData *data) {
                                                                               [self hideHUDView];
                                                                               if (error) {
                                                                                   [self showAlertWithMessage:error.localizedDescription];

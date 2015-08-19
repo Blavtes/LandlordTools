@@ -142,8 +142,8 @@
     }
     [self showHUDView];
     [[RMTUtilityLogin sharedInstance] requestVerifyWithPhoneNumber:_accountTextField.text
-                                                       verifyCode:@"1"
-                                                          complete:^(NSError *error) {
+                                                       verifyCode:RMTVerificationCodeRegister
+                                                          complete:^(NSError *error,LoginPassworldBack *data) {
                                                               [self hideHUDView];
                                                               if (error) {
                                                                   [self showAlertWithMessage:error.localizedDescription];
@@ -304,14 +304,14 @@
             [[RMTUtilityLogin sharedInstance] requestCheckVerifyWithPhoneNumber:data.mobile
                                                                     checkVerify:_verifycodeTextField.text
                                                                       vcodeType:RMTVerificationCodeRegister
-                                                                       complete:^(NSError *error,NSString *token) {
+                                                                       complete:^(NSError *error,LoginCheckoutVerifyData *token) {
                    if (error || !token) {
                        [self hideHUDView];
                        NSLog(@"验证码 失败");
                        [self showAlertWithMessage:error.localizedDescription];
                        return ;
                    }
-                    data.token = token;
+                    data.token = token.token;
                     [[RMTUtilityLogin sharedInstance] requestRegisterUserWithData:data
                                                                          complete:^(NSError *error,NSString*loginId) {
                        

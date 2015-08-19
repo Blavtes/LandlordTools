@@ -13,15 +13,18 @@
 {
     return YES;
 }
-
 @end
 
 @implementation LoginPassworldBack
-
 +(BOOL)propertyIsOptional:(NSString*)propertyName
 {
     return YES;
 }
+@end
 
-
+@implementation LoginCheckoutVerifyData
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
 @end

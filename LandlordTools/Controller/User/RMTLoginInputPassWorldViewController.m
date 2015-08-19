@@ -10,6 +10,7 @@
 #import "RMTUtilityLogin.h"
 #import "RMTUserLogic.h"
 #import "RMTUserShareData.h"
+#import "RMTLoginForgotViewController.h"
 
 @interface RMTLoginInputPassWorldViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *notifyLabel;
@@ -41,7 +42,13 @@
 */
 - (IBAction)backClick:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    for (UIViewController *controller in self.navigationController.viewControllers) {
+        if ([controller isKindOfClass:NSClassFromString(@"MainContentControlViewController")]) {
+            [self.navigationController popToViewController:controller animated:YES];
+            
+            return;
+        }
+    }
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
@@ -78,7 +85,8 @@
 
 - (IBAction)findPassWordClick:(id)sender
 {
-    
+    RMTLoginForgotViewController *vc = [[RMTLoginForgotViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

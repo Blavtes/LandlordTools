@@ -70,10 +70,10 @@ typedef enum _RMTUpdataMyBuildType {
 -(void)requestUpdatePasswordWithPhoneNumber:(NSString *)phoneNumber
                                    password:(NSString *)password
                                       token:(NSString *)token
-                                   complete:(void (^)(NSError *error))handler;
+                                   complete:(void (^)(NSError *error,LoginCheckoutVerifyData *data))handler;
 //获取手机验证码
 -(void)requestVerifyWithPhoneNumber:(NSString *)phoneNumber
-                        verifyCode:(NSString *)countryCode
+                        verifyCode:(int )countryCode
                            complete:(void (^)(NSError *error,LoginPassworldBack *obj))handler;
 
 
@@ -81,7 +81,7 @@ typedef enum _RMTUpdataMyBuildType {
 -(void)requestCheckVerifyWithPhoneNumber:(NSString *)phoneNumber
                         checkVerify:(NSString *)checkVerify
                                vcodeType:(int)vcode
-                           complete:(void (^)(NSError *error,NSString *token))handler;
+                           complete:(void (^)(NSError *error,LoginCheckoutVerifyData *token))handler;
 //注销请求
 -(void)requestLogout:(void (^)(NSError *error))handler;
 

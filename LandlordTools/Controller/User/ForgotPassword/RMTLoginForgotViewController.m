@@ -8,6 +8,7 @@
 
 #import "RMTLoginForgotViewController.h"
 #import "RMTUtilityLogin.h"
+#import "RMTUserShareData.h"
 
 @interface RMTLoginForgotViewController () <UITextFieldDelegate>
 
@@ -15,16 +16,21 @@
     
     NSTimer *_timer;
     NSDate *_sendDate;
+    BOOL _verifyUse;
 }
 
-@property (weak, nonatomic) IBOutlet UILabel *notifyLabel;
+@property (weak, nonatomic) IBOutlet UILabel *notifyLabel1;
+@property (weak, nonatomic) IBOutlet UILabel *notifyLabel2;
+@property (weak, nonatomic) IBOutlet UILabel *notifyLabel3;
 @property (weak, nonatomic) IBOutlet UITextField *inputTextField;
 @property (weak, nonatomic) IBOutlet UIView *verifyView;
 @property (weak, nonatomic) IBOutlet UITextField *verifyTextField;
 @property (weak, nonatomic) IBOutlet UIButton *verifyBt;
+@property (weak, nonatomic) IBOutlet UIView *setView;
 
+@property (weak, nonatomic) IBOutlet UITextField *setTextField;
 
-@property (nonatomic, strong) NSString *mobile;;
+@property (nonatomic, strong) NSString *mobile;
 
 @end
 
@@ -32,7 +38,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _notifyLabel.text = @"";
+    _notifyLabel1.text = @"";
+    _notifyLabel2.text = @"";
+    _notifyLabel3.text = @"";
     _inputTextField.delegate = self;
     // Do any additional setup after loading the view from its nib.
 }
@@ -44,7 +52,9 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    _notifyLabel.text = @"";
+    _notifyLabel1.text = @"";
+    _notifyLabel2.text = @"";
+    _notifyLabel3.text = @"";
 }
 
 /*
@@ -60,36 +70,76 @@
 - (IBAction)nextClick:(id)sender
 {
     if ([_inputTextField.text isEqualToString:@""]) {
-        _notifyLabel.text = @"手机号码不能为空";
+        _notifyLabel1.text = @"手机号码不能为空";
         return;
     }
     _mobile = _inputTextField.text;
     [[RMTUtilityLogin sharedInstance] requestIsRegisterUserWith:_mobile  complete:^(NSError *error,BackOject *obj) {
-
+        
         if (obj.code == RMTRegisterCodeHaveRegist) {
-//            RMTLoginInputPassWorldViewController *vc = [[RMTLoginInputPassWorldViewController alloc] init];
-//            vc.mobile = mobile;
-//            [self.navigationController pushViewController:vc animated:YES];
+            _verifyView.hidden = NO;
+            _notifyLabel1.text = @"";
+        } else {
+            _notifyLabel1.text = obj.message;
         }
-        _notifyLabel.text = obj.message;
+        
         NSLog(@"back code %d  message %@ ",obj.code,obj.message);
     }];
 }
 
+- (IBAction)verifyNextClick:(id)sender
+{
+    if ([_verifyTextField.text length] == 0) {
+         _notifyLabel1.text  = @"验证码错误";
+        return;
+    }
+    [[RMTUtilityLogin sharedInstance] requestCheckVerifyWithPhoneNumber:_mobile
+                                                            checkVerify:_verifyTextField.text
+                                                              vcodeType:RMTVerificationCodeFindWorld
+                                                               complete:^(NSError *error,LoginCheckoutVerifyData *data) {
+                                                                   if (data.code == RMTRequestBackCodeSucceed) {
+                                                                       RMTUserData *userData =  [[RMTUserShareData sharedInstance] userData];
+                                                                       userData.token = data.token;
+                                                                       [[RMTUserShareData sharedInstance] updataUserData:userData];
+                                                                       _setView.hidden = NO;
+                                                                   } else {
+                                                                       _notifyLabel1.text = data.message;
+                                                                   }
+                                                               }];
+}
+
+
 - (IBAction)verifyClick:(id)sender {
-    [[RMTUtilityLogin sharedInstance] requestVerifyWithPhoneNumber:self.mobile  verifyCode:@"2" complete:^(NSError *error, LoginPassworldBack *obj) {
+    if (!self.mobile) {
+        return;
+    }
+    [[RMTUtilityLogin sharedInstance] requestVerifyWithPhoneNumber:self.mobile  verifyCode:RMTVerificationCodeFindWorld complete:^(NSError *error, LoginPassworldBack *obj) {
        
         if (obj.code == RMTRequestBackCodeSucceed) {
-            _notifyLabel.text = obj.message;
+            _notifyLabel2.text = obj.message;
             
             _sendDate = [NSDate date];
             _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(verifyHandle) userInfo:nil repeats:YES];
             [_timer fire];
+            _verifyUse = YES;
         }
        
     }];
 
 }
+
+- (IBAction)setClick:(id)sender
+{
+    [[RMTUtilityLogin sharedInstance] requestUpdatePasswordWithPhoneNumber:self.mobile
+                                                                  password:_setTextField.text
+                                                                     token:[[RMTUserShareData sharedInstance] userData].token
+                                                                  complete:^(NSError *error,LoginCheckoutVerifyData *obj) {
+                                                                      if (obj.code == RMTRequestBackCodeSucceed) {
+                                                                          _notifyLabel3.text = obj.message;
+                                                                      }
+                                                                  }];
+}
+
 
 - (void)verifyHandle
 {
@@ -111,7 +161,13 @@
 
 - (IBAction)backClick:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    for (UIViewController *controller in self.navigationController.viewControllers) {
+        if ([controller isKindOfClass:NSClassFromString(@"MainContentControlViewController")]) {
+            [self.navigationController popToViewController:controller animated:YES];
+
+            return;
+        }
+    }
 }
 
 @end
