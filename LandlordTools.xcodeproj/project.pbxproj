@@ -8,7 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		AF0B97ABCF12C131065984F4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 968AF5976CDFCA8CD97FE1D5 /* libPods.a */; };
+		C126C0471B844A0C0090A4FF /* LoginModelData.m in Sources */ = {isa = PBXBuildFile; fileRef = C126C0461B844A0C0090A4FF /* LoginModelData.m */; };
+		C126C04C1B8462D70090A4FF /* RMTLoginForgotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C126C04A1B8462D70090A4FF /* RMTLoginForgotViewController.m */; };
+		C126C04D1B8462D70090A4FF /* RMTLoginForgotViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C126C04B1B8462D70090A4FF /* RMTLoginForgotViewController.xib */; };
 		C158DA051B83178500795B62 /* ConfigSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = C158DA041B83178500795B62 /* ConfigSystem.m */; };
+		C158DA091B842EEC00795B62 /* RMTLoginEnterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C158DA071B842EEC00795B62 /* RMTLoginEnterViewController.m */; };
+		C158DA0A1B842EEC00795B62 /* RMTLoginEnterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C158DA081B842EEC00795B62 /* RMTLoginEnterViewController.xib */; };
+		C158DA0E1B84448300795B62 /* RMTLoginInputPassWorldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C158DA0C1B84448300795B62 /* RMTLoginInputPassWorldViewController.m */; };
+		C158DA0F1B84448300795B62 /* RMTLoginInputPassWorldViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C158DA0D1B84448300795B62 /* RMTLoginInputPassWorldViewController.xib */; };
 		C174C9771B82182B00694C9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C174C9761B82182B00694C9B /* main.m */; };
 		C174C97A1B82182B00694C9B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C174C9791B82182B00694C9B /* AppDelegate.m */; };
 		C174C97D1B82182B00694C9B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174C97C1B82182B00694C9B /* ViewController.m */; };
@@ -143,8 +150,19 @@
 
 /* Begin PBXFileReference section */
 		968AF5976CDFCA8CD97FE1D5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C126C0451B844A0C0090A4FF /* LoginModelData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModelData.h; sourceTree = "<group>"; };
+		C126C0461B844A0C0090A4FF /* LoginModelData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModelData.m; sourceTree = "<group>"; };
+		C126C0491B8462D70090A4FF /* RMTLoginForgotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTLoginForgotViewController.h; sourceTree = "<group>"; };
+		C126C04A1B8462D70090A4FF /* RMTLoginForgotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTLoginForgotViewController.m; sourceTree = "<group>"; };
+		C126C04B1B8462D70090A4FF /* RMTLoginForgotViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMTLoginForgotViewController.xib; sourceTree = "<group>"; };
 		C158DA031B83178500795B62 /* ConfigSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigSystem.h; sourceTree = "<group>"; };
 		C158DA041B83178500795B62 /* ConfigSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigSystem.m; sourceTree = "<group>"; };
+		C158DA061B842EEC00795B62 /* RMTLoginEnterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTLoginEnterViewController.h; sourceTree = "<group>"; };
+		C158DA071B842EEC00795B62 /* RMTLoginEnterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTLoginEnterViewController.m; sourceTree = "<group>"; };
+		C158DA081B842EEC00795B62 /* RMTLoginEnterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMTLoginEnterViewController.xib; sourceTree = "<group>"; };
+		C158DA0B1B84448300795B62 /* RMTLoginInputPassWorldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTLoginInputPassWorldViewController.h; sourceTree = "<group>"; };
+		C158DA0C1B84448300795B62 /* RMTLoginInputPassWorldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTLoginInputPassWorldViewController.m; sourceTree = "<group>"; };
+		C158DA0D1B84448300795B62 /* RMTLoginInputPassWorldViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMTLoginInputPassWorldViewController.xib; sourceTree = "<group>"; };
 		C174C9711B82182B00694C9B /* LandlordTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LandlordTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C174C9751B82182B00694C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C174C9761B82182B00694C9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -376,6 +394,16 @@
 				968AF5976CDFCA8CD97FE1D5 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C126C0481B8462AB0090A4FF /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				C126C0491B8462D70090A4FF /* RMTLoginForgotViewController.h */,
+				C126C04A1B8462D70090A4FF /* RMTLoginForgotViewController.m */,
+				C126C04B1B8462D70090A4FF /* RMTLoginForgotViewController.xib */,
+			);
+			path = ForgotPassword;
 			sourceTree = "<group>";
 		};
 		C174C9681B82182B00694C9B = {
@@ -669,6 +697,13 @@
 				C174CADC1B82202F00694C9B /* RMTRegisterViewController.h */,
 				C174CADD1B82202F00694C9B /* RMTRegisterViewController.m */,
 				C174CADE1B82202F00694C9B /* RMTRegisterViewController.xib */,
+				C158DA061B842EEC00795B62 /* RMTLoginEnterViewController.h */,
+				C158DA071B842EEC00795B62 /* RMTLoginEnterViewController.m */,
+				C158DA081B842EEC00795B62 /* RMTLoginEnterViewController.xib */,
+				C158DA0B1B84448300795B62 /* RMTLoginInputPassWorldViewController.h */,
+				C158DA0C1B84448300795B62 /* RMTLoginInputPassWorldViewController.m */,
+				C158DA0D1B84448300795B62 /* RMTLoginInputPassWorldViewController.xib */,
+				C126C0481B8462AB0090A4FF /* ForgotPassword */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -848,6 +883,8 @@
 			children = (
 				C174CB861B82273200694C9B /* AddBuildModleData.h */,
 				C174CB871B82273200694C9B /* AddBuildModleData.m */,
+				C126C0451B844A0C0090A4FF /* LoginModelData.h */,
+				C126C0461B844A0C0090A4FF /* LoginModelData.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -953,6 +990,7 @@
 				C174CA911B8218F100694C9B /* slider-default-handle@2x.png in Resources */,
 				C174CB341B82202F00694C9B /* RMTRegisterViewController.xib in Resources */,
 				C174CA9C1B8218F100694C9B /* slider-default7-trackBackground.png in Resources */,
+				C126C04D1B8462D70090A4FF /* RMTLoginForgotViewController.xib in Resources */,
 				C174CA8F1B8218F100694C9B /* slider-default-handle-highlighted@2x.png in Resources */,
 				C174CB431B82202F00694C9B /* AddHouseViewController.xib in Resources */,
 				C174CB451B82202F00694C9B /* MainContentControlViewController.xib in Resources */,
@@ -967,6 +1005,7 @@
 				C174CB471B82202F00694C9B /* MenuLeftViewController.xib in Resources */,
 				C174CAA51B8218F100694C9B /* slider-metal-track@2x.png in Resources */,
 				C174CAA61B8218F100694C9B /* slider-metal-trackBackground.png in Resources */,
+				C158DA0A1B842EEC00795B62 /* RMTLoginEnterViewController.xib in Resources */,
 				C174CB731B82207300694C9B /* AddFloorWaterDataViewControll.xib in Resources */,
 				C174CA9D1B8218F100694C9B /* slider-default7-trackBackground@2x.png in Resources */,
 				C174CB321B82202F00694C9B /* RMTLoginViewController.xib in Resources */,
@@ -980,6 +1019,7 @@
 				C174CAAE1B8218F100694C9B /* WaterViewController.xib in Resources */,
 				C174CB2D1B82202F00694C9B /* RMTAgreementViewController.xib in Resources */,
 				C174CA9B1B8218F100694C9B /* slider-default7-track@2x.png in Resources */,
+				C158DA0F1B84448300795B62 /* RMTLoginInputPassWorldViewController.xib in Resources */,
 				C174CB301B82202F00694C9B /* RMTFindPasswordViewController.xib in Resources */,
 				C174CB7D1B82207300694C9B /* ConfigHouseEditCell.xib in Resources */,
 				C174CB7F1B82207300694C9B /* ConfigHouseViewController.xib in Resources */,
@@ -1055,6 +1095,7 @@
 				C174CB7B1B82207300694C9B /* ConfigEditCellForButton.m in Sources */,
 				C174CB511B82202F00694C9B /* RESideMenu.m in Sources */,
 				C174CB7C1B82207300694C9B /* ConfigHouseEditCell.m in Sources */,
+				C126C04C1B8462D70090A4FF /* RMTLoginForgotViewController.m in Sources */,
 				C174CB881B82273200694C9B /* AddBuildModleData.m in Sources */,
 				C174CB3B1B82202F00694C9B /* RMTUtilityBaseInfo.m in Sources */,
 				C174CB501B82202F00694C9B /* RECommonFunctions.m in Sources */,
@@ -1071,6 +1112,7 @@
 				C174CB331B82202F00694C9B /* RMTRegisterViewController.m in Sources */,
 				C174CB2F1B82202F00694C9B /* RMTFindPasswordViewController.m in Sources */,
 				C174CB721B82207300694C9B /* AddFloorWaterDataViewControll.m in Sources */,
+				C158DA0E1B84448300795B62 /* RMTLoginInputPassWorldViewController.m in Sources */,
 				C174CB1D1B82202F00694C9B /* GetAmmeterViewController.m in Sources */,
 				C174CB261B82202F00694C9B /* DEMORightMenuViewController.m in Sources */,
 				C174CB911B837D4400694C9B /* JSONKit.m in Sources */,
@@ -1081,6 +1123,7 @@
 				C174CB4B1B82202F00694C9B /* UIImage+REFrostedViewController.m in Sources */,
 				C174CB521B82202F00694C9B /* UIViewController+RESideMenu.m in Sources */,
 				C174CB4E1B82202F00694C9B /* RentMainViewController.m in Sources */,
+				C158DA091B842EEC00795B62 /* RMTLoginEnterViewController.m in Sources */,
 				C174CB371B82202F00694C9B /* RMTURLSession.m in Sources */,
 				C174CA881B8218F100694C9B /* ComboBox.m in Sources */,
 				C174CB761B82207300694C9B /* AddLastMothDataTableViewCell.m in Sources */,
@@ -1089,6 +1132,7 @@
 				C174CB2E1B82202F00694C9B /* RMTCountryPickerView.m in Sources */,
 				C174CB7A1B82207300694C9B /* ConfigEditHouseData.m in Sources */,
 				C174CB4A1B82202F00694C9B /* REFrostedViewController.m in Sources */,
+				C126C0471B844A0C0090A4FF /* LoginModelData.m in Sources */,
 				C174CB3A1B82202F00694C9B /* RMTUserShareData.m in Sources */,
 				C174CB211B82202F00694C9B /* UIColor+Hexadecimal.m in Sources */,
 				C174C9771B82182B00694C9B /* main.m in Sources */,

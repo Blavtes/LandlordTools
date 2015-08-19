@@ -108,8 +108,8 @@ NSString * const RMTLoginFinishedNotification = @"RMTLoginFinishedNotification";
     }
     
     [self showHUDView];
-    [[RMTUtilityLogin sharedInstance] requestIsRegisterUserWith:_accountTextField.text  complete:^(NSError *error,int code) {
-        if (error && code != RMTRegisterCodeHaveRegist) {
+    [[RMTUtilityLogin sharedInstance] requestIsRegisterUserWith:_accountTextField.text  complete:^(NSError *error, BackOject *obj) {
+        if (error && obj.code != RMTRegisterCodeHaveRegist) {
              [self hideHUDView];
             [self showAlertWithMessage:error.localizedDescription];
             return ;

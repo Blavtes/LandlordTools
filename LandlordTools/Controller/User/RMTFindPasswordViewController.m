@@ -132,14 +132,14 @@
     }
     
     
-    [[RMTUtilityLogin sharedInstance] requestIsRegisterUserWith:mobile complete:^(NSError *error, int code) {
-        if (error && code != RMTRegisterCodeHaveRegist) {
+    [[RMTUtilityLogin sharedInstance] requestIsRegisterUserWith:mobile complete:^(NSError *error, BackOject *obj) {
+        if (error && obj.code != RMTRegisterCodeHaveRegist) {
             [self showAlertWithMessage:error.localizedDescription];
              [self hideHUDView];
             return ;
         }
         
-        [[RMTUtilityLogin sharedInstance] requestVerifyWithPhoneNumber:mobile  verifyCode:@"2" complete:^(NSError *error) {
+        [[RMTUtilityLogin sharedInstance] requestVerifyWithPhoneNumber:mobile  verifyCode:@"2" complete:^(NSError *error,LoginPassworldBack *obj) {
             if (error) {
                 [self showAlertWithMessage:error.localizedDescription];
                  [self hideHUDView];
@@ -245,8 +245,8 @@
     
     [self showHUDView];
     
-    [[RMTUtilityLogin sharedInstance] requestIsRegisterUserWith:mobile complete:^(NSError *error, int code) {
-         if (error && code != RMTRegisterCodeHaveRegist) {
+    [[RMTUtilityLogin sharedInstance] requestIsRegisterUserWith:mobile complete:^(NSError *error, BackOject *obj) {
+         if (error && obj.code != RMTRegisterCodeHaveRegist) {
             [self showAlertWithMessage:error.localizedDescription];
             [self hideHUDView];
             return ;

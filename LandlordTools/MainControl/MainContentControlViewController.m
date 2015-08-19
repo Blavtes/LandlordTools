@@ -12,6 +12,7 @@
 #import "RentMainViewController.h"
 #import "GetAmmeterViewController.h"
 #import "AddHouseViewController.h"
+#import "RMTLoginEnterViewController.h"
 
 @interface MainContentControlViewController ()
 
@@ -65,7 +66,7 @@
 */
 - (IBAction)logicClick:(id)sender
 {
-    RMTLoginViewController *vc = [[RMTLoginViewController alloc] init];
+    RMTLoginEnterViewController *vc = [[RMTLoginEnterViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

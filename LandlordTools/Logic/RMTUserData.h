@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface RMTUserData : NSObject
-
+@property (nonatomic, assign) int code;
 @property (nonatomic, strong) NSString *message;
 @property (nonatomic, strong) NSString *mobile;
 @property (nonatomic, strong) NSString *token;

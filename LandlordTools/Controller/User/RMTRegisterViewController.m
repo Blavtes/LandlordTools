@@ -290,13 +290,13 @@
     data.userType = @"1";
     [self showHUDView];
     [[RMTUtilityLogin sharedInstance] requestIsRegisterUserWith:data.mobile
-                                                       complete:^(NSError *error,int code) {
-        if (error && code == RMTRegisterCodeHaveRegist) {
+                                                       complete:^(NSError *error,BackOject *obj) {
+        if (error && obj.code == RMTRegisterCodeHaveRegist) {
              [self hideHUDView];
             [self showAlertWithMessage:error.localizedDescription];
             return ;
         }
-       if (code == RMTRegisterCodeErr) {
+       if (obj.code == RMTRegisterCodeErr) {
            [self hideHUDView];
            [self showAlertWithMessage:error.localizedDescription];
            return;

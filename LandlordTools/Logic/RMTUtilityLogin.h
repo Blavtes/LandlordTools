@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "RMTUserData.h"
 #import "AddBuildModleData.h"
+#import "LoginModelData.h"
 
 typedef enum _RMTRequestBackCode{
     RMTRequestBackCodeException = -1,
@@ -43,7 +44,7 @@ typedef enum _RMTUpdataMyBuildType {
 //0 未注册 1 已注册，-1 异常
 
 - (void)requestIsRegisterUserWith:(NSString*)mobile
-                         complete:(void (^)(NSError *error,int code))handler;
+                         complete:(void (^)(NSError *error,BackOject *obj))handler;
 //登录请求
 -(void)requestLoginWithAccount:(NSString *)acount
                       password:(NSString *)password
@@ -73,7 +74,7 @@ typedef enum _RMTUpdataMyBuildType {
 //获取手机验证码
 -(void)requestVerifyWithPhoneNumber:(NSString *)phoneNumber
                         verifyCode:(NSString *)countryCode
-                           complete:(void (^)(NSError *error))handler;
+                           complete:(void (^)(NSError *error,LoginPassworldBack *obj))handler;
 
 
 //校验手机验证码 1 regist 2 find pass
