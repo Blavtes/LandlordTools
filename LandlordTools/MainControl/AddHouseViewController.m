@@ -11,6 +11,7 @@
 #import "UIColor+Hexadecimal.h"
 #import "RMTUtilityLogin.h"
 #import <Masonry/Masonry.h>
+#import "RMTLoginViewController.h"
 
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 @interface AddHouseViewController () <UITableViewDataSource,UITableViewDelegate,AddHouseChangeCellHeightDelegate>
@@ -29,7 +30,7 @@
     
     [[RMTUtilityLogin sharedInstance] requestGetMyBuildingsWithLogicId:@"F30645C539BC8B8E5A8293F1A2C7E767" complete:^(NSError *error, AddBuildModleData *buildData) {
         NSLog(@"builrd %@",buildData);
-        if (buildData.code == 1) {
+        if (buildData.code == RMTRequestBackCodeSucceed) {
             if (buildData.buildings.count == 0 )
             {
                 //init
@@ -43,7 +44,8 @@
                 [_buildArr addObject:data];
                 [_tableView reloadData];
             } else {
-                
+                [_buildArr addObjectsFromArray:buildData.buildings];
+                [_tableView reloadData];
             }
         }
     }];
@@ -122,16 +124,7 @@
     data.isShowDataList = NO;
     data.oprType = RMTUpdataMyBuildAddType;
     
-    UpdateBuildData   *updata = [[UpdateBuildData alloc] init];
-    updata.id = data._id;
-    updata.buildingName = data.buildingName;
-    updata.waterPrice = data.waterPrice;
-    updata.electricPrice = data.waterPrice;
-    updata.oprType = data.oprType;
-    updata.payRentDay = data.payRentDay;
-    
-    NSString *str = [updata toJSONString];
-    NSArray *arr = [NSArray arrayWithObjects:str,str, nil];
+    NSArray *arr = [NSArray arrayWithObjects:data, nil];
     [[RMTUtilityLogin sharedInstance] requestUpdateMyBuilingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId] whithBuildData:arr complete:^(NSError *error, BackOject *object) {
         if (object.code == RMTRequestBackCodeSucceed) {
             [_buildArr addObject:data];
@@ -142,19 +135,35 @@
    
 }
 
-- (void)reflashData:(AddBuildArrayData *)data adnRow:(int)row
+- (void)reflashData:(AddBuildArrayData *)data andRow:(int)row
 {
     if (row > _buildArr.count) {
         return;
     }
-    [_buildArr replaceObjectAtIndex:row withObject:data];
+
+    data.oprType = RMTUpdataMyBuildUpdataType;
+    [[RMTUtilityLogin sharedInstance] requestUpdateMyBuilingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId] whithBuildData:[NSArray arrayWithObject:data] complete:^(NSError *error, BackOject *object) {
+        if (object.code == RMTRequestBackCodeSucceed) {
+           [_buildArr replaceObjectAtIndex:row withObject:data];
+        }
+        NSLog(@"reflashData code %d %@",object.code,object.message);
+    }];
+     
+    
 }
 
 - (void)deletBuildData:(int)row
 {
     if (row < _buildArr.count) {
-        [_buildArr removeObjectAtIndex:row];
-        [_tableView reloadData];
+        AddBuildArrayData *data = [_buildArr objectAtIndex:row];
+        data.oprType = RMTUpdataMyBuildDeletedType;
+        [[RMTUtilityLogin sharedInstance] requestUpdateMyBuilingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId] whithBuildData:[NSArray arrayWithObject:data] complete:^(NSError *error, BackOject *object) {
+            if (object.code == RMTRequestBackCodeSucceed) {
+                [_buildArr removeObjectAtIndex:row];
+                [_tableView reloadData];
+            }
+            NSLog(@"delet code %d %@",object.code,object.message);
+        }];
     }
     NSLog(@"delete build index %d",row);
 }
@@ -165,11 +174,8 @@
     for (int i = 0 ; i < _buildArr.count; i++) {
         AddBuildArrayData *data = [_buildArr objectAtIndex:i];
         data.isShowDataList = NO;
-        
     }
-
-    
-       [_tableView reloadData];
+    [_tableView reloadData];
     AddBuildArrayData *data = [_buildArr objectAtIndex:row];
     data.isShowDataList = sender;
     [_buildArr replaceObjectAtIndex:row withObject:data];
@@ -186,6 +192,23 @@
 }
 
 - (IBAction)saveClick:(id)sender {
+    for (AddBuildArrayData *data  in _buildArr) {
+        data.oprType = RMTUpdataMyBuildUpdataType;
+    }
+    if ([[RMTUtilityLogin sharedInstance] getLogId]) {
+        [[RMTUtilityLogin sharedInstance] requestUpdateMyBuilingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId]
+                                                              whithBuildData:_buildArr
+                                                                    complete:^(NSError *error, BackOject *object) {
+                                                                        if (object.code == RMTRequestBackCodeSucceed) {
+                                                                            
+                                                                        }
+                                                                        NSLog(@"delet code %d %@",object.code,object.message);
+                                                                    }];
+    } else {
+        RMTLoginViewController *vc = [[RMTLoginViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+   
 }
 
 

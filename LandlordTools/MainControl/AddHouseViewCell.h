@@ -13,7 +13,7 @@
 
 - (void)changeAddHouseCellHeigt:(BOOL)sender andRow:(int)row;
 - (void)deletBuildData:(int)row;
-- (void)reflashData:(AddBuildArrayData*)data adnRow:(int)row;
+- (void)reflashData:(AddBuildArrayData*)data andRow:(int)row;
 @end
 
 

@@ -95,28 +95,8 @@
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zL3-G4-aat">
                                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="26" id="B58-uq-dVT">
-                                                        <variation key="heightClass=regular-widthClass=compact" constant="50"/>
-                                                    </constraint>
-                                                    <constraint firstAttribute="width" constant="25" id="ahC-Ia-nWU">
-                                                        <variation key="heightClass=regular-widthClass=compact" constant="40"/>
-                                                    </constraint>
-                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="B58-uq-dVT"/>
-                                                        <exclude reference="ahC-Ia-nWU"/>
-                                                    </mask>
-                                                </variation>
-                                                <variation key="heightClass=regular-widthClass=compact">
-                                                    <mask key="constraints">
-                                                        <include reference="B58-uq-dVT"/>
-                                                        <exclude reference="ahC-Ia-nWU"/>
-                                                    </mask>
-                                                </variation>
                                                 <connections>
                                                     <action selector="waterTextFieldEnd:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="6T8-7N-erH"/>
                                                 </connections>
@@ -357,6 +337,7 @@
                                             </constraint>
                                             <constraint firstItem="upg-rk-3Fy" firstAttribute="top" secondItem="3U6-gt-RHm" secondAttribute="bottom" constant="2" id="rJb-Jc-66V"/>
                                             <constraint firstItem="ECP-MR-ENZ" firstAttribute="top" secondItem="upg-rk-3Fy" secondAttribute="bottom" constant="9" id="rQV-Mq-sbF"/>
+                                            <constraint firstAttribute="centerX" secondItem="lcO-i5-urh" secondAttribute="centerX" constant="9" id="vAc-6D-Isx"/>
                                             <constraint firstItem="Fif-wv-5Zb" firstAttribute="centerY" secondItem="upg-rk-3Fy" secondAttribute="centerY" id="woC-zS-2AW"/>
                                         </constraints>
                                         <variation key="default">
@@ -388,6 +369,7 @@
                                                 <exclude reference="FIb-9S-Yjy"/>
                                                 <exclude reference="RV8-pc-xvL"/>
                                                 <exclude reference="W41-HG-fIs"/>
+                                                <exclude reference="vAc-6D-Isx"/>
                                                 <exclude reference="GGw-ut-dgJ"/>
                                                 <exclude reference="kcg-hf-B84"/>
                                                 <exclude reference="7qN-0m-HB7"/>
@@ -426,6 +408,7 @@
                                                 <include reference="FIb-9S-Yjy"/>
                                                 <include reference="RV8-pc-xvL"/>
                                                 <include reference="W41-HG-fIs"/>
+                                                <include reference="vAc-6D-Isx"/>
                                                 <include reference="GGw-ut-dgJ"/>
                                                 <include reference="kcg-hf-B84"/>
                                                 <include reference="7qN-0m-HB7"/>
@@ -572,7 +555,7 @@
                 <outlet property="titleTextField" destination="NIS-fu-DFR" id="hxI-xV-Ttd"/>
                 <outlet property="waterTextField" destination="zL3-G4-aat" id="R7s-zO-aKw"/>
             </connections>
-            <point key="canvasLocation" x="177" y="208"/>
+            <point key="canvasLocation" x="-69" y="235"/>
         </tableViewCell>
     </objects>
     <resources>

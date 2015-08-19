@@ -21,6 +21,10 @@
     UIButton *bt = (UIButton*)sender;
     NSLog(@"bt tag %ld",bt.tag);
     _dataLable.text = [NSString stringWithFormat: @"slelect %ld",bt.tag];
+    _modelData.payRentDay = (int)bt.tag;
+    if ([_delegate respondsToSelector:@selector(reflashData:andRow:)]) {
+        [_delegate reflashData:_modelData andRow:_cellRow];
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -44,8 +48,8 @@
 
 - (void)changeDataWithReflash
 {
-    if ([_delegate respondsToSelector:@selector(reflashData:adnRow:)]) {
-        [_delegate reflashData:_modelData adnRow:_cellRow];
+    if ([_delegate respondsToSelector:@selector(reflashData:andRow:)]) {
+        [_delegate reflashData:_modelData andRow:_cellRow];
     }
 }
 

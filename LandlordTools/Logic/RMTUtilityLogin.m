@@ -720,7 +720,7 @@ static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countr
 }
 
 - (void)requestUpdateMyBuilingsWithLogicId:(NSString *)logicId
-                            whithBuildData:(NSArray *)data
+                            whithBuildData:(NSArray *)dataArr
                                   complete:(void (^)(NSError *, BackOject *))handler
 {
     NSMutableDictionary *dic = [NSMutableDictionary new];
@@ -732,8 +732,19 @@ static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countr
 //    updata.electricPrice = data.electricPrice;
 //    updata.payRentDay = data.payRentDay;
 //    updata.oprType = data.oprType;
-    NSString *str = [data JSONString];
-    [dic setValue:str forKey:@"buildings"];
+    NSMutableArray *list = [NSMutableArray arrayWithCapacity:0];
+    for (AddBuildArrayData *data in dataArr) {
+        NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:@{@"id":@(data._id),
+                                                                                    @"buildingName":[data.buildingName length] == 0 ?@"":data.buildingName,
+                                                                                    @"electricPrice":@(data.electricPrice),
+                                                                                    @"waterPrice":@(data.waterPrice),
+                                                                                    @"oprType":@(data.oprType),
+                                                                                    @"payRentDay":@(data.payRentDay)}];
+        [list addObject:dict];
+    }
+    
+
+    [dic setValue:list forKey:@"buildings"];
     NSLog(@"dict %@",dic);
     NSString *url = [NSString stringWithFormat:@"%@/building/editBuildings", kUCBaseUrl];
     NSDictionary *headerFields = [self getHTTPHeaderFields];
