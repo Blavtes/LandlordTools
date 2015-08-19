@@ -82,6 +82,11 @@ typedef enum _RMTUpdataMyBuildType {
                         checkVerify:(NSString *)checkVerify
                                vcodeType:(int)vcode
                            complete:(void (^)(NSError *error,LoginCheckoutVerifyData *token))handler;
+
+- (void)requestChangePasswordWithPhoneNumber:(NSString*)mobile
+                                    password:(NSString*)password
+                                       token:(NSString*)token
+                                    complete:(void (^)(NSError *error, LoginCheckoutVerifyData *data))handler;
 //注销请求
 -(void)requestLogout:(void (^)(NSError *error))handler;
 

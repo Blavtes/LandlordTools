@@ -11,6 +11,8 @@
 		C126C0471B844A0C0090A4FF /* LoginModelData.m in Sources */ = {isa = PBXBuildFile; fileRef = C126C0461B844A0C0090A4FF /* LoginModelData.m */; };
 		C126C04C1B8462D70090A4FF /* RMTLoginForgotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C126C04A1B8462D70090A4FF /* RMTLoginForgotViewController.m */; };
 		C126C04D1B8462D70090A4FF /* RMTLoginForgotViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C126C04B1B8462D70090A4FF /* RMTLoginForgotViewController.xib */; };
+		C126C0511B848DA00090A4FF /* RMTChangePassWorldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C126C04F1B848DA00090A4FF /* RMTChangePassWorldViewController.m */; };
+		C126C0521B848DA00090A4FF /* RMTChangePassWorldViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C126C0501B848DA00090A4FF /* RMTChangePassWorldViewController.xib */; };
 		C158DA051B83178500795B62 /* ConfigSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = C158DA041B83178500795B62 /* ConfigSystem.m */; };
 		C158DA091B842EEC00795B62 /* RMTLoginEnterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C158DA071B842EEC00795B62 /* RMTLoginEnterViewController.m */; };
 		C158DA0A1B842EEC00795B62 /* RMTLoginEnterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C158DA081B842EEC00795B62 /* RMTLoginEnterViewController.xib */; };
@@ -155,6 +157,9 @@
 		C126C0491B8462D70090A4FF /* RMTLoginForgotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTLoginForgotViewController.h; sourceTree = "<group>"; };
 		C126C04A1B8462D70090A4FF /* RMTLoginForgotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTLoginForgotViewController.m; sourceTree = "<group>"; };
 		C126C04B1B8462D70090A4FF /* RMTLoginForgotViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMTLoginForgotViewController.xib; sourceTree = "<group>"; };
+		C126C04E1B848DA00090A4FF /* RMTChangePassWorldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTChangePassWorldViewController.h; sourceTree = "<group>"; };
+		C126C04F1B848DA00090A4FF /* RMTChangePassWorldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTChangePassWorldViewController.m; sourceTree = "<group>"; };
+		C126C0501B848DA00090A4FF /* RMTChangePassWorldViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMTChangePassWorldViewController.xib; sourceTree = "<group>"; };
 		C158DA031B83178500795B62 /* ConfigSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigSystem.h; sourceTree = "<group>"; };
 		C158DA041B83178500795B62 /* ConfigSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigSystem.m; sourceTree = "<group>"; };
 		C158DA061B842EEC00795B62 /* RMTLoginEnterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTLoginEnterViewController.h; sourceTree = "<group>"; };
@@ -402,6 +407,9 @@
 				C126C0491B8462D70090A4FF /* RMTLoginForgotViewController.h */,
 				C126C04A1B8462D70090A4FF /* RMTLoginForgotViewController.m */,
 				C126C04B1B8462D70090A4FF /* RMTLoginForgotViewController.xib */,
+				C126C04E1B848DA00090A4FF /* RMTChangePassWorldViewController.h */,
+				C126C04F1B848DA00090A4FF /* RMTChangePassWorldViewController.m */,
+				C126C0501B848DA00090A4FF /* RMTChangePassWorldViewController.xib */,
 			);
 			path = ForgotPassword;
 			sourceTree = "<group>";
@@ -1007,6 +1015,7 @@
 				C174CAA61B8218F100694C9B /* slider-metal-trackBackground.png in Resources */,
 				C158DA0A1B842EEC00795B62 /* RMTLoginEnterViewController.xib in Resources */,
 				C174CB731B82207300694C9B /* AddFloorWaterDataViewControll.xib in Resources */,
+				C126C0521B848DA00090A4FF /* RMTChangePassWorldViewController.xib in Resources */,
 				C174CA9D1B8218F100694C9B /* slider-default7-trackBackground@2x.png in Resources */,
 				C174CB321B82202F00694C9B /* RMTLoginViewController.xib in Resources */,
 				C174CB1E1B82202F00694C9B /* GetAmmeterViewController.xib in Resources */,
@@ -1120,6 +1129,7 @@
 				C174CB221B82202F00694C9B /* UIImage+RMT.m in Sources */,
 				C174CB3C1B82202F00694C9B /* RMTUtilityFeedback.m in Sources */,
 				C174CA8C1B8218F100694C9B /* JBChartView.m in Sources */,
+				C126C0511B848DA00090A4FF /* RMTChangePassWorldViewController.m in Sources */,
 				C174CB4B1B82202F00694C9B /* UIImage+REFrostedViewController.m in Sources */,
 				C174CB521B82202F00694C9B /* UIViewController+RESideMenu.m in Sources */,
 				C174CB4E1B82202F00694C9B /* RentMainViewController.m in Sources */,

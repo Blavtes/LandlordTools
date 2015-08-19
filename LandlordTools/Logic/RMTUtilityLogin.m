@@ -186,6 +186,40 @@ static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countr
                                     }];
 }
 
+- (void)requestChangePasswordWithPhoneNumber:(NSString *)mobile
+                                    password:(NSString *)password
+                                       token:(NSString *)token
+                                    complete:(void (^)(NSError *, LoginCheckoutVerifyData *))handler
+{
+    NSMutableDictionary *parameterDic = [NSMutableDictionary new];
+    [parameterDic setValue:mobile forKey:@"mobile"];
+    [parameterDic setValue:password forKey:@"password"];
+    [parameterDic setValue:token forKey:@"token"];
+    
+    NSString *url = [NSString stringWithFormat:@"%@/user/changePassword", kUCBaseUrl];
+    NSDictionary *headerFields = [self getHTTPHeaderFields];
+    [[RMTURLSession sharedInstance] requestApiWithUrl:url
+                                           parameters:parameterDic
+                               customHTTPHeaderFields:headerFields
+                                    completionHandler:^(NSError *error, NSDictionary *dic){
+                                        if (error || !dic) {
+                                            NSLog(@"<%s : %d : %s> error:%@", __FILE__, __LINE__, __FUNCTION__, error);
+                                            NSDictionary *userInfo = @{NSLocalizedDescriptionKey: NSLocalizedString(@"网络错误", nil)};
+                                            NSError *customError = [NSError errorWithDomain:error.domain
+                                                                                       code:error.code
+                                                                                   userInfo:userInfo];
+                                            handler(customError, nil);
+                                            return;
+                                        }
+                                        
+                                        NSError *jsonError = nil;
+                                        LoginCheckoutVerifyData *data = [[LoginCheckoutVerifyData alloc] initWithDictionary:dic error:&jsonError];
+                                        
+                                        handler(jsonError,data);
+                                    }];
+}
+
+
 //使用手机号码找回密码
 -(void)requestFindPasswordWithPhoneNumber:(NSString *)phoneNumber
                               countryCode:(NSString *)countryCode

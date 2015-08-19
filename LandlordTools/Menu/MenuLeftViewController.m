@@ -8,6 +8,7 @@
 
 #import "MenuLeftViewController.h"
 #import "RMTUserShareData.h"
+#import "RMTChangePassWorldViewController.h"
 
 @interface MenuLeftViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *amountLable;
@@ -64,7 +65,11 @@
 
 - (IBAction)changePasswordClick:(id)sender
 {
-    
+    RMTChangePassWorldViewController *vc = [[RMTChangePassWorldViewController alloc] init];
+    [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:vc]
+                                                 animated:YES];
+    [self.sideMenuViewController hideMenuViewController];
+  
 }
 
 - (IBAction)logoutClick:(id)sender
