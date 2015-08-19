@@ -1,0 +1,27 @@
+EV.i18n.setMessages({
+    "See your notes on a map.":"Se dine noter på et kort.",
+    "Atlas organizes your notes by location.":
+        "Atlas organiserer dine noter efter placering.",
+    "Connect to the Internet to view Atlas":"Opret forbindelse til internettet for at se Atlas.",
+    "Loading...":"Indlæser...",
+	"All Notes" : "Alle noter",
+	"Atlas Notes" : "Atlas-noter",
+	"Evernote Atlas": "Evernote Atlas",
+	"Notes from Map": "Noter fra kort",
+    "Notes": "Noter",
+    "Food notes": "Food-noter",
+    "Hello notes": "Hello-noter",
+    "View all": "Vis alle",
+    "View all num notes": "Vis alle {{ 0 }} noter",
+    "View all num note": "Vis alle {{ 0 }} note",
+	"num Note": "{{ 0 }} note",
+	"num note": "{{ 0 }} note",
+	"num Notes": "{{ 0 }} noter",
+	"num notes": "{{ 0 }} noter",
+    "Europe": "Europa",
+    "Asia":"Asien",
+    "North America":"Nordamerika",
+    "South America":"Sydamerika",
+    "Australia":"Australien",
+    "Africa":"Afrika"
+});

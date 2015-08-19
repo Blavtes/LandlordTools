@@ -1,0 +1,880 @@
+/* styles for Evernote Announcements */
+/* article classes:
+	alert #f7922b #656565
+	our-notes #63144b
+	partner
+	product #5fb336
+	tips-and-guides #e98208
+	product-updates #0a9dbb
+	stories #152f6b
+*/
+/* =========================================================
+	resets and maxims
+========================================================= */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* =========================================================
+	utility classes
+========================================================= */
+/* http://nicolasgallagher.com/micro-clearfix-hack/ */
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+.cf:after {
+  clear: both;
+}
+.cf {
+  *zoom: 1;
+}
+.left {
+  float: left;
+}
+.alignleft {
+  text-align: left;
+}
+.right {
+  float: right;
+}
+.alignright {
+  text-align: right;
+}
+.half {
+  width: 50%;
+}
+/* =========================================================
+	typography roundup + design
+
+	color pallette:
+========================================================= */
+@font-face {
+  font-family: 'caecilialtstd-light';
+  src: url('../fonts/caecilialtstd-light-webfont.eot');
+  src: url('../fonts/caecilialtstd-light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/caecilialtstd-light-webfont.woff') format('woff'), url('../fonts/caecilialtstd-light-webfont.ttf') format('truetype'), url('../fonts/caecilialtstd-light-webfont.svg#caecilialtstd-light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'caecilialtstd-bold';
+  src: url('../fonts/caecilialtstd-bold-webfont.eot');
+  src: url('../fonts/caecilialtstd-bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/caecilialtstd-bold-webfont.woff') format('woff'), url('../fonts/caecilialtstd-bold-webfont.ttf') format('truetype'), url('../fonts/caecilialtstd-bold-webfont.svg#caecilialtstd-bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'caecilialtstd-roman';
+  src: url('../fonts/caecilialtstd-roman-webfont.eot');
+  src: url('../fonts/caecilialtstd-roman-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/caecilialtstd-roman-webfont.woff') format('woff'), url('../fonts/caecilialtstd-roman-webfont.ttf') format('truetype'), url('../fonts/caecilialtstd-roman-webfont.svg#caecilialtstd-roman') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+*,
+.sidebar h4,
+html.caecilia .sidebar h4,
+.button.save .save-message {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+body {
+  font-size: 15px;
+  line-height: 1.65;
+}
+.home {
+  font-size: 14px;
+}
+.sidebar h4 {
+  font-size: 13px;
+  line-height: 1.4;
+}
+/* prefixing the caecilia selectors with html.caecilia
+/* roundup of Caecilia light */
+html.caecilia h1,
+html.caecilia .home h2,
+html.caecilia h4,
+html.caecilia h5,
+html.caecilia h6,
+html.caecilia .sidebar .cta *,
+html.caecilia article.new header .new-notice {
+  font-family: "caecilialtstd-light", Times, Arial;
+  font-weight: normal;
+}
+/* roundup of Caecilia bold */
+html.caecilia body > header h1,
+html.caecilia header div.paginate,
+html.caecilia .sidebar .cta b {
+  font-family: "caecilialtstd-bold", Times, Arial;
+  font-weight: normal;
+}
+/* roundup of Caecilia roman */
+html.caecilia h2,
+html.caecilia h3,
+html.caecilia .button.save *,
+html.caecilia .sidebar .cta-partner .text,
+html.caecilia footer h3 {
+  font-family: "caecilialtstd-roman", Times, Arial;
+}
+html.caecilia h2,
+html.caecilia h3 {
+  font-weight: normal;
+}
+h1,
+.main .content h2 {
+  font-size: 19px;
+  font-weight: normal;
+}
+body > header h1 {
+  color: #a3a0a0;
+  font-size: 17px;
+  font-weight: normal;
+  letter-spacing: 0;
+}
+header .paginate {
+  color: #a4a3a3;
+  letter-spacing: -1px;
+}
+.scroll-content > footer {
+  margin-top: 38px;
+}
+.scroll-content > footer h3 {
+  padding-top: 38px;
+  color: #7e9aaf;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1em;
+}
+.sidebar .cta a {
+  font-size: 15px;
+}
+/* the bold variant looks shorter. bumping it 1px */
+.sidebar .cta b {
+  font-size: 16px;
+}
+.alerts .alert {
+  font-size: 14px;
+}
+.alerts .alert a {
+  color: #9c9c9c;
+  /*border-bottom: 1px dotted #9a9b9b;*/
+
+  text-decoration: none;
+}
+.alerts .alert a:hover,
+.alerts .alert a:active {
+  color: #6a6a6a;
+}
+/* roundup of 1px white text shadow
+	- buttons are covered in .buttons because of the state overrides */
+body > header h1,
+.main .content .read-more {
+  text-shadow: 0 1px 1px #fff;
+}
+.main .content h1 {
+  font-size: 24px;
+  font-weight: normal;
+  padding-bottom: 28px;
+  color: #858585;
+}
+.main .content h2,
+.main .content h3 {
+  margin-top: 24px;
+  color: #749BB9;
+}
+.home h2 {
+  font-size: 22px;
+  font-weight: normal;
+  padding-bottom: 20px;
+}
+/* roundup of things with dotted rule at bottom */
+.home h2,
+.main .content h1 {
+  line-height: 1.5em;
+  padding-bottom: 10px;
+}
+.home h2,
+.main .content h1,
+.rule,
+.scroll-content > footer .layout {
+  margin-top: 12px;
+  background-color: transparent;
+  background-image: url('../img/dotted-rule.png');
+  background-repeat: repeat-x;
+  background-attachment: scroll;
+  background-position: left bottom;
+}
+.scroll-content > footer .layout {
+  background-position: left top;
+}
+.home h2 {
+  background-repeat: no-repeat;
+  background-position: -630px bottom;
+}
+.rule {
+  display: block;
+  width: 100%;
+  height: 2px;
+}
+.main .content a {
+  color: #9a9a9a;
+  text-decoration: none;
+  border-bottom: 1px dotted #9a9a9a;
+}
+.main .content footer {
+  margin-top: 25px;
+}
+.main .content footer a {
+  border-bottom: none;
+}
+footer .read-more {
+  position: relative;
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: none;
+  padding-left: 24px;
+}
+footer .read-more .icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 21px;
+  height: 21px;
+  background-color: transparent;
+  background-image: url('../img/button-sprite.png');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: -12px -368px;
+}
+body {
+  color: #737373;
+}
+.main .content {
+  background-color: white;
+}
+.main article {
+  background: #fff;
+}
+.home.main article .description {
+  padding-top: 6px;
+}
+.home.main article.read > a,
+.home.main article.read h2,
+.home.main article.read .article-header {
+  color: #81817E;
+}
+.home.main article.read img {
+  opacity: 0.75;
+}
+.main article,
+.main .content,
+.sidebar .callout,
+.alerts .alert {
+  box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.2);
+}
+.home.main article.read {
+  background: #ededed;
+  box-shadow: 0 1px 2px 1px #ccc;
+}
+.snippet-read-more {
+  font-family: "caecilialtstd-bold", Times, Arial;
+  display: inline-block;
+}
+.our-notes .snippet-read-more {
+  color: #63144b;
+}
+.product .snippet-read-more {
+  color: #5fb336;
+}
+.product-updates .snippet-read-more {
+  color: #0a9dbb;
+}
+.stories .snippet-read-more {
+  color: #152f6b;
+}
+.tips-and-guides .snippet-read-more {
+  color: #e98208;
+}
+article.read .snippet-read-more {
+  color: #81817e;
+}
+/* articles on homepage are wrapped with an anchor, we need to 'nullify' default
+	link styles for links directly descendant from article containers */
+article > a {
+  color: #656565;
+  text-decoration: none;
+}
+.sidebar .cta a {
+  color: #fff;
+  font-weight: normal;
+  background-color: transparent;
+  background-image: url('../img/cta-partner-off.jpg');
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-position: left top;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #404040;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  text-decoration: none;
+}
+.sidebar .cta a:hover,
+.sidebar .cta a:active {
+  background-image: url('../img/cta-partner-on.jpg');
+}
+.sidebar .cta-evernote a {
+  color: #fff;
+  background-image: url('../img/cta-evernote-off.jpg');
+  text-shadow: 0 -1px 1px #040404;
+  border-color: #404040;
+}
+.sidebar .cta-evernote a:hover,
+.sidebar .cta-evernote a:active {
+  background-image: url('../img/cta-evernote-on.jpg');
+}
+.sidebar .cta-partner a {
+  color: #365770;
+  text-shadow: 0 1px 1px #fff;
+  border-color: #a5a5a5;
+}
+.sidebar .cta-premium a,
+.sidebar .cta-product a {
+  color: #fff;
+  background-image: url('../img/cta-premium-off.jpg');
+  text-shadow: 0 1px 1px #040404;
+  border-color: #347f0e;
+}
+.sidebar .cta-premium a:hover,
+.sidebar .cta-premium a:active,
+.sidebar .cta-product a:hover,
+.sidebar .cta-product a:active {
+  background-image: url('../img/cta-premium-on.jpg');
+}
+article header .article-header,
+.content .article-header {
+  position: relative;
+  padding-left: 32px;
+  background-color: transparent;
+  background-image: url('../img/button-sprite.png');
+  /* see retina overrides at bottom */
+
+  background-repeat: no-repeat;
+  background-position: -1000px -1000px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+article.new header .article-header {
+  padding-right: 26px;
+}
+.new-notice {
+  display: none;
+}
+article.new:not(.read) header .new-notice {
+  position: absolute;
+  display: block;
+  top: 2px;
+  right: -24px;
+  padding: 2px 4px 2px 5px;
+  text-transform: capitalize;
+  font-size: 12px;
+  color: white;
+}
+.our-notes .new-notice {
+  background-color: #63144b;
+}
+.product .new-notice {
+  background-color: #5fb336;
+}
+.product-updates .new-notice {
+  background-color: #0a9dbb;
+}
+.stories .new-notice {
+  background-color: #152f6b;
+}
+.tips-and-guides .new-notice {
+  background-color: #e98208;
+}
+.main article.read header .article-header {
+  background-image: url('../img/button-sprite-read.png');
+  /* see retina overrides at bottom */
+
+}
+article.alert {
+  background: #fdf5e6;
+}
+article.alert .date-time {
+  color: #f7922b;
+}
+.our-notes .article-header {
+  color: #63144b;
+  background-position: -10px -110px;
+}
+.product .article-header {
+  color: #5fb336;
+  background-position: -10px -160px;
+}
+.product-updates .article-header {
+  color: #0a9dbb;
+  background-position: -10px -210px;
+}
+.stories .article-header {
+  color: #152f6b;
+  background-position: -10px -260px;
+}
+.tips-and-guides .article-header {
+  color: #e98208;
+  background-position: -10px -310px;
+}
+/* =========================================================
+	page layout
+========================================================= */
+body {
+  padding-bottom: 100px;
+}
+body > header {
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+body > header h1 {
+  margin: 0;
+}
+.alerts .alert {
+  margin: 30px auto 16px;
+  width: 648px;
+  /* twice the article width, plus the gutter margin */
+
+  padding: 6px 50px;
+  /* 6px top/bottom because paragraph has 14px */
+
+}
+.content .article-header {
+  /*padding-left: 50px;*/
+
+  margin-left: -8px;
+}
+.layout {
+  position: relative;
+  width: 90%;
+  max-width: 840px;
+  min-width: 720px;
+  margin: 0 auto;
+}
+.main.article .content {
+  padding: 38px 56px 52px;
+  margin-right: 200px;
+}
+.main.article.no-sidebar .content {
+  margin-right: auto;
+}
+.main.article.no-sidebar .sidebar {
+  display: none;
+}
+.main.article .sidebar {
+  width: 172px;
+  margin-right: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.home .layout {
+  width: auto;
+  max-width: 1472px;
+}
+.home .layout .do-masonry {
+  margin: 0 auto;
+}
+.main {
+  position: relative;
+  width: 100%;
+}
+.home article {
+  display: block;
+  float: left;
+  width: 310px;
+  margin: 14px;
+  padding: 12px 24px 24px;
+}
+/* =========================================================
+	forms
+========================================================= */
+/* =========================================================
+	buttons and controls
+========================================================= */
+.button {
+  display: inline-block;
+  background-color: transparent;
+  background-image: url('../img/button-background-default.png');
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-position: left top;
+  background-size: 50px 50px;
+  border: none !important;
+  line-height: 32px;
+  padding: 0 37px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 1px #fff;
+  color: #959595;
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: none !important;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+.button.save.busy,
+.button:hover {
+  background-image: url('../img/button-background-hover.png');
+}
+.button.save.error,
+.button:active {
+  background-image: url('../img/button-background-active.png');
+}
+.button.save.busy,
+.button.save.error,
+.button.save:active {
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2), 0 1px 2px #ffffff;
+}
+header .button {
+  text-indent: -5000%;
+  background-color: transparent;
+  background-image: url('../img/button-sprite.png');
+  /* see retina overrides at bottom */
+
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: -1000px -1000px;
+  background-size: 45px 700px;
+  box-shadow: none;
+  border-radius: none;
+}
+header a.back-button {
+  width: 45px;
+  height: 32px;
+  background-position: 0 -8px;
+}
+header h1 {
+  display: inline-block;
+  line-height: 32px;
+  padding-left: 50px;
+  width: auto;
+  background-image: url('../img/button-sprite.png');
+  /* see retina overrides at bottom */
+
+  background-repeat: no-repeat;
+  background-position: left -58px;
+}
+header .button.left {
+  position: absolute;
+  left: 10px;
+  top: 4px;
+  padding: 0;
+}
+header .paginate {
+  position: absolute;
+  left: 64px;
+  top: 4px;
+  line-height: 32px;
+}
+.button.previous,
+.button.next {
+  display: inline-block;
+  position: relative;
+  width: 28px;
+  height: 32px;
+  line-height: 32px;
+  /* override big button style */
+
+  padding: 0;
+  box-shadow: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.button.previous {
+  background-position: -6px -409px;
+}
+.button.next {
+  background-position: -8px -459px;
+}
+header a.back-button:hover,
+.button.previous:hover,
+.button.next:hover {
+  background-image: url('../img/button-sprite-hover.png');
+  /* see retina overrides at bottom */
+
+}
+header a.back-button:active,
+.button.previous:active,
+.button.next:active {
+  background-image: url('../img/button-sprite-active.png');
+  /* see retina overrides at bottom */
+
+}
+/* Save to Evernote button, states */
+/* hide all but the default text */
+.button.save .default,
+.button.save .busy,
+.button.save .error,
+.button.save .success,
+.save-message {
+  display: none;
+}
+.button.save.default .default,
+.button.save.busy .busy,
+.button.save.error .error,
+.button.save.success .success {
+  display: inline;
+}
+.button.save {
+  position: relative;
+  width: auto;
+}
+.button.save.busy {
+  /* busy state - 'saving' */
+
+}
+.button.save .busy .spinner {
+  display: block;
+  left: -18px;
+  top: 16px;
+  width: 30px;
+}
+.button.save.error {
+  /* error state - unable to save */
+
+}
+.button.save.error .save-message {
+  font-size: 12px;
+  text-align: center;
+  position: absolute;
+  display: block;
+  left: 0;
+  right: 0;
+  color: #991f2c;
+  bottom: -120%;
+}
+.button.save.success {
+  /* success state - 'saved' */
+
+  color: #406f92;
+  background: none;
+  box-shadow: none;
+}
+.button.save.success .success {
+  padding-left: 22px;
+  margin-left: -22px;
+  background-color: transparent;
+  background-image: url('../img/button-sprite.png');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: -15px -567px;
+}
+/* =========================================================
+	page elements
+========================================================= */
+article header .article-header,
+.main .content .article-header {
+  display: block;
+  height: 32px;
+  padding-top: 8px;
+  margin-top: 5px;
+  margin-right: -12px;
+  line-height: 1.25;
+}
+.main .content img {
+  display: block;
+  margin: 1.65em auto;
+  max-width: 100%;
+  height: auto;
+}
+.main .content p {
+  margin-bottom: 1.1em;
+}
+.main article .article-image {
+  overflow: hidden;
+  margin: 0 -24px;
+  /* this negates the margin on the article container */
+
+}
+.main article .article-image img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+.sidebar .cta a {
+  position: relative;
+  display: block;
+  width: 172px;
+  margin-bottom: 14px;
+  padding: 10px;
+  /*padding: 16px 17px;*/
+
+}
+.sidebar .cta * {
+  line-height: 1.2em;
+}
+.sidebar .cta-partner .text,
+.sidebar .cta-premium .text,
+.sidebar .cta-product .text {
+  text-align: center;
+}
+.cta-evernote a,
+.cta-market a {
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.sidebar .cta-evernote .text,
+.sidebar .cta-market .text {
+  display: inline-block;
+  white-space: normal;
+  line-height: 1.5;
+  max-width: 120px;
+  padding: 0.4em 3px 0 5px;
+}
+.sidebar .cta .icon {
+  display: inline-block;
+  vertical-align: top;
+  width: 31px;
+  height: 31px;
+}
+.sidebar .cta .icon img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.sidebar .callout {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 14px;
+  background: #fff;
+}
+.sidebar .callout a > span {
+  display: block;
+  background: #000;
+}
+.sidebar .callout img {
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+.sidebar .callout a:hover img {
+  opacity: 0.8;
+}
+.sidebar .callout > a {
+  display: block;
+  color: #91adc0;
+  text-decoration: none;
+}
+.sidebar .callout > a:hover,
+.sidebar .callout > a:active {
+  color: #7395ac;
+}
+.sidebar .callout h4 {
+  margin: 4px 0;
+  font-weight: normal;
+}
+/* =========================================================
+	icons!
+========================================================= */
+/* =========================================================
+	footer
+========================================================= */
+/* =========================================================
+	retina overrides
+========================================================= */
+@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
+  article header .article-header,
+  .content .article-header {
+    background-image: url('../img/retina-sprite.png');
+    background-size: 45px 700px;
+  }
+  .main article.read header .article-header {
+    background-image: url('../img/retina-sprite-read.png');
+  }
+  header .button,
+  header h1 {
+    background-image: url('../img/retina-sprite.png');
+    background-size: 45px 700px;
+  }
+  header a.back-button:hover,
+  .button.previous:hover,
+  .button.next:hover {
+    background-image: url('../img/retina-sprite-hover.png');
+    /* see retina overrides at bottom */
+  
+  }
+  header a.back-button:active,
+  .button.previous:active,
+  .button.next:active {
+    background-image: url('../img/retina-sprite-active.png');
+    /* see retina overrides at bottom */
+  
+  }
+  .button {
+    background-image: url('../img/button-background-default-2x.png');
+  }
+  .button.save.busy,
+  .button:hover {
+    background-image: url('../img/button-background-hover-2x.png');
+  }
+  .button.save.error,
+  .button:active {
+    background-image: url('../img/button-background-active-2x.png');
+  }
+  .button.save.success .success {
+    background-image: url('../img/retina-sprite.png');
+    background-size: 45px 700px;
+  }
+  footer .read-more .icon {
+    background-image: url('../img/retina-sprite.png');
+    background-size: 45px 700px;
+  }
+  .sidebar .cta a {
+    background-image: url('../img/cta-partner-off-2x.jpg');
+    background-size: 340px 96px;
+  }
+  .sidebar .cta a:hover,
+  .sidebar .cta a:active {
+    background-image: url('../img/cta-partner-on-2x.jpg');
+    background-size: 340px 96px;
+  }
+  .sidebar .cta-evernote a {
+    background-image: url('../img/cta-evernote-off-2x.jpg');
+    background-size: 340px 96px;
+  }
+  .sidebar .cta-evernote a:hover,
+  .sidebar .cta-evernote a:active {
+    background-image: url('../img/cta-evernote-on-2x.jpg');
+    background-size: 340px 96px;
+  }
+  .sidebar .cta-premium a,
+  .sidebar .cta-product a {
+    background-image: url('../img/cta-premium-off-2x.jpg');
+    background-size: 340px 96px;
+  }
+  .sidebar .cta-premium a:hover,
+  .sidebar .cta-premium a:active,
+  .sidebar .cta-product a:hover,
+  .sidebar .cta-product a:active {
+    background-image: url('../img/cta-premium-on-2x.jpg');
+    background-size: 340px 96px;
+  }
+}
+/* =========================================================
+	styles to support isotope transitions
+========================================================= */
+/**** disabling Isotope CSS3 transitions ****/
+/* End: Recommended Isotope styles */

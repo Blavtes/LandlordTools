@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html class="no-js caecilia" >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="css/announce-base.css">
+    <link rel="stylesheet" href="css/client-override.css">
+
+</head>
+<body>
+<header role="banner" class="banner">
+
+    <!--<h1>Announcements</h1>-->
+
+    <!--<a class="button back-button left">back</a>-->
+
+    <!--<div class="paginate">-->
+
+        <!--<a href="#" class="button previous">previous</a>-->
+
+        <!--<span class="current">1</span>-->
+        <!--/-->
+        <!--<span class="total">12</span>-->
+
+        <!--<a href="#" class="button next">next</a>-->
+
+    <!--</div>-->
+</header><!-- /.banner -->
+
+<div class="offline">
+    <div class="offline-message">This is offline</div>
+</div>
+
+<div class="scroll-content">
+
+    <section role="main" class="main home cf">
+    <div class="layout cf">
+
+        <div id="snippet-tiles" class="cf do-masonry">
+
+        </div>
+    </div>
+
+</section><!-- /.main -->
+
+<div id="big-stories"></div>
+    <footer class="page-footer">
+        <div class="layout">
+            <h3>New Announcements every week!</h3>
+        </div>
+    </footer>
+</div>
+
+<script type="text/html" id="alert-tmpl">
+    <section class="alerts">
+        <div class="layout">
+            <article class="alert">
+                <p><span class="date-time">{{item.title}}</span> {{item.description}}<BR>
+                    <% if (!_.str.isBlank(item.readMoreURI)) {%>
+                    <a href="{{item.readMoreURI}}" class="learn-more" target="_blank"><span class="icon"></span>{{item.readMoreTitle}}</a>
+                    <% } %></p>
+            </article>
+        </div>
+    </section><!-- /.alerts -->
+</script>
+<script type="text/html" id="page-header-tmpl">
+    <a class="button back-button left">{{backButtonText}}</a>
+    <div class="paginate">
+        <a href="#" class="button previous">previous</a>
+        <span class="current">1</span>
+        /
+        <span class="total">12</span>
+        <a href="#" class="button next">next</a>
+    </div>
+</script>
+<script type="text/html" id="story-tmpl">
+    <article class="snippet-tile clickable-snippet-tile partner {{item.new}} {{item.contentTypeClass}} <%if(item.read) {%> read<%}%>" id="snippet-tile-{{item.id}}" order="{{item.idx}}">
+        <a href="#">
+            <header>
+                <span class="article-header">{{item.header}}</span>
+                <h2>{{item.title}}</h2>
+                <div class="new-notice">
+                  {{item.newMsg}}
+                </div>
+            </header>
+            <div class="article-image">
+                <% if (!_.str.isBlank(item.descriptionImg)) { %>
+                <img src="{{item.descriptionImg}}" alt="photo" width="354">
+                <% } %>
+            </div>
+            <div class="description">{{item.description}} &nbsp;
+                <div class="snippet-read-more">{{item.readMoreMsg}}</div>
+            </div>
+        </a>
+    </article>
+</script>
+<script type="text/html" id="big-story-tmpl">
+    <section id="big-story-{{item.id}}" role="main" class="main article {{noSidebarClass}} cf">
+
+        <div class="layout">
+
+            <div id="content" class="content {{item.contentTypeClass}} cf">
+                <div class="header">
+                    <span class="article-header">{{item.header}}</span>
+                    <h1>{{item.title}}</h1>
+                </div>
+                {{item.content}}
+                <div class="rule"></div>
+                <footer class="cf">
+                    <%if (!_.str.isBlank(item.readMoreURI) && !_.str.isBlank(item.readMoreTitle)) {    %>
+                    <div class="half left">
+                        <a href="{{item.readMoreURI}}" class="read-more" target="_blank"><span class="icon"></span>{{item.readMoreTitle}}</a>
+                    </div>
+                    <% } %>
+
+                    <% if (!_.str.isBlank(item.enexURI)) { %>
+                    <div class="half right alignright">
+                        <a class="button save default" href="{{item.enexURI}}" data-id="{{item.id}}">
+                            <span class="default">{{page.saveButtonText}}</span>
+                            <span class="busy">{{page.saveButtonText}}</span>
+                            <span class="error">{{page.saveButtonText}}</span>
+                            <span class="success">{{page.savedMsg}}</span>
+                            <p class="save-message">{{page.saveErrorMsg}}</p>
+                        </a>
+                    </div>
+                    <% } %>
+
+                </footer>
+
+            </div>
+
+            <div class="sidebar">
+
+                <% if (!_.str.isBlank(item.ctaAppStoreURI)) { %>
+                <div class="cta cta-evernote cf"><a href="{{item.ctaAppStoreURI}}" target="_blank">
+                    <div class="icon"><img src="{{item.ctaAppStoreProductImg}}" width="50" height="50"></div>
+                    <div class="text"><b>{{item.ctaAppStoreProductTitle}}</b></div>
+                </a></div>
+                <% } %>
+                <% if (!_.str.isBlank(item.goPremiumTitle)) { %>
+                <div class="cta cta-premium cf"><a href="#" data-short-guid="{{item.id}}">
+                    <div class="text">{{item.goPremiumTitle}}</div>
+                </a></div>
+                <% } %>
+
+                <% if (!_.str.isBlank(item.ctaMarketProductTitle)) { %>
+                <div class="cta cta-product cf"><a href="{{item.ctaMarketProductURI}}" target="_blank">
+                    <div class="text">{{item.ctaMarketProductTitle}}<!--Explore Product--></div>
+                </a></div>
+                <% } %>
+
+
+                <% if (!_.str.isBlank(item.ctaMarketShopWindowTitle)) { %>
+                <div class="cta cta-evernote cf"><a href="evernote://market/shop-window">
+                    <div class="icon"><img src="img/announce-market-icon@2x.png"></div>
+                    <div class="text">{{item.ctaMarketShopWindowTitle}}<!--Shop Market--></div>
+                </a></div>
+                <% } %>
+
+
+                <% if (!_.str.isBlank(item.ctaBrowserURI)) { %>
+                <div class="cta cta-partner cf"><a href="{{item.ctaBrowserURI}}" target="_blank">
+                    <div class="text">{{item.ctaBrowserTitle}}</div>
+                </a></div>
+                <% } %>
+
+                <% if (!_.str.isBlank(item.ctaAuthenticatedLinkURI)) { %>
+                <div class="cta cta-product cf"><a href="{{item.ctaAuthenticatedLinkURI}}" target="_blank">
+                    <div class="text">{{item.ctaAuthenticatedLinkTitle}}</div>
+                </a></div>
+                <% } %>
+
+                <% if (!_.str.isBlank(item.sidebarCallout1URI)) { %>
+                <aside class="callout">
+                    <a href="{{item.sidebarCallout1URI}}" target="_blank">
+                        <img src="{{item.sidebarCallout1Img}}" />
+                        <h4>{{item.sidebarCallout1Title}}</h4>
+                    </a>
+                </aside>
+                <% } %>
+
+                <% if (!_.str.isBlank(item.sidebarCallout2URI)) { %>
+                <aside class="callout">
+                    <a href="{{item.sidebarCallout2URI}}" target="_blank">
+                        <img src="{{item.sidebarCallout2Img}}" />
+                        <h4>{{item.sidebarCallout2Title}}</h4>
+                    </a>
+                </aside>
+                <% } %>
+
+                <% if (!_.str.isBlank(item.sidebarCallout3URI)) { %>
+                <aside class="callout">
+                    <a href="{{item.sidebarCallout3URI}}" target="_blank">
+                        <img src="{{item.sidebarCallout3Img}}" />
+                        <h4>{{item.sidebarCallout3Title}}</h4>
+                    </a>
+                </aside>
+                <% } %>
+            </div>
+
+        </div>
+
+    </section>
+    <!---->
+
+</script>
+
+<div id="preload" style="visibility:hidden;">
+    <!-- preload over / pressed images to prevent blinking when first used -->
+    <img src="img/cta-partner-on.jpg" />
+    <img src="img/cta-partner-on-2x.jpg" />
+    <img src="img/cta-premium-on.jpg" />
+    <img src="img/cta-premium-on-2x.jpg" />
+    <img src="img/cta-evernote-on.jpg" />
+    <img src="img/cta-evernote-on-2x.jpg" />
+
+    <img src="img/button-sprite-active.png" />
+    <img src="img/button-sprite-active.png" />
+    <img src="img/button-sprite-hover.png" />
+    <img src="img/button-sprite-read.png" />
+    <img src="img/retina-sprite-active.png" />
+    <img src="img/retina-sprite-hover.png" />
+    <img src="img/retina-sprite-read.png" />
+</div>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="js/vendor/jquery.isotope.js"></script>
+<script src="js/vendor/underscore.js"></script>
+<script src="js/vendor/underscore.string.js"></script>
+<script src="js/vendor/pubsub.js"></script>
+<script src="js/vendor/URI.js"></script>
+<script src="js/vendor/html-sanitizer-bundle.js"></script>
+<script src="js/vendor/spin.min.js"></script>
+<script src="js/vendor/jquery.spin.js"></script>
+<script src="js/jsload.js"></script>
+<script> jsload(); </script>
+<script src="js/main.js"></script>
+<script>
+    $(function() {
+        EVAnnPresenter.run();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>zh-Hans</key>
+	<dict>
+		<key>characterCountOfCommonFN</key>
+		<integer>1</integer>
+		<key>namePatternSuggestion</key>
+		<string>姓 名</string>
+		<key>canDisplayInMultilLine</key>
+		<false/>
+		<key>patterns</key>
+		<array>
+			<integer>1</integer>
+		</array>
+	</dict>
+	<key>ja-JP</key>
+	<dict>
+		<key>characterCountOfCommonFN</key>
+		<integer>2</integer>
+		<key>namePatternSuggestion</key>
+		<string>姓 名</string>
+		<key>canDisplayInMultilLine</key>
+		<false/>
+		<key>patterns</key>
+		<array>
+			<integer>1</integer>
+		</array>
+	</dict>
+	<key>ko-KR</key>
+	<dict>
+		<key>characterCountOfCommonFN</key>
+		<integer>1</integer>
+		<key>namePatternSuggestion</key>
+		<string>성 이름</string>
+		<key>canDisplayInMultilLine</key>
+		<false/>
+		<key>patterns</key>
+		<array>
+			<integer>1</integer>
+		</array>
+	</dict>
+	<key>en-US</key>
+	<dict>
+		<key>characterCountOfCommonFN</key>
+		<integer>0</integer>
+		<key>namePatternSuggestion</key>
+		<string>First Last</string>
+		<key>canDisplayInMultilLine</key>
+		<true/>
+		<key>patterns</key>
+		<array>
+			<integer>0</integer>
+		</array>
+	</dict>
+	<key>zh-Hant</key>
+	<dict>
+		<key>characterCountOfCommonFN</key>
+		<integer>1</integer>
+		<key>namePatternSuggestion</key>
+		<string>姓 名</string>
+		<key>canDisplayInMultilLine</key>
+		<false/>
+		<key>patterns</key>
+		<array>
+			<integer>1</integer>
+		</array>
+	</dict>
+	<key>cjk-CJK</key>
+	<dict>
+		<key>characterCountOfCommonFN</key>
+		<integer>1</integer>
+		<key>namePatternSuggestion</key>
+		<string>姓 名</string>
+		<key>canDisplayInMultilLine</key>
+		<false/>
+		<key>patterns</key>
+		<array>
+			<integer>1</integer>
+		</array>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,201 @@
+/* overrides of announcement-feed stylesheet *
+
+
+/* roundup of Caecilia light */
+
+h1, h2, h3, h4, h5, h6,
+.sidebar .cta *
+{
+  font-family: "CaeciliaLTStd-Light";
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+// removes flash from transformed elements
+div, header, span, a {
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
+body {
+  height:100%;
+  width:100%;
+  margin: 0px;
+}
+
+#debug-mode-on {
+  display: none;
+  position: fixed;
+  top: 8px;
+  right: 16px;
+  z-index: 999;
+  font-family: "CaeciliaLTStd-Bold";
+  color: red;
+  text-shadow: 0px 0px 0px white;
+  transition: text-shadow 0.6s ease-in-out;
+
+  &.fadeIn {
+    text-shadow: 0px 0px 10px red;
+  }
+}
+
+.offline {
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  margin: auto;
+  display: none;
+  width: 300px;
+  height: 230px;
+  background-image:url('../img/offline-alert-icon@2x.png');
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: 0px;
+  background-size: 152px 134px;
+}
+.offline .offline-message {
+  position:absolute;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  line-height: 22px;
+  bottom:0px;
+}
+
+.scroll-content {
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  overflow: auto;
+  bottom:0px;
+}
+
+/* roundup of Caecilia bold */
+body > header h1,
+header div.paginate
+{
+  font-family: "CaeciliaLTStd-Bold";
+}
+
+
+/* roundup of Caecilia roman */
+.button.save *
+{
+  font-family: "CaeciliaLTStd-Roman";
+}
+
+.banner {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  top: 0px;
+}
+
+
+.alerts a {
+  text-decoration: none;
+  color: #9a9a9a;
+
+}
+.alerts .learn-more
+{
+  position: relative;
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: none;
+//  padding-left: 24px;
+  text-shadow: 0 1px 1px #fff;
+}
+
+.alerts href {
+  display: none;
+}
+.article {
+  border-bottom: 30px solid transparent;
+  display: none;
+}
+.scroll-content > footer
+{
+  border-bottom: 30px solid transparent;
+  display: none;
+}
+
+header .button.left {
+  display:none;
+}
+header .paginate {
+  display:none;
+}
+header a.back-button  {
+  display:none;
+}
+
+.button.save.success {
+  cursor: default;
+  pointer-events: none;
+
+  .success {
+    padding-bottom: 6px;
+  }
+}
+
+@-webkit-keyframes shrink-fade-out {
+  0% {opacity: 1.0; -webkit-transform: none;}
+  100% {opacity: 0.0; -webkit-transform: scale(.9);}
+}
+@-webkit-keyframes grow-fade-in {
+  0% {opacity: 0.0; -webkit-transform: scale(.9);}
+  100% {opacity: 1.0; -webkit-transform: scale(1.0);}
+}
+
+.shrink-fade-out {
+  -webkit-animation: shrink-fade-out .333s forwards;
+}
+.grow-fade-in {
+  display: block;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation: grow-fade-in .333s forwards;
+}
+@-webkit-keyframes shrink-fade-out-less {
+  0% {opacity: 1.0; -webkit-transform: none;}
+  100% {opacity: 0.0; -webkit-transform: scale(.95);}
+}
+@-webkit-keyframes grow-fade-in-less {
+  0% {opacity: 0.0; -webkit-transform: scale(.95);}
+  100% {opacity: 1.0; -webkit-transform: scale(1.0);}
+}
+
+.shrink-fade-out-less {
+  -webkit-animation: shrink-fade-out-less .333s forwards;
+}
+.grow-fade-in-less {
+  display: block;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation: grow-fade-in-less .333s forwards;
+}
+
+@-webkit-keyframes fade-out {
+  0% { opacity: 1.0; }
+  100% { opacity: 0.0;}
+}
+@-webkit-keyframes fade-in {
+  0% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+
+.fade-out {
+  -webkit-animation: shrink-fade-out-less .333s forwards;
+}
+
+.fade-in {
+  display: block;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation: fade-in .333s forwards;
+}

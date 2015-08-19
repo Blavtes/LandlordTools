@@ -1,0 +1,165 @@
+html.caecilia h1,
+html.caecilia .home h2,
+html.caecilia h4,
+html.caecilia h5,
+html.caecilia h6,
+html.caecilia .sidebar .cta * {
+  font-family: "Segoe UI", "&#x30E1;&#x30A4;&#x30EA;&#x30AA;", Meiryo, "MS PGothic";
+  font-weight: normal;
+}
+/* roundup of Caecilia bold */
+html.caecilia body > header h1,
+html.caecilia header div.paginate,
+html.caecilia .sidebar .cta b {
+  font-family: "Segoe UI", "&#x30E1;&#x30A4;&#x30EA;&#x30AA;", Meiryo, "MS PGothic";
+  font-weight: normal;
+}
+/* roundup of Caecilia roman */
+html.caecilia h2,
+html.caecilia h3,
+html.caecilia .button.save *,
+html.caecilia .sidebar .cta-partner .text,
+html.caecilia footer h3 {
+  font-family: "Segoe UI", "&#x30E1;&#x30A4;&#x30EA;&#x30AA;", Meiryo, "MS PGothic";
+  font-size: 18px;
+  color: #858585;
+}
+html.caecilia .sidebar .cta-partner .text {
+  color: #365770;
+  text-shadow: 0 1px 1px #fff;
+  border-color: #a5a5a5;
+}
+body {
+  background: #dbdbdb;
+  font-family: "Segoe UI", "&#x30E1;&#x30A4;&#x30EA;&#x30AA;", Meiryo, "MS PGothic";
+}
+*,
+.sidebar h4,
+html.caecilia .sidebar h4,
+.button.save .save-message {
+  font-family: "Segoe UI", "&#x30E1;&#x30A4;&#x30EA;&#x30AA;", Meiryo, "MS PGothic";
+}
+/* Header */
+body > header {
+  background: #fafafa;
+  height: 40px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #d5d5d5;
+  box-shadow: none;
+}
+body > header h1 {
+  font-size: 18px;
+  color: #858585;
+}
+body > header .paginate {
+  position: absolute;
+  right: 2px;
+  top: 4px;
+  left: auto;
+  line-height: 32px;
+  font-size: 13px;
+  color: #b1b1b1;
+}
+body > header .button {
+  text-indent: -5000%;
+}
+body > header .button.back-button {
+  text-indent: 1.7%;
+  width: 8px;
+  left: 12px;
+}
+body > header .button.previous,
+body > header .button.previous:hover,
+body > header .button.previous:active {
+  background-image: url('../img/win/arrow-left.png');
+  background-size: auto auto;
+  background-position: 50% 48%;
+}
+body > header .button.next,
+body > header .button.next:hover,
+body > header .button.next:active {
+  background-image: url('../img/win/arrow-right.png');
+  background-size: auto auto;
+  background-position: 50% 48%;
+}
+body > header a.button.back-button,
+body > header a.button.back-button:hover,
+body > header a.button.back-button:active {
+  background-image: url('../img/win/arrow-left.png');
+  background-size: auto auto;
+  background-position: 50% 48%;
+  font-size: 13px;
+}
+/* Alerts */
+.alerts .alert {
+  background-color: #fdf5e6;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e4d7be;
+  box-shadow: none;
+  text-size: 15px;
+  line-height: 21px;
+  color: #767675;
+  font-family: "Segoe UI", "&#x30E1;&#x30A4;&#x30EA;&#x30AA;", Meiryo, "MS PGothic";
+  font-weight: normal;
+  /* Actually the bold text for the alert */
+
+}
+.alerts .alert .date-time {
+  font-weight: bold;
+  color: #f7922b;
+}
+/* Style for a plain box, used for holding articles or cards */
+/* Big Note View */
+.main .content {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #d6d6d6;
+  box-shadow: none;
+}
+.main .content footer a,
+.button.save {
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-color: #e1e1e1 !important;
+  box-shadow: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  font-size: 15px;
+  line-height: 30px;
+  color: #8c8b8b;
+}
+.main .content footer a.success,
+.button.save.success {
+  border: none !important;
+}
+.main .content footer a.success .success,
+.button.save.success .success {
+  background-position: -15px -564px;
+}
+/* Card View */
+.home.main article {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #d6d6d6;
+  box-shadow: none;
+}
+.home.main article header h2 {
+  font-size: 25px;
+  color: #9b9b9b;
+  line-height: 32px;
+}
+.home.main article .description {
+  font-size: 14px;
+  line-height: 23px;
+  color: #656565;
+}
+.home.main article .description .snippet-read-more {
+  font-size: 14px;
+  line-height: 23px;
+}
+.home.main article.read {
+  box-shadow: none;
+}

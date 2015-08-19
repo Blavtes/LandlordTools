@@ -1,0 +1,27 @@
+EV.i18n.setMessages({
+    "See your notes on a map.":"Zobacz swoje notatki na mapie.",
+    "Atlas organizes your notes by location.":
+        "Atlas segreguje notatki wg lokalizacji.",
+    "Connect to the Internet to view Atlas":"Nawiąż połączenie z internetem, aby wyświetlić Atlas",
+    "Loading...":"Wczytywanie...",
+	"All Notes" : "Wszystkie notatki",
+	"Atlas Notes" : "Notatki programu Atlas",
+	"Evernote Atlas": "Evernote Atlas",
+	"Notes from Map": "Notatki z mapy",
+    "Notes": "Notatki",
+    "Food notes": "Notatki programu Food",
+    "Hello notes": "Notatki programu Hello",
+    "View all": "Wyświetl wszystko",
+    "View all num notes": "Wyświetl wszystkie notatki: {{ 0 }}",
+    "View all num note": "Wyświetl wszystkie notatki: {{ 0 }}",
+	"num Note": "{{ 0 }} notatka",
+	"num note": "{{ 0 }} notatka",
+	"num Notes": "Notatki: {{ 0 }}",
+	"num notes": "Notatki: {{ 0 }}",
+    "Europe": "Europa",
+    "Asia":"Azja",
+    "North America":"Ameryka Północna",
+    "South America":"Ameryka Południowa",
+    "Australia":"Australia",
+    "Africa":"Afryka"
+});

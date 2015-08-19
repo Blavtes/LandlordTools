@@ -1,0 +1,27 @@
+EV.i18n.setMessages({
+    "See your notes on a map.":"Notlarınızı haritada görün.",
+    "Atlas organizes your notes by location.":
+        "Atlas notlarınızı konuma göre düzenler.",
+    "Connect to the Internet to view Atlas":"Atlas'ı görüntülemek için Internet'e bağlan",
+    "Loading...":"Yükleniyor...",
+	"All Notes" : "Tüm Notlar",
+	"Atlas Notes" : "Atlas Notlari",
+	"Evernote Atlas": "Evernote Atlas",
+	"Notes from Map": "Haritadan Notlar",
+    "Notes": "Notlar",
+    "Food notes": "Food notları",
+    "Hello notes": "Hello notları",
+    "View all": "Tümünü göster",
+    "View all num notes": "{{ 0 }} notun tamamını göster",
+    "View all num note": "{{ 0 }} notun tamamını göster",
+	"num Note": "{{ 0 }} Not",
+	"num note": "{{ 0 }} not",
+	"num Notes": "{{ 0 }} Not",
+	"num notes": "{{ 0 }} not",
+    "Europe": "Avrupa",
+    "Asia":"Asya",
+    "North America":"Kuzey Amerika",
+    "South America":"Güney Amerika",
+    "Australia":"Avustralya",
+    "Africa":"Afrika"
+});

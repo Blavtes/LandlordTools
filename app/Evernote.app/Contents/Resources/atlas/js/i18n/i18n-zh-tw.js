@@ -1,0 +1,27 @@
+EV.i18n.setMessages({
+    "See your notes on a map.":"在地圖上查看您的記事。",
+    "Atlas organizes your notes by location.":
+        "地圖集可按照位置編排您的記事。",
+    "Connect to the Internet to view Atlas":"連線至網際網路以瀏覽 Atlas。",
+    "Loading...":"載入中...",
+	"All Notes" : "所有記事",
+	"Atlas Notes" : "地圖集記事",
+	"Evernote Atlas": "Evernote 地圖集",
+	"Notes from Map": "地圖記事",
+    "Notes": "記事",
+    "Food notes": "Food 記事",
+    "Hello notes": "Hello 記事",
+    "View all": "檢視全部",
+    "View all num notes": "檢視全部 {{ 0 }} 記事",
+    "View all num note": "檢視全部 {{ 0 }} 記事",
+	"num Note": "{{ 0 }} 則記事",
+	"num note": "{{ 0 }} 則記事",
+	"num Notes": "{{ 0 }} 則記事",
+	"num notes": "{{ 0 }} 則記事",
+    "Europe": "歐洲",
+    "Asia":"亞洲",
+    "North America":"北美",
+    "South America":"南美",
+    "Australia":"澳大利亞",
+    "Africa":"非洲"
+});

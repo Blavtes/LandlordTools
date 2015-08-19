@@ -12,11 +12,13 @@
 #import "RMTUtilityLogin.h"
 #import <Masonry/Masonry.h>
 #import "RMTLoginViewController.h"
+#import "MBProgressHUD.h"
 
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 @interface AddHouseViewController () <UITableViewDataSource,UITableViewDelegate,AddHouseChangeCellHeightDelegate>
 @property (nonatomic, assign) BOOL showData;
 @property (nonatomic, strong) NSMutableArray *buildArr;
+@property (weak, nonatomic) IBOutlet UIView *hubView;
 @end
 
 @implementation AddHouseViewController
@@ -27,7 +29,8 @@
     [_tableView registerNib:nib1 forCellReuseIdentifier:@"AddHouseViewCell"];
     
     _buildArr = [NSMutableArray arrayWithCapacity:0];
-    
+    [self showHUDView];
+    __weak __typeof(self)weakSelf = self;
     [[RMTUtilityLogin sharedInstance] requestGetMyBuildingsWithLogicId:@"F30645C539BC8B8E5A8293F1A2C7E767" complete:^(NSError *error, AddBuildModleData *buildData) {
         NSLog(@"builrd %@",buildData);
         if (buildData.code == RMTRequestBackCodeSucceed) {
@@ -48,6 +51,7 @@
                 [_tableView reloadData];
             }
         }
+        [weakSelf hideHUDView];
     }];
     // Do any additional setup after loading the view from its nib.
 }
@@ -125,12 +129,15 @@
     data.oprType = RMTUpdataMyBuildAddType;
     
     NSArray *arr = [NSArray arrayWithObjects:data, nil];
+    [self showHUDView];
+    __weak __typeof(self)weakSelf = self;
     [[RMTUtilityLogin sharedInstance] requestUpdateMyBuilingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId] whithBuildData:arr complete:^(NSError *error, BackOject *object) {
         if (object.code == RMTRequestBackCodeSucceed) {
             [_buildArr addObject:data];
             [_tableView reloadData];
         }
         NSLog(@"add code %d %@",object.code,object.message);
+        [weakSelf hideHUDView];
     }];
    
 }
@@ -142,11 +149,14 @@
     }
 
     data.oprType = RMTUpdataMyBuildUpdataType;
+    [self showHUDView];
+    __weak __typeof(self)weakSelf = self;
     [[RMTUtilityLogin sharedInstance] requestUpdateMyBuilingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId] whithBuildData:[NSArray arrayWithObject:data] complete:^(NSError *error, BackOject *object) {
         if (object.code == RMTRequestBackCodeSucceed) {
            [_buildArr replaceObjectAtIndex:row withObject:data];
         }
         NSLog(@"reflashData code %d %@",object.code,object.message);
+        [weakSelf hideHUDView];
     }];
      
     
@@ -157,12 +167,15 @@
     if (row < _buildArr.count) {
         AddBuildArrayData *data = [_buildArr objectAtIndex:row];
         data.oprType = RMTUpdataMyBuildDeletedType;
+        [self showHUDView];
+        __weak __typeof(self)weakSelf = self;
         [[RMTUtilityLogin sharedInstance] requestUpdateMyBuilingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId] whithBuildData:[NSArray arrayWithObject:data] complete:^(NSError *error, BackOject *object) {
             if (object.code == RMTRequestBackCodeSucceed) {
                 [_buildArr removeObjectAtIndex:row];
                 [_tableView reloadData];
             }
             NSLog(@"delet code %d %@",object.code,object.message);
+            [weakSelf hideHUDView];
         }];
     }
     NSLog(@"delete build index %d",row);
@@ -196,6 +209,8 @@
         data.oprType = RMTUpdataMyBuildUpdataType;
     }
     if ([[RMTUtilityLogin sharedInstance] getLogId]) {
+        [self showHUDView];
+        __weak __typeof(self)weakSelf = self;
         [[RMTUtilityLogin sharedInstance] requestUpdateMyBuilingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId]
                                                               whithBuildData:_buildArr
                                                                     complete:^(NSError *error, BackOject *object) {
@@ -203,6 +218,7 @@
                                                                             
                                                                         }
                                                                         NSLog(@"delet code %d %@",object.code,object.message);
+                                                                        [weakSelf hideHUDView];
                                                                     }];
     } else {
         RMTLoginViewController *vc = [[RMTLoginViewController alloc] init];
@@ -212,6 +228,17 @@
 }
 
 
+- (void)showHUDView
+{
+    _hubView.hidden = NO;
+    [MBProgressHUD showHUDAddedTo:_hubView animated:YES];
+}
+
+- (void)hideHUDView
+{
+    _hubView.hidden = YES;
+    [MBProgressHUD hideHUDForView:_hubView animated:YES];
+}
 /*
 #pragma mark - Navigation
 

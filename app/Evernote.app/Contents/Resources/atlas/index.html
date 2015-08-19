@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Evernote Atlas</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="js/libs/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="css/leaflet.markercluster.css">
+    <link rel="stylesheet" href="css/atlas.css">
+
+    <script src="js/libs/jquery-1.9.1.min.js"></script>
+    <script src="js/libs/underscore.js"></script>
+    <script src="js/libs/underscore.string.js"></script>
+
+    <script src="js/evHelper.js"></script>
+    <script src="js/libs/i18n2.js"></script>
+    <script src="js/libs/json2.js"></script>
+    <script src="js/libs/leaflet/leaflet-src.evernote.js"></script>
+    <script src="js/libs/leaflet.markercluster-src.js"></script>
+    <script src="js/libs/jquery-transit.js"></script>
+    <script src="js/countries.js"></script>
+
+    <script src="js/plugins.js"></script>
+    <script src="js/jsload.js"></script>
+    <script> jsload(); </script>
+    <script >
+      EV.drawAtlas = true;
+    </script>
+    <script src="js/atlasMB.js"></script>
+  </head>
+  <body>
+    <script type="text/html" id="card-tmpl">
+      <div class="atlas-card map-card">
+        <div class="supertitle" id="supertitle-{{idx}}"></div>
+        <div class="title" id="title-{{idx}}" >{{place}}</div>
+        <div class="subtitle" id="subtitle-{{idx}}">{{numNotes}}</div>
+        <div class="map-div map-div-small" id="map-canvas-{{idx}}"></div>
+      </div>
+    </script>
+    <script type="text/html" id="card-tmpl-fle">
+      <div class="atlas-card fle-card">
+        <div class="flesubtitle" id="subtitle-{{idx}}">{{subtitle}}</div>
+        <div class="fle-message" id="fle-message-{{idx}}" ><span>{{message}}</span></div>
+      </div>
+    </script>
+    <script type="text/html" id="flyout-tmpl">
+      <div class="flyout-dialog">
+        <div class="top-left"></div>
+        <div class="top-mid"></div>
+        <div class="top-right"></div>
+        <div class="mid-left-top"></div>
+        <div class="arrow-left"></div>
+        <div class="mid-left-bottom"></div>
+        <div class="mid-mid"></div>
+        <div class="mid-right"></div>
+        <div class="bottom-left"></div>
+        <div class="bottom-mid"></div>
+        <div class="bottom-right"></div>
+      </div>
+    </script>
+    <script type="text/html" id="flyout-table-tmpl">
+      <table class="flyout-table">
+        <% _.each(rows, function(row, index) { %>
+        <% if (rows.length === 1) { %>
+        <tr class="flyout-row {{row.typeId}}">
+          <td class="flyout-img"><div class="flyout-inner-wrapper"><img src="img/flyout/atlas-{{row.typeId}}-icon{{retina}}.png"></div></td>
+          <td class="flyout-type" colspan=2><div class="flyout-inner-wrapper">{{row.type}}</div></td>
+        </tr>
+        <% } else { %>
+        <tr class="flyout-row {{row.typeId}}">
+          <td class="flyout-img"><div class="flyout-inner-wrapper"><img src="img/flyout/atlas-{{row.typeId}}-icon{{retina}}.png"></div></td>
+          <td class="flyout-type"><div class="flyout-inner-wrapper">{{row.type}}</div></td>
+          <td class="flyout-num"><div class="flyout-inner-wrapper">{{row.numOfType}}</div></td>
+        </tr>
+        <% } %>
+        <% if (index < rows.length -1) { %>
+        <tr class="flyout-divider-row"><div><td colspan=3><div class="flyout-divider"></div></td></div></tr>
+        <% } %>
+        <% }); %>
+        </table>
+    </script>
+
+    <script type="text/html" id="card-back-tmpl">
+      <div class="card-back">
+        <div class="map-container">
+          <div class="map-emboss">
+            <img class="map-emboss-compass" src="img/places/atlas-emboss-dark-compass{{retina}}.png">
+            <img class="map-emboss-evernote" src="img/places/atlas-emboss-dark-logo{{retina}}.png">
+          </div>
+          <div class="map-div map-div-large" id="map-big"></div>
+        </div>
+      </div>
+    </script>
+    <script type="text/html" id="close-button-tmpl">
+      <div class="close-button big-control">
+        <img src="img/places/atlas-button-close{{retina}}.png">
+      </div>
+    </script>
+    <script type="text/html" id="map-big-tmpl">
+      <div class="map-label-big big-control">California</div>
+      <!--<div class="location-disclosure-icon"><img src="img/places/places-menu-disclosure-icon.png"></div>-->
+      <div class="controls">
+        <div class="findme big-control"></div>
+        <!--<div class="search-box"><input class="search-input" placeholder="Filter notes" type="search" results="5" autosave="com.evernote.atlas" style="font-size: 20px; width: 220px"></div>-->
+        <div class="all-notes-button big-control">
+          <div class="all-notes-button-text">Loading...</div>
+          <div class="leftcap"></div>
+          <div class="mid" ></div>
+          <div class="rightcap"></div>
+        </div>
+        <div class="zoom-slider-container big-control">
+          <div class="zoom-out big-control"></div>
+          <div class="zoom-slider">
+            <div class="zoom-slider-bg">
+              <input type="range"  min="2" max="17" step="1" value="2" id="rounded-border" class="big-control">
+            </div>
+          </div>
+          <div class="zoom-in big-control"></div>
+        </div>
+
+      </div>
+    </script>
+    <div id="page"></div>
+
+    <div id="preload" style="visibility:hidden;">
+      <!-- preload over / pressed images to prevent blinking when first used -->
+      <img src="img/places/atlas-card.png" />
+      <img src="img/places/atlas-card@2x.png" />
+      <img src="img/places/atlas-button-view-leftcap-pressed.png" />
+      <img src="img/places/atlas-button-view-leftcap-over.png" />
+      <img src="img/places/atlas-button-view-mid-pressed.png" />
+      <img src="img/places/atlas-button-view-mid-over.png" />
+      <img src="img/places/atlas-button-view-rightcap-pressed.png" />
+      <img src="img/places/atlas-button-view-rightcap-over.png" />
+      <img src="img/places/atlas-button-findme-pressed.png" />
+      <img src="img/places/atlas-button-findme-over.png" />
+      <img src="img/places/atlas-button-zoom-in-pressed.png" />
+      <img src="img/places/atlas-button-zoom-in-over.png" />
+      <img src="img/places/atlas-button-zoom-out-pressed.png" />
+      <img src="img/places/atlas-button-zoom-out-over.png" />
+      <img src="img/flags/atlas-01-hover.png" />
+      <img src="img/flags/atlas-02-hover.png" />
+      <img src="img/flags/atlas-03-hover.png" />
+      <img src="img/flags/atlas-04-hover.png" />
+      <img src="img/places/atlas-button-view-leftcap-pressed@2x.png" />
+      <img src="img/places/atlas-button-view-leftcap-over@2x.png" />
+      <img src="img/places/atlas-button-view-mid-pressed@2x.png" />
+      <img src="img/places/atlas-button-view-mid-over@2x.png" />
+      <img src="img/places/atlas-button-view-rightcap-pressed@2x.png" />
+      <img src="img/places/atlas-button-view-rightcap-over@2x.png" />
+      <img src="img/places/atlas-button-findme-pressed@2x.png" />
+      <img src="img/places/atlas-button-findme-over@2x.png" />
+      <img src="img/places/atlas-button-zoom-in-pressed@2x.png" />
+      <img src="img/places/atlas-button-zoom-in-over@2x.png" />
+      <img src="img/places/atlas-button-zoom-out-pressed@2x.png" />
+      <img src="img/places/atlas-button-zoom-out-over@2x.png" />
+      <img src="img/flags/atlas-01-hover@2x.png" />
+      <img src="img/flags/atlas-02-hover@2x.png" />
+      <img src="img/flags/atlas-03-hover@2x.png" />
+      <img src="img/flags/atlas-04-hover@2x.png" />
+    </div>
+
+  </body>
+</html>

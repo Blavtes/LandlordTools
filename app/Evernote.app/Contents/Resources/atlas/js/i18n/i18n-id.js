@@ -1,0 +1,27 @@
+EV.i18n.setMessages({
+    "See your notes on a map.":"Lihat catatan Anda pada peta.",
+    "Atlas organizes your notes by location.":
+        "Atlas mengatur catatan Anda berdasarkan lokasinya.",
+    "Connect to the Internet to view Atlas":"Sambungkan ke Internet untuk melihat Atlas",
+    "Loading...":"Memuat...",
+	"All Notes" : "Semua Catatan",
+	"Atlas Notes" : "Catatan Atlas",
+	"Evernote Atlas": "Evernote Atlas",
+	"Notes from Map": "Catatan dari Peta",
+    "Notes": "Catatan",
+    "Food notes": "Catatan Food",
+    "Hello notes": "Catatan Hello",
+    "View all": "Lihat semua",
+    "View all num notes": "Lihat semua catatan {{ 0 }}",
+    "View all num note": "Lihat semua catatan {{ 0 }}",
+	"num Note": "Catatan {{ 0 }}",
+	"num note": "Catatan {{ 0 }}",
+	"num Notes": "Catatan {{ 0 }}",
+	"num notes": "Catatan {{ 0 }}",
+    "Europe": "Eropa",
+    "Asia":"Asia",
+    "North America":"Amerika Utara",
+    "South America":"Amerika Selatan",
+    "Australia":"Australia",
+    "Africa":"Afrika"
+});

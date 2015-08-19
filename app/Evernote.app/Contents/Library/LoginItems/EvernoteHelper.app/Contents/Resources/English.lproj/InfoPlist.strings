@@ -1,0 +1,11 @@
+/* 
+  InfoPlist.strings
+  EvernoteHelper
+
+  Created by Zdzislaw Losvik on 25/02/2013.
+
+*/
+
+NSContactsUsageDescription = "Evernote can help you work together with friends and colleagues.";
+
+NSCalendarsUsageDescription = "Evernote can help you prepare notes and track progress for more productive meetings.";

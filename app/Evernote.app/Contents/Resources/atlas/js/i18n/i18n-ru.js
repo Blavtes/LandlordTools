@@ -1,0 +1,27 @@
+EV.i18n.setMessages({
+    "See your notes on a map.":"Посмотреть заметки на карте.",
+    "Atlas organizes your notes by location.":
+        "Атлас организует ваши заметки по местоположению.",
+    "Connect to the Internet to view Atlas":"Для просмотра Атласа необходимо соединение с Интернетом",
+    "Loading...":"Загружаю...",
+	"All Notes" : "Все заметки",
+	"Atlas Notes" : "Заметки на атласе",
+	"Evernote Atlas": "Атлас Evernote",
+	"Notes from Map": "Заметки с карты",
+    "Notes": "Заметки",
+    "Food notes": "Заметки Food",
+    "Hello notes": "Заметки Hello",
+    "View all": "Показать все",
+    "View all num notes": "Показать все {{ 0 }} заметок",
+    "View all num note": "Показать всю {{ 0 }} заметку",
+	"num Note": "{{ 0 }} заметка",
+	"num note": "{{ 0 }} заметка",
+	"num Notes": "{{ 0 }} заметок",
+	"num notes": "{{ 0 }} заметок",
+    "Europe": "Европа",
+    "Asia":"Азия",
+    "North America":"Северная Америка",
+    "South America":"Южная Америка",
+    "Australia":"Австралия",
+    "Africa":"Африка"
+});

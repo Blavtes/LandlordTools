@@ -1,0 +1,697 @@
+
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" version="2.0">
+  <channel xmlns:evernote="http://evernote.com">
+    <title>Announcements Beta Blog</title>
+    <atom:link href="https://announcements.corp.etonreve.com/custom-feed/?locale=en_US&amp;platformProduct=mac-evernote" rel="self" type="application/rss+xml" />
+    <link>https://announcements.corp.etonreve.com/custom-feed/?locale=en_US&amp;platformProduct=mac-evernote</link>
+    <description>Just another Evernote Blog site</description>
+    <lastBuildDate>Thu, 18 Apr 2013 16:00:31 +0000</lastBuildDate>
+    <language>en-US</language>
+    <sy:updatePeriod>hourly</sy:updatePeriod>
+    <sy:updateFrequency>1</sy:updateFrequency>
+    <evernote:pageTitle>Announcements (l10n)</evernote:pageTitle>
+    <evernote:saveButtonText>Save to Evernote (l10n)</evernote:saveButtonText>
+    <evernote:savedMsg>Saved to Evernote (l10n)</evernote:savedMsg>
+    <evernote:saveErrorMsg>Unable to save due to network error (l10n)</evernote:saveErrorMsg>
+    <item>
+      <title>Get to Know: Reminders </title>
+      <pubDate>Tue, 11 Jun 2013 8:24:21 +0000</pubDate>
+      <dc:creator>khickey</dc:creator>
+      <guid isPermaLink="true">https://announcements.corp.etonreve.com/?p=193</guid>
+      <evernote:shortGuid>ipad-evernote-193</evernote:shortGuid>
+
+      <evernote:userPrivilege>Everyone</evernote:userPrivilege>			<evernote:contentCategory>updates</evernote:contentCategory>			<evernote:contentCategoryTitle>Updates</evernote:contentCategoryTitle>
+      <evernote:descriptionImg>https://announcements.corp.etonreve.com/wp-content/uploads/2013/06/Reminder_1-300x145.jpg</evernote:descriptionImg>
+      <evernote:ctaAppStoreURI></evernote:ctaAppStoreURI>
+      <evernote:ctaAppStoreProductTitle></evernote:ctaAppStoreProductTitle>
+      <evernote:ctaAppStoreProductImg></evernote:ctaAppStoreProductImg>
+      <evernote:ctaMarketURI></evernote:ctaMarketURI>
+      <evernote:ctaMarketProductTitle></evernote:ctaMarketProductTitle>
+      <evernote:ctaMarketProductImg></evernote:ctaMarketProductImg>
+
+      <evernote:ctaBrowserURI></evernote:ctaBrowserURI>
+      <evernote:ctaBrowserTitle></evernote:ctaBrowserTitle>
+
+      <evernote:enexURI>https://announcements.corp.etonreve.com/wp-content/uploads/2013/05/reminders.enex</evernote:enexURI>
+      <evernote:applicationVersion>5.5</evernote:applicationVersion>
+      <evernote:readMoreURI></evernote:readMoreURI>
+      <evernote:readMoreTitle></evernote:readMoreTitle>
+      <evernote:sidebarCallout1URI>http://www.youtube.com/watch?v=afyORbYS7Hs</evernote:sidebarCallout1URI>
+      <evernote:sidebarCallout1Title>Reminders Overview</evernote:sidebarCallout1Title>
+      <evernote:sidebarCallout1Img>https://announcements.corp.etonreve.com/wp-content/uploads/2013/06/video_reminders-150x150.png</evernote:sidebarCallout1Img>
+      <evernote:sidebarCallout2URI></evernote:sidebarCallout2URI>
+      <evernote:sidebarCallout2Title></evernote:sidebarCallout2Title>
+      <evernote:sidebarCallout2Img></evernote:sidebarCallout2Img>
+      <evernote:sidebarCallout3URI></evernote:sidebarCallout3URI>
+      <evernote:sidebarCallout3Title></evernote:sidebarCallout3Title>
+      <evernote:sidebarCallout3Img></evernote:sidebarCallout3Img>
+      <description>
+        <![CDATA[
+
+Use Reminders to keep all of your projects and ideas on track. 
+]]>
+      </description>
+      <content:encoded>
+        <![CDATA[
+
+<img src="https://announcements.corp.etonreve.com/wp-content/uploads/2013/06/Reminder_1-1024x495.jpg" /> <p>With Reminders, we&#8217;ve rolled up our three most requested features into one small package:</p>
+<ul>
+<li>In-app and email Alarms</li>
+<li>Quick note based to-do lists</li>
+<li>Pinning notes to the top of your note list</li>
+</ul>
+<p>Reminders are incredibly easy to use. You can add a Reminder to a note by simply tapping on the alarm clock icon in a note. If you like, set a date and time for when this note must be completed.</p>
+<p>You’ll get an in-app alarm and, optionally, an email the day that a Reminder is due. Once set, you’ll see the note title appear in the new Reminder section at the top of the note list. You can change the order of Reminders simply by dragging them around. When you complete your task, tap on the check or, on iOS, swipe to remove the Reminder from the list.</p>
+<p>Like most things in Evernote, Reminders sync across all versions of the app that support the new feature.</p>
+<h3>Reminders and Notebooks</h3>
+<p>To keep your Reminders nicely organized, we’ve made them notebook-based. Whenever you add a Reminder to a note, it will appear in the Reminder section within that notebook. This is a perfect way to keep various projects separated. Of course, if you want to see them all in one place, simply go to the All Notes view.</p>
+<h3>Shared Reminders</h3>
+<p>By associating Reminders with notebooks, we’re able to do some really cool stuff. First, since Reminders show up at the top of a given notebook, they can be used as a handy way to highlight the most important notes in that notebook—it’s like creating a quick table of contents for your visitors. In addition, anyone who has access to your notebook is able to subscribe to be notified when notes come due. This way the entire team will stay informed about group projects and tasks.</p>
+<h3>Great for Business</h3>
+<p>All of these features are also available to our Evernote Business users, so that you’re not just sharing your team’s knowledge, but also moving your projects forward.</p>
+<h3>4 Ways to Use Reminders Right Now</h3>
+<p><strong>Birthday gifts</strong><br />
+Evernote has always been a great way to clip gift ideas. Create a notebook called Gift ideas, and add notes containing gifts for your friends and family. Add a Reminder to each note set to a week before the person’s birthday. Now you’ll know what to get and when to get it.</p>
+<p><strong>Project planning</strong><br />
+At Evernote, we use Reminders to plan all of our video projects. We’ve set up a shared notebook with the team called Video Projects. In it, we have a running list of all ongoing projects and their completion dates. If something needs to be reprioritized, we drag it to the top of the list. Once a project is completed, it’s marked as done and we’re on to the next one.</p>
+<p><strong>Packing right</strong><br />
+You’ll never forget your toothbrush again. Create your packing list note and set a Reminder to go off a few hours before the trip. Because Reminders are associated with notes, you’ll not only be notified to check your packing list, but you’ll also see the entire thing. If you have everything you need, mark the note as done.</p>
+<p><strong>Doctors orders</strong><br />
+Before heading off to the doctor’s office for a checkup, create a note with questions that you want to be sure to cover. Set a Reminder for the time of the appointment and you won’t miss a thing. Repeat this the next time you have an appointment so that you have a running history of past questions and answers.</p>
+
+<p><a data-authenticate-service="/User.action">Account Settings</a></p>
+]]>
+      </content:encoded>
+    </item>
+    <item>
+      <title>Five Actionable Ways to Use Evernote to Kickstart a Project</title>
+      <pubDate>Mon, 10 Jun 2013 23:41:28 +0000</pubDate>
+      <dc:creator>khickey</dc:creator>
+      <guid isPermaLink="true">https://announcements.corp.etonreve.com/?p=189</guid>
+      <evernote:shortGuid>android-evernote-189</evernote:shortGuid>
+
+      <evernote:userPrivilege>Everyone</evernote:userPrivilege>			<evernote:contentCategory>tips-and-guides</evernote:contentCategory>			<evernote:contentCategoryTitle>Tips &amp; Guides</evernote:contentCategoryTitle>
+      <evernote:descriptionImg>https://announcements.corp.etonreve.com/wp-content/uploads/2013/06/Inspiration_1-300x158.jpg</evernote:descriptionImg>
+      <evernote:ctaAppStoreURI></evernote:ctaAppStoreURI>
+      <evernote:ctaAppStoreProductTitle></evernote:ctaAppStoreProductTitle>
+      <evernote:ctaAppStoreProductImg></evernote:ctaAppStoreProductImg>
+      <evernote:ctaMarketURI></evernote:ctaMarketURI>
+      <evernote:ctaMarketProductTitle></evernote:ctaMarketProductTitle>
+      <evernote:ctaMarketProductImg></evernote:ctaMarketProductImg>
+
+      <evernote:ctaBrowserURI></evernote:ctaBrowserURI>
+      <evernote:ctaBrowserTitle></evernote:ctaBrowserTitle>
+
+      <evernote:enexURI>https://announcements.corp.etonreve.com/wp-content/uploads/2013/05/kickstart_project.enex</evernote:enexURI>
+      <evernote:applicationVersion></evernote:applicationVersion>
+      <evernote:readMoreURI>http://blog.evernote.com/blog/category/tips-guides/</evernote:readMoreURI>
+      <evernote:readMoreTitle>Read More Tips</evernote:readMoreTitle>
+      <evernote:sidebarCallout1URI></evernote:sidebarCallout1URI>
+      <evernote:sidebarCallout1Title></evernote:sidebarCallout1Title>
+      <evernote:sidebarCallout1Img></evernote:sidebarCallout1Img>
+      <evernote:sidebarCallout2URI></evernote:sidebarCallout2URI>
+      <evernote:sidebarCallout2Title></evernote:sidebarCallout2Title>
+      <evernote:sidebarCallout2Img></evernote:sidebarCallout2Img>
+      <evernote:sidebarCallout3URI></evernote:sidebarCallout3URI>
+      <evernote:sidebarCallout3Title></evernote:sidebarCallout3Title>
+      <evernote:sidebarCallout3Img></evernote:sidebarCallout3Img>
+      <description>
+        <![CDATA[
+
+Evernote will help you capture inspiration, stay organized and track your progress through any project.
+]]>
+      </description>
+      <content:encoded>
+        <![CDATA[
+
+<img src="https://announcements.corp.etonreve.com/wp-content/uploads/2013/06/Inspiration_1-1024x540.jpg" /> <h3>1. Capture Inspiration</h3>
+<p>In the infancy phase of your project, you may want to spend time collecting inspiration. Clip things from the web using the Evernote Web Clipper, snap photos of sketches and handwritten ideas using Evernote on your mobile device, jot down your ideas using Evernote on your desktop, mobile device or the Web. </p>
+<h3>2. Set Some Goals</h3>
+<p>Holding yourself accountable to a few set goals will help you achieve them. Create a checklist with high-level goals in your Evernote account. Be as specific or broad as you need to be and make sure to revisit this goal list often from your desktop and mobile device.</p>
+<h3>3. Collect Supporting Documents</h3>
+<p>As you start to move from concept to execution, you’ll want to collect any relevant documentation in one place. With Evernote, you can attach files (in a variety of formats) to notes and forward email correspondences into your Evernote account. Any attachments contained in the emails will be available right inside your Evernote account.</p>
+<h3>4. Put Two Heads Together</h3>
+<p>Get feedback on your project, or work with a partner by simply sharing your project notebook. If both parties are Premium subscribers, you’ll both be able to modify notes so you can quickly iterate.</p>
+<h3>5. Work On The Go</h3>
+<p>A creative project demands flexibility and Evernote gives you plenty of it. You can work on your project wherever you happen to be — at the airport, in another country, at home, in the office, and even on a park bench.</p>
+
+]]>
+      </content:encoded>
+    </item>
+    <item>
+      <title>Evernote’s Three Laws of Data Protection</title>
+      <pubDate>Mon, 10 Jun 2013 19:29:28 +0000</pubDate>
+      <dc:creator>asinkov</dc:creator>
+      <guid isPermaLink="true">https://announcements.corp.etonreve.com/?p=279</guid>
+      <evernote:shortGuid>android-evernote-279</evernote:shortGuid>
+
+      <evernote:userPrivilege>Everyone</evernote:userPrivilege>			<evernote:contentCategory>our-notes</evernote:contentCategory>			<evernote:contentCategoryTitle>Our Notes</evernote:contentCategoryTitle>
+      <evernote:descriptionImg>https://announcements.corp.etonreve.com/wp-content/uploads/2013/06/DataProtection_1-300x91.jpg</evernote:descriptionImg>
+      <evernote:ctaAppStoreURI></evernote:ctaAppStoreURI>
+      <evernote:ctaAppStoreProductTitle></evernote:ctaAppStoreProductTitle>
+      <evernote:ctaAppStoreProductImg></evernote:ctaAppStoreProductImg>
+      <evernote:ctaMarketURI></evernote:ctaMarketURI>
+      <evernote:ctaMarketProductTitle></evernote:ctaMarketProductTitle>
+      <evernote:ctaMarketProductImg></evernote:ctaMarketProductImg>
+
+      <evernote:ctaBrowserURI></evernote:ctaBrowserURI>
+      <evernote:ctaBrowserTitle></evernote:ctaBrowserTitle>
+
+      <evernote:enexURI>https://announcements.corp.etonreve.com/wp-content/uploads/2013/05/3laws.enex</evernote:enexURI>
+      <evernote:applicationVersion></evernote:applicationVersion>
+      <evernote:readMoreURI>http://blog.evernote.com/blog/category/our-notes/</evernote:readMoreURI>
+      <evernote:readMoreTitle></evernote:readMoreTitle>
+      <evernote:sidebarCallout1URI></evernote:sidebarCallout1URI>
+      <evernote:sidebarCallout1Title></evernote:sidebarCallout1Title>
+      <evernote:sidebarCallout1Img></evernote:sidebarCallout1Img>
+      <evernote:sidebarCallout2URI></evernote:sidebarCallout2URI>
+      <evernote:sidebarCallout2Title></evernote:sidebarCallout2Title>
+      <evernote:sidebarCallout2Img></evernote:sidebarCallout2Img>
+      <evernote:sidebarCallout3URI></evernote:sidebarCallout3URI>
+      <evernote:sidebarCallout3Title></evernote:sidebarCallout3Title>
+      <evernote:sidebarCallout3Img></evernote:sidebarCallout3Img>
+      <description>
+        <![CDATA[
+
+We'd like to clearly spell out our core guiding principles for how we treat your data.
+]]>
+      </description>
+      <content:encoded>
+        <![CDATA[
+
+<img src="https://announcements.corp.etonreve.com/wp-content/uploads/2013/06/DataProtection_1-1024x313.jpg" /> <p>Evernote&#8217;s goal is to become the <strong>permanent, trusted and ubiquitous</strong> place for all the world&#8217;s memories. Each of those words is very important to us, so we&#8217;d like to clearly spell out our core guiding principles for how we treat your data.</p>
+<p>Everything we do at Evernote follows these three basic rules:</p>
+<ol>
+<li>Your Data is <em>Yours</em></li>
+<li>Your Data is <em>Protected</em></li>
+<li>Your Data is <em>Portable</em></li>
+</ol>
+<h3>1. Your Data is Yours</h3>
+<p>We do not own your data. Putting notes and other content into Evernote does not change its ownership or copyright status. If the data was yours to begin with, it remains yours after you put it in Evernote.</p>
+<p>By putting data in Evernote, you give us permission to do certain things with it for the purpose of running our service. For example, you give us permission to back it up, send it on a network, index it for searching, display it on your phone, etc. Some of these operations may require us to send your data to our normal business partners–such as a network operator–that we have contracted with to provide parts of the Evernote Service.</p>
+<p>Other than giving us the permission to perform these limited operations so we can run the Evernote Service, you retain all the rights to your data.</p>
+<h3>2. Your Data is Protected</h3>
+<p>Everything you put into Evernote is private by default. We never look at it, analyze it, share it, use it to target ads, data mine it, etc.&mdash;unless you specifically ask us to do one of these things. Our business model does not depend on &#8220;monetizing&#8221; your data in any way. Rather, it depends on building trust and providing a great service that more and more people choose to pay for.</p>
+<p>There are features in Evernote which allow you to publish and share some of your notes with others, but these are totally optional and whether or not you use them is up to you. If you choose to connect your Evernote account with one of our many partners, you may be giving the partner access to your data. We will tell you how the partner application will access your account and you can turn off access whenever you want.</p>
+<p>In addition, we take many precautions to protect your data from accidental loss and theft. Everything you put into an Evernote synchronized notebook is stored in our secure data center with multiple redundant servers, storage devices and off-site backups. Communication between Evernote clients and our servers is encrypted via industry-standard SSL. We don&#8217;t store your password on our servers and no one at Evernote will ever ask you for it.</p>
+<h3>3. Your Data is Portable</h3>
+<p>There is no data-lock in Evernote. We are committed to making it easy for you to get all of your data into, and out of, Evernote at any time. Our desktop software lets you export all of your notes and content in human-readable HTML as well as a fully documented machine-readable XML format. We also have a full, free API that lets you access all of your data. Our philosophy is that if you&#8217;re confident that you can leave Evernote at any time, then you&#8217;ll be confident enough to want to stay.</p>
+
+]]>
+      </content:encoded>
+    </item>
+    <item>
+      <title>Skitch for Mac: Fast Feedback on PDFs and Everything Else</title>
+      <pubDate>Mon, 10 Jun 2013 0:15:15 +0000</pubDate>
+      <dc:creator>ahanda</dc:creator>
+      <guid isPermaLink="true">https://announcements.corp.etonreve.com/?p=161</guid>
+      <evernote:shortGuid>mac-evernote-161</evernote:shortGuid>
+
+      <evernote:userPrivilege>Everyone</evernote:userPrivilege>			<evernote:contentCategory>product</evernote:contentCategory>			<evernote:contentCategoryTitle>Product</evernote:contentCategoryTitle>
+      <evernote:descriptionImg>https://announcements.corp.etonreve.com/wp-content/uploads/2013/06/Skitch_1-300x102.jpg</evernote:descriptionImg>
+      <evernote:ctaAppStoreURI>https://itunes.apple.com/us/app/skitch/id425955336</evernote:ctaAppStoreURI>
+      <evernote:ctaAppStoreProductTitle>Install Skitch</evernote:ctaAppStoreProductTitle>
+      <evernote:ctaAppStoreProductImg>https://announcements.corp.etonreve.com/wp-content/uploads/2013/06/Icon_skitch@2x.png</evernote:ctaAppStoreProductImg>
+      <evernote:ctaMarketURI></evernote:ctaMarketURI>
+      <evernote:ctaMarketProductTitle></evernote:ctaMarketProductTitle>
+      <evernote:ctaMarketProductImg></evernote:ctaMarketProductImg>
+
+      <evernote:ctaBrowserURI></evernote:ctaBrowserURI>
+      <evernote:ctaBrowserTitle></evernote:ctaBrowserTitle>
+
+      <evernote:enexURI>https://announcements.corp.etonreve.com/wp-content/uploads/2013/06/Skitch_PDFs.enex</evernote:enexURI>
+      <evernote:applicationVersion></evernote:applicationVersion>
+      <evernote:readMoreURI></evernote:readMoreURI>
+      <evernote:readMoreTitle></evernote:readMoreTitle>
+      <evernote:sidebarCallout1URI>http://www.youtube.com/watch?v=XE325A4RvQc</evernote:sidebarCallout1URI>
+      <evernote:sidebarCallout1Title>Watch video</evernote:sidebarCallout1Title>
+      <evernote:sidebarCallout1Img>https://announcements.corp.etonreve.com/wp-content/uploads/2013/06/video_skitch-150x150.png</evernote:sidebarCallout1Img>
+      <evernote:sidebarCallout2URI></evernote:sidebarCallout2URI>
+      <evernote:sidebarCallout2Title></evernote:sidebarCallout2Title>
+      <evernote:sidebarCallout2Img></evernote:sidebarCallout2Img>
+      <evernote:sidebarCallout3URI></evernote:sidebarCallout3URI>
+      <evernote:sidebarCallout3Title></evernote:sidebarCallout3Title>
+      <evernote:sidebarCallout3Img></evernote:sidebarCallout3Img>
+      <description>
+        <![CDATA[
+
+Clear, concise communication is powerful. Learn how Evernote's Skitch application can make sharing your ideas easier than ever.
+]]>
+      </description>
+      <content:encoded>
+        <![CDATA[
+
+<img src="https://announcements.corp.etonreve.com/wp-content/uploads/2013/06/Skitch_1-1024x350.jpg" /> <p>Clear, concise communication is powerful. With a little clarity, we can eliminate those long, roundabout email exchanges that keep projects in perpetual limbo. That&#8217;s what Skitch is for, and we&#8217;re bringing this vision to your PDF workflow to help you give the fastest, friendliest and most direct feedback ever. Not only that, but we&#8217;ve also added an innovative summary that ensures your recipients are able to act upon your feedback immediately. Let&#8217;s dive into the new PDF features, as well as some exciting new tools.</p>
+<h3>PDF Annotation</h3>
+<p>Starting to use the new PDF features is as simple as you&#8217;d expect. Open a single or multi-page PDF in Skitch or drag it right onto the app. Then, annotate it with shapes, arrows and text. Point out items that need a change, use the Highlighter to draw attention to important sections and add text to give your recipient instructions on next steps. Navigate to any part of the PDF using the new drawer along the edge of the app. Once you&#8217;re done, share the document back. This is where the real magic begins.</p>
+<p><strong>The Skitch Summary</strong><br />
+There&#8217;s a real sense of satisfaction that comes from knowing that the people you&#8217;re working with fully understand your thoughts. When you share an annotated multi-page PDF, Skitch lets you add a new first page to that document. This page is made up of previews of each piece of feedback contained in the PDF. Click on one and you&#8217;re taken to the annotation. This summary makes it a snap for your recipient to scan over all of your feedback, understand it, and take action without needing to go beyond the first page.</p>
+<p><img src="https://announcements.corp.etonreve.com/wp-content/uploads/2013/06/Skitch_3.jpg" alt="Skitch_3" width="1240" height="750" class="alignnone size-full wp-image-433" /></p>
+<p>As anyone that&#8217;s found themselves on the receiving end of feedback knows, it&#8217;s always incredibly helpful to get a sense of your reader&#8217;s thought and how many changes they&#8217;re looking for before diving in. That&#8217;s the second part of the Skitch Summary. When you email an annotated PDF to someone or create a public link, the viewer will first see a display of the quantity and type of annotations in the document.</p>
+<p><strong>Sharing the PDF</strong><br />
+Sharing a Skitch Summary couldn&#8217;t be easier. You can include a summary when you choose to email your PDF with the share button. In addition, on Skitch for Mac you can attach a summary when exporting or by selecting <em>PDF with Summary</em> in the Drag Me bar, then dragging it straight onto your desktop or into other apps. It’s that easy to share rich, detailed feedback on PDF documents.</p>
+<h3>Fast Feedback with new Stamps</h3>
+<p>Stamps are an all-new annotation tool in Skitch that lets you communicate your ideas incredibly quickly with simple shapes that stand out. Place a stamp to quickly indicate that you like something, hate it, or need a deeper explanation. When it&#8217;s perfect, stamp it with a Skitch heart.</p>
+<p><img src="https://announcements.corp.etonreve.com/wp-content/uploads/2013/06/Skitch_2.jpg" alt="Skitch_2" width="1240" height="750" class="alignnone size-full wp-image-434" /></p>
+<p>After you place each stamp, you can also add a little more detail to your feedback with a pointer and a label. To add a pointer to any stamp, just click or tap on the (+). The pointer will display, and you can now move the blue dot to position it anywhere around the Stamp. Adding labels to stamps is as simple as clicking the “a” symbol. Each stamp comes with a standard label, but if you’d like to change it, just start typing your own text (only a few words).</p>
+
+]]>
+      </content:encoded>
+    </item>
+    <item>
+      <title>5 Ways Evernote Can Boost Your Productivity</title>
+      <pubDate>Tue, 14 May 2013 0:36:35 +0000</pubDate>
+      <dc:creator>ahanda</dc:creator>
+      <guid isPermaLink="true">https://announcements.corp.etonreve.com/?p=171</guid>
+      <evernote:shortGuid>android-evernote-171</evernote:shortGuid>
+
+      <evernote:userPrivilege>Everyone</evernote:userPrivilege>			<evernote:contentCategory>tips-and-guides</evernote:contentCategory>			<evernote:contentCategoryTitle>Tips &amp; Guides</evernote:contentCategoryTitle>
+      <evernote:descriptionImg></evernote:descriptionImg>
+      <evernote:ctaAppStoreURI></evernote:ctaAppStoreURI>
+      <evernote:ctaAppStoreProductTitle></evernote:ctaAppStoreProductTitle>
+      <evernote:ctaAppStoreProductImg></evernote:ctaAppStoreProductImg>
+      <evernote:ctaMarketURI></evernote:ctaMarketURI>
+      <evernote:ctaMarketProductTitle></evernote:ctaMarketProductTitle>
+      <evernote:ctaMarketProductImg></evernote:ctaMarketProductImg>
+
+      <evernote:ctaBrowserURI></evernote:ctaBrowserURI>
+      <evernote:ctaBrowserTitle></evernote:ctaBrowserTitle>
+
+      <evernote:enexURI>https://announcements.corp.etonreve.com/wp-content/uploads/2013/05/5ways_productivity.enex</evernote:enexURI>
+      <evernote:applicationVersion></evernote:applicationVersion>
+      <evernote:readMoreURI>http://blog.evernote.com/blog/category/tips-guides/</evernote:readMoreURI>
+      <evernote:readMoreTitle>Read More Tips</evernote:readMoreTitle>
+      <evernote:sidebarCallout1URI></evernote:sidebarCallout1URI>
+      <evernote:sidebarCallout1Title></evernote:sidebarCallout1Title>
+      <evernote:sidebarCallout1Img></evernote:sidebarCallout1Img>
+      <evernote:sidebarCallout2URI></evernote:sidebarCallout2URI>
+      <evernote:sidebarCallout2Title></evernote:sidebarCallout2Title>
+      <evernote:sidebarCallout2Img></evernote:sidebarCallout2Img>
+      <evernote:sidebarCallout3URI></evernote:sidebarCallout3URI>
+      <evernote:sidebarCallout3Title></evernote:sidebarCallout3Title>
+      <evernote:sidebarCallout3Img></evernote:sidebarCallout3Img>
+      <description>
+        <![CDATA[
+
+We've enlisted Joshua Zerkel, our Productivity Ambassador, to give us ideas on how to get more accomplished. 
+]]>
+      </description>
+      <content:encoded>
+        <![CDATA[
+
+<p>We&#8217;ve enlisted certified professional organizer, Joshua Zerkel, to show us five great ways to be more productive with Evernote.</p>
+<h3>1. Snap Your Scrap Paper</h3>
+<p>Instead of trying to rework how you do everything, try using Evernote in little pieces. Start by taking snapshots with Evernote of all the scraps of paper that you have scattered around your office &mdash; your sticky notes, the backs of envelopes, scrawls on napkins, etc. You&#8217;ll discover how handy it is to be able to search through these photos and actually find what you’re looking for.</p>
+<h3>2. Capture the Whiteboard</h3>
+<p>Meetings can be productive, but taking notes can be a real chore. In your next meeting, instead of frantically copying everything that’s written on a whiteboard, try snapping a photo with Evernote. Since Evernote makes the handwriting in the photo searchable, you’ll be able to easily refer back to that whiteboard whenever you need it.</p>
+<h3>3. Share the Love</h3>
+<p>If you work with clients and you’d like to share information with them, set up a shared notebook in Evernote dedicated to that client. In it, you can capture clips of web articles, snapshots of resources that they could find useful, ideas for upcoming meetings or sessions. This can be a huge value-add to the people you work with&mdash;not only are you introducing them to Evernote, but you’re populating their notebook with stuff they’ll be interested in.</p>
+<h3>4. Wrangle the Receipts</h3>
+<p>I help my client organize their finances, as well. When you’re busy and on the go, it can be a challenge to keep track of your receipts and other expenses. Instead of losing your receipts or stuffing them into a box, bag, or drawer, try scanning your receipts into a “receipts notebook” in Evernote. That way, they’ll all be captured in one central area.</p>
+<h3>5. Tie Up Your Travel</h3>
+<p>Before your next business trip, create an Evernote notebook. Save any notes you have about upcoming meetings or trade shows, along with the agendas, location, maps and any venue information. Also, this is a great spot to keep details about your travel &mdash; flight confirmations, hotel and car reservations, and the like. You can even collect clips about restaurants, local attractions, and other fun things to do while you&#8217;re away.</p>
+<p>Any one of these strategies can help gather your information in a central spot to save you time and make your more productive. Give them a shot.</p>
+
+]]>
+      </content:encoded>
+    </item>
+    <item>
+      <title>How to Live the Freelance Life with Evernote</title>
+      <pubDate>Tue, 14 May 2013 0:15:39 +0000</pubDate>
+      <dc:creator>ahanda</dc:creator>
+      <guid isPermaLink="true">https://announcements.corp.etonreve.com/?p=150</guid>
+      <evernote:shortGuid>android-evernote-150</evernote:shortGuid>
+
+      <evernote:userPrivilege>Everyone</evernote:userPrivilege>			<evernote:contentCategory>stories</evernote:contentCategory>			<evernote:contentCategoryTitle>Stories</evernote:contentCategoryTitle>
+      <evernote:descriptionImg></evernote:descriptionImg>
+      <evernote:ctaAppStoreURI></evernote:ctaAppStoreURI>
+      <evernote:ctaAppStoreProductTitle></evernote:ctaAppStoreProductTitle>
+      <evernote:ctaAppStoreProductImg></evernote:ctaAppStoreProductImg>
+      <evernote:ctaMarketURI></evernote:ctaMarketURI>
+      <evernote:ctaMarketProductTitle></evernote:ctaMarketProductTitle>
+      <evernote:ctaMarketProductImg></evernote:ctaMarketProductImg>
+
+      <evernote:ctaBrowserURI></evernote:ctaBrowserURI>
+      <evernote:ctaBrowserTitle></evernote:ctaBrowserTitle>
+
+      <evernote:enexURI>https://announcements.corp.etonreve.com/wp-content/uploads/2013/05/freelance.enex</evernote:enexURI>
+      <evernote:applicationVersion></evernote:applicationVersion>
+      <evernote:readMoreURI>http://blog.evernote.com/blog/category/tips-guides/user_stories/</evernote:readMoreURI>
+      <evernote:readMoreTitle>Read More Stories</evernote:readMoreTitle>
+      <evernote:sidebarCallout1URI></evernote:sidebarCallout1URI>
+      <evernote:sidebarCallout1Title></evernote:sidebarCallout1Title>
+      <evernote:sidebarCallout1Img></evernote:sidebarCallout1Img>
+      <evernote:sidebarCallout2URI></evernote:sidebarCallout2URI>
+      <evernote:sidebarCallout2Title></evernote:sidebarCallout2Title>
+      <evernote:sidebarCallout2Img></evernote:sidebarCallout2Img>
+      <evernote:sidebarCallout3URI></evernote:sidebarCallout3URI>
+      <evernote:sidebarCallout3Title></evernote:sidebarCallout3Title>
+      <evernote:sidebarCallout3Img></evernote:sidebarCallout3Img>
+      <description>
+        <![CDATA[
+
+Learn how to be an effective freelancer wherever the job takes you.
+]]>
+      </description>
+      <content:encoded>
+        <![CDATA[
+
+<p>Joelle Alcaidinho is a freelance travel writer, blogger and consultant working with tech start-ups, educational institutions, and retail organizations. &#8220;Without Evernote, I&#8217;d be lost,&#8221; she says.</p>
+<h3>I use Evernote to help juggle all my projects</h3>
+<p>Between my travels and the great number of things I have going on (writing, consulting, running my Etsy shop), I needed a tool that could be there with me at all times. Evernote is a place where I can store a lot of important content at the same time, and always be able to access it. I used to have tons of notebooks around for sketching and writing. Evernote has become my digital version of these notebooks.</p>
+<h3>I keep separate notebooks for all my projects</h3>
+<p>I have notebooks for my writing for Apartment Therapy, my technology blog, my travel guides, as well as my Etsy store. Because I&#8217;m always working on multiple projects at any given time, being able to compartmentalize is vital. Evernote is a great place to store work-related documents, such as meeting and conference notes, as well as more creative things, like pictures of fabrics that I like and inspirations. I also create a notebook for each city when working on a travel guide, which becomes the place I keep all the essential information that I will need when I later craft the guide.</p>
+<h3>I use Evernote to save my research</h3>
+<p>For Apartment Therapy, I cover tablet apps. With Evernote I&#8217;m able to keep track of interesting apps throughout the week so that when I&#8217;m ready to sit down and write, I always have a starting point. I tag apps I come across with &#8217;roundup ideas&#8217; and also store various templates and HTML snippets in Evernote for handy reference. Half the work associated with preparing a blog post is done before I even begin writing!</p>
+<h3>I use Evernote on the go</h3>
+<p>In addition to my tech writing, I also do a lot of travel writing. When I&#8217;m working on a travel guide, I use Evernote to take photos of the signs of the places I visit, menus, and anything else I want to remember. My notes are all geo-tagged, so it&#8217;s easy to organize them and have all my notes associated with a certain location in the same place. I also snap photos of my receipts so I&#8217;ll remember what I ate and can easily submit expense reports.</p>
+<h3>I record interviews that I can replay later</h3>
+<p>When I am working with a client on a consulting project, I use Evernote to record conversations. Audio notes allow me to concentrate on the conversation I&#8217;m having, while also allowing me to revisit it later when I&#8217;m in brainstorm mode.</p>
+<h3>I&#8217;m able to let go of ideas</h3>
+<p>Knowing that everything is in Evernote lets me clear my mind and focus on other things, which gives me the freedom to be more creative. Once I save an idea in Evernote, I know I can mull the possibilities later. This is helpful both for creative and tactical projects. I&#8217;m able to stay on top of to-dos and also come back to ideas that I may not necessarily have an an immediate use for.</p>
+
+]]>
+      </content:encoded>
+    </item>
+    <item>
+      <title>Search Better with Evernote Premium: Document Search</title>
+      <pubDate>Tue, 14 May 2013 0:07:26 +0000</pubDate>
+      <dc:creator>ahanda</dc:creator>
+      <guid isPermaLink="true">https://announcements.corp.etonreve.com/?p=142</guid>
+      <evernote:shortGuid>android-evernote-142</evernote:shortGuid>
+
+      <evernote:userPrivilege>Business Only</evernote:userPrivilege><evernote:userPrivilege>Premium Only</evernote:userPrivilege>			<evernote:contentCategory>tips-and-guides</evernote:contentCategory>			<evernote:contentCategoryTitle>Tips &amp; Guides</evernote:contentCategoryTitle>
+      <evernote:descriptionImg>https://announcements.corp.etonreve.com/wp-content/uploads/2013/05/Premium_1-1-300x96.jpg</evernote:descriptionImg>
+      <evernote:ctaAppStoreURI></evernote:ctaAppStoreURI>
+      <evernote:ctaAppStoreProductTitle></evernote:ctaAppStoreProductTitle>
+      <evernote:ctaAppStoreProductImg></evernote:ctaAppStoreProductImg>
+      <evernote:ctaMarketURI></evernote:ctaMarketURI>
+      <evernote:ctaMarketProductTitle></evernote:ctaMarketProductTitle>
+      <evernote:ctaMarketProductImg></evernote:ctaMarketProductImg>
+
+      <evernote:ctaBrowserURI></evernote:ctaBrowserURI>
+      <evernote:ctaBrowserTitle></evernote:ctaBrowserTitle>
+
+      <evernote:enexURI>https://announcements.corp.etonreve.com/wp-content/uploads/2013/05/doc_search.enex</evernote:enexURI>
+      <evernote:applicationVersion></evernote:applicationVersion>
+      <evernote:readMoreURI>http://blog.evernote.com/blog/category/tips-guides/</evernote:readMoreURI>
+      <evernote:readMoreTitle>Read More Tips</evernote:readMoreTitle>
+      <evernote:sidebarCallout1URI></evernote:sidebarCallout1URI>
+      <evernote:sidebarCallout1Title></evernote:sidebarCallout1Title>
+      <evernote:sidebarCallout1Img></evernote:sidebarCallout1Img>
+      <evernote:sidebarCallout2URI></evernote:sidebarCallout2URI>
+      <evernote:sidebarCallout2Title></evernote:sidebarCallout2Title>
+      <evernote:sidebarCallout2Img></evernote:sidebarCallout2Img>
+      <evernote:sidebarCallout3URI></evernote:sidebarCallout3URI>
+      <evernote:sidebarCallout3Title></evernote:sidebarCallout3Title>
+      <evernote:sidebarCallout3Img></evernote:sidebarCallout3Img>
+      <description>
+        <![CDATA[
+
+The new Document Search feature makes searching your Evernote account even more powerful.
+]]>
+      </description>
+      <content:encoded>
+        <![CDATA[
+
+<img src="https://announcements.corp.etonreve.com/wp-content/uploads/2013/05/Premium_1-1-1024x330.jpg" /> <p>Search is a centerpiece of the Evernote experience. No matter how you use notebooks and tags, search is often the key to helping you discover the items you&#8217;re looking for. Over the years, we&#8217;ve continually made search better for all of our users. From making it faster to adding type-ahead suggestions to improving our search for text in images, we want to make sure everyone can find what they need.</p>
+<p><img src="https://announcements.corp.etonreve.com/wp-content/uploads/2013/05/PremiumDocumentSearch_2.jpg" alt="PremiumDocumentSearch_2" width="1240" height="750" class="alignnone size-full wp-image-388" /></p>
+<h3>Search Better with Evernote Premium</h3>
+<p>We&#8217;ve supercharged our search for Evernote Premium and Evernote Business users with the addition of <strong>Document Search</strong>. Any attached document, presentation and spreadsheet created using Microsoft Office and iWork will show up in your search results across almost every version of Evernote that you use.</p>
+<p>It&#8217;s important to keep in mind that when you add new documents, you&#8217;ll need to give us a few minutes to sync and index them before the results will appear.</p>
+<p>Document Search comes in addition to the existing priority image recognition, and Premium PDF Search, which makes any scanned documents attached to notes searchable, for Premium users.</p>
+<p>If you attach documents to your notes, scan PDFs and take photos containing text, you may want to consider upgrading to Evernote Premium. It&#8217;ll make finding your notes faster and easier than ever.</p>
+
+]]>
+      </content:encoded>
+    </item>
+    <item>
+      <title>How an Author and Journalist Uses Evernote to Write</title>
+      <pubDate>Mon, 06 May 2013 17:24:12 +0000</pubDate>
+      <dc:creator>ahanda</dc:creator>
+      <guid isPermaLink="true">https://announcements.corp.etonreve.com/?p=82</guid>
+      <evernote:shortGuid>mac-evernote-82</evernote:shortGuid>
+
+      <evernote:userPrivilege>Everyone</evernote:userPrivilege>			<evernote:contentCategory>stories</evernote:contentCategory>			<evernote:contentCategoryTitle>Stories</evernote:contentCategoryTitle>
+      <evernote:descriptionImg>https://announcements.corp.etonreve.com/wp-content/uploads/2013/05/Author_and_Journalist_1-300x157.jpg</evernote:descriptionImg>
+      <evernote:ctaAppStoreURI></evernote:ctaAppStoreURI>
+      <evernote:ctaAppStoreProductTitle></evernote:ctaAppStoreProductTitle>
+      <evernote:ctaAppStoreProductImg></evernote:ctaAppStoreProductImg>
+      <evernote:ctaMarketURI></evernote:ctaMarketURI>
+      <evernote:ctaMarketProductTitle></evernote:ctaMarketProductTitle>
+      <evernote:ctaMarketProductImg></evernote:ctaMarketProductImg>
+
+      <evernote:ctaBrowserURI></evernote:ctaBrowserURI>
+      <evernote:ctaBrowserTitle></evernote:ctaBrowserTitle>
+
+      <evernote:enexURI>https://announcements.corp.etonreve.com/wp-content/uploads/2013/05/author.enex</evernote:enexURI>
+      <evernote:applicationVersion></evernote:applicationVersion>
+      <evernote:readMoreURI>http://blog.evernote.com/blog/category/community/</evernote:readMoreURI>
+      <evernote:readMoreTitle>Read More Stories</evernote:readMoreTitle>
+      <evernote:sidebarCallout1URI></evernote:sidebarCallout1URI>
+      <evernote:sidebarCallout1Title></evernote:sidebarCallout1Title>
+      <evernote:sidebarCallout1Img></evernote:sidebarCallout1Img>
+      <evernote:sidebarCallout2URI></evernote:sidebarCallout2URI>
+      <evernote:sidebarCallout2Title></evernote:sidebarCallout2Title>
+      <evernote:sidebarCallout2Img></evernote:sidebarCallout2Img>
+      <evernote:sidebarCallout3URI></evernote:sidebarCallout3URI>
+      <evernote:sidebarCallout3Title></evernote:sidebarCallout3Title>
+      <evernote:sidebarCallout3Img></evernote:sidebarCallout3Img>
+      <description>
+        <![CDATA[
+
+David Brown uses Evernote to be a more organized reporter and writer. 
+]]>
+      </description>
+      <content:encoded>
+        <![CDATA[
+
+<img src="https://announcements.corp.etonreve.com/wp-content/uploads/2013/05/Author_and_Journalist_1-1024x536.jpg" /> <p><em>David Brown has been writing professionally since 2008. He writes for The Atlantic, The Week and Mental Floss. David is also the author of three books.</em></p>
+<p>I started writing full-time in 2008 and have been using Evernote consistently to the point where I don&#8217;t remember a time before Evernote! I use it so much, it&#8217;s become transparent. Everything goes into my Evernote account — from recipes to notes for my next column. I recently finished my latest book — a project that I worked on for two years — and Evernote was there every step of the way.</p>
+<h3>For Non-Fiction Writing</h3>
+<p>For my latest book, a work of non-fiction, I spent a lot of time researching at the library; it&#8217;s where the heavy lifting happens. If you&#8217;re writing about the CIA, as I was, having access to physical materials was a must. At any given time, I have about 40 books checked out; it&#8217;s a colossal project. Often, I only need one or two pages of information from any given book, so I use Evernote on my phone to snap a picture of the page in question, the cover, and boom — it&#8217;s in my Evernote account so I know exactly where to look when I want to incorporate this information into the manuscript. That said, most of my research is Web-based, and having the Evernote Web Clipper in my desktop browser is invaluable for saving information as I come across it. Research-wise, everything from interview notes to photographs lives in Evernote.</p>
+<p>When you&#8217;re doing a lot of research, you begin to build this mountain of information. I try to keep things organized, but I&#8217;m bad at it. The beauty of Evernote is that its search function is so robust, it does the work for me, so I don&#8217;t have to spend so much time organizing things. I have one notebook for the book and I tag everything. The more notebooks I have, the more ambiguous things become so I prefer having just one notebook per project and use tags so I can easily pull up everything that has to do with that subject. For example, I&#8217;ll tag &#8216;military campaigns for the 20th century&#8221; with tags like 20th century, military campaigns. I like categorizing things — it helps keep me on track as a writer.</p>
+<p>When I get into the writing stage, I turn to Evernote because it&#8217;s already my central place for accessing information I need to build my story. Everything autosaves in Evernote, so all I have to focus on is getting the words down.</p>
+<p>In addition to helping capture thoughts and research, Evernote is invaluable in terms of collaboration, especially with my co-author. Once you bring in an editor and various other individuals, working on the book can become a headache. Nobody has the time to sit down to learn a new application, so I suggested we use Evernote to share information. Everyone picked it up and learned it intuitively. Having it available on all platforms made it an easy transition and I was happy because everything related to the book stayed in Evernote.</p>
+<h3>For Journalism</h3>
+<p>Evernote is also my main tool for writing my columns. I depend on Evernote to help me stay on top of the news cycle by clipping articles that I can quickly reference as I&#8217;m writing my latest column. I create outlines in Evernote for all of my columns, and often have the app open both on my computer and iPad so I can do quick reference checks.</p>
+
+]]>
+      </content:encoded>
+    </item>
+    <item>
+      <title>Notebook Sharing with Evernote for Mac</title>
+      <pubDate>Mon, 06 May 2013 17:19:17 +0000</pubDate>
+      <dc:creator>ahanda</dc:creator>
+      <guid isPermaLink="true">https://announcements.corp.etonreve.com/?p=73</guid>
+      <evernote:shortGuid>mac-evernote-73</evernote:shortGuid>
+
+      <evernote:userPrivilege>Everyone</evernote:userPrivilege>			<evernote:contentCategory>tips-and-guides</evernote:contentCategory>			<evernote:contentCategoryTitle>Tips &amp; Guides</evernote:contentCategoryTitle>
+      <evernote:descriptionImg>https://announcements.corp.etonreve.com/wp-content/uploads/2013/05/SharedNotes_1-300x169.jpg</evernote:descriptionImg>
+      <evernote:ctaAppStoreURI></evernote:ctaAppStoreURI>
+      <evernote:ctaAppStoreProductTitle></evernote:ctaAppStoreProductTitle>
+      <evernote:ctaAppStoreProductImg></evernote:ctaAppStoreProductImg>
+      <evernote:ctaMarketURI></evernote:ctaMarketURI>
+      <evernote:ctaMarketProductTitle></evernote:ctaMarketProductTitle>
+      <evernote:ctaMarketProductImg></evernote:ctaMarketProductImg>
+
+      <evernote:ctaBrowserURI></evernote:ctaBrowserURI>
+      <evernote:ctaBrowserTitle></evernote:ctaBrowserTitle>
+
+      <evernote:enexURI>https://announcements.corp.etonreve.com/wp-content/uploads/2013/05/notebook_sharing_mac.enex</evernote:enexURI>
+      <evernote:applicationVersion></evernote:applicationVersion>
+      <evernote:readMoreURI>http://blog.evernote.com/blog/category/tips-guides/</evernote:readMoreURI>
+      <evernote:readMoreTitle>Read More Tips</evernote:readMoreTitle>
+      <evernote:sidebarCallout1URI></evernote:sidebarCallout1URI>
+      <evernote:sidebarCallout1Title></evernote:sidebarCallout1Title>
+      <evernote:sidebarCallout1Img></evernote:sidebarCallout1Img>
+      <evernote:sidebarCallout2URI></evernote:sidebarCallout2URI>
+      <evernote:sidebarCallout2Title></evernote:sidebarCallout2Title>
+      <evernote:sidebarCallout2Img></evernote:sidebarCallout2Img>
+      <evernote:sidebarCallout3URI></evernote:sidebarCallout3URI>
+      <evernote:sidebarCallout3Title></evernote:sidebarCallout3Title>
+      <evernote:sidebarCallout3Img></evernote:sidebarCallout3Img>
+      <description>
+        <![CDATA[
+
+Notebook sharing is a great way to give your friends and coworkers access to the projects you're working on. 
+]]>
+      </description>
+      <content:encoded>
+        <![CDATA[
+
+<img src="https://announcements.corp.etonreve.com/wp-content/uploads/2013/05/SharedNotes_1-1024x578.jpg" /> <p>Sharing notebooks is a great way to work together with others on personal and professional projects. Whether you&#8217;re working on a team project, planning a family vacation, or just passing along interesting content to friends and family, Shared Notebooks allow you to share what&#8217;s important with anyone, even those who don&#8217;t use Evernote. </p>
+<ol>
+<li>Open the &#8216;Notebooks&#8217; section from the sidebar</li>
+<li>Hover your mouse over the notebook you want to share, then click the share icon</li>
+<li>In the &#8216;Share this notebook&#8217; dialog, click &#8216;Invite Individuals&#8217;</li>
+<li>Enter the email addresses of the people you want to share with</li>
+<li>Select the permission level you want to grant</li>
+<li>Click &#8216;Invite&#8217;</li>
+</ol>
+<p>Once you&#8217;ve invited someone to a Shared Notebook, they will receive an email with a link. Other Evernote users that you invite to a Shared Notebook will also have the option to &#8216;Join&#8217; your Shared Notebook, which will make it appear in their Evernote account.</p>
+<h3>Better with Premium and Business</h3>
+<p>Evernote Premium users can grant recipients the ability to edit the Shared Notebook contents. Evernote Business users can create Business Notebooks and make them available to anyone on their team. </p>
+
+]]>
+      </content:encoded>
+    </item>
+    <item>
+      <title>Works with Evernote Business: Fujitsu ScanSnap</title>
+      <pubDate>Mon, 06 May 2013 16:41:41 +0000</pubDate>
+      <dc:creator>ahanda</dc:creator>
+      <guid isPermaLink="true">https://announcements.corp.etonreve.com/?p=65</guid>
+      <evernote:shortGuid>mac-evernote-65</evernote:shortGuid>
+
+      <evernote:userPrivilege>Business Only</evernote:userPrivilege>			<evernote:contentCategory>tips-and-guides</evernote:contentCategory>			<evernote:contentCategoryTitle>Tips &amp; Guides</evernote:contentCategoryTitle>
+      <evernote:descriptionImg>https://announcements.corp.etonreve.com/wp-content/uploads/2013/05/Scansnap_1-300x150.jpg</evernote:descriptionImg>
+      <evernote:ctaAppStoreURI></evernote:ctaAppStoreURI>
+      <evernote:ctaAppStoreProductTitle></evernote:ctaAppStoreProductTitle>
+      <evernote:ctaAppStoreProductImg></evernote:ctaAppStoreProductImg>
+      <evernote:ctaMarketURI></evernote:ctaMarketURI>
+      <evernote:ctaMarketProductTitle></evernote:ctaMarketProductTitle>
+      <evernote:ctaMarketProductImg></evernote:ctaMarketProductImg>
+
+      <evernote:ctaBrowserURI>http://trunk.evernote.com/hardware/fujitsu-scansnap</evernote:ctaBrowserURI>
+      <evernote:ctaBrowserTitle>Learn more</evernote:ctaBrowserTitle>
+
+      <evernote:enexURI>https://announcements.corp.etonreve.com/wp-content/uploads/2013/05/scansnap.enex</evernote:enexURI>
+      <evernote:applicationVersion></evernote:applicationVersion>
+      <evernote:readMoreURI>http://blog.evernote.com/blog/category/friends_partners/</evernote:readMoreURI>
+      <evernote:readMoreTitle>See More Partners</evernote:readMoreTitle>
+      <evernote:sidebarCallout1URI></evernote:sidebarCallout1URI>
+      <evernote:sidebarCallout1Title></evernote:sidebarCallout1Title>
+      <evernote:sidebarCallout1Img></evernote:sidebarCallout1Img>
+      <evernote:sidebarCallout2URI></evernote:sidebarCallout2URI>
+      <evernote:sidebarCallout2Title></evernote:sidebarCallout2Title>
+      <evernote:sidebarCallout2Img></evernote:sidebarCallout2Img>
+      <evernote:sidebarCallout3URI></evernote:sidebarCallout3URI>
+      <evernote:sidebarCallout3Title></evernote:sidebarCallout3Title>
+      <evernote:sidebarCallout3Img></evernote:sidebarCallout3Img>
+      <description>
+        <![CDATA[
+
+Whether you're just starting to use Evernote at work, or have been using it in the office for years, a scanner is an essential Evernote companion.
+]]>
+      </description>
+      <content:encoded>
+        <![CDATA[
+
+<img src="https://announcements.corp.etonreve.com/wp-content/uploads/2013/05/Scansnap_1-1024x512.jpg" /> <p>Whether you&#8217;re just starting to use Evernote at work, or have been using it in the office for years, a scanner is an essential Evernote companion. Once you digitize your papers and have them saved in Evernote, you&#8217;ll be able to search and find everything you need. For our Evernote Business users, saving what&#8217;s important is easier than ever with Fujitsu ScanSnap scanners, that can send your scans directly into any Business Notebooks you may have.</p>
+<h3>The Scansnap iX500</h3>
+<p>Get rid of clutter and get your business organized by scanning in business cards, travel receipts, customer contracts, project documents, or even scribbled meeting notes. The new ScanSnap iX500 model is versatile, letting you quickly and accurately scan multiple documents. The scanner will also detect the size of a page and fix skew, display images in the proper orientation, remove blank pages, and even scan via wifi.</p>
+<h3>Evernote Business Tip</h3>
+<p>Use the Fujitsu ScanSnap to save directly to a Shared Business Notebook or a Business Notebook published to your company&#8217;s Business Library to make your scanned documents instantly accessible to your entire team.</p>
+<p>Use Evernote&#8217;s powerful search feature to find what you&#8217;re looking for, even typed or handwritten text within attached images. Evernote Business and Evernote Premium users can also search within office documents, presentations, spreadsheets, and scanned PDFs.</p>
+
+]]>
+      </content:encoded>
+    </item>
+    <item>
+      <title>Save Time With The Quick Note Feature</title>
+      <pubDate>Mon, 06 May 2013 16:08:55 +0000</pubDate>
+      <dc:creator>ahanda</dc:creator>
+      <guid isPermaLink="true">https://announcements.corp.etonreve.com/?p=34</guid>
+      <evernote:shortGuid>mac-evernote-34</evernote:shortGuid>
+
+      <evernote:userPrivilege>Everyone</evernote:userPrivilege>			<evernote:contentCategory>tips-and-guides</evernote:contentCategory>			<evernote:contentCategoryTitle>Tips &amp; Guides</evernote:contentCategoryTitle>
+      <evernote:descriptionImg>https://announcements.corp.etonreve.com/wp-content/uploads/2013/05/QuickNote_1-300x159.jpg</evernote:descriptionImg>
+      <evernote:ctaAppStoreURI>http://evernote.com/download/get.php?file=EvernoteMacApp</evernote:ctaAppStoreURI>
+      <evernote:ctaAppStoreProductTitle>Install Evernote</evernote:ctaAppStoreProductTitle>
+      <evernote:ctaAppStoreProductImg>https://announcements.corp.etonreve.com/wp-content/uploads/2013/05/Icon_evernote@2x.png</evernote:ctaAppStoreProductImg>
+      <evernote:ctaMarketURI></evernote:ctaMarketURI>
+      <evernote:ctaMarketProductTitle></evernote:ctaMarketProductTitle>
+      <evernote:ctaMarketProductImg></evernote:ctaMarketProductImg>
+
+      <evernote:ctaBrowserURI></evernote:ctaBrowserURI>
+      <evernote:ctaBrowserTitle></evernote:ctaBrowserTitle>
+
+      <evernote:enexURI>https://announcements.corp.etonreve.com/wp-content/uploads/2013/05/quicknote.enex</evernote:enexURI>
+      <evernote:applicationVersion></evernote:applicationVersion>
+      <evernote:readMoreURI>http://blog.evernote.com/blog/category/tips-guides/</evernote:readMoreURI>
+      <evernote:readMoreTitle>Read More Tips</evernote:readMoreTitle>
+      <evernote:sidebarCallout1URI></evernote:sidebarCallout1URI>
+      <evernote:sidebarCallout1Title></evernote:sidebarCallout1Title>
+      <evernote:sidebarCallout1Img></evernote:sidebarCallout1Img>
+      <evernote:sidebarCallout2URI></evernote:sidebarCallout2URI>
+      <evernote:sidebarCallout2Title></evernote:sidebarCallout2Title>
+      <evernote:sidebarCallout2Img></evernote:sidebarCallout2Img>
+      <evernote:sidebarCallout3URI></evernote:sidebarCallout3URI>
+      <evernote:sidebarCallout3Title></evernote:sidebarCallout3Title>
+      <evernote:sidebarCallout3Img></evernote:sidebarCallout3Img>
+      <description>
+        <![CDATA[
+
+Learn about the completely redesigned Menu Bar Helper that includes our new Quick Note functionality.
+]]>
+      </description>
+      <content:encoded>
+        <![CDATA[
+
+<img src="https://announcements.corp.etonreve.com/wp-content/uploads/2013/05/QuickNote_1-1024x545.jpg" /> <p>The Quick Note feature lets you create a note at any time, no matter what you&#8217;re doing on your computer, by clicking the elephant in the menu bar at the top of your screen or using the keyboard shortcut Control-Command-N.</p>
+<h3>Quickest text notes ever</h3>
+<p>The simplest thing you can do is pop open Quick Note and start typing. Once you&#8217;re done with your thought, click <em>Save to Evernote</em> or Command-Return, then continue doing what you were doing. If you don&#8217;t save to Evernote, then your content will stay in the Quick Note window waiting for you to add more stuff.</p>
+<h3>Images, audio, attachments, and screenshots</h3>
+<p>Create audio notes and screenshots by clicking on the relevant icons in the Helper. You can also add images or attachments by simply dragging them onto the elephant icon in the menu bar. Every new item will be added to the same note until you save it to Evernote.</p>
+<p>Quick Note is the perfect on-the-go complement to your normal Evernote use, and once you get the hang of the keyboard shortcuts, you&#8217;ll wonder how you ever got along without it.</p>
+
+]]>
+      </content:encoded>
+    </item>
+    <item>
+      <title>Keeping Things Organized with (and Around) the Kids</title>
+      <pubDate>Mon, 06 May 2013 16:01:07 +0000</pubDate>
+      <dc:creator>ahanda</dc:creator>
+      <guid isPermaLink="true">https://announcements.corp.etonreve.com/?p=28</guid>
+      <evernote:shortGuid>mac-evernote-28</evernote:shortGuid>
+
+      <evernote:userPrivilege>Everyone</evernote:userPrivilege>			<evernote:contentCategory>stories</evernote:contentCategory>			<evernote:contentCategoryTitle>Stories</evernote:contentCategoryTitle>
+      <evernote:descriptionImg>https://announcements.corp.etonreve.com/wp-content/uploads/2013/05/SpringCleaning_1b-300x164.jpg</evernote:descriptionImg>
+      <evernote:ctaAppStoreURI></evernote:ctaAppStoreURI>
+      <evernote:ctaAppStoreProductTitle></evernote:ctaAppStoreProductTitle>
+      <evernote:ctaAppStoreProductImg></evernote:ctaAppStoreProductImg>
+      <evernote:ctaMarketURI></evernote:ctaMarketURI>
+      <evernote:ctaMarketProductTitle></evernote:ctaMarketProductTitle>
+      <evernote:ctaMarketProductImg></evernote:ctaMarketProductImg>
+
+      <evernote:ctaBrowserURI></evernote:ctaBrowserURI>
+      <evernote:ctaBrowserTitle></evernote:ctaBrowserTitle>
+
+      <evernote:enexURI>https://announcements.corp.etonreve.com/wp-content/uploads/2013/05/keeping_organized.enex</evernote:enexURI>
+      <evernote:applicationVersion></evernote:applicationVersion>
+      <evernote:readMoreURI>http://blog.evernote.com/blog/category/community/</evernote:readMoreURI>
+      <evernote:readMoreTitle>Read More Stories</evernote:readMoreTitle>
+      <evernote:sidebarCallout1URI></evernote:sidebarCallout1URI>
+      <evernote:sidebarCallout1Title></evernote:sidebarCallout1Title>
+      <evernote:sidebarCallout1Img></evernote:sidebarCallout1Img>
+      <evernote:sidebarCallout2URI></evernote:sidebarCallout2URI>
+      <evernote:sidebarCallout2Title></evernote:sidebarCallout2Title>
+      <evernote:sidebarCallout2Img></evernote:sidebarCallout2Img>
+      <evernote:sidebarCallout3URI></evernote:sidebarCallout3URI>
+      <evernote:sidebarCallout3Title></evernote:sidebarCallout3Title>
+      <evernote:sidebarCallout3Img></evernote:sidebarCallout3Img>
+      <description>
+        <![CDATA[
+
+Great ideas from our Parenting Ambassador on using Evernote to help keep your home organized. 
+]]>
+      </description>
+      <content:encoded>
+        <![CDATA[
+
+<img src="https://announcements.corp.etonreve.com/wp-content/uploads/2013/05/SpringCleaning_1b-1024x561.jpg" /> <p><em>Contributed Post by Carley Knobloch, Parenting Ambassador:</em></p>
+<p>Organizational overhauls can be a great learning experience for kids, especially when those kids are responsible for much of the mess in the house. For me, it&#8217;s just as much about getting them to pitch in as it is imparting some organizational wisdom. </p>
+<h3>Archive The Kids&#8217; Art</h3>
+<p>I accept that someday my children will leave the house, so why is it so hard to let go of their noodle necklaces and marker masterpieces? Artwork is accumulative, and I’ve learned over the years that saving everything means nothing feels special. Scan or photograph your mini-Monet’s works and store all the archives in Evernote. I like to record the artists’ commentary on the works as well, and I bet they’ll love listening to those old voice notes once they’re away at college (and I’ve converted their room into a home gym).</p>
+<p><img src="https://announcements.corp.etonreve.com/wp-content/uploads/2013/05/SpringCleaning_2b.jpg" alt="SpringCleaning_2b" width="1240" height="680" class="alignnone size-full wp-image-509" /></p>
+<h3>Store Toys With a System. </h3>
+<p>Maybe it’s something about the cold winter months, but I am convinced that stuffed animals (and toys and books) tend to multiply in winter. It&#8217;s time to thin the herd: store the old toys for the next sibling in line, or (my dirty secret) put things in the garage to ensure that no one misses them, then giving them away to charity. I snap a quick phone picture of everything I put in storage, and keep them all in Evernote, so if someone suddenly wonders where their purple bunny with the polka-dot tunic went, you’ll know exactly which storage bin it’s in.</p>
+<h3>Purge Your Paper</h3>
+<p>Here’s something no one ever told me: families leave a paper trail.  Report cards, medical histories, soccer schedules, vet records, bills paid, checks returned… the list is endless. I promise you, 92% of these documents can safely disappear with two words: scan and shred. Because I despise unnecessary paper piles, my Fujitsu ScanSnap iX500 has become my partner in paperless living.  All those piles become searchable PDF documents, easy to find at a moment’s notice for the rest of eternity. </p>
+<p><em>Carley Knobloch is an Evernote Parenting Ambassador, a Today show contributor and digital lifestyle expert. She&#8217;s the host and founder of Digitwirl, a Webby-nominated web show designed to help busy women discover technology that just works.</em></p>
+
+]]>
+      </content:encoded>
+    </item>
+  </channel>
+</rss>

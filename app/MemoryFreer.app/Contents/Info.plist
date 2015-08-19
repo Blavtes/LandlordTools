@@ -1,0 +1,42 @@
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+    <plist version="0.9">
+    <dict>
+        <key>CFBundleDevelopmentRegion</key>
+        <string>English</string>
+        <key>CFBundleExecutable</key>
+        <string>MemoryFreer</string>
+        <key>CFBundleName</key>
+        <string>MemoryFreer</string>
+        <key>CFBundleShortVersionString</key>
+        <string>1.2.2</string>
+        <key>CFBundlePackageType</key>
+        <string>APPL</string>
+        <key>CFBundleIdentifier</key>
+        <string>com.thinktimecreations.MemoryFreer</string>
+        <key>NSHumanReadableCopyright</key>
+        <string>© 2011 ThinkTime Creations LLC.</string>
+        <key>LSMinimumSystemVersion</key>
+        <string>10.5</string>
+        <key>CFBundleIconFile</key>
+        <string>app.icns</string>
+        <key>NSMainNibFile</key>
+        <string>MainMenu</string>
+        <key>LSUIElement</key>
+        <true/>
+        <key>CFBundleLocalizations</key>
+        <array>
+            <string>English</string>
+            <string>German</string>
+            <string>French</string>
+            <string>Italian</string>
+            <string>Japanese</string>
+            <string>Chinese</string>
+        </array>
+        <key>NSHumanReadableCopyright</key>
+        <string>© 2011 ThinkTime Creations LLC.</string>
+        <key>LSApplicationCategoryType</key>
+        <string>public.app-category.utilities</string>
+        </dict>
+        </plist>
+

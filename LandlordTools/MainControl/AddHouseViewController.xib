@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddHouseViewController">
             <connections>
+                <outlet property="hubView" destination="P1a-A1-LMQ" id="uRP-uL-Umu"/>
                 <outlet property="tableView" destination="w7B-Tq-jYF" id="QRh-EG-Rsv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -132,45 +133,63 @@
                                 </mask>
                             </variation>
                         </view>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P1a-A1-LMQ">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstAttribute="bottom" secondItem="P1a-A1-LMQ" secondAttribute="bottom" id="6Ur-pE-kvE"/>
                         <constraint firstItem="0fb-lG-160" firstAttribute="top" secondItem="HED-VB-FuK" secondAttribute="bottom" id="B17-5a-aiA"/>
+                        <constraint firstItem="P1a-A1-LMQ" firstAttribute="leading" secondItem="ee3-2h-fsJ" secondAttribute="leading" id="CGr-jL-W6O"/>
                         <constraint firstItem="HED-VB-FuK" firstAttribute="leading" secondItem="ee3-2h-fsJ" secondAttribute="leading" id="HTH-D7-Z4w"/>
+                        <constraint firstAttribute="trailing" secondItem="P1a-A1-LMQ" secondAttribute="trailing" id="I4p-Ig-zuc"/>
                         <constraint firstItem="0fb-lG-160" firstAttribute="leading" secondItem="ee3-2h-fsJ" secondAttribute="leading" id="OFj-IP-nDy"/>
                         <constraint firstAttribute="trailing" secondItem="HED-VB-FuK" secondAttribute="trailing" id="ZJK-aV-88y"/>
                         <constraint firstAttribute="bottom" secondItem="0fb-lG-160" secondAttribute="bottom" id="iZx-Dt-lw6"/>
                         <constraint firstAttribute="trailing" secondItem="0fb-lG-160" secondAttribute="trailing" id="oFI-eb-JtQ"/>
+                        <constraint firstItem="P1a-A1-LMQ" firstAttribute="top" secondItem="HED-VB-FuK" secondAttribute="bottom" id="wef-Zo-6zr"/>
                         <constraint firstItem="HED-VB-FuK" firstAttribute="top" secondItem="ee3-2h-fsJ" secondAttribute="top" id="y8B-fN-ZIf"/>
                     </constraints>
                     <variation key="default">
                         <mask key="subviews">
                             <exclude reference="HED-VB-FuK"/>
                             <exclude reference="0fb-lG-160"/>
+                            <exclude reference="P1a-A1-LMQ"/>
                         </mask>
                         <mask key="constraints">
+                            <exclude reference="HTH-D7-Z4w"/>
+                            <exclude reference="ZJK-aV-88y"/>
+                            <exclude reference="y8B-fN-ZIf"/>
                             <exclude reference="B17-5a-aiA"/>
                             <exclude reference="OFj-IP-nDy"/>
                             <exclude reference="iZx-Dt-lw6"/>
                             <exclude reference="oFI-eb-JtQ"/>
-                            <exclude reference="HTH-D7-Z4w"/>
-                            <exclude reference="ZJK-aV-88y"/>
-                            <exclude reference="y8B-fN-ZIf"/>
+                            <exclude reference="6Ur-pE-kvE"/>
+                            <exclude reference="CGr-jL-W6O"/>
+                            <exclude reference="I4p-Ig-zuc"/>
+                            <exclude reference="wef-Zo-6zr"/>
                         </mask>
                     </variation>
                     <variation key="heightClass=regular-widthClass=compact">
                         <mask key="subviews">
                             <include reference="HED-VB-FuK"/>
                             <include reference="0fb-lG-160"/>
+                            <include reference="P1a-A1-LMQ"/>
                         </mask>
                         <mask key="constraints">
+                            <include reference="HTH-D7-Z4w"/>
+                            <include reference="ZJK-aV-88y"/>
+                            <include reference="y8B-fN-ZIf"/>
                             <include reference="B17-5a-aiA"/>
                             <include reference="OFj-IP-nDy"/>
                             <include reference="iZx-Dt-lw6"/>
                             <include reference="oFI-eb-JtQ"/>
-                            <include reference="HTH-D7-Z4w"/>
-                            <include reference="ZJK-aV-88y"/>
-                            <include reference="y8B-fN-ZIf"/>
+                            <include reference="6Ur-pE-kvE"/>
+                            <include reference="CGr-jL-W6O"/>
+                            <include reference="I4p-Ig-zuc"/>
+                            <include reference="wef-Zo-6zr"/>
                         </mask>
                     </variation>
                 </view>

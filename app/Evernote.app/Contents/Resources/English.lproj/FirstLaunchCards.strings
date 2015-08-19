@@ -1,0 +1,117 @@
+/* 
+  FirstLaunchCards.strings
+  NewLoginWindow
+
+  Created by Matt Sarnoff on 1/14/13.
+  Copyright (c) 2013 Evernote. All rights reserved.
+*/
+
+"home-cook-personName" = "Lauren";
+
+"home-cook-personOccupation" = "Home Cook";
+
+"home-cook-title" = "I collect recipes and share shopping lists with my family.";
+
+"home-cook-description" = "Create your own cookbook by clipping recipes you find online. Make, share, and update checklists so you always know what you need.";
+
+"home-cook-str1" = "Home To-do’s";
+
+"home-cook-str2" = "Grocery list for week of Aug. 27th";
+
+"home-cook-str3" = "Need cupcake ingredients for the party this weekend!";
+
+"home-cook-str4" = "Vegetable oil";
+
+"home-cook-str5" = "Buttermilk";
+
+"home-cook-str6" = "Pure vanilla extract";
+
+"home-cook-str7" = "Unsweetened cocoa powder";
+
+"home-cook-str8" = "Eggs";
+
+"home-cook-str9" = "Baking soda";
+
+"home-cook-str10" = "Self-rising flour";
+
+"home-cook-str11" = "Half & half";
+
+"home-cook-str12" = "Cupcake liners";
+
+
+"small-business-personName" = "Russell";
+
+"small-business-personOccupation" = "Small Business Owner";
+
+"small-business-title" = "I keep my business running with Shared Notebooks.";
+
+"small-business-description" = "Evernote makes it easy for your team to edit notes and quickly access shared documents from any device, even when you’re out of the office.";
+
+"small-business-str1" = "Job #1383827";
+
+"small-business-str2" = "Notes from Site 1024 Meeting - 9/12";
+
+"small-business-str3" = "Building layout updated. My comments below:";
+
+"small-business-str4" = "Remaining action items:";
+
+"small-business-str5" = "Update floor plan with changes ==> David";
+
+"small-business-str6" = "New project estimate ==> Emma";
+
+"small-business-str7" = "Signed contract ==> Emma";
+
+
+"parent-personName" = "Carley";
+
+"parent-personOccupation" = "Working Parent";
+
+"parent-title" = "I capture memories and organize our important documents.";
+
+"parent-description" = "From scans of warranties to photos of kids’ artwork, Evernote keeps everything organized and accessible whenever you need it.";
+
+"parent-str1" = "Annie - First Grade";
+
+"parent-str2" = "Paintings and drawings of our family.";
+
+
+"student-personName" = "Megan";
+
+"student-personOccupation" = "College Student";
+
+"student-title" = "I take notes and collaborate with classmates on team projects.";
+
+"student-description" = "Snap photos of handwritten class notes and whiteboards. With Evernote, you can even search for text within images to find things later.";
+
+"student-str1" = "Resume Workshop";
+
+"student-str2" = "Class Notes";
+
+
+"traveler-personName" = "Rebecca";
+
+"traveler-personOccupation" = "Avid Traveler";
+
+"traveler-title" = "I keep my travel plans, research, and discoveries all in one place.";
+
+"traveler-description" = "Create an itinerary for every trip, including flight confirmations, packing lists, and maps. Access it all on the go, even when you’re offline.";
+
+"traveler-str1" = "Hiking Adventures";
+
+"traveler-str2" = "Pipiwai Trail and Waimoku Falls – Itinerary";
+
+"traveler-str3" = "Day 4 of vacation";
+
+"traveler-str4" = "Trail Info";
+
+"traveler-str5" = "4 miles roundtrip - 650 ft elevation";
+
+"traveler-str6" = "Address: 42215 Hana Hwy, Hana, HI 96713";
+
+"traveler-str7" = "Things to pack:";
+
+"traveler-str8" = "Sunscreen";
+
+"traveler-str9" = "Camera";
+
+"traveler-str10" = "Lots of water";

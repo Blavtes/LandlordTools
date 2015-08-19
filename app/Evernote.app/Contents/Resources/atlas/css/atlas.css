@@ -1,0 +1,1017 @@
+.leaflet-cluster {
+  top: -34px;
+  left: -7px;
+  height: 38px;
+}
+.leaflet-cluster.ones {
+  width: 33px;
+  left: 2px;
+}
+@media all {
+  .leaflet-cluster.ones {
+    background: url('../img/flags/atlas-01.png') bottom;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .leaflet-cluster.ones {
+    background: url('../img/flags/atlas-01@2x.png') bottom;
+    background-size: 33px, 38px;
+  }
+}
+.leaflet-cluster.ones .cluster-count {
+  left: -4px;
+}
+.leaflet-cluster.tens {
+  width: 37px;
+  left: -4px;
+}
+@media all {
+  .leaflet-cluster.tens {
+    background: url('../img/flags/atlas-02.png') bottom;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .leaflet-cluster.tens {
+    background: url('../img/flags/atlas-02@2x.png') bottom;
+    background-size: 37px, 38px;
+  }
+}
+.leaflet-cluster.hundreds {
+  width: 43px;
+  left: -9px;
+}
+@media all {
+  .leaflet-cluster.hundreds {
+    background: url('../img/flags/atlas-03.png') bottom;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .leaflet-cluster.hundreds {
+    background: url('../img/flags/atlas-03@2x.png') bottom;
+    background-size: 43px, 38px;
+  }
+}
+.leaflet-cluster.thousands {
+  width: 49px;
+  left: -11px;
+}
+@media all {
+  .leaflet-cluster.thousands {
+    background: url('../img/flags/atlas-04.png') bottom;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .leaflet-cluster.thousands {
+    background: url('../img/flags/atlas-04@2x.png') bottom;
+    background-size: 49px, 38px;
+  }
+}
+.leaflet-cluster.big-map:hover {
+  height: 40px;
+  top: -36px;
+}
+@media all {
+  .leaflet-cluster.big-map:hover.ones {
+    background: url('../img/flags/atlas-01-hover.png') bottom;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .leaflet-cluster.big-map:hover.ones {
+    background: url('../img/flags/atlas-01-hover@2x.png') bottom;
+    background-size: 33px, 40px;
+  }
+}
+@media all {
+  .leaflet-cluster.big-map:hover.tens {
+    background: url('../img/flags/atlas-02-hover.png') bottom;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .leaflet-cluster.big-map:hover.tens {
+    background: url('../img/flags/atlas-02-hover@2x.png') bottom;
+    background-size: 37px, 40px;
+  }
+}
+@media all {
+  .leaflet-cluster.big-map:hover.hundreds {
+    background: url('../img/flags/atlas-03-hover.png') bottom;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .leaflet-cluster.big-map:hover.hundreds {
+    background: url('../img/flags/atlas-03-hover@2x.png') bottom;
+    background-size: 43px, 40px;
+  }
+}
+@media all {
+  .leaflet-cluster.big-map:hover.thousands {
+    background: url('../img/flags/atlas-04-hover.png') bottom;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .leaflet-cluster.big-map:hover.thousands {
+    background: url('../img/flags/atlas-04-hover@2x.png') bottom;
+    background-size: 49px, 40px;
+  }
+}
+.leaflet-cluster .cluster-count {
+  display: block;
+  text-align: center;
+  position: relative;
+  top: 3px;
+  left: -3px;
+  color: white;
+  font-weight: bold;
+  font-family: "Helvetica Neue Medium", "HelveticaNeue-Medium", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.6);
+}
+#page {
+  -webkit-user-select: none;
+  user-select: none;
+  min-width: 575px;
+  min-height: 458px;
+  margin: 40px 30px 0 30px;
+  text-align: left;
+  /*-webkit-transform-origin: 0px, 500px, 0px;*/
+
+  -webkit-perspective: 5000px;
+  /*-webkit-transform-style: preserve-3d; causes bug in safari on retina display*/
+
+  -webkit-perspective-origin-y: 50%;
+}
+#page:before {
+  content: " ";
+  display: table;
+}
+#page:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+@-webkit-keyframes pop {
+  0%,
+  100% {
+    -webkit-transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.015);
+  }
+}
+.map-card {
+  cursor: pointer;
+}
+.map-card:not(.zooming):hover {
+  -webkit-animation: pop .2s ;
+}
+.atlas-card {
+  display: inline-block;
+  position: absolute;
+  width: 180px;
+  height: 225px;
+  margin-bottom: 35px;
+  -webkit-transform: rotateY(0deg);
+  opacity: 0;
+  background-repeat: no-repeat;
+  border: 1px solid #e2e2e2;
+  background: white;
+}
+.atlas-card.fle-card {
+  cursor: default;
+}
+@media all {
+  .atlas-card.fle-card {
+    background: url("../img/places/atlas-fle.png") center 20px no-repeat;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .atlas-card.fle-card {
+    background: url("../img/places/atlas-fle@2x.png") center 20px no-repeat;
+    background-size: 88px, 88px;
+  }
+}
+.atlas-card.fle-card .flesubtitle {
+  font-family: 'caecilia-bold', Arial, Helvetica, sans-serif;
+  font-variant: small-caps;
+  font-weight: normal;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.16);
+  text-align: center;
+  font-size: 18px;
+  line-height: 18px;
+  opacity: 1;
+  color: #858585;
+  position: absolute;
+  top: 121px;
+  left: 0px;
+  width: 180px;
+  -webkit-font-smoothing: antialiased;
+}
+.atlas-card.fle-card .fle-message {
+  font-family: "Helvetica Neue Regular", "HelveticaNeue-Regular", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-size: 12px;
+  line-height: 15px;
+  opacity: 1;
+  color: #858585;
+  position: absolute;
+  top: 156px;
+  left: 10px;
+  right: 10px;
+  -webkit-font-smoothing: antialiased;
+}
+.atlas-card.fle-card .fle-message p {
+  margin: 0px;
+}
+.single-pic-marker {
+  border-radius: 2px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), inset 0 0 1px rgba(255, 255, 255, 0.95);
+}
+.marker-snippet {
+  width: 38px;
+  height: 38px;
+}
+.marker-snippet img {
+  margin: 2px;
+  width: 34px;
+  height: 34px;
+}
+.marker-card {
+  width: 38px;
+  height: 38px;
+}
+.marker-card img {
+  margin: 2px;
+  width: 34px;
+  height: 34px;
+}
+@font-face {
+  font-family: 'caecilia-bold';
+  src: url('./fonts/caecilialtstd-bold-webfont.eot');
+  src: url('./fonts/caecilialtstd-bold-webfont.eot?#iefix') format('embedded-opentype'), url('./fonts/caecilialtstd-bold-webfont.woff') format('woff'), url('./fonts/caecilialtstd-bold-webfont.ttf') format('truetype'), url('./fonts/caecilialtstd-bold-webfont.svg#webfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.helvetica-neue-light {
+  font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+.helvetica-neue-regular {
+  font-family: "Helvetica Neue Regular", "HelveticaNeue-Regular", "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+.helvetica-neue-medium {
+  font-family: "Helvetica Neue Medium", "HelveticaNeue-Medium", "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+.supertitle {
+  font-family: "Helvetica Neue Regular", "HelveticaNeue-Regular", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  line-height: 10px;
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  color: #858585;
+  text-transform: capitalize;
+}
+.title {
+  font-family: "Helvetica Neue Regular", "HelveticaNeue-Regular", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 18px;
+  color: black;
+  position: absolute;
+  top: 29px;
+  left: 14px;
+  right: 15px;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.subtitle {
+  font-family: "Helvetica Neue Regular", "HelveticaNeue-Regular", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 12px;
+  color: #858585;
+  position: absolute;
+  top: 52px;
+  left: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+#user-select {
+  position: absolute;
+  top: 1350px;
+  left: 4px;
+  width: 274px;
+  height: 233px;
+}
+.map-div {
+  outline: none;
+  width: 100%;
+  height: 100%;
+}
+.map-div-small {
+  position: absolute;
+  left: 0px;
+  top: 75px;
+  width: 180px;
+  height: 150px;
+  z-index: 10;
+}
+.map-div-large {
+  /*background: #888;*/
+}
+.map-container .map-emboss {
+  position: absolute;
+}
+.map-container .map-emboss img {
+  position: absolute;
+}
+.map-container .map-emboss .map-emboss-compass {
+  height: 300px;
+  width: 300px;
+}
+.map-container .map-emboss .map-emboss-evernote {
+  top: 305px;
+  left: 18px;
+  width: 273px;
+  height: 23px;
+}
+.card-back-container {
+  padding: 15px 25px 0px 13px;
+  margin: 0 40px;
+  min-height: 458px;
+}
+.card-back .map-container {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  border: 7px solid whitesmoke;
+  background: #f5f5f5;
+  background-repeat: repeat;
+}
+.card-back-container .close-button {
+  position: absolute;
+  top: 28px;
+  left: 26px;
+}
+.card-back-container .close-button img {
+  width: 21px;
+  height: 20px;
+}
+.big-control {
+  cursor: pointer;
+}
+.card-back .close-button:hover {
+  cursor: pointer;
+}
+.card-back .controls {
+  width: 100%;
+  margin-top: 20px;
+}
+.card-back .search-box {
+  left: 518px;
+  top: 38px;
+  position: absolute;
+}
+.card-back .all-notes-button {
+  float: right;
+  min-width: 98px;
+  position: relative;
+  left: 13px;
+}
+.card-back .all-notes-button .all-notes-button-text {
+  position: absolute;
+  top: 4px;
+  left: 9px;
+  color: #787878;
+  font-size: 12px;
+  font-weight: bold;
+}
+.card-back .all-notes-button div {
+  height: 22px;
+  display: inline-block;
+}
+.card-back .all-notes-button div.leftcap {
+  width: 4px;
+}
+@media all {
+  .card-back .all-notes-button div.leftcap {
+    background: url("../img/places/atlas-button-view-leftcap.png") center;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .card-back .all-notes-button div.leftcap {
+    background: url("../img/places/atlas-button-view-leftcap@2x.png") center;
+    background-size: 4px, 22px;
+  }
+}
+.card-back .all-notes-button div.mid {
+  width: 70px;
+  margin-left: -4px;
+  margin-right: -4px;
+}
+@media all {
+  .card-back .all-notes-button div.mid {
+    background: url("../img/places/atlas-button-view-mid.png") repeat-x;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .card-back .all-notes-button div.mid {
+    background: url("../img/places/atlas-button-view-mid@2x.png") repeat-x;
+    background-size: 1px, 22px;
+  }
+}
+.card-back .all-notes-button div.rightcap {
+  width: 19px;
+}
+@media all {
+  .card-back .all-notes-button div.rightcap {
+    background: url("../img/places/atlas-button-view-rightcap.png") center;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .card-back .all-notes-button div.rightcap {
+    background: url("../img/places/atlas-button-view-rightcap@2x.png") center;
+    background-size: 19px, 22px;
+  }
+}
+@media all {
+  .card-back .all-notes-button:hover .leftcap {
+    background: url("../img/places/atlas-button-view-leftcap-over.png") center;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .card-back .all-notes-button:hover .leftcap {
+    background: url("../img/places/atlas-button-view-leftcap-over@2x.png") center;
+    background-size: 4px, 22px;
+  }
+}
+@media all {
+  .card-back .all-notes-button:hover .mid {
+    background: url("../img/places/atlas-button-view-mid-over.png") repeat-x;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .card-back .all-notes-button:hover .mid {
+    background: url("../img/places/atlas-button-view-mid-over@2x.png") repeat-x;
+    background-size: 1px, 22px;
+  }
+}
+@media all {
+  .card-back .all-notes-button:hover .rightcap {
+    background: url("../img/places/atlas-button-view-rightcap-over.png") center;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .card-back .all-notes-button:hover .rightcap {
+    background: url("../img/places/atlas-button-view-rightcap-over@2x.png") center;
+    background-size: 19px, 22px;
+  }
+}
+@media all {
+  .card-back .all-notes-button:active .leftcap {
+    background: url("../img/places/atlas-button-view-leftcap-pressed.png") center;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .card-back .all-notes-button:active .leftcap {
+    background: url("../img/places/atlas-button-view-leftcap-pressed@2x.png") center;
+    background-size: 4px, 22px;
+  }
+}
+@media all {
+  .card-back .all-notes-button:active .mid {
+    background: url("../img/places/atlas-button-view-mid-pressed.png") repeat-x;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .card-back .all-notes-button:active .mid {
+    background: url("../img/places/atlas-button-view-mid-pressed@2x.png") repeat-x;
+    background-size: 1px, 22px;
+  }
+}
+@media all {
+  .card-back .all-notes-button:active .rightcap {
+    background: url("../img/places/atlas-button-view-rightcap-pressed.png") center;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .card-back .all-notes-button:active .rightcap {
+    background: url("../img/places/atlas-button-view-rightcap-pressed@2x.png") center;
+    background-size: 19px, 22px;
+  }
+}
+.card-back .all-notes-button.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.card-back .zoom-slider {
+  display: inline-block;
+}
+.card-back .zoom-slider-container {
+  width: 241px;
+  min-width: 241px;
+  margin: 0 auto;
+}
+.card-back .zoom-slider .zoom-slider-bg {
+  height: 21px;
+  width: 190px;
+}
+@media all {
+  .card-back .zoom-slider .zoom-slider-bg {
+    background: url("../img/places/atlas-slider-outside.png") center center;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .card-back .zoom-slider .zoom-slider-bg {
+    background: url("../img/places/atlas-slider-outside@2x.png") center center;
+    background-size: 190px, 21px;
+  }
+}
+.card-back .zoom-slider input[type="range"] {
+  -webkit-appearance: none !important;
+  width: 178px;
+  height: 22px;
+  position: relative;
+  left: 5px;
+  overflow: visible;
+}
+@media all {
+  .card-back .zoom-slider input[type="range"] {
+    background: url("../img/places/atlas-slider-inside.png") no-repeat transparent 0px 9px;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .card-back .zoom-slider input[type="range"] {
+    background: url("../img/places/atlas-slider-inside@2x.png") no-repeat transparent 0px 9px;
+    background-size: 178px, 6px;
+  }
+}
+.card-back .zoom-slider input::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  height: 15px;
+  width: 8px;
+  /*bottom: 7px;*/
+
+  /*left: 0px;*/
+}
+@media all {
+  .card-back .zoom-slider input::-webkit-slider-thumb {
+    background: url("../img/places/atlas-slider-thumb.png") center;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .card-back .zoom-slider input::-webkit-slider-thumb {
+    background: url("../img/places/atlas-slider-thumb@2x.png") center;
+    background-size: 8px, 15px;
+  }
+}
+.card-back .zoom-slider .slider-thumb {
+  position: absolute;
+  left: 50px;
+  bottom: 27px;
+}
+.card-back .findme {
+  float: left;
+  width: 21px;
+  height: 21px;
+}
+@media all {
+  .card-back .findme-normal {
+    background: url("../img/places/atlas-button-findme.png") center;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .card-back .findme-normal {
+    background: url("../img/places/atlas-button-findme@2x.png") center;
+    background-size: 21px, 22px;
+  }
+}
+@media all {
+  .card-back .findme-hover {
+    background: url("../img/places/atlas-button-findme-over.png") center;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .card-back .findme-hover {
+    background: url("../img/places/atlas-button-findme-over@2x.png") center;
+    background-size: 21px, 22px;
+  }
+}
+@media all {
+  .card-back .findme-push {
+    background: url("../img/places/atlas-button-findme-pressed.png") center;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .card-back .findme-push {
+    background: url("../img/places/atlas-button-findme-pressed@2x.png") center;
+    background-size: 21px, 22px;
+  }
+}
+.card-back .findme-wait {
+  background-image: url("../img/places/findme-spin.gif");
+}
+.card-back .zoom-in,
+.card-back .zoom-out {
+  width: 21px;
+  height: 21px;
+  display: inline-block;
+}
+@media all {
+  .card-back .zoom-in {
+    background: url("../img/places/atlas-button-zoom-in.png") center;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .card-back .zoom-in {
+    background: url("../img/places/atlas-button-zoom-in@2x.png") center;
+    background-size: 21px, 22px;
+  }
+}
+@media all {
+  .card-back .zoom-in:hover {
+    background: url("../img/places/atlas-button-zoom-in-over.png") center;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .card-back .zoom-in:hover {
+    background: url("../img/places/atlas-button-zoom-in-over@2x.png") center;
+    background-size: 21px, 22px;
+  }
+}
+@media all {
+  .card-back .zoom-in:active {
+    background: url("../img/places/atlas-button-zoom-in-pressed.png") center;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .card-back .zoom-in:active {
+    background: url("../img/places/atlas-button-zoom-in-pressed@2x.png") center;
+    background-size: 21px, 22px;
+  }
+}
+@media all {
+  .card-back .zoom-out {
+    background: url("../img/places/atlas-button-zoom-out.png") center;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .card-back .zoom-out {
+    background: url("../img/places/atlas-button-zoom-out@2x.png") center;
+    background-size: 21px, 22px;
+  }
+}
+@media all {
+  .card-back .zoom-out:hover {
+    background: url("../img/places/atlas-button-zoom-out-over.png") center;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .card-back .zoom-out:hover {
+    background: url("../img/places/atlas-button-zoom-out-over@2x.png") center;
+    background-size: 21px, 22px;
+  }
+}
+@media all {
+  .card-back .zoom-out:active {
+    background: url("../img/places/atlas-button-zoom-out-pressed.png") center;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .card-back .zoom-out:active {
+    background: url("../img/places/atlas-button-zoom-out-pressed@2x.png") center;
+    background-size: 21px, 22px;
+  }
+}
+.card-back .map-label-big {
+  position: absolute;
+  width: 98%;
+  top: -23px;
+  text-align: center;
+  color: #565656;
+  font-family: "Helvetica", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+.card-back .location-disclosure-icon {
+  position: absolute;
+  left: 577px;
+  top: 27px;
+}
+.map-div-large.leaflet-container {
+  background: none;
+}
+.flyout-card-big {
+  width: 179px;
+  height: 175px;
+}
+.flyout-card-big img {
+  position: absolute;
+  top: 0px;
+  left: -5px;
+  clip: rect(1px 186px 181px 6px);
+}
+.flyout-table {
+  top: 50%;
+  margin-top: 0px;
+  width: 150px;
+}
+.flyout-table tr {
+  color: #2079c6;
+  width: 100%;
+}
+.flyout-table tr:not(.flyout-divider-row):hover {
+  background-color: #2079c6;
+  color: white;
+}
+.flyout-table td {
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 12px;
+  position: relative;
+}
+.flyout-table td .flyout-inner-wrapper {
+  position: relative;
+  top: -3px;
+}
+.flyout-table td.flyout-img {
+  padding-left: 5px;
+  padding-top: 6px;
+  vertical-align: top;
+  padding-bottom: 2px;
+}
+.flyout-table td.flyout-img img {
+  width: 15px;
+  height: 15px;
+}
+.flyout-table td.flyout-type {
+  vertical-align: bottom;
+  padding-left: 5px;
+}
+.flyout-table td.flyout-num {
+  vertical-align: bottom;
+}
+.flyout-table .flyout-divider {
+  top: 3px;
+  height: 5px;
+  padding-top: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 0px;
+}
+@media all {
+  .flyout-table .flyout-divider {
+    background: url("../img/flyout/atlas-flyout-divider.png") repeat-x 0 2px;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .flyout-table .flyout-divider {
+    background: url("../img/flyout/atlas-flyout-divider@2x.png") repeat-x 0 2px;
+    background-size: 1px, 2px;
+  }
+}
+.flyout-num {
+  text-align: right;
+  padding-right: 5px;
+}
+.leaflet-container a.leaflet-popup-close-button {
+  display: none;
+}
+.leaflet-container a.leaflet-popup-close-button:hover {
+  display: none;
+}
+.flyout-arrow-left {
+  position: absolute;
+  top: 45px;
+  left: -21px;
+}
+.leaflet-popup-tip {
+  display: none;
+}
+.leaflet-popup-content-wrapper {
+  background: none;
+  box-shadow: none;
+}
+.leaflet-popup-content {
+  margin: 0;
+}
+.flyout-dialog {
+  position: relative;
+  height: 114px;
+  width: 210px;
+}
+.flyout-dialog .top-left {
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  height: 32px;
+  width: 30px;
+  background-repeat: "no-repeat";
+}
+@media all {
+  .flyout-dialog .top-left {
+    background: url("../img/flyout/atlas-flyout-top-left.png") center;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .flyout-dialog .top-left {
+    background: url("../img/flyout/atlas-flyout-top-left@2x.png") center;
+    background-size: 30px, 32px;
+  }
+}
+.flyout-dialog .top-mid {
+  position: absolute;
+  height: 32px;
+  width: 150px;
+  background-repeat: "repeat-x";
+  top: 0px;
+  left: 30px;
+}
+@media all {
+  .flyout-dialog .top-mid {
+    background: url("../img/flyout/atlas-flyout-top-mid.png") center;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .flyout-dialog .top-mid {
+    background: url("../img/flyout/atlas-flyout-top-mid@2x.png") center;
+    background-size: 1px, 32px;
+  }
+}
+.flyout-dialog .top-right {
+  position: absolute;
+  height: 32px;
+  width: 30px;
+  background-repeat: "no-repeat";
+  top: 0px;
+  right: 0px;
+}
+@media all {
+  .flyout-dialog .top-right {
+    background: url("../img/flyout/atlas-flyout-top-right.png") center;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .flyout-dialog .top-right {
+    background: url("../img/flyout/atlas-flyout-top-right@2x.png") center;
+    background-size: 30px, 32px;
+  }
+}
+.flyout-dialog .mid-left-top {
+  position: absolute;
+  height: 9px;
+  width: 30px;
+  background-repeat: "repeat-y";
+  top: 32px;
+  left: 0px;
+}
+@media all {
+  .flyout-dialog .mid-left-top {
+    background: url("../img/flyout/atlas-flyout-mid-left.png") center;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .flyout-dialog .mid-left-top {
+    background: url("../img/flyout/atlas-flyout-mid-left@2x.png") center;
+    background-size: 30px, 9px;
+  }
+}
+.flyout-dialog .arrow-left {
+  position: absolute;
+  width: 30px;
+  background-repeat: "repeat-y";
+  top: 41px;
+  left: 0px;
+  height: 32px;
+}
+@media all {
+  .flyout-dialog .arrow-left {
+    background: url("../img/flyout/atlas-flyout-arrow-left.png") center;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .flyout-dialog .arrow-left {
+    background: url("../img/flyout/atlas-flyout-arrow-left@2x.png") center;
+    background-size: 30px, 32px;
+  }
+}
+.flyout-dialog .mid-left-bottom {
+  position: absolute;
+  height: 9px;
+  width: 30px;
+  background-repeat: "repeat-y";
+  top: 73px;
+  left: 0px;
+}
+@media all {
+  .flyout-dialog .mid-left-bottom {
+    background: url("../img/flyout/atlas-flyout-mid-left.png") center;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .flyout-dialog .mid-left-bottom {
+    background: url("../img/flyout/atlas-flyout-mid-left@2x.png") center;
+    background-size: 30px, 9px;
+  }
+}
+.flyout-dialog .mid-mid {
+  position: absolute;
+  height: 32px;
+  width: 150px;
+  background-repeat: "repeat";
+  top: 32px;
+  left: 30px;
+}
+@media all {
+  .flyout-dialog .mid-mid {
+    background: url("../img/flyout/atlas-flyout-mid-mid.png") center;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .flyout-dialog .mid-mid {
+    background: url("../img/flyout/atlas-flyout-mid-mid@2x.png") center;
+    background-size: 1px 50px, 32px;
+  }
+}
+.flyout-dialog .mid-right {
+  position: absolute;
+  height: 50px;
+  width: 30px;
+  background-repeat: "repeat-y";
+  top: 32px;
+  right: 0px;
+}
+@media all {
+  .flyout-dialog .mid-right {
+    background: url("../img/flyout/atlas-flyout-mid-right.png") center;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .flyout-dialog .mid-right {
+    background: url("../img/flyout/atlas-flyout-mid-right@2x.png") center;
+    background-size: 30px, 50px;
+  }
+}
+.flyout-dialog .bottom-left {
+  position: absolute;
+  height: 32px;
+  width: 30px;
+  background-repeat: "no-repeat";
+  bottom: 0px;
+  left: 0px;
+}
+@media all {
+  .flyout-dialog .bottom-left {
+    background: url("../img/flyout/atlas-flyout-bottom-left.png") center;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .flyout-dialog .bottom-left {
+    background: url("../img/flyout/atlas-flyout-bottom-left@2x.png") center;
+    background-size: 30px, 32px;
+  }
+}
+.flyout-dialog .bottom-mid {
+  position: absolute;
+  height: 32px;
+  width: 150px;
+  background-repeat: "repeat-x";
+  bottom: 0px;
+  left: 30px;
+}
+@media all {
+  .flyout-dialog .bottom-mid {
+    background: url("../img/flyout/atlas-flyout-bottom-mid.png") center;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .flyout-dialog .bottom-mid {
+    background: url("../img/flyout/atlas-flyout-bottom-mid@2x.png") center;
+    background-size: 1px, 32px;
+  }
+}
+.flyout-dialog .bottom-right {
+  position: absolute;
+  height: 32px;
+  width: 30px;
+  background-repeat: "no-repeat";
+  bottom: 0px;
+  right: 0px;
+}
+@media all {
+  .flyout-dialog .bottom-right {
+    background: url("../img/flyout/atlas-flyout-bottom-right.png") center;
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .flyout-dialog .bottom-right {
+    background: url("../img/flyout/atlas-flyout-bottom-right@2x.png") center;
+    background-size: 30px, 32px;
+  }
+}
+.loading {
+  font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 100;
+  color: #d6d6d6;
+}
+/* Hi-DPI (retina display) Background Images */

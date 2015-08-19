@@ -1,0 +1,4 @@
+CFBundleName = "7zX";
+CFBundleShortVersionString = "1.7.1";
+CFBundleGetInfoString = "7zX version 1.7.1 Copyright 2008 Sixty Five, Ltd.";
+NSHumanReadableCopyright = "Copyright 2008 Sixty Five, Ltd..";

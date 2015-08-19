@@ -1,0 +1,40 @@
+html {
+  overflow-y: auto;
+  background-color: transparent;
+}
+
+body {
+  position: absolute;
+  top: 3px;
+  left: 0px;
+  bottom: 0px;
+  right: 3px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+  display: block;
+  background-color: transparent;
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-track:hover {
+  background-color: #a3a3a3;
+}
+::-webkit-scrollbar-thumb:vertical {
+  height: 50px;
+  background-color: #d3d3d3;
+}
+::-webkit-scrollbar-thumb:horizontal {
+  width: 50px;
+  background-color: #d3d3d3;
+}

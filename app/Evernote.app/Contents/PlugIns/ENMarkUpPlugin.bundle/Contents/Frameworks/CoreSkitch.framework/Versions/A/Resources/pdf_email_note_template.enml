@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">
+<table width="100%" style="font-family: Times;">
+	<tbody>
+	<tr>
+	<td width="1%"/>
+	<td style="margin-top: 24px; margin-bottom: 24px;"><br/>
+	<div style="max-width:492px">
+	<table width="99%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 20px;">
+		<tbody>
+		<tr>
+		<td colspan="3" style="background-color: rgb(254, 249, 183); border-style: solid; border-width: 1px 1px 0px; border-color: rgb(200, 200, 200); color: rgb(102, 102, 102); padding: 20px 20px; font-size: 12pt; font-family: 'Times New Roman', Times, serif;"><!--Email message here--></td>
+		</tr>
+		<tr>
+		<td style="border-top-style: solid; border-top-width: 1px; border-top-color: rgb(200, 200, 200); width: 20px; height: 9px; font-size: 0px;"/>
+		<td style="border-top-style: solid; border-top-width: 1px; border-top-color: rgb(200, 200, 200); height: 9px; font-size: 0px;"/>
+		</tr>
+		</tbody>
+	</table>
+	<table width="99%" border="0" cellpadding="0" cellspacing="0">
+		<tbody>
+		<tr>
+		<td> </td>
+		</tr>
+		<tr>
+		<td style="color: rgb(102, 102, 102); font-size: 16pt; font-family: 'Lucida Grande', sans-serif;">@skitch_summary@</td>
+		</tr>
+		<tr>
+		<td style="color: rgb(102, 102, 102); font-size: 9pt; font-family: 'Lucida Grande', sans-serif;">@X annotations on Y pages by USERNAME@</td>
+		</tr>
+		</tbody>
+	</table>
+	<table width="99%" border="0" cellpadding="0" cellspacing="0">
+		<tbody>
+		<tr style="height: 8px; font-size: 0px;">
+		<td> </td>
+		</tr>
+		<tr>
+		<td colspan="3" style="background-color: rgb(241, 242, 241); height: 130px; border-style: solid; border-width: 1px 1px 0px; border-color: rgb(200, 200, 200); color: rgb(102, 102, 102); padding: 8px; font-family: 'Caecilia Roman', 'Times Roman', serif;">
+		<table cellspacing="12">
+			<tbody>
+			<tr>
+			@clip_count@
+			</tr>
+			<tr>
+				<td width="99%" style="padding: 0px;" colspan="7" align="right"><a href="https://evernote.com/skitch/"><en-media align="right" type="image/png" hash="skitch.png" style="margin-bottom:0"/></a></td>
+			</tr>
+			</tbody>
+		</table>
+		</td>
+		</tr>
+		<tr>
+		<td style="border-top-style: solid; border-top-width: 1px; border-top-color: rgb(200, 200, 200); width: 20px; height: 9px; font-size: 0px;"/>
+		<td style="border-top-style: solid; border-top-width: 1px; border-top-color: rgb(200, 200, 200); height: 9px; font-size: 0px;"/>
+		</tr>
+		</tbody>
+	</table>
+	</div>
+	</td>
+	<td width="1%"/>
+	</tr>
+	</tbody>
+</table>
+<en-media style='border:1px solid #aaa; box-shadow: 0px 0px 15px rgba(20,20,20,0.15);max-width:100%;' type='application/pdf' hash="annotated.pdf"/>
+</en-note>

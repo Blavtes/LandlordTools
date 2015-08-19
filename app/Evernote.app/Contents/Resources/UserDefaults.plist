@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CardViewWidth</key>
+	<integer>431</integer>
+	<key>ENNoteThumbnailViewSplitterLayout</key>
+	<array>
+		<string>{{0, 0}, {320, 459}}</string>
+		<string>{{320, 0}, {347, 459}}</string>
+	</array>
+	<key>ShortcutRecorder pasteboard</key>
+	<dict>
+		<key>keyCode</key>
+		<integer>9</integer>
+		<key>modifierFlags</key>
+		<integer>1310720</integer>
+	</dict>
+	<key>ShortcutRecorder screenshot</key>
+	<dict>
+		<key>keyCode</key>
+		<integer>8</integer>
+		<key>modifierFlags</key>
+		<integer>1310720</integer>
+	</dict>
+	<key>ShortcutRecorder search</key>
+	<dict>
+		<key>keyCode</key>
+		<integer>14</integer>
+		<key>modifierFlags</key>
+		<integer>1310720</integer>
+	</dict>
+	<key>ShowActivityInSourceList</key>
+	<true/>
+	<key>SnippetViewWidth</key>
+	<integer>410</integer>
+	<key>activateAfterClip</key>
+	<true/>
+	<key>noteFont</key>
+	<data>BAtzdHJlYW10eXBlZIHoA4QBQISEhAZOU0ZvbnQehIQITlNPYmplY3QAhYQBaSSEBVszNmNdBgAAABwAAAD//kgAZQBsAHYAZQB0AGkAYwBhAE4AZQB1AGUAhAFmDoQBYwCYAZgAmACG</data>
+	<key>noteListFont</key>
+	<data>BAtzdHJlYW10eXBlZIHoA4QBQISEhAZOU0ZvbnQehIQITlNPYmplY3QAhYQBaSSEBVszNmNdBgAAABoAAAD//kwAdQBjAGkAZABhAEcAcgBhAG4AZABlAAAAhAFmDIQBYwCYAZgAmACG</data>
+	<key>notePlainTextFont</key>
+	<data>BAtzdHJlYW10eXBlZIHoA4QBQISEhAZOU0ZvbnQehIQITlNPYmplY3QAhYQBaRiEBVsyNGNdBgAAABAAAAD//kMAbwB1AHIAaQBlAHIAhAFmDYQBYwCYAZgAmACG</data>
+	<key>searchExplanationIsVisibile</key>
+	<true/>
+	<key>showsStatusBarItem</key>
+	<true/>
+	<key>thumbnailZoomLevel</key>
+	<real>50</real>
+	<key>lastView</key>
+	<integer>2</integer>
+	<key>ShortcutRecorder newnote</key>
+	<dict>
+		<key>modifierFlags</key>
+		<integer>1310720</integer>
+		<key>keyCode</key>
+		<integer>45</integer>
+	</dict>
+	<key>ShortcutRecorder newnotewindow</key>
+	<dict>
+		<key>modifierFlags</key>
+		<integer>1835008</integer>
+		<key>keyCode</key>
+		<integer>45</integer>
+	</dict>
+	<key>noteGroupsInBrowse</key>
+	<true/>
+	<key>noteGroupsInSearchResults</key>
+	<false/>
+	<key>ENIncludeLinkedNotesInResults</key>
+	<true/>
+	<key>ENIncludeAppNotesInResults_food</key>
+	<true/>
+	<key>ENIncludeAppNotesInResults_hello</key>
+	<true/>
+	<key>ENIncludeAppNotesInResults_skitch</key>
+	<true/>
+	<key>sortPropertyKey</key>
+	<integer>2</integer>
+	<key>ENCopyTagsWhenCopyingNote</key>
+	<true/>
+	<key>ENCardScanFeatureEnabled</key>
+	<true/>
+	<key>sortByRelevanceInSearch</key>
+	<true/>
+	<key>sortAscendingArray</key>
+	<array>
+		<true/>
+		<false/>
+		<false/>
+		<true/>
+		<true/>
+		<false/>
+		<true/>
+		<true/>
+	</array>
+	<key>ENShowRelatedNotes</key>
+	<true/>
+	<key>ENShowRelatedNews</key>
+	<true/>
+	<key>ENShowRelatedPeople</key>
+	<true/>
+	<key>ENShowContext</key>
+	<true/>
+	<key>ENAutomaticBusinessSummary</key>
+	<true/>
+</dict>
+</plist>

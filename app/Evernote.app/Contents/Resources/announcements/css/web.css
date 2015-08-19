@@ -1,0 +1,46 @@
+/* web only css loaded by jsload */
+/* =========================================================
+	typography roundup + design
+
+	color pallette:
+========================================================= */
+@font-face {
+  font-family: 'caecilialtstd-light';
+  src: url('../fonts/caecilialtstd-light-webfont.eot');
+  src: url('../fonts/caecilialtstd-light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/caecilialtstd-light-webfont.woff') format('woff'), url('../fonts/caecilialtstd-light-webfont.ttf') format('truetype'), url('../fonts/caecilialtstd-light-webfont.svg#caecilialtstd-light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'caecilialtstd-bold';
+  src: url('../fonts/caecilialtstd-bold-webfont.eot');
+  src: url('../fonts/caecilialtstd-bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/caecilialtstd-bold-webfont.woff') format('woff'), url('../fonts/caecilialtstd-bold-webfont.ttf') format('truetype'), url('../fonts/caecilialtstd-bold-webfont.svg#caecilialtstd-bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'caecilialtstd-roman';
+  src: url('../fonts/caecilialtstd-roman-webfont.eot');
+  src: url('../fonts/caecilialtstd-roman-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/caecilialtstd-roman-webfont.woff') format('woff'), url('../fonts/caecilialtstd-roman-webfont.ttf') format('truetype'), url('../fonts/caecilialtstd-roman-webfont.svg#caecilialtstd-roman') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* roundup of Caecilia light */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.sidebar .cta * {
+  font-family: "caecilialtstd-light";
+}
+/* roundup of Caecilia bold */
+body > header h1,
+header div.paginate {
+  font-family: "caecilialtstd-bold";
+}
+/* roundup of Caecilia roman */
+.button.save * {
+  font-family: "caecilialtstd-roman";
+}

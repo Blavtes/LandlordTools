@@ -1,0 +1,27 @@
+EV.i18n.setMessages({
+    "See your notes on a map.":"在地图上查看笔记",
+    "Atlas organizes your notes by location.":
+        "用地图集，可以通过地点管理笔记。",
+    "Connect to the Internet to view Atlas":"连接到网络查看地图集。",
+    "Loading...":"正在载入...",
+	"All Notes" : "所有笔记",
+	"Atlas Notes" : "地图集笔记",
+	"Evernote Atlas": "印象笔记地图集",
+	"Notes from Map": "地图笔记",
+    "Notes": "笔记",
+    "Food notes": "食记笔记",
+    "Hello notes": "人脉笔记",
+    "View all": "查看全部",
+    "View all num notes": "查看全部{{ 0 }}笔记",
+    "View all num note": "查看全部{{ 0 }}笔记",
+	"num Note": "{{ 0 }} 笔记",
+	"num note": "{{ 0 }} 笔记",
+	"num Notes": "{{ 0 }} 笔记",
+	"num notes": "{{ 0 }} 笔记",
+    "Europe": "欧洲",
+    "Asia":"亚洲",
+    "North America":"北美洲",
+    "South America":"南美洲",
+    "Australia":"澳大利亚",
+    "Africa":"非洲"
+});

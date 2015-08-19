@@ -1,0 +1,4 @@
+CFBundleName = "7zX-SEA";
+CFBundleShortVersionString = "1.7";
+CFBundleGetInfoString = "7zX-SEA version 1.7 Copyright 2008 Sixty Five, Ltd.";
+NSHumanReadableCopyright = "Copyright 2008 Sixty Five, Ltd..";

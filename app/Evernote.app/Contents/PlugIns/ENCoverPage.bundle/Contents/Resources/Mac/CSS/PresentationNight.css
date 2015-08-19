@@ -1,0 +1,45 @@
+/* common */
+hr {
+  background-color: rgb(64, 64, 64);
+}
+div.encp-note-title {
+  color:rgb(255, 255, 255);
+}
+div.encp-note-title > div.encp-title-container > h1.title {
+  color:rgb(255, 255, 255);
+}
+img.encp-preview-encrypted-content {
+  background-image: url(../Images/encryptedContentWhite.svg);
+}
+img.encp-preview-default {
+  background-image: url(../Images/brokenNoteWhite.svg);
+}
+/* presentation */
+html {
+  color:rgb(245, 245, 245);
+  background-color:rgb(0,0,0);
+}
+body {
+  color:rgb(245, 245, 245);
+}
+body * {
+  color:rgb(245,245,245) !important;
+}
+a.encp-note-link.encp-text-link, a.encp-note-link.encp-text-link:visited, a.encp-note-link.encp-text-link:active {
+  color: rgb(1, 159, 81) !important;
+  text-decoration: underline;
+}
+a.encp-note-link.encp-text-link:hover, a.encp-note-link.encp-text-link:focus {
+  color:white !important;
+  background-color: rgb(1, 159, 81) !important;
+}
+a.encp-broken-link, a.encp-broken-link.encp-note-link.encp-text-link,
+a.encp-broken-link:hover, a.encp-broken-link.encp-note-link.encp-text-link:hover,
+a.encp-broken-link:focus, a.encp-broken-link.encp-note-link.encp-text-link:focus {
+  color: rgb(255, 255, 255) !important;
+}
+td, th,
+td:first-child:before, th:first-child:before,
+td:last-child:after, th:last-child:after {
+  border-color: rgb(134, 134, 134);
+}

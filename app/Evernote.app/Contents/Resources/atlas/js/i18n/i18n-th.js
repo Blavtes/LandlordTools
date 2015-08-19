@@ -1,0 +1,27 @@
+EV.i18n.setMessages({
+    "See your notes on a map.":"ดูบันทึกย่อของคุณบนแผนที่",
+    "Atlas organizes your notes by location.":
+        "สมุดแผนที่จะจัดการบันทึกย่อของคุณตามตำแหน่งที่ตั้ง",
+    "Connect to the Internet to view Atlas":"เชื่อมต่อกับอินเทอร์เน็ตเพื่อดูสมุดแผนที่",
+    "Loading...":"กำลังโหลด...",
+	"All Notes" : "บันทึกย่อทั้งหมด",
+	"Atlas Notes" : "บันทึกย่อสมุดแผนที่",
+	"Evernote Atlas": "Evernote สมุดแผนที่",
+	"Notes from Map": "บันทึกย่อจากแผนที่",
+    "Notes": "Note",
+    "Food notes": "Food บันทึกย่อ",
+    "Hello notes": "สวัสดี บันทึกย่อ",
+    "View all": "ดูทั้งหมด",
+    "View all num notes": "ดูบันทึกย่อทั้งหมด {{ 0 }} รายการ",
+    "View all num note": "ดูบันทึกย่อทั้งหมด {{ 0 }} รายการ",
+	"num Note": "บันทึกย่อ {{ 0 }} รายการ",
+	"num note": "บันทึกย่อ {{ 0 }} รายการ",
+	"num Notes": "บันทึกย่อ {{ 0 }} รายการ",
+	"num notes": "บันทึกย่อ {{ 0 }} รายการ",
+    "Europe": "ยุโรป",
+    "Asia":"เอเชีย",
+    "North America":"อเมริกาเหนือ",
+    "South America":"อเมริกาใต้",
+    "Australia":"ออสเตรเลีย",
+    "Africa":"แอฟริกา"
+});

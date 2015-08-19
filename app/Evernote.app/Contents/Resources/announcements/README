@@ -1,0 +1,80 @@
+Introduction
+============
+
+This project implements the feed of announcements, tips, and guides for
+Evernote. It is written as a single, large javascript file that is
+loaded as-is into the native clients. In addition to this, there is a
+single index.html file that holds all of the static html code and a
+bunch of hidden templates in script tags.
+
+This project was originally written by Josh Mangum, and is currently maintained
+by Andrei Thorp <athorp@evernote.com>.
+
+
+File Structure
+==============
+
+  Metadata
+  | README
+  | deploy-excludes          Files that won't be copied to native clients.
+
+  Main Source
+  | js
+  | | evBrowser.js           Provides the underlying "EV" object for browser.
+  | | evClient.js            Provides the underlying "EV" object for clients.
+  | | jsload.js              Loads one of evBrowser.js or evClient.js.
+  | | main.js                Source code for entirety of Announcements.
+  | | vendor                 3rd-party libraries.
+  | |
+  | index.html               Entirety of HTML & HTML templates.
+  | css                      Less & complied CSS files.
+  | fonts                    Fonts loaded by Announcements.
+  | img                      UI & test images.
+
+  Test Files
+  | test                     Unit tests for various features.
+  | *.xml                    Test XML files that can be loaded for testing.
+
+  Google App Engine          Optional tools used for loading in-browser.
+  | main.py
+  | oauth.py
+  | announcements.iml
+  | app.yaml
+  | consumer_oauth.py
+
+
+Tools used
+==========
+
+Less: used to compile the .Less files into CSS. A useful tool for this is
+http://incident57.com/less/. It's a simple application that will watch your
+filesystem and automatically recompile all of the less files as you change them.
+
+Google App Engine: this feature is somewhat unnecessary now, but Announcements
+is capable of running in-browser instead of in-client. This frequently gives
+you access to better or more up to date debugging tools, but comes at the
+price of not knowing if what you see in the browser will be 100% identical to
+what you'll see when you move it to the client.
+
+
+Build System
+============
+
+There is no build system. Just edit the code, make sure your Less is complied,
+and you're done. To load a development version of the application into the
+Mac client, simply drag the index.html file on top of the web view in-client.
+
+More details about getting set up for development are available in
+Andrei Thorp's "Embedded Javascript Tech" Business notebook.
+
+
+Major Libraries
+===============
+
+jQuery                       jquery.com
+jQuery.Isotope               isotope.metafizzy.co
+jQuery.Spin                  ksylvest.github.io/jquery-spin
+JsHtmlSanitizer              code.google.com/p/google-caja/wiki/JsHtmlSanitizer
+Jasmine                      pivotal.github.io/jasmine
+Underscore.js                underscorejs.org
+URI.js                       medialize.github.io/URI.js

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">
+<table width="100%" style="font-family: Times;">
+	<tbody>
+	<tr>
+	<td width="1%"/>
+	<td style="margin-top: 24px; margin-bottom: 24px;"><br/>
+	<div style="max-width:492px">
+	<table width="99%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 20px;">
+		<tbody>
+		<tr>
+		<td colspan="3" style="background-color: rgb(254, 249, 183); border-style: solid; border-width: 1px 1px 0px; border-color: rgb(200, 200, 200); color: rgb(102, 102, 102); padding: 20px 20px; font-size: 12pt; font-family: 'Times New Roman', Times, serif;"><!--Email message here--></td>
+		</tr>
+		<tr>
+		<td style="border-top-style: solid; border-top-width: 1px; border-top-color: rgb(200, 200, 200); width: 20px; height: 9px; font-size: 0px;"/>
+		<td style="border-top-style: solid; border-top-width: 1px; border-top-color: rgb(200, 200, 200); height: 9px; font-size: 0px;"/>
+		</tr>
+		</tbody>
+	</table>
+	</div>
+	</td>
+	<td width="1%"/>
+	</tr>
+	</tbody>
+</table>
+<en-media style='border:1px solid #aaa; box-shadow: 0px 0px 15px rgba(20,20,20,0.15);max-width:100%;' type='application/pdf' hash="annotated.pdf"/>
+</en-note>

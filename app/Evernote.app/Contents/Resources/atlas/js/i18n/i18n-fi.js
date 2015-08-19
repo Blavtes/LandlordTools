@@ -1,0 +1,27 @@
+EV.i18n.setMessages({
+    "See your notes on a map.":"Näe muistiinpanosi kartalla.",
+    "Atlas organizes your notes by location.":
+        "Atlas järjestelee muistiinpanosi sijainnin mukaan.",
+    "Connect to the Internet to view Atlas":"Yhdistä Internetiin käyttääksesi Atlasta",
+    "Loading...":"Ladataan...",
+	"All Notes" : "Kaikki muistiot",
+	"Atlas Notes" : "Atlas-muistiinpanot",
+	"Evernote Atlas": "Evernote Atlas",
+	"Notes from Map": "Muistiinpanot kartasta",
+    "Notes": "Muistiinpanot",
+    "Food notes": "Food-muistiinpanot",
+    "Hello notes": "Hello-muistiinpanot",
+    "View all": "Näytä kaikki",
+    "View all num notes": "Näytä kaikki {{ 0 }} muistiinpanoa",
+    "View all num note": "Näytä kaikki {{ 0 }} muistiinpanoa",
+	"num Note": "{{ 0 }} muistiinpano",
+	"num note": "{{ 0 }} muistiinpano",
+	"num Notes": "{{ 0 }} muistiinpanoa",
+	"num notes": "{{ 0 }} muistiinpanoa",
+    "Europe": "Eurooppa",
+    "Asia":"Aasia",
+    "North America":"Pohjois-Amerikka",
+    "South America":"Etelä-Amerikka",
+    "Australia":"Australia",
+    "Africa":"Afrikka"
+});

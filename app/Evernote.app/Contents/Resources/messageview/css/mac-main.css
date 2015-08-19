@@ -1,0 +1,309 @@
+/* Assigns background image with support for automatically handling retina.
+ * The @url given should be the part in square brackets:
+ * ../img/win-[filename].png
+ */
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body {
+  padding: 0px;
+  background-color: #ffffff;
+  font-family: helvetica, arial, sans-serif;
+  background-color: #eef0f0;
+}
+#message-list {
+  padding: 0px 20px;
+}
+#message-list.one-on-one .senderName {
+  display: none;
+}
+#message-list.one-on-one .sentAt:before {
+  content: '';
+}
+#message-list.one-on-one .sentAt {
+  margin-left: 62px;
+}
+.message {
+  position: relative;
+  max-width: 675px;
+  margin: 0 auto;
+  font-family: helvetica, arial, sans-serif;
+  border-top: 0px;
+}
+.message.grouped .senderName,
+.message.grouped .sentAt,
+.message.grouped .imageCropper {
+  display: none;
+}
+.message.grouped .body {
+  margin-top: 10px;
+}
+.message.grouped .body:before,
+.message.grouped .body:after {
+  top: 26px;
+  top: 28px;
+}
+.message:first-child {
+  border-width: 0px;
+}
+.message:last-child {
+  padding-bottom: 15px;
+}
+.message .imageCropper {
+  position: absolute;
+  margin-left: 20px;
+  margin-top: 6px;
+  margin-right: 12px;
+  overflow: hidden;
+  background-size: 100%;
+  width: 26px;
+  height: 26px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  font-family: helvetica, arial, sans-serif;
+  width: 39px;
+  height: 39px;
+  margin-left: 10px;
+  margin-top: 0px;
+}
+@media all {
+  .message .imageCropper.showBackground {
+    background-image: url("../img/mac-person-placeholder.png");
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .message .imageCropper.showBackground {
+    background-image: url("../img/mac-person-placeholder@2x.png");
+  }
+}
+.message .imageCropper .senderImage {
+  width: 26px;
+  width: 40px;
+  opacity: 0;
+}
+.message .senderName {
+  font-size: 11px;
+  color: #696969;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-left: 62px;
+  margin-bottom: 5px;
+  margin-top: 9px;
+  float: left;
+  max-width: 300px;
+  color: #909090;
+  font-family: helvetica, arial, sans-serif;
+}
+.message .sentAt:before {
+  content: ', ';
+}
+.message .sentAt {
+  font-size: 11px;
+  color: #696969;
+  text-align: left;
+  margin-bottom: 5px;
+  margin-top: 9px;
+  float: left;
+  color: #909090;
+  font-family: helvetica, arial, sans-serif;
+}
+.message .body {
+  font-size: 14px;
+  word-wrap: break-word;
+  max-width: 496px;
+  margin-left: 62px;
+  line-height: 17px;
+  display: block;
+  float: left;
+  clear: left;
+  padding: 14px 15px;
+  color: #4d4d4d;
+  background: white;
+  border: 1px solid #dedede;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  font-family: helvetica, arial, sans-serif;
+}
+.message .body .content {
+  background: #f1f1f1;
+  padding: 14px 15px;
+  word-break: break-word;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  display: block;
+  color: #000000;
+  background: none;
+  border: none;
+  padding: 0px;
+}
+.message .body .content:empty {
+  margin-bottom: -10px;
+}
+.message .body .content a {
+  color: #00a9fc;
+}
+.message .body .attachments {
+  max-width: 100%;
+  word-wrap: break-word;
+  display: block;
+  float: left;
+  clear: left;
+}
+.message .body.empty .attachments {
+  margin-top: -10px;
+}
+.message .body.empty .content {
+  display: none;
+}
+.message .body.empty:after,
+.message .body.empty:before {
+  display: none;
+}
+.message .body:after,
+.message .body:before {
+  content: "";
+  top: 40px;
+  left: 56px;
+  bottom: auto;
+  border-width: 5px 8px 5px 0;
+  border-color: transparent #f1f1f1;
+  position: absolute;
+  display: block;
+  border-style: solid;
+  top: 44px;
+  border-color: transparent white;
+}
+.message .body:before {
+  border-color: transparent #f1f1f1;
+  border-color: transparent #dedede;
+  left: 55px;
+}
+.message.right .senderName,
+.message.right .imageCropper {
+  display: none;
+}
+.message.right .sentAt:before {
+  content: '';
+}
+.message.right .sentAt {
+  float: right;
+  text-align: right;
+  margin-right: 0px;
+}
+.message.right .attachments {
+  float: right;
+  float: left;
+}
+.message.right .body {
+  float: right;
+  margin-left: 0px;
+  background: #def0ff;
+}
+.message.right .body .content {
+  background: #cbe8f6;
+  background: none;
+}
+.message.right .body .attachment {
+  background-color: #cbe8f6;
+  float: right;
+  margin: 10px 0px 0px 10px;
+  float: left;
+  margin: 10px 10px 0px 0px;
+  background-color: #def0ff;
+}
+.message.right .body:after,
+.message.right .body:before {
+  right: -4px;
+  left: auto;
+  border-color: transparent #cbe8f6;
+  border-width: 5px 0px 8px 8px;
+  border-color: transparent #def0ff;
+}
+.message.right .body:before {
+  border-color: transparent #dedede;
+  left: auto;
+  right: -5px;
+}
+.attachment {
+  display: inline-block;
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-indent: 24px;
+  margin: 10px 10px 0px 0px;
+  font-size: 14px;
+  color: #000000;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  word-wrap: break-word;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  background-size: 14px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  font-family: helvetica, arial, sans-serif;
+  background-position: 0px center;
+  position: relative;
+  background-color: transparent;
+  border: 0px;
+  color: #66c4fa;
+  padding: 0px 10px 0px 0px;
+  background-size: 20px;
+  margin-right: 16px;
+}
+.attachment::after {
+  font-family: helvetica, arial, sans-serif;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  font-size: 10px;
+  content: "❯";
+}
+@media all {
+  .attachment.note {
+    background-image: url("../img/mac-note-icon.png");
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .attachment.note {
+    background-image: url("../img/mac-note-icon@2x.png");
+  }
+}
+@media all {
+  .attachment.notebook {
+    background-image: url("../img/mac-notebook-icon.png");
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .attachment.notebook {
+    background-image: url("../img/mac-notebook-icon@2x.png");
+  }
+}
+@media (max-width: 600px) {
+  .message .body .attachment {
+    max-width: 300px;
+  }
+}
+@media (max-width: 496px) {
+  .message .body .attachment {
+    max-width: 250px;
+  }
+  .message.grouped .body,
+  .message.right .body {
+    max-width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  .message .body .attachment {
+    max-width: 200px;
+  }
+}

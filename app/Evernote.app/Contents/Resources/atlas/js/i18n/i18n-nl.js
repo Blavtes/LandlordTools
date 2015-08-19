@@ -1,0 +1,27 @@
+EV.i18n.setMessages({
+    "See your notes on a map.":"Bekijk je notities op een kaart.",
+    "Atlas organizes your notes by location.":
+        "Atlas ordent je notities per locatie.",
+    "Connect to the Internet to view Atlas":"Maak verbinding met internet om Atlas te bekijken",
+    "Loading...":"Laden...",
+	"All Notes" : "Alle notities",
+	"Atlas Notes" : "Atlas notities",
+	"Evernote Atlas": "Evernote Atlas",
+	"Notes from Map": "Notities van kaart",
+    "Notes": "Notities",
+    "Food notes": "Eten notities",
+    "Hello notes": "Begroetingsberichten",
+    "View all": "Alles weergeven",
+    "View all num notes": "Alle {{ 0 }} notities weergeven",
+    "View all num note": "Alle {{ 0 }} notitite weergeven",
+	"num Note": "{{ 0 }} Notitie",
+	"num note": "{{ 0 }} notitie",
+	"num Notes": "{{ 0 }} Notities",
+	"num notes": "{{ 0 }} notities",
+    "Europe": "Europa",
+    "Asia":"Azië",
+    "North America":"Noord-Amerika",
+    "South America":"Zuid-Amerika",
+    "Australia":"Australië",
+    "Africa":"Afrika"
+});
