@@ -71,7 +71,11 @@
 - (IBAction)oldPassworldClick:(id)sender
 {
     _notifyLabel.text = @"";
-    [[RMTUtilityLogin sharedInstance] requestChangePasswordWithPhoneNumber:_mobile password:_oldPassWorldTextField.text token:@"" complete:^(NSError *error, LoginCheckoutVerifyData *data) {
+    [[RMTUtilityLogin sharedInstance] requestChangePasswordWithPhoneNumber:_mobile
+                                                                  password:_oldPassWorldTextField.text
+                                                                     token:@""
+                                                                      step:1
+                                                                  complete:^(NSError *error, LoginCheckoutVerifyData *data) {
     
         
         if (error) {
@@ -93,16 +97,28 @@
 
 - (IBAction)changeClick:(id)sender
 {
-    [[RMTUtilityLogin sharedInstance] requestUpdatePasswordWithPhoneNumber:self.mobile
+    [[RMTUtilityLogin sharedInstance] requestChangePasswordWithPhoneNumber:_mobile
                                                                   password:_passworldTextField.text
                                                                      token:_token
-                                                                  complete:^(NSError *error,LoginCheckoutVerifyData *obj) {
-                                                                      if (obj.code == RMTRequestBackCodeSucceed) {
-                                                                          _notifyLabel.text = obj.message;
-                                                                      } else {
-                                                                          _notifyLabel.text = obj.message;
-                                                                      }
-                                                                  }];
+                                                                      step:2
+                                                                  complete:^(NSError *error, LoginCheckoutVerifyData *data) {
+        
+        
+        if (error) {
+            NSLog(@"Login error");
+            return ;
+        }
+        
+        if (data.code == RMTRequestBackCodeSucceed) {
+            
+            _notifyLabel.text = @"";
+//            _setView.hidden = NO;
+
+        } else {
+          
+        }
+        _notifyLabel.text = data.message;
+    }];
 }
 
 

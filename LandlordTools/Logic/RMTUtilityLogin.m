@@ -189,12 +189,16 @@ static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countr
 - (void)requestChangePasswordWithPhoneNumber:(NSString *)mobile
                                     password:(NSString *)password
                                        token:(NSString *)token
+                                        step:(int)step
                                     complete:(void (^)(NSError *, LoginCheckoutVerifyData *))handler
 {
     NSMutableDictionary *parameterDic = [NSMutableDictionary new];
     [parameterDic setValue:mobile forKey:@"mobile"];
     [parameterDic setValue:password forKey:@"password"];
-    [parameterDic setValue:token forKey:@"token"];
+    if (token.length > 0) {
+          [parameterDic setValue:token forKey:@"token"];
+    }
+    [parameterDic setValue:@(step) forKey:@"step"];
     
     NSString *url = [NSString stringWithFormat:@"%@/user/changePassword", kUCBaseUrl];
     NSDictionary *headerFields = [self getHTTPHeaderFields];

@@ -86,6 +86,7 @@ typedef enum _RMTUpdataMyBuildType {
 - (void)requestChangePasswordWithPhoneNumber:(NSString*)mobile
                                     password:(NSString*)password
                                        token:(NSString*)token
+                                        step:(int)step
                                     complete:(void (^)(NSError *error, LoginCheckoutVerifyData *data))handler;
 //注销请求
 -(void)requestLogout:(void (^)(NSError *error))handler;
