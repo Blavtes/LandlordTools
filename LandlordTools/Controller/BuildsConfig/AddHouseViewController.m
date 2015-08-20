@@ -15,8 +15,8 @@
 #import "UIColor+Hexadecimal.h"
 #import "MBProgressHUD.h"
 #import "MyBuildingsViewCell.h"
+#import "AddRoomViewController.h"
 
-#import "TableViewViewController.h"
 
 
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
@@ -146,7 +146,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(!_isEdit) {
-        TableViewViewController *vc = [[TableViewViewController alloc] init];
+        AddBuildArrayData * buildid = [_buildArr objectAtIndex:indexPath.row];
+        AddRoomViewController *vc = [[AddRoomViewController alloc] init];
+        vc.buildingData = buildid;
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

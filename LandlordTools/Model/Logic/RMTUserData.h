@@ -41,3 +41,25 @@
 @end
 
 
+@interface EditRoomsByArrObj : NSObject
+@property (nonatomic, assign) int _id;
+@property (nonatomic, strong) NSString *number;
+@property (nonatomic, assign) int oprType;
+@end
+
+@protocol EditRoomsByArrObj <NSObject>
+@end
+@interface EditFloorsByArrObj : NSObject
+@property (nonatomic, assign) int _id;
+@property (nonatomic, assign) int count;
+@property (nonatomic, assign) int oprType;
+@property (nonatomic, strong) NSArray <EditRoomsByArrObj> *rooms;
+@end
+
+@protocol EditFloorsByArrObj <NSObject>
+@end
+@interface EditFloorsByObj : NSObject
+@property (nonatomic, strong) NSArray <EditFloorsByArrObj> *floors;
+@end
+
+

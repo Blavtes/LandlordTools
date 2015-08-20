@@ -28,9 +28,25 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f97-hO-3Xs">
                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                    <state key="normal" image="rmt_video_backbutton_blue">
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="f97-hO-3Xs" secondAttribute="height" multiplier="1:1" id="QSF-ax-pK0"/>
+                                        <constraint firstAttribute="width" constant="40" id="smv-9L-LKp"/>
+                                    </constraints>
+                                    <state key="normal" image="bt_left">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="QSF-ax-pK0"/>
+                                            <exclude reference="smv-9L-LKp"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="QSF-ax-pK0"/>
+                                            <include reference="smv-9L-LKp"/>
+                                        </mask>
+                                    </variation>
                                     <connections>
                                         <action selector="backClick:" destination="-1" eventType="touchUpInside" id="vxu-xy-Ono"/>
                                     </connections>
@@ -39,6 +55,7 @@
                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <state key="normal" title="保存">
+                                        <color key="titleColor" red="0.59607843140000005" green="0.59607843140000005" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
@@ -280,6 +297,6 @@
         </view>
     </objects>
     <resources>
-        <image name="rmt_video_backbutton_blue" width="40" height="40"/>
+        <image name="bt_left" width="9" height="15"/>
     </resources>
 </document>

@@ -133,6 +133,8 @@
 		C1D353A21B85C6F4003AC2FB /* RMTUtilityReport.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D3532B1B85C6F3003AC2FB /* RMTUtilityReport.m */; };
 		C1D353A31B85C6F4003AC2FB /* RMTUtilityUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D3532D1B85C6F3003AC2FB /* RMTUtilityUpdate.m */; };
 		C1D353A41B85C6F4003AC2FB /* LoginModelData.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D3532F1B85C6F3003AC2FB /* LoginModelData.m */; };
+		C1D353A81B85CCAD003AC2FB /* AddRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D353A61B85CCAD003AC2FB /* AddRoomViewController.m */; };
+		C1D353A91B85CCAD003AC2FB /* AddRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1D353A71B85CCAD003AC2FB /* AddRoomViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -347,6 +349,9 @@
 		C1D3532D1B85C6F3003AC2FB /* RMTUtilityUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTUtilityUpdate.m; sourceTree = "<group>"; };
 		C1D3532E1B85C6F3003AC2FB /* LoginModelData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModelData.h; sourceTree = "<group>"; };
 		C1D3532F1B85C6F3003AC2FB /* LoginModelData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModelData.m; sourceTree = "<group>"; };
+		C1D353A51B85CCAD003AC2FB /* AddRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddRoomViewController.h; path = LandlordTools/Controller/BuildsConfig/RoomConfig/AddRoomViewController.h; sourceTree = SOURCE_ROOT; };
+		C1D353A61B85CCAD003AC2FB /* AddRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddRoomViewController.m; path = LandlordTools/Controller/BuildsConfig/RoomConfig/AddRoomViewController.m; sourceTree = SOURCE_ROOT; };
+		C1D353A71B85CCAD003AC2FB /* AddRoomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddRoomViewController.xib; path = LandlordTools/Controller/BuildsConfig/RoomConfig/AddRoomViewController.xib; sourceTree = SOURCE_ROOT; };
 		E59BEDF2FF6B761CCC47BCB1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FA3467288651B61433E13F22 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -425,6 +430,7 @@
 				C174C9811B82182B00694C9B /* Images.xcassets */,
 				C174C9831B82182B00694C9B /* LaunchScreen.xib */,
 				C174C9741B82182B00694C9B /* Supporting Files */,
+				C1D352B61B85C6F3003AC2FB /* ThirdParty */,
 			);
 			path = LandlordTools;
 			sourceTree = "<group>";
@@ -468,9 +474,6 @@
 				C1D352991B85C6F3003AC2FB /* Menu */,
 				C1D3529D1B85C6F3003AC2FB /* REFrostedViewController */,
 				C1D352B11B85C6F3003AC2FB /* RentControl */,
-				C1D352B51B85C6F3003AC2FB /* RoomConfig */,
-				C1D352B61B85C6F3003AC2FB /* ThirdParty */,
-				C1D352EF1B85C6F3003AC2FB /* UPPay */,
 				C1D352F31B85C6F3003AC2FB /* WaterControl */,
 			);
 			path = Controller;
@@ -553,6 +556,7 @@
 		C1D352791B85C6F3003AC2FB /* BuildsConfig */ = {
 			isa = PBXGroup;
 			children = (
+				C1D352B51B85C6F3003AC2FB /* RoomConfig */,
 				C1D3527A1B85C6F3003AC2FB /* AddHouseViewCell.h */,
 				C1D3527B1B85C6F3003AC2FB /* AddHouseViewCell.m */,
 				C1D3527C1B85C6F3003AC2FB /* AddHouseViewCell.xib */,
@@ -668,13 +672,18 @@
 		C1D352B51B85C6F3003AC2FB /* RoomConfig */ = {
 			isa = PBXGroup;
 			children = (
+				C1D353A51B85CCAD003AC2FB /* AddRoomViewController.h */,
+				C1D353A61B85CCAD003AC2FB /* AddRoomViewController.m */,
+				C1D353A71B85CCAD003AC2FB /* AddRoomViewController.xib */,
 			);
-			path = RoomConfig;
+			name = RoomConfig;
+			path = ../RoomConfig;
 			sourceTree = "<group>";
 		};
 		C1D352B61B85C6F3003AC2FB /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				C1D352EF1B85C6F3003AC2FB /* UPPay */,
 				C1D352B71B85C6F3003AC2FB /* .gitignore */,
 				C1D352B81B85C6F3003AC2FB /* ComboBox */,
 				C1D352BB1B85C6F3003AC2FB /* EqualizerView */,
@@ -685,7 +694,8 @@
 				C1D352E71B85C6F3003AC2FB /* Reachability */,
 				C1D352EA1B85C6F3003AC2FB /* slider */,
 			);
-			path = ThirdParty;
+			name = ThirdParty;
+			path = Controller/ThirdParty;
 			sourceTree = "<group>";
 		};
 		C1D352B81B85C6F3003AC2FB /* ComboBox */ = {
@@ -805,7 +815,8 @@
 				C1D352F11B85C6F3003AC2FB /* UPPayPlugin.h */,
 				C1D352F21B85C6F3003AC2FB /* UPPayPluginDelegate.h */,
 			);
-			path = UPPay;
+			name = UPPay;
+			path = ../UPPay;
 			sourceTree = "<group>";
 		};
 		C1D352F31B85C6F3003AC2FB /* WaterControl */ = {
@@ -863,9 +874,9 @@
 			children = (
 				C1D353141B85C6F3003AC2FB /* AddBuildModleData.h */,
 				C1D353151B85C6F3003AC2FB /* AddBuildModleData.m */,
-				C1D353161B85C6F3003AC2FB /* Logic */,
 				C1D3532E1B85C6F3003AC2FB /* LoginModelData.h */,
 				C1D3532F1B85C6F3003AC2FB /* LoginModelData.m */,
+				C1D353161B85C6F3003AC2FB /* Logic */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1012,6 +1023,7 @@
 				C1D3533F1B85C6F3003AC2FB /* ConfigLastMothControllViewController.xib in Resources */,
 				C1D3536D1B85C6F3003AC2FB /* slider-default-track@2x.png in Resources */,
 				C1D353431B85C6F3003AC2FB /* AddHouseViewCell.xib in Resources */,
+				C1D353A91B85CCAD003AC2FB /* AddRoomViewController.xib in Resources */,
 				C1D3537C1B85C6F3003AC2FB /* slider-metal-handle.png in Resources */,
 				C1D353351B85C6F3003AC2FB /* AddLastMothDataTableViewCell.xib in Resources */,
 				C1D3534F1B85C6F3003AC2FB /* RMTLoginInputPassWorldViewController.xib in Resources */,
@@ -1151,6 +1163,7 @@
 				C1D353441B85C6F3003AC2FB /* AddHouseViewController.m in Sources */,
 				C1D353591B85C6F3003AC2FB /* RECommonFunctions.m in Sources */,
 				C1D353941B85C6F4003AC2FB /* NSString+RMT.m in Sources */,
+				C1D353A81B85CCAD003AC2FB /* AddRoomViewController.m in Sources */,
 				C1D353A21B85C6F4003AC2FB /* RMTUtilityReport.m in Sources */,
 				C1D353641B85C6F3003AC2FB /* EqualizerView.m in Sources */,
 				C1D353821B85C6F3003AC2FB /* NMRangeSlider.m in Sources */,

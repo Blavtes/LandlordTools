@@ -12,11 +12,23 @@
 
 @end
 
-
 @implementation RMTRegisterUserData
 
 @end
 
 @implementation RMTCountryCodeData
+
+@end
+
+
+@implementation EditFloorsByArrObj
+
+@end
+
+@implementation EditFloorsByObj
+
+@end
+
+@implementation EditRoomsByArrObj
 
 @end

@@ -38,8 +38,54 @@
 @end
 
 @interface BackOject : JSONModel
-
 @property (nonatomic, assign) int code;
 @property (nonatomic, strong) NSString *message;
+@end
 
+#pragma mark -- get floors
+@interface RoomsByArrObj : JSONModel
+@property (nonatomic, assign) int _id;
+@property (nonatomic, strong) NSString *number;
+@property (nonatomic, assign) int isInit;
+@end
+
+@protocol RoomsByArrObj <NSObject>
+@end
+//根据楼宇id获取楼层和房间
+@interface FloorsByArrObj : JSONModel
+@property (nonatomic, assign) int _id;
+@property (nonatomic, assign) int count;
+@property (nonatomic, strong) NSArray <RoomsByArrObj,Optional> *rooms;
+@end
+
+@protocol FloorsByArrObj <NSObject>
+@end
+@interface FloorsByBuildingObj : JSONModel
+@property (nonatomic, assign) int code;
+@property (nonatomic, strong) NSString *message;
+@property (nonatomic, strong) NSArray <FloorsByArrObj,Optional> *floors;
+@end
+
+
+#pragma mark --edit floors
+
+@interface EditRoomsByArrModle : JSONModel
+@property (nonatomic, assign) int _id;
+@property (nonatomic, strong) NSString *number;
+@property (nonatomic, assign) int oprType;
+@end
+
+@protocol EditRoomsByArrModle <NSObject>
+@end
+@interface EditFloorsByArrModle : JSONModel
+@property (nonatomic, assign) int _id;
+@property (nonatomic, assign) int count;
+@property (nonatomic, assign) int oprType;
+@property (nonatomic, strong) NSArray <EditRoomsByArrModle, Optional> *rooms;
+@end
+
+@protocol EditFloorsByArrModle <NSObject>
+@end
+@interface EditFloorsByModle : JSONModel
+@property (nonatomic, strong) NSArray <EditFloorsByArrModle,Optional> *floors;
 @end

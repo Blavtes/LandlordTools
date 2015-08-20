@@ -313,7 +313,10 @@ static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countr
 }
 
 
-- (void)requestUpdatePasswordWithPhoneNumber:(NSString *)phoneNumber password:(NSString *)password token:(NSString *)token complete:(void (^)(NSError *,LoginCheckoutVerifyData *datas))handler
+- (void)requestUpdatePasswordWithPhoneNumber:(NSString *)phoneNumber
+                                    password:(NSString *)password
+                                       token:(NSString *)token
+                                    complete:(void (^)(NSError *,LoginCheckoutVerifyData *datas))handler
 {
     NSMutableDictionary *reqDic = [NSMutableDictionary new];
     
@@ -451,60 +454,6 @@ static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countr
     }];
 }
 
-//获取CountryCode列表
-- (void)requestCountryCodeList:(void (^)(NSError *error, NSArray *data))handler
-{
-    if (countryCodeList) {
-        handler(nil, countryCodeList);
-        return;
-    }
-    
-    [[RMTURLSession sharedInstance] requestApiWithUrl:[kCountryCodeListUrl copy] customHTTPHeaderFields:nil completionHandler:^(NSError *error, NSDictionary *dic){
-        if (error || !dic) {
-            NSLog(@"<%s : %d : %s> error:%@", __FILE__, __LINE__, __FUNCTION__, error);
-            NSDictionary *userInfo = @{NSLocalizedDescriptionKey: NSLocalizedString(@"网络错误", nil)};
-            NSError *customError = [NSError errorWithDomain:error.domain
-                                                       code:error.code
-                                                   userInfo:userInfo];
-            handler(customError, nil);
-            return;
-        }
-        
-        NSNumber *rtnObject = [dic valueForKey:@"rtn"];
-        if (!rtnObject) {
-            NSDictionary *userInfo = @{NSLocalizedDescriptionKey: NSLocalizedString(@"服务器错误，请重试", nil)};
-            NSError *customError = [NSError errorWithDomain:@"RMTUtilityLoginErrorDomain"
-                                                       code:10000
-                                                   userInfo:userInfo];
-            handler(customError, nil);
-            return;
-        }
-        
-        NSInteger rtn = [rtnObject integerValue];
-        if (rtn == 0) {
-            NSArray *data = [dic objectForKey:@"data"];
-            NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:data.count];
-            for (NSDictionary *country in data) {
-                RMTCountryCodeData *codeData = [[RMTCountryCodeData alloc] init];
-                codeData.name = [country objectForKey:@"name"];
-                codeData.countrycode = [country objectForKey:@"countrycode"];
-                codeData.locale = [country objectForKey:@"locale"];
-                codeData.language = [country objectForKey:@"language"];
-                [array addObject:codeData];
-            }
-            
-            countryCodeList = [array copy];
-            handler(nil, countryCodeList);
-            return;
-        }
-        NSDictionary *userInfo = @{NSLocalizedDescriptionKey: NSLocalizedString(@"获取地区列表失败", nil)};
-        NSError *customError = [NSError errorWithDomain:@"RMTUtilityLoginErrorDomain"
-                                                   code:rtn
-                                               userInfo:userInfo];
-        handler(customError, nil);
-        return;
-    }];
-}
 
 - (NSDictionary *)getHTTPHeaderFields
 {
@@ -635,21 +584,16 @@ static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countr
 {
     NSMutableDictionary *dic = [NSMutableDictionary new];
     [dic setValue:logicId forKey:@"loginId"];
-//    UpdateBuildData *updata = [[UpdateBuildData alloc] init];
-//    updata.id = data._id;
-//    updata.buildingName = data.buildingName;
-//    updata.waterPrice = data.waterPrice;
-//    updata.electricPrice = data.electricPrice;
-//    updata.payRentDay = data.payRentDay;
-//    updata.oprType = data.oprType;
+
     NSMutableArray *list = [NSMutableArray arrayWithCapacity:0];
     for (AddBuildArrayData *data in dataArr) {
-        NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:@{@"id":@(data._id),
-                                                                                    @"buildingName":[data.buildingName length] == 0 ?@"":data.buildingName,
-                                                                                    @"electricPrice":@(data.electricPrice),
-                                                                                    @"waterPrice":@(data.waterPrice),
-                                                                                    @"oprType":@(data.oprType),
-                                                                                    @"payRentDay":@(data.payRentDay)}];
+        NSMutableDictionary *dict = [NSMutableDictionary
+                                     dictionaryWithDictionary:@{@"id":@(data._id),
+                                                                @"buildingName":[data.buildingName length] == 0 ?@"":data.buildingName,
+                                                                @"electricPrice":@(data.electricPrice),
+                                                                @"waterPrice":@(data.waterPrice),
+                                                                @"oprType":@(data.oprType),
+                                                                @"payRentDay":@(data.payRentDay)}];
         [list addObject:dict];
     }
     
@@ -657,6 +601,90 @@ static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countr
     [dic setValue:list forKey:@"buildings"];
     NSLog(@"dict %@",dic);
     NSString *url = [NSString stringWithFormat:@"%@/building/editBuildings", kUCBaseUrl];
+    NSDictionary *headerFields = [self getHTTPHeaderFields];
+    [[RMTURLSession sharedInstance] requestApiWithUrl:url
+                                           parameters:dic
+                               customHTTPHeaderFields:headerFields
+                                    completionHandler:^(NSError *error, NSDictionary *dic) {
+                                        if (error || !dic) {
+                                            NSLog(@"<%s : %d : %s> error:%@", __FILE__, __LINE__, __FUNCTION__, error);
+                                            NSDictionary *userInfo = @{NSLocalizedDescriptionKey: NSLocalizedString(@"网络错误", nil)};
+                                            NSError *customError = [NSError errorWithDomain:error.domain
+                                                                                       code:error.code
+                                                                                   userInfo:userInfo];
+                                            handler(customError,nil);
+                                            return;
+                                        }
+                                        NSError *jsonError = nil;
+                                        BackOject *data = [[BackOject alloc] initWithDictionary:dic error:&jsonError];
+                                        
+                                        handler(jsonError,data);
+                                        return;
+                                    }];
+}
+
+
+- (void)requestGetFloorsByBuildingId:(int)buildid
+                         withLoginId:(NSString *)loginId
+                            complete:(void (^)(NSError *, FloorsByBuildingObj *))handler
+{
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    [dic setValue:loginId forKey:@"loginId"];
+    [dic setValue:@(buildid) forKey:@"buildingId"];
+    
+    NSString *url = [NSString stringWithFormat:@"%@/floor/getFloorsByBuildingId", kUCBaseUrl];
+    NSDictionary *headerFields = [self getHTTPHeaderFields];
+    [[RMTURLSession sharedInstance] requestApiWithUrl:url
+                                           parameters:dic
+                               customHTTPHeaderFields:headerFields
+                                    completionHandler:^(NSError *error, NSDictionary *dic) {
+                                        if (error || !dic) {
+                                            NSLog(@"<%s : %d : %s> error:%@", __FILE__, __LINE__, __FUNCTION__, error);
+                                            NSDictionary *userInfo = @{NSLocalizedDescriptionKey: NSLocalizedString(@"网络错误", nil)};
+                                            NSError *customError = [NSError errorWithDomain:error.domain
+                                                                                       code:error.code
+                                                                                   userInfo:userInfo];
+                                            handler(customError,nil);
+                                            return;
+                                        }
+                                        NSError *jsonError = nil;
+                                        FloorsByBuildingObj *data = [[FloorsByBuildingObj alloc] initWithDictionary:dic error:&jsonError];
+                                        
+                                        handler(jsonError,data);
+                                        return;
+                                    }];
+}
+
+
+- (void)requestEditFloorsWithLoginId:(NSString *)loginId withBuildindId:(int)buildid withFloors:(NSArray *)floors complete:(void (^)(NSError *, BackOject *))handler
+{
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    [dic setValue:loginId forKey:@"loginId"];
+    [dic setValue:@(buildid) forKey:@"buildingId"];
+    
+    
+    NSMutableArray *list = [NSMutableArray arrayWithCapacity:0];
+    for (EditFloorsByArrObj *floor in floors) {
+         NSMutableArray *roomArr = [NSMutableArray arrayWithCapacity:0];
+        for (EditRoomsByArrObj *room in floor.rooms) {
+            NSMutableDictionary *dict = [NSMutableDictionary
+                                         dictionaryWithDictionary:@{@"id":@(room._id),
+                                                                    @"number":[room.number length] == 0 ?@"":room.number,
+                                                                    @"oprType":@(room.oprType)}];
+            [roomArr addObject:dict];
+        }
+        NSMutableDictionary *dict = [NSMutableDictionary
+                                     dictionaryWithDictionary:@{@"id":@(floor._id),
+                                                                @"count":@(floor.count),
+                                                                @"rooms":roomArr,
+                                                                @"oprType":@(floor.oprType)}];
+        [list addObject:dict];
+    }
+    
+    
+    [dic setValue:list forKey:@"floors"];
+    
+    NSString *url = [NSString stringWithFormat:@"%@/floor/getFloorsByBuildingId", kUCBaseUrl];
     NSDictionary *headerFields = [self getHTTPHeaderFields];
     [[RMTURLSession sharedInstance] requestApiWithUrl:url
                                            parameters:dic

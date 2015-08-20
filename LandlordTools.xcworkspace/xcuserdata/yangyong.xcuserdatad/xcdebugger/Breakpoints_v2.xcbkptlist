@@ -321,38 +321,6 @@
             endingLineNumber = "67"
             landmarkName = "-nextClick:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[RMTLoginEnterViewController nextClick:]"
-                  moduleName = "LandlordTools"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yangyong/Documents/WorkPlace/work/LandlordTools/LandlordTools/Controller/User/RMTLoginEnterViewController.m"
-                  timestampString = "461751313.16819"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "67"
-                  endingLineNumber = "67"
-                  offsetFromSymbolStart = "376">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__41-[RMTLoginEnterViewController nextClick:]_block_invoke"
-                  moduleName = "LandlordTools"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yangyong/Documents/WorkPlace/work/LandlordTools/LandlordTools/Controller/User/RMTLoginEnterViewController.m"
-                  timestampString = "461751313.168298"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "67"
-                  endingLineNumber = "67"
-                  offsetFromSymbolStart = "70">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -369,38 +337,6 @@
             endingLineNumber = "50"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[AddHouseViewController viewDidLoad]"
-                  moduleName = "LandlordTools"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yangyong/Documents/WorkPlace/work/LandlordTools/LandlordTools/MainControl/AddHouseViewController.m"
-                  timestampString = "461751313.168873"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "50"
-                  endingLineNumber = "50"
-                  offsetFromSymbolStart = "654">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__37-[AddHouseViewController viewDidLoad]_block_invoke"
-                  moduleName = "LandlordTools"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yangyong/Documents/WorkPlace/work/LandlordTools/LandlordTools/MainControl/AddHouseViewController.m"
-                  timestampString = "461751313.168991"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "50"
-                  endingLineNumber = "50"
-                  offsetFromSymbolStart = "77">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -433,38 +369,6 @@
             endingLineNumber = "207"
             landmarkName = "-deletBuildData:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[AddHouseViewController deletBuildData:]"
-                  moduleName = "LandlordTools"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yangyong/Documents/WorkPlace/work/LandlordTools/LandlordTools/MainControl/AddHouseViewController.m"
-                  timestampString = "461751313.170036"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "207"
-                  endingLineNumber = "207"
-                  offsetFromSymbolStart = "199">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__41-[AddHouseViewController deletBuildData:]_block_invoke"
-                  moduleName = "LandlordTools"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yangyong/Documents/WorkPlace/work/LandlordTools/LandlordTools/MainControl/AddHouseViewController.m"
-                  timestampString = "461751313.170224"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "207"
-                  endingLineNumber = "207"
-                  offsetFromSymbolStart = "67">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -529,38 +433,6 @@
             endingLineNumber = "189"
             landmarkName = "-reflashData:andRow:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[AddHouseViewController reflashData:andRow:]"
-                  moduleName = "LandlordTools"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yangyong/Documents/WorkPlace/work/LandlordTools/LandlordTools/MainControl/AddHouseViewController.m"
-                  timestampString = "461751313.289137"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "189"
-                  endingLineNumber = "189"
-                  offsetFromSymbolStart = "189">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__45-[AddHouseViewController reflashData:andRow:]_block_invoke"
-                  moduleName = "LandlordTools"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yangyong/Documents/WorkPlace/work/LandlordTools/LandlordTools/MainControl/AddHouseViewController.m"
-                  timestampString = "461751313.289293"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "189"
-                  endingLineNumber = "189"
-                  offsetFromSymbolStart = "67">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -640,6 +512,22 @@
             startingLineNumber = "147"
             endingLineNumber = "147"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LandlordTools/Controller/BuildsConfig/RoomConfig/AddRoomViewController.m"
+            timestampString = "461756544.621313"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

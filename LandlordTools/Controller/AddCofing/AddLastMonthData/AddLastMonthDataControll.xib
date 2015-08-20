@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -228,17 +229,17 @@
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="zye-F2-eYx"/>
+                                                    <exclude reference="UhL-Ck-MfU"/>
+                                                    <exclude reference="r7U-xm-9pL"/>
+                                                    <exclude reference="Afl-o0-lVV"/>
+                                                    <exclude reference="jNh-WY-RJ4"/>
+                                                    <exclude reference="90w-CX-mcw"/>
+                                                    <exclude reference="ZTR-DK-SgF"/>
+                                                    <exclude reference="t5a-Hs-4Ad"/>
                                                     <exclude reference="3tk-ac-Bjn"/>
                                                     <exclude reference="DDD-aT-N48"/>
                                                     <exclude reference="rAv-M7-geF"/>
                                                     <exclude reference="xpj-gc-gjN"/>
-                                                    <exclude reference="Afl-o0-lVV"/>
-                                                    <exclude reference="jNh-WY-RJ4"/>
-                                                    <exclude reference="UhL-Ck-MfU"/>
-                                                    <exclude reference="r7U-xm-9pL"/>
-                                                    <exclude reference="90w-CX-mcw"/>
-                                                    <exclude reference="ZTR-DK-SgF"/>
-                                                    <exclude reference="t5a-Hs-4Ad"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -250,17 +251,17 @@
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="zye-F2-eYx"/>
+                                                    <include reference="UhL-Ck-MfU"/>
+                                                    <include reference="r7U-xm-9pL"/>
+                                                    <include reference="Afl-o0-lVV"/>
+                                                    <include reference="jNh-WY-RJ4"/>
+                                                    <include reference="90w-CX-mcw"/>
+                                                    <include reference="ZTR-DK-SgF"/>
+                                                    <include reference="t5a-Hs-4Ad"/>
                                                     <exclude reference="3tk-ac-Bjn"/>
                                                     <include reference="DDD-aT-N48"/>
                                                     <exclude reference="rAv-M7-geF"/>
                                                     <include reference="xpj-gc-gjN"/>
-                                                    <include reference="Afl-o0-lVV"/>
-                                                    <include reference="jNh-WY-RJ4"/>
-                                                    <include reference="UhL-Ck-MfU"/>
-                                                    <include reference="r7U-xm-9pL"/>
-                                                    <include reference="90w-CX-mcw"/>
-                                                    <include reference="ZTR-DK-SgF"/>
-                                                    <include reference="t5a-Hs-4Ad"/>
                                                 </mask>
                                             </variation>
                                         </view>
@@ -298,13 +299,13 @@
                                         </mask>
                                         <mask key="constraints">
                                             <exclude reference="olH-3S-Zrw"/>
+                                            <exclude reference="9lk-zB-Zyj"/>
+                                            <exclude reference="yBn-e7-jBu"/>
                                             <exclude reference="7nd-ZM-pd6"/>
                                             <exclude reference="CYo-kS-NWh"/>
                                             <exclude reference="Ai0-2v-hA6"/>
                                             <exclude reference="ure-Kf-NVY"/>
                                             <exclude reference="yO3-zZ-nLP"/>
-                                            <exclude reference="9lk-zB-Zyj"/>
-                                            <exclude reference="yBn-e7-jBu"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
@@ -315,13 +316,13 @@
                                         </mask>
                                         <mask key="constraints">
                                             <include reference="olH-3S-Zrw"/>
+                                            <include reference="9lk-zB-Zyj"/>
+                                            <include reference="yBn-e7-jBu"/>
                                             <include reference="7nd-ZM-pd6"/>
                                             <include reference="CYo-kS-NWh"/>
                                             <include reference="Ai0-2v-hA6"/>
                                             <include reference="ure-Kf-NVY"/>
                                             <include reference="yO3-zZ-nLP"/>
-                                            <include reference="9lk-zB-Zyj"/>
-                                            <include reference="yBn-e7-jBu"/>
                                         </mask>
                                     </variation>
                                 </view>

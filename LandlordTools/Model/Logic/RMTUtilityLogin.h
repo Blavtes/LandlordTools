@@ -49,6 +49,15 @@ typedef enum _RMTUpdataMyBuildType {
 
 
 + (instancetype)sharedInstance;
+
+
+- (BOOL)isLogined;
+
+- (RMTUserData *)getUserData;
+- (NSString *)getLogId;
+
+
+
 //是否注册
 //0 未注册 1 已注册，-1 异常
 
@@ -100,13 +109,7 @@ typedef enum _RMTUpdataMyBuildType {
 //注销请求
 -(void)requestLogout:(void (^)(NSError *error))handler;
 
-//获取CountryCode列表
-- (void)requestCountryCodeList:(void (^)(NSError *error, NSArray *data))handler;
 
-- (BOOL)isLogined;
-
-- (RMTUserData *)getUserData;
-- (NSString *)getLogId;
 
 
 //获取楼宇
@@ -116,5 +119,16 @@ typedef enum _RMTUpdataMyBuildType {
 - (void)requestUpdateMyBuilingsWithLogicId:(NSString*)logicId
                           whithBuildData:(NSArray*)data
                                 complete:(void (^)(NSError *error,BackOject *object))handler;
+
+//根据楼宇id获取楼层和房间
+- (void)requestGetFloorsByBuildingId:(int)buildid
+                         withLoginId:(NSString*)loginId
+                            complete:(void (^)(NSError *error, FloorsByBuildingObj* obj))handler;
+//编辑楼层
+
+- (void)requestEditFloorsWithLoginId:(NSString*)loginId
+                      withBuildindId:(int)buildid
+                          withFloors:(NSArray*) floors
+                            complete:(void (^)(NSError *error, BackOject* obj))handler;
 
 @end
