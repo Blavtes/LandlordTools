@@ -27,7 +27,12 @@
     [[RMTUtilityLogin  sharedInstance] requestGetFloorsByBuildingId:_buildingData._id
                                                         withLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
                                                            complete:^(NSError *error, FloorsByBuildingObj *obj) {
-        
+                                                               if (obj.code == RMTRequestBackCodeSucceed) {
+                                                                   if (obj.floors.count == 0) {
+                                                                     
+                                                                   }
+                                                               }
+                                                             NSLog(@"requestGetFloorsBy floors count %ld",obj.floors.count);
     }];
     // Do any additional setup after loading the view from its nib.
 }
