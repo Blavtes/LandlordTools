@@ -16,6 +16,8 @@
 		C174C9821B82182B00694C9B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C174C9811B82182B00694C9B /* Images.xcassets */; };
 		C174C9851B82182B00694C9B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174C9831B82182B00694C9B /* LaunchScreen.xib */; };
 		C174C9911B82182C00694C9B /* LandlordToolsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C174C9901B82182C00694C9B /* LandlordToolsTests.m */; };
+		C174CB951B860F3800694C9B /* AddRoomEditTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CB931B860F3800694C9B /* AddRoomEditTableViewCell.m */; };
+		C174CB961B860F3800694C9B /* AddRoomEditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CB941B860F3800694C9B /* AddRoomEditTableViewCell.xib */; };
 		C1D353301B85C6F3003AC2FB /* AddFloorWaterDataViewControll.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D3525A1B85C6F3003AC2FB /* AddFloorWaterDataViewControll.m */; };
 		C1D353311B85C6F3003AC2FB /* AddFloorWaterDataViewControll.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1D3525B1B85C6F3003AC2FB /* AddFloorWaterDataViewControll.xib */; };
 		C1D353321B85C6F3003AC2FB /* AddLastMonthDataControll.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D3525E1B85C6F3003AC2FB /* AddLastMonthDataControll.m */; };
@@ -164,6 +166,9 @@
 		C174C98A1B82182C00694C9B /* LandlordToolsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LandlordToolsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C174C98F1B82182C00694C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C174C9901B82182C00694C9B /* LandlordToolsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LandlordToolsTests.m; sourceTree = "<group>"; };
+		C174CB921B860F3800694C9B /* AddRoomEditTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddRoomEditTableViewCell.h; path = LandlordTools/Category/AddRoomEditTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		C174CB931B860F3800694C9B /* AddRoomEditTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddRoomEditTableViewCell.m; path = LandlordTools/Category/AddRoomEditTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		C174CB941B860F3800694C9B /* AddRoomEditTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddRoomEditTableViewCell.xib; path = LandlordTools/Category/AddRoomEditTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		C1D352591B85C6F3003AC2FB /* AddFloorWaterDataViewControll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFloorWaterDataViewControll.h; sourceTree = "<group>"; };
 		C1D3525A1B85C6F3003AC2FB /* AddFloorWaterDataViewControll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFloorWaterDataViewControll.m; sourceTree = "<group>"; };
 		C1D3525B1B85C6F3003AC2FB /* AddFloorWaterDataViewControll.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddFloorWaterDataViewControll.xib; sourceTree = "<group>"; };
@@ -675,6 +680,9 @@
 				C1D353A51B85CCAD003AC2FB /* AddRoomViewController.h */,
 				C1D353A61B85CCAD003AC2FB /* AddRoomViewController.m */,
 				C1D353A71B85CCAD003AC2FB /* AddRoomViewController.xib */,
+				C174CB921B860F3800694C9B /* AddRoomEditTableViewCell.h */,
+				C174CB931B860F3800694C9B /* AddRoomEditTableViewCell.m */,
+				C174CB941B860F3800694C9B /* AddRoomEditTableViewCell.xib */,
 			);
 			name = RoomConfig;
 			path = ../RoomConfig;
@@ -1029,6 +1037,7 @@
 				C1D3534F1B85C6F3003AC2FB /* RMTLoginInputPassWorldViewController.xib in Resources */,
 				C1D3534B1B85C6F3003AC2FB /* RMTLoginForgotViewController.xib in Resources */,
 				C1D353921B85C6F4003AC2FB /* .gitignore in Resources */,
+				C174CB961B860F3800694C9B /* AddRoomEditTableViewCell.xib in Resources */,
 				C1D3537E1B85C6F3003AC2FB /* slider-metal-track.png in Resources */,
 				C1D353511B85C6F3003AC2FB /* RMTRegistersViewController.xib in Resources */,
 				C1D353771B85C6F3003AC2FB /* slider-default7-trackBackground@2x.png in Resources */,
@@ -1108,6 +1117,7 @@
 				C1D353541B85C6F3003AC2FB /* MenuLeftViewController.m in Sources */,
 				C1D353931B85C6F4003AC2FB /* JSONKit.m in Sources */,
 				C1D353841B85C6F3003AC2FB /* RMTPopoverSlider.m in Sources */,
+				C174CB951B860F3800694C9B /* AddRoomEditTableViewCell.m in Sources */,
 				C1D353571B85C6F3003AC2FB /* REFrostedContainerViewController.m in Sources */,
 				C1D353671B85C6F3003AC2FB /* JBLineChartView.m in Sources */,
 				C1D3534E1B85C6F3003AC2FB /* RMTLoginInputPassWorldViewController.m in Sources */,

@@ -45,9 +45,10 @@
     }
     return self;
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-     [self.navigationController.navigationBar setHidden:YES];
+    [self.navigationController.navigationBar setHidden:YES];
     NSLog(@"MainContentControlViewControllerviewDidLoad  ");
     
     [[RMTUserLogic sharedInstance] requestLoginName:@"13538101601"
