@@ -91,14 +91,14 @@
                                 </mask>
                                 <mask key="constraints">
                                     <exclude reference="kHN-dc-YIF"/>
+                                    <exclude reference="802-pA-VxT"/>
+                                    <exclude reference="mYz-eK-dLq"/>
                                     <exclude reference="aAA-ss-hPw"/>
                                     <exclude reference="fSw-Ib-1mW"/>
                                     <exclude reference="tAT-l1-BPz"/>
                                     <exclude reference="Na9-eV-l18"/>
                                     <exclude reference="pBU-W1-2Pn"/>
                                     <exclude reference="r9d-Pt-qvs"/>
-                                    <exclude reference="802-pA-VxT"/>
-                                    <exclude reference="mYz-eK-dLq"/>
                                 </mask>
                             </variation>
                             <variation key="heightClass=regular-widthClass=compact">
@@ -109,14 +109,14 @@
                                 </mask>
                                 <mask key="constraints">
                                     <include reference="kHN-dc-YIF"/>
+                                    <include reference="802-pA-VxT"/>
+                                    <include reference="mYz-eK-dLq"/>
                                     <exclude reference="aAA-ss-hPw"/>
                                     <include reference="fSw-Ib-1mW"/>
                                     <include reference="tAT-l1-BPz"/>
                                     <include reference="Na9-eV-l18"/>
                                     <include reference="pBU-W1-2Pn"/>
                                     <include reference="r9d-Pt-qvs"/>
-                                    <include reference="802-pA-VxT"/>
-                                    <include reference="mYz-eK-dLq"/>
                                 </mask>
                             </variation>
                         </view>

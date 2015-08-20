@@ -16,6 +16,8 @@
 #import "MBProgressHUD.h"
 #import "MyBuildingsViewCell.h"
 
+#import "TableViewViewController.h"
+
 
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 @interface AddHouseViewController () <UITableViewDataSource,UITableViewDelegate,AddHouseChangeCellHeightDelegate>
@@ -87,7 +89,7 @@
     NSLog(@"");
     if (_isEdit) {
         if (indexPath.row == _buildArr.count) {
-            return 60;
+            return 80;
         }
         
         if (!((AddBuildArrayData*)[_buildArr objectAtIndex:indexPath.row]).isShowDataList) {
@@ -143,8 +145,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(_isEdit) {
-        
+    if(!_isEdit) {
+        TableViewViewController *vc = [[TableViewViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 
