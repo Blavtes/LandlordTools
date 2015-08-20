@@ -9,7 +9,7 @@
 #import "DEMOLeftMenuViewController.h"
 #import "DEMOFirstViewController.h"
 #import "DEMOSecondViewController.h"
-#import "RMTLoginViewController.h"
+#import "RMTLoginEnterViewController.h"
 #import "MainContentControlViewController.h"
 @interface DEMOLeftMenuViewController ()
 
@@ -55,7 +55,7 @@
             [self.sideMenuViewController hideMenuViewController];
             break;
         default:
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[RMTLoginViewController alloc] init]]
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[RMTLoginEnterViewController alloc] init]]
                                                          animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;

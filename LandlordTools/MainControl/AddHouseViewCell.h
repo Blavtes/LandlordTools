@@ -26,11 +26,15 @@
 @property (weak, nonatomic) IBOutlet UIButton *downBT;
 
 @property (weak, nonatomic) IBOutlet UIView *dataAllView;
-@property (weak, nonatomic) IBOutlet UIButton *dataBt;
+@property (weak, nonatomic) IBOutlet UIButton *deletedBt;
 @property (nonatomic, strong) AddBuildArrayData *modelData;
 @property (nonatomic, assign) BOOL showData;
 @property (nonatomic, strong) NSString *data;
 @property (nonatomic, assign) int cellRow;
+
+@property (weak, nonatomic) IBOutlet UIButton *rightBt;
+
+
 - (void) changeDataViewFrame;
 - (void) setCellData:(AddBuildArrayData*)data andCellRow:(int)row;
 - (void)setHideView;

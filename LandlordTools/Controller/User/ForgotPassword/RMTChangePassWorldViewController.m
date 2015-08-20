@@ -131,5 +131,8 @@
         }
     }
 }
+- (IBAction)backClick:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 @end

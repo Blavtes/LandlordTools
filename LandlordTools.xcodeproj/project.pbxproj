@@ -15,6 +15,8 @@
 		C126C0521B848DA00090A4FF /* RMTChangePassWorldViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C126C0501B848DA00090A4FF /* RMTChangePassWorldViewController.xib */; };
 		C126C0571B8563D50090A4FF /* RMTRegistersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C126C0551B8563D50090A4FF /* RMTRegistersViewController.m */; };
 		C126C0581B8563D50090A4FF /* RMTRegistersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C126C0561B8563D50090A4FF /* RMTRegistersViewController.xib */; };
+		C126C05C1B85A2B10090A4FF /* MyBuildingsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C126C05A1B85A2B10090A4FF /* MyBuildingsViewCell.m */; };
+		C126C05D1B85A2B10090A4FF /* MyBuildingsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C126C05B1B85A2B10090A4FF /* MyBuildingsViewCell.xib */; };
 		C158DA051B83178500795B62 /* ConfigSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = C158DA041B83178500795B62 /* ConfigSystem.m */; };
 		C158DA091B842EEC00795B62 /* RMTLoginEnterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C158DA071B842EEC00795B62 /* RMTLoginEnterViewController.m */; };
 		C158DA0A1B842EEC00795B62 /* RMTLoginEnterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C158DA081B842EEC00795B62 /* RMTLoginEnterViewController.xib */; };
@@ -156,6 +158,9 @@
 		C126C0541B8563D50090A4FF /* RMTRegistersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTRegistersViewController.h; sourceTree = "<group>"; };
 		C126C0551B8563D50090A4FF /* RMTRegistersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTRegistersViewController.m; sourceTree = "<group>"; };
 		C126C0561B8563D50090A4FF /* RMTRegistersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMTRegistersViewController.xib; sourceTree = "<group>"; };
+		C126C0591B85A2B10090A4FF /* MyBuildingsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBuildingsViewCell.h; sourceTree = "<group>"; };
+		C126C05A1B85A2B10090A4FF /* MyBuildingsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBuildingsViewCell.m; sourceTree = "<group>"; };
+		C126C05B1B85A2B10090A4FF /* MyBuildingsViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBuildingsViewCell.xib; sourceTree = "<group>"; };
 		C158DA031B83178500795B62 /* ConfigSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigSystem.h; sourceTree = "<group>"; };
 		C158DA041B83178500795B62 /* ConfigSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigSystem.m; sourceTree = "<group>"; };
 		C158DA061B842EEC00795B62 /* RMTLoginEnterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTLoginEnterViewController.h; sourceTree = "<group>"; };
@@ -738,6 +743,9 @@
 				C174CAFE1B82202F00694C9B /* MainContentControlViewController.h */,
 				C174CAFF1B82202F00694C9B /* MainContentControlViewController.m */,
 				C174CB001B82202F00694C9B /* MainContentControlViewController.xib */,
+				C126C0591B85A2B10090A4FF /* MyBuildingsViewCell.h */,
+				C126C05A1B85A2B10090A4FF /* MyBuildingsViewCell.m */,
+				C126C05B1B85A2B10090A4FF /* MyBuildingsViewCell.xib */,
 			);
 			path = MainControl;
 			sourceTree = "<group>";
@@ -1011,6 +1019,7 @@
 				C174CB7F1B82207300694C9B /* ConfigHouseViewController.xib in Resources */,
 				C174CAA41B8218F100694C9B /* slider-metal-track.png in Resources */,
 				C174CA951B8218F100694C9B /* slider-default-trackCrossedOver.png in Resources */,
+				C126C05D1B85A2B10090A4FF /* MyBuildingsViewCell.xib in Resources */,
 				C174CB2B1B82202F00694C9B /* TabTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1071,6 +1080,7 @@
 				C174CB391B82202F00694C9B /* RMTUserLogic.m in Sources */,
 				C174CB741B82207300694C9B /* AddLastMonthDataControll.m in Sources */,
 				C174CAA81B8218F100694C9B /* NMRangeSlider.m in Sources */,
+				C126C05C1B85A2B10090A4FF /* MyBuildingsViewCell.m in Sources */,
 				C174CB421B82202F00694C9B /* AddHouseViewController.m in Sources */,
 				C174CA8D1B8218F100694C9B /* JBLineChartView.m in Sources */,
 				C174C97D1B82182B00694C9B /* ViewController.m in Sources */,

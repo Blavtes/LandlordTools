@@ -7,12 +7,14 @@
 //
 
 #import "MainContentControlViewController.h"
-
+#import "RESideMenu.h"
 #import "WaterViewController.h"
 #import "RentMainViewController.h"
 #import "GetAmmeterViewController.h"
 #import "AddHouseViewController.h"
 #import "RMTLoginEnterViewController.h"
+#import "RMTUserLogic.h"
+#import "RMTUserShareData.h"
 
 @interface MainContentControlViewController ()
 
@@ -45,8 +47,17 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
- [self.navigationController.navigationBar setHidden:YES];
+     [self.navigationController.navigationBar setHidden:YES];
     NSLog(@"MainContentControlViewControllerviewDidLoad  ");
+    
+    [[RMTUserLogic sharedInstance] requestLoginName:@"13538101601"
+                                           password:@"222222"
+                                           complete:^(NSError *error, RMTUserData *data) {
+                                               
+                                               
+                                               NSLog(@"login %@",data.loginId);
+                                               [[RMTUserShareData sharedInstance] updataUserData:data];
+    }];
     // Do any additional setup after loading the view from its nib.
 }
 

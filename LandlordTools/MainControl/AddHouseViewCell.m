@@ -8,6 +8,7 @@
 
 #import "AddHouseViewCell.h"
 #import "ConfigSystem.h"
+#import "UIColor+Hexadecimal.h"
 
 @implementation AddHouseViewCell
 
@@ -20,7 +21,7 @@
 {
     UIButton *bt = (UIButton*)sender;
     NSLog(@"bt tag %ld",bt.tag);
-    _dataLable.text = [NSString stringWithFormat: @"slelect %ld",bt.tag];
+    _dataLable.text = [NSString stringWithFormat: @"每月%ld号交租",bt.tag];
     _modelData.payRentDay = (int)bt.tag;
     if ([_delegate respondsToSelector:@selector(reflashData:andRow:)]) {
         [_delegate reflashData:_modelData andRow:_cellRow];
@@ -86,6 +87,8 @@
     _ammterTextField.text = [NSString stringWithFormat:@"%.1f",data.electricPrice];
     _cellRow = row;
     _modelData = data;
+    _dataLable.text = [NSString stringWithFormat:@"每月%d号抄表",data.payRentDay];
+   
 }
 
 - (void)setHideView
@@ -116,29 +119,44 @@
 //        _dataAllView.hidden = YES;
         _showData = NO;
            [_delegate changeAddHouseCellHeigt:_showData andRow:_cellRow];
-       
+        [_downBT setImage:[UIImage imageNamed:@"bt_down"] forState:UIControlStateNormal];
     } else {
 //        _dataAllView.hidden = NO;
+        [_downBT setImage:[UIImage imageNamed:@"bt_up"] forState:UIControlStateNormal];
         _showData = YES;
            [_delegate changeAddHouseCellHeigt:_showData andRow:_cellRow];
         [self getDeviceType];
         float space = 30.0f;
+        float opffset = 6.0f;
+        float labe = 2.0f;
+        float edg = 28.0f;
         if (global_deviceType == iPhoneDeviceTypeIPhone4 || global_deviceType == iPhoneDeviceTypeIPhone4S) {
             space = 25.0f;
         } else if (global_deviceType == iPhoneDeviceTypeIPhone5 || global_deviceType == iPhoneDeviceTypeIPhone5S)
         {
-            space = 30.0f;
+            space = 60;
+            opffset = 4.0f;
+            labe = 1.7f;
+            edg = 17.0f;
         } else if (global_deviceType == iPhoneDeviceTypeIPhone6) {
-            space = 40.f;
+            space = 75;
+            opffset = 8.0f;
+            labe = 2.2f;
+            edg = 20.f;
         } else if (global_deviceType == iPhoneDeviceTypeIPhone6P) {
             space = 90;
+            labe = 2.52f;
+            opffset = 6.0f;
+            edg = 20.0f;
         }
         for (int i = 0; i < 31; i ++) {
             UIButton *bt = [UIButton new];
-            [bt setFrame:CGRectMake((i % 5) * (space / 2 + 28) + space / 2 , i / 5 * space/2.5 + 6, 28, 28)];
+            [bt setFrame:CGRectMake((i % 5) * (space / 2 + edg) + space / 2 , i / 5 * space/labe + opffset, 28, 28)];
             [bt setTitle:[NSString stringWithFormat:@"%d",i+1] forState:UIControlStateNormal];
-            [bt setTag:i];
-            [bt setBackgroundColor:[UIColor grayColor]];
+            [bt setTag:i+1];
+//            [bt setBackgroundColor:[UIColor grayColor]];
+            [bt setTitleColor:[UIColor colorWithHex:@"fabe00"] forState:UIControlStateNormal];
+            
             [bt setBackgroundImage:[UIImage imageNamed:@"rentyes"] forState:UIControlStateHighlighted];
             [bt addTarget:self action:@selector(dataSelect:) forControlEvents:UIControlEventTouchUpInside];
             [_dataAllView addSubview:bt];
@@ -148,6 +166,11 @@
 - (IBAction)deletedClick:(id)sender {
     
 }
+
+
+- (IBAction)rightClick:(id)sender {
+}
+
 
 -(void)getDeviceType
 {

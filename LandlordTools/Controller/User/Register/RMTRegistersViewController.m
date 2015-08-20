@@ -41,6 +41,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)backClick:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*
@@ -63,6 +64,7 @@
             _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(verifyHandle) userInfo:nil repeats:YES];
             [_timer fire];
             _verifyUse = YES;
+            _tipsVerifyLabel.hidden = NO;
         }
         
     }];

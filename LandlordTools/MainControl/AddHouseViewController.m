@@ -12,34 +12,47 @@
 #import "RMTUtilityLogin.h"
 #import <Masonry/Masonry.h>
 #import "RMTLoginEnterViewController.h"
-
+#import "UIColor+Hexadecimal.h"
 #import "MBProgressHUD.h"
+#import "MyBuildingsViewCell.h"
+
 
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 @interface AddHouseViewController () <UITableViewDataSource,UITableViewDelegate,AddHouseChangeCellHeightDelegate>
 @property (nonatomic, assign) BOOL showData;
 @property (nonatomic, strong) NSMutableArray *buildArr;
 @property (weak, nonatomic) IBOutlet UIView *hubView;
+
+@property (weak, nonatomic) IBOutlet UIButton *saveBt;
+@property (weak, nonatomic) IBOutlet UIButton *editBt;
+
+@property (nonatomic, assign) BOOL isEdit;
+
 @end
 
 @implementation AddHouseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _isEdit = YES;
+    _editBt.enabled = NO;  
     UINib* nib1 = [UINib nibWithNibName:@"AddHouseViewCell" bundle:[NSBundle mainBundle]];
     [_tableView registerNib:nib1 forCellReuseIdentifier:@"AddHouseViewCell"];
+    
+    UINib* nib2 = [UINib nibWithNibName:@"MyBuildingsViewCell" bundle:[NSBundle mainBundle]];
+    [_tableView registerNib:nib2 forCellReuseIdentifier:@"MyBuildingsViewCell"];
     
     _buildArr = [NSMutableArray arrayWithCapacity:0];
     [self showHUDView];
     __weak __typeof(self)weakSelf = self;
-    [[RMTUtilityLogin sharedInstance] requestGetMyBuildingsWithLogicId:@"F30645C539BC8B8E5A8293F1A2C7E767" complete:^(NSError *error, AddBuildModleData *buildData) {
+    [[RMTUtilityLogin sharedInstance] requestGetMyBuildingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId] complete:^(NSError *error, AddBuildModleData *buildData) {
         NSLog(@"builrd %@",buildData);
         if (buildData.code == RMTRequestBackCodeSucceed) {
             if (buildData.buildings.count == 0 )
             {
                 //init
                 AddBuildArrayData *data = [[AddBuildArrayData alloc] init];
-                data._id = 1;
+//                data._id = 1;
                 data.buildingName = @"我的1号楼";
                 data.electricPrice = 1;
                 data.waterPrice = 6;
@@ -64,64 +77,82 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _buildArr.count + 1;
+    return _buildArr.count + (_isEdit  == YES ? 1 : 0);
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 //      UITableViewCell *deqCell = [_tableView cellForRowAtIndexPath:indexPath];
 //    AddHouseViewCell *cell = (AddHouseViewCell*)deqCell;
-    if (indexPath.row == _buildArr.count) {
-        return 40;
+    NSLog(@"");
+    if (_isEdit) {
+        if (indexPath.row == _buildArr.count) {
+            return 60;
+        }
+        
+        if (!((AddBuildArrayData*)[_buildArr objectAtIndex:indexPath.row]).isShowDataList) {
+            return 120;
+        }
+        return 360;
     }
-    
-    if (!((AddBuildArrayData*)[_buildArr objectAtIndex:indexPath.row]).isShowDataList) {
-        return 100;
-    }
-    return 360;
+    return 80.0f;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == _buildArr.count) {
 
-        UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"AdddefaultCell"];
-        UIButton *btn = [UIButton new];
-        [btn setTitle:@"add" forState:UIControlStateNormal];
-        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [btn addTarget:self action:@selector(addBuildDta:) forControlEvents:UIControlEventTouchUpInside];
-        [btn setBackgroundColor:[UIColor yellowColor]];
-        [cell addSubview:btn];
-        
-        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(cell.mas_top);
-            make.left.mas_equalTo(cell.mas_left);
-            make.right.mas_equalTo(cell.mas_right);
-            make.bottom.mas_equalTo(cell.mas_bottom);
+    if (_isEdit) {
+        if (indexPath.row == _buildArr.count) {
             
-        }];
-       
+           UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"AdddefaultCell"];
+            UIButton *btn = [UIButton new];
+            [btn setTitle:@"+ 添加楼宇" forState:UIControlStateNormal];
+            [btn setTitleColor:[UIColor colorWithHex:@"fabe00"] forState:UIControlStateNormal];
+            [btn addTarget:self action:@selector(addBuildDta:) forControlEvents:UIControlEventTouchUpInside];
+            [btn setBackgroundColor:[UIColor colorWithRed:42.0f/255.0f green:42.0f/255.0f blue:42.0f/255.0f alpha:1]];
+            [cell addSubview:btn];
+            
+            [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.mas_equalTo(cell.mas_top);
+                make.left.mas_equalTo(cell.mas_left);
+                make.right.mas_equalTo(cell.mas_right);
+                make.bottom.mas_equalTo(cell.mas_bottom);
+                
+            }];
+            
+            return cell;
+        }
+        UITableViewCell *deqCell = [_tableView dequeueReusableCellWithIdentifier:@"AddHouseViewCell"];
+        AddHouseViewCell *cell = (AddHouseViewCell*)deqCell;
+        cell.delegate = self;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell changeDataViewFrame];
+        [cell setHideView];
+        [cell setCellData:((AddBuildArrayData*)[_buildArr objectAtIndex:indexPath.row]) andCellRow:(int)indexPath.row];
         return cell;
     }
-    UITableViewCell *deqCell = [_tableView dequeueReusableCellWithIdentifier:@"AddHouseViewCell"];
-    AddHouseViewCell *cell = (AddHouseViewCell*)deqCell;
-    cell.delegate = self;
-//    cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
-//    cell.selectedBackgroundView.backgroundColor = [UIColor grayColor];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    [cell changeDataViewFrame];
-    [cell setHideView];
-    [cell setCellData:((AddBuildArrayData*)[_buildArr objectAtIndex:indexPath.row]) andCellRow:(int)indexPath.row];
     
-    
+        UITableViewCell *deqCell = [_tableView dequeueReusableCellWithIdentifier:@"MyBuildingsViewCell"];
+        MyBuildingsViewCell *cell = (MyBuildingsViewCell*)deqCell;
+
+        cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
+        cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:42/ 255.0f green:42/255.0f blue:42/255.0f alpha:1];
+        [cell setCellData:((AddBuildArrayData*)[_buildArr objectAtIndex:indexPath.row]) andCellRow:(int)indexPath.row];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(_isEdit) {
+        
+    }
 }
 
 - (void) addBuildDta:(id)sender
 {
     
     AddBuildArrayData *data = [[AddBuildArrayData alloc] init];
-    data._id = 1;
+//    data._id = 1;
     data.buildingName = @"我的1号楼";
     data.electricPrice = 1;
     data.waterPrice = 6;
@@ -200,33 +231,54 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-//    [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:NO];
-}
-
 - (IBAction)saveClick:(id)sender {
-    for (AddBuildArrayData *data  in _buildArr) {
-        data.oprType = RMTUpdataMyBuildUpdataType;
-    }
-    if ([[RMTUtilityLogin sharedInstance] getLogId]) {
-        [self showHUDView];
-        __weak __typeof(self)weakSelf = self;
-        [[RMTUtilityLogin sharedInstance] requestUpdateMyBuilingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId]
-                                                              whithBuildData:_buildArr
-                                                                    complete:^(NSError *error, BackOject *object) {
-                                                                        if (object.code == RMTRequestBackCodeSucceed) {
+
+    if (self.isEdit) {
+        [_saveBt setTitle:@"编辑" forState:UIControlStateNormal];
+        
+        for (AddBuildArrayData *data  in _buildArr) {
+            data.oprType = RMTUpdataMyBuildUpdataType;
+        }
+        if ([[RMTUtilityLogin sharedInstance] getLogId]) {
+            [self showHUDView];
+            __weak __typeof(self)weakSelf = self;
+            [[RMTUtilityLogin sharedInstance] requestUpdateMyBuilingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId]
+                                                                  whithBuildData:_buildArr
+                                                                        complete:^(NSError *error, BackOject *object) {
+                                                                            if (object.code == RMTRequestBackCodeSucceed) {
+                                                                                
+                                                                            }
+                                                                            NSLog(@"delet code %d %@",object.code,object.message);
+                                                                            [weakSelf hideHUDView];
+                                                                            self.isEdit = NO;
+                                                                            [_tableView reloadData];
                                                                             
-                                                                        }
-                                                                        NSLog(@"delet code %d %@",object.code,object.message);
-                                                                        [weakSelf hideHUDView];
-                                                                    }];
+                                                                        }];
+        } else {
+            RMTLoginEnterViewController *vc = [[RMTLoginEnterViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
     } else {
-        RMTLoginEnterViewController *vc = [[RMTLoginEnterViewController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
+        [_saveBt setTitle:@"保存" forState:UIControlStateNormal];
+        self.isEdit = YES;
+
+        [_tableView reloadData];
     }
+ 
    
 }
+
+
+- (IBAction)editClick:(id)sender
+{
+    _isEdit = YES;
+    _editBt.hidden = YES;
+    _saveBt.hidden = NO;
+    _editBt.enabled = NO;
+    _saveBt.enabled = YES;
+    [_tableView reloadData];
+}
+
 
 
 - (void)showHUDView

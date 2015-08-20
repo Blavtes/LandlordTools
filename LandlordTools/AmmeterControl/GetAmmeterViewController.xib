@@ -26,9 +26,6 @@
                                     <state key="normal" image="rmt_video_backbutton_blue">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
-                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                        <rect key="frame" x="11" y="23" width="40" height="40"/>
-                                    </variation>
                                     <connections>
                                         <action selector="backClick:" destination="-1" eventType="touchUpInside" id="spw-GA-fXP"/>
                                     </connections>
@@ -68,9 +65,6 @@
                         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S3B-ZS-gJL">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                <rect key="frame" x="0.0" y="64" width="400" height="800"/>
-                            </variation>
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -89,13 +83,13 @@
                             <exclude reference="S3B-ZS-gJL"/>
                         </mask>
                         <mask key="constraints">
-                            <exclude reference="OPJ-sc-HIY"/>
-                            <exclude reference="SJT-ZP-ych"/>
-                            <exclude reference="fF8-Ae-63E"/>
                             <exclude reference="AvU-IE-CQM"/>
                             <exclude reference="djK-Rs-Dnb"/>
                             <exclude reference="gBp-H2-sye"/>
                             <exclude reference="hkE-ph-ftF"/>
+                            <exclude reference="OPJ-sc-HIY"/>
+                            <exclude reference="SJT-ZP-ych"/>
+                            <exclude reference="fF8-Ae-63E"/>
                         </mask>
                     </variation>
                     <variation key="heightClass=regular-widthClass=compact">
@@ -104,13 +98,13 @@
                             <include reference="S3B-ZS-gJL"/>
                         </mask>
                         <mask key="constraints">
-                            <include reference="OPJ-sc-HIY"/>
-                            <include reference="SJT-ZP-ych"/>
-                            <include reference="fF8-Ae-63E"/>
                             <include reference="AvU-IE-CQM"/>
                             <include reference="djK-Rs-Dnb"/>
                             <include reference="gBp-H2-sye"/>
                             <include reference="hkE-ph-ftF"/>
+                            <include reference="OPJ-sc-HIY"/>
+                            <include reference="SJT-ZP-ych"/>
+                            <include reference="fF8-Ae-63E"/>
                         </mask>
                     </variation>
                 </view>

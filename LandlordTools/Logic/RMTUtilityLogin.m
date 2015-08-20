@@ -58,8 +58,8 @@ static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countr
 
 - (NSString*)getLogId
 {
-//    return [[RMTUserShareData sharedInstance] userData].loginId;
-    return @"F30645C539BC8B8E5A8293F1A2C7E767";
+    return [[RMTUserShareData sharedInstance] userData].loginId;
+//    return @"F30645C539BC8B8E5A8293F1A2C7E767";
 }
 
 - (void)requestIsRegisterUserWith:(NSString *)mobile complete:(void (^)(NSError *,BackOject *obj))handler

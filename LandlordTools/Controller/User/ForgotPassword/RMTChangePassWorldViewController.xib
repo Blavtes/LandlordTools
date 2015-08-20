@@ -52,6 +52,9 @@
                                             <include reference="nFg-B3-ojc"/>
                                         </mask>
                                     </variation>
+                                    <connections>
+                                        <action selector="backClick:" destination="-1" eventType="touchDragInside" id="Yie-Ay-CRS"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="修改密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Rw-ya-JP6">
                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>

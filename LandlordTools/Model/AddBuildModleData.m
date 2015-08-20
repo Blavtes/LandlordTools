@@ -22,7 +22,7 @@
 
 +(JSONKeyMapper*)keyMapper
 {
-    return [[JSONKeyMapper alloc] initWithDictionary:@{@"_id": @"id"}];
+    return [[JSONKeyMapper alloc] initWithDictionary:@{@"id": @"_id"}];
 }
 
 +(BOOL)propertyIsOptional:(NSString*)propertyName

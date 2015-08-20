@@ -3,11 +3,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddHouseViewController">
             <connections>
+                <outlet property="editBt" destination="sGN-Kt-xxE" id="qGA-tf-9bs"/>
                 <outlet property="hubView" destination="P1a-A1-LMQ" id="uRP-uL-Umu"/>
+                <outlet property="saveBt" destination="Hd4-pH-KYP" id="xcs-uN-At9"/>
                 <outlet property="tableView" destination="w7B-Tq-jYF" id="QRh-EG-Rsv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -42,11 +45,25 @@
                                         <action selector="saveClick:" destination="-1" eventType="touchUpInside" id="vJW-Ps-32s"/>
                                     </connections>
                                 </button>
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGN-Kt-xxE">
+                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <state key="normal" title="编辑">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="editClick:" destination="-1" eventType="touchUpInside" id="k78-o4-REI"/>
+                                        <action selector="saveClick:" destination="-1" eventType="touchUpInside" id="vNc-t8-Src"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" red="0.91764705879999997" green="0.76862745099999996" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="Hd4-pH-KYP" secondAttribute="trailing" constant="8" id="802-pA-VxT">
                                     <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                                </constraint>
+                                <constraint firstItem="sGN-Kt-xxE" firstAttribute="centerY" secondItem="Hd4-pH-KYP" secondAttribute="centerY" constant="-14" id="Na9-eV-l18">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                 </constraint>
                                 <constraint firstAttribute="trailing" secondItem="f97-hO-3Xs" secondAttribute="trailing" constant="335" id="aAA-ss-hPw"/>
                                 <constraint firstItem="f97-hO-3Xs" firstAttribute="top" secondItem="HED-VB-FuK" secondAttribute="top" constant="17" id="fSw-Ib-1mW">
@@ -58,6 +75,10 @@
                                 <constraint firstItem="Hd4-pH-KYP" firstAttribute="top" secondItem="HED-VB-FuK" secondAttribute="top" constant="26" id="mYz-eK-dLq">
                                     <variation key="heightClass=regular-widthClass=compact" constant="30"/>
                                 </constraint>
+                                <constraint firstItem="sGN-Kt-xxE" firstAttribute="centerX" secondItem="Hd4-pH-KYP" secondAttribute="centerX" constant="-163" id="pBU-W1-2Pn">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                </constraint>
+                                <constraint firstItem="sGN-Kt-xxE" firstAttribute="width" secondItem="Hd4-pH-KYP" secondAttribute="height" multiplier="34:33" id="r9d-Pt-qvs"/>
                                 <constraint firstItem="f97-hO-3Xs" firstAttribute="leading" secondItem="HED-VB-FuK" secondAttribute="leading" constant="19" id="tAT-l1-BPz">
                                     <variation key="heightClass=regular-widthClass=compact" constant="4"/>
                                 </constraint>
@@ -66,28 +87,36 @@
                                 <mask key="subviews">
                                     <exclude reference="f97-hO-3Xs"/>
                                     <exclude reference="Hd4-pH-KYP"/>
+                                    <exclude reference="sGN-Kt-xxE"/>
                                 </mask>
                                 <mask key="constraints">
                                     <exclude reference="kHN-dc-YIF"/>
-                                    <exclude reference="802-pA-VxT"/>
-                                    <exclude reference="mYz-eK-dLq"/>
                                     <exclude reference="aAA-ss-hPw"/>
                                     <exclude reference="fSw-Ib-1mW"/>
                                     <exclude reference="tAT-l1-BPz"/>
+                                    <exclude reference="Na9-eV-l18"/>
+                                    <exclude reference="pBU-W1-2Pn"/>
+                                    <exclude reference="r9d-Pt-qvs"/>
+                                    <exclude reference="802-pA-VxT"/>
+                                    <exclude reference="mYz-eK-dLq"/>
                                 </mask>
                             </variation>
                             <variation key="heightClass=regular-widthClass=compact">
                                 <mask key="subviews">
                                     <include reference="f97-hO-3Xs"/>
                                     <include reference="Hd4-pH-KYP"/>
+                                    <include reference="sGN-Kt-xxE"/>
                                 </mask>
                                 <mask key="constraints">
                                     <include reference="kHN-dc-YIF"/>
-                                    <include reference="802-pA-VxT"/>
-                                    <include reference="mYz-eK-dLq"/>
                                     <exclude reference="aAA-ss-hPw"/>
                                     <include reference="fSw-Ib-1mW"/>
                                     <include reference="tAT-l1-BPz"/>
+                                    <include reference="Na9-eV-l18"/>
+                                    <include reference="pBU-W1-2Pn"/>
+                                    <include reference="r9d-Pt-qvs"/>
+                                    <include reference="802-pA-VxT"/>
+                                    <include reference="mYz-eK-dLq"/>
                                 </mask>
                             </variation>
                         </view>
@@ -96,14 +125,15 @@
                             <subviews>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="w7B-Tq-jYF">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <connections>
                                         <outlet property="dataSource" destination="-1" id="HCh-7e-E3a"/>
                                         <outlet property="delegate" destination="-1" id="VY0-wV-EgS"/>
                                     </connections>
                                 </tableView>
                             </subviews>
-                            <color key="backgroundColor" red="0.51764705879999995" green="0.58039215690000001" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="w7B-Tq-jYF" secondAttribute="trailing" id="0ET-54-jI8"/>
                                 <constraint firstAttribute="bottom" secondItem="w7B-Tq-jYF" secondAttribute="bottom" id="aQJ-W9-c3K"/>
@@ -159,13 +189,13 @@
                             <exclude reference="P1a-A1-LMQ"/>
                         </mask>
                         <mask key="constraints">
-                            <exclude reference="HTH-D7-Z4w"/>
-                            <exclude reference="ZJK-aV-88y"/>
-                            <exclude reference="y8B-fN-ZIf"/>
                             <exclude reference="B17-5a-aiA"/>
                             <exclude reference="OFj-IP-nDy"/>
                             <exclude reference="iZx-Dt-lw6"/>
                             <exclude reference="oFI-eb-JtQ"/>
+                            <exclude reference="HTH-D7-Z4w"/>
+                            <exclude reference="ZJK-aV-88y"/>
+                            <exclude reference="y8B-fN-ZIf"/>
                             <exclude reference="6Ur-pE-kvE"/>
                             <exclude reference="CGr-jL-W6O"/>
                             <exclude reference="I4p-Ig-zuc"/>
@@ -179,13 +209,13 @@
                             <include reference="P1a-A1-LMQ"/>
                         </mask>
                         <mask key="constraints">
-                            <include reference="HTH-D7-Z4w"/>
-                            <include reference="ZJK-aV-88y"/>
-                            <include reference="y8B-fN-ZIf"/>
                             <include reference="B17-5a-aiA"/>
                             <include reference="OFj-IP-nDy"/>
                             <include reference="iZx-Dt-lw6"/>
                             <include reference="oFI-eb-JtQ"/>
+                            <include reference="HTH-D7-Z4w"/>
+                            <include reference="ZJK-aV-88y"/>
+                            <include reference="y8B-fN-ZIf"/>
                             <include reference="6Ur-pE-kvE"/>
                             <include reference="CGr-jL-W6O"/>
                             <include reference="I4p-Ig-zuc"/>
