@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *passworldTextField;
 @property (strong, nonatomic) NSString *mobile;
 @property (strong, nonatomic) NSString *token;
+@property (weak, nonatomic) IBOutlet UIView *loginView;
 
 @end
 
@@ -112,7 +113,7 @@
         if (data.code == RMTRequestBackCodeSucceed) {
             
             _notifyLabel.text = @"";
-//            _setView.hidden = NO;
+            _loginView.hidden = NO;
 
         } else {
           
@@ -121,5 +122,14 @@
     }];
 }
 
+- (IBAction)loginClick:(id)sender {
+    for (UIViewController *controller in self.navigationController.viewControllers) {
+        if ([controller isKindOfClass:NSClassFromString(@"RMTLoginEnterViewController")]) {
+            [self.navigationController popToViewController:controller animated:YES];
+            
+            return;
+        }
+    }
+}
 
 @end

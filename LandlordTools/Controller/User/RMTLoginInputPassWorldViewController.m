@@ -63,21 +63,21 @@
         return;
     }
      _notifyLabel.text = @"";
-    [[RMTUserLogic sharedInstance] requestLoginName:_mobile password:_inputPassWordTextField.text complete:^(NSError *error, RMTUserData *data) {
+    [[RMTUserLogic sharedInstance] requestLoginName:_mobile
+                                           password:_inputPassWordTextField.text
+                                           complete:^(NSError *error, RMTUserData *data) {
 
-        if (error) {
-            NSLog(@"Login error");
-            return ;
-        }
+      
         NSLog(@"login %@",data.loginId);
         _notifyLabel.text = data.message;
         [[RMTUserShareData sharedInstance] updataUserData:data];
-        //        if (self.delegate) {
-        //            [self.delegate loginFinishedHandler];
-        //        }
-        //
-        //        [self.navigationController popViewControllerAnimated:YES];
-        ////        [[NSNotificationCenter defaultCenter] postNotificationName:RMTLoginFinishedNotification object:nil];
+        for (UIViewController *controller in self.navigationController.viewControllers) {
+           if ([controller isKindOfClass:NSClassFromString(@"MainContentControlViewController")]) {
+               [self.navigationController popToViewController:controller animated:YES];
+               
+               return;
+           }
+        }
     }];
 
     

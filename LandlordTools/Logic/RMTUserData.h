@@ -26,7 +26,7 @@
 @property (nonatomic, copy) NSString *mobile;
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic, copy) NSString *token;
-@property (nonatomic, copy) NSString *userType;
+@property (nonatomic, assign) int userType;
 
 @end
 

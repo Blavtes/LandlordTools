@@ -11,7 +11,8 @@
 #import "UIColor+Hexadecimal.h"
 #import "RMTUtilityLogin.h"
 #import <Masonry/Masonry.h>
-#import "RMTLoginViewController.h"
+#import "RMTLoginEnterViewController.h"
+
 #import "MBProgressHUD.h"
 
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
@@ -221,7 +222,7 @@
                                                                         [weakSelf hideHUDView];
                                                                     }];
     } else {
-        RMTLoginViewController *vc = [[RMTLoginViewController alloc] init];
+        RMTLoginEnterViewController *vc = [[RMTLoginEnterViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
    

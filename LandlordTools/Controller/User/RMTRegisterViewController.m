@@ -287,7 +287,7 @@
 
     data.mobile = _accountTextField.text;
     data.password = _passwordTextField.text;
-    data.userType = @"1";
+    data.userType = RMTRegisterLandlordsType;
     [self showHUDView];
     [[RMTUtilityLogin sharedInstance] requestIsRegisterUserWith:data.mobile
                                                        complete:^(NSError *error,BackOject *obj) {

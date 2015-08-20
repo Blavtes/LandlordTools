@@ -13,6 +13,8 @@
 		C126C04D1B8462D70090A4FF /* RMTLoginForgotViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C126C04B1B8462D70090A4FF /* RMTLoginForgotViewController.xib */; };
 		C126C0511B848DA00090A4FF /* RMTChangePassWorldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C126C04F1B848DA00090A4FF /* RMTChangePassWorldViewController.m */; };
 		C126C0521B848DA00090A4FF /* RMTChangePassWorldViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C126C0501B848DA00090A4FF /* RMTChangePassWorldViewController.xib */; };
+		C126C0571B8563D50090A4FF /* RMTRegistersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C126C0551B8563D50090A4FF /* RMTRegistersViewController.m */; };
+		C126C0581B8563D50090A4FF /* RMTRegistersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C126C0561B8563D50090A4FF /* RMTRegistersViewController.xib */; };
 		C158DA051B83178500795B62 /* ConfigSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = C158DA041B83178500795B62 /* ConfigSystem.m */; };
 		C158DA091B842EEC00795B62 /* RMTLoginEnterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C158DA071B842EEC00795B62 /* RMTLoginEnterViewController.m */; };
 		C158DA0A1B842EEC00795B62 /* RMTLoginEnterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C158DA081B842EEC00795B62 /* RMTLoginEnterViewController.xib */; };
@@ -80,15 +82,6 @@
 		C174CB291B82202F00694C9B /* TableViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CACC1B82202F00694C9B /* TableViewViewController.xib */; };
 		C174CB2A1B82202F00694C9B /* TabTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CACE1B82202F00694C9B /* TabTableViewCell.m */; };
 		C174CB2B1B82202F00694C9B /* TabTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CACF1B82202F00694C9B /* TabTableViewCell.xib */; };
-		C174CB2C1B82202F00694C9B /* RMTAgreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CAD21B82202F00694C9B /* RMTAgreementViewController.m */; };
-		C174CB2D1B82202F00694C9B /* RMTAgreementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CAD31B82202F00694C9B /* RMTAgreementViewController.xib */; };
-		C174CB2E1B82202F00694C9B /* RMTCountryPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CAD51B82202F00694C9B /* RMTCountryPickerView.m */; };
-		C174CB2F1B82202F00694C9B /* RMTFindPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CAD71B82202F00694C9B /* RMTFindPasswordViewController.m */; };
-		C174CB301B82202F00694C9B /* RMTFindPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CAD81B82202F00694C9B /* RMTFindPasswordViewController.xib */; };
-		C174CB311B82202F00694C9B /* RMTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CADA1B82202F00694C9B /* RMTLoginViewController.m */; };
-		C174CB321B82202F00694C9B /* RMTLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CADB1B82202F00694C9B /* RMTLoginViewController.xib */; };
-		C174CB331B82202F00694C9B /* RMTRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CADD1B82202F00694C9B /* RMTRegisterViewController.m */; };
-		C174CB341B82202F00694C9B /* RMTRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C174CADE1B82202F00694C9B /* RMTRegisterViewController.xib */; };
 		C174CB351B82202F00694C9B /* RMTNetworkKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CAE11B82202F00694C9B /* RMTNetworkKit.m */; };
 		C174CB361B82202F00694C9B /* RMTUPPayBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = C174CAE31B82202F00694C9B /* RMTUPPayBridge.mm */; };
 		C174CB371B82202F00694C9B /* RMTURLSession.m in Sources */ = {isa = PBXBuildFile; fileRef = C174CAE51B82202F00694C9B /* RMTURLSession.m */; };
@@ -160,6 +153,9 @@
 		C126C04E1B848DA00090A4FF /* RMTChangePassWorldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTChangePassWorldViewController.h; sourceTree = "<group>"; };
 		C126C04F1B848DA00090A4FF /* RMTChangePassWorldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTChangePassWorldViewController.m; sourceTree = "<group>"; };
 		C126C0501B848DA00090A4FF /* RMTChangePassWorldViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMTChangePassWorldViewController.xib; sourceTree = "<group>"; };
+		C126C0541B8563D50090A4FF /* RMTRegistersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTRegistersViewController.h; sourceTree = "<group>"; };
+		C126C0551B8563D50090A4FF /* RMTRegistersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTRegistersViewController.m; sourceTree = "<group>"; };
+		C126C0561B8563D50090A4FF /* RMTRegistersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMTRegistersViewController.xib; sourceTree = "<group>"; };
 		C158DA031B83178500795B62 /* ConfigSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigSystem.h; sourceTree = "<group>"; };
 		C158DA041B83178500795B62 /* ConfigSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigSystem.m; sourceTree = "<group>"; };
 		C158DA061B842EEC00795B62 /* RMTLoginEnterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTLoginEnterViewController.h; sourceTree = "<group>"; };
@@ -259,20 +255,6 @@
 		C174CACD1B82202F00694C9B /* TabTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabTableViewCell.h; sourceTree = "<group>"; };
 		C174CACE1B82202F00694C9B /* TabTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabTableViewCell.m; sourceTree = "<group>"; };
 		C174CACF1B82202F00694C9B /* TabTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabTableViewCell.xib; sourceTree = "<group>"; };
-		C174CAD11B82202F00694C9B /* RMTAgreementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTAgreementViewController.h; sourceTree = "<group>"; };
-		C174CAD21B82202F00694C9B /* RMTAgreementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTAgreementViewController.m; sourceTree = "<group>"; };
-		C174CAD31B82202F00694C9B /* RMTAgreementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMTAgreementViewController.xib; sourceTree = "<group>"; };
-		C174CAD41B82202F00694C9B /* RMTCountryPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTCountryPickerView.h; sourceTree = "<group>"; };
-		C174CAD51B82202F00694C9B /* RMTCountryPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTCountryPickerView.m; sourceTree = "<group>"; };
-		C174CAD61B82202F00694C9B /* RMTFindPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTFindPasswordViewController.h; sourceTree = "<group>"; };
-		C174CAD71B82202F00694C9B /* RMTFindPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTFindPasswordViewController.m; sourceTree = "<group>"; };
-		C174CAD81B82202F00694C9B /* RMTFindPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMTFindPasswordViewController.xib; sourceTree = "<group>"; };
-		C174CAD91B82202F00694C9B /* RMTLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTLoginViewController.h; sourceTree = "<group>"; };
-		C174CADA1B82202F00694C9B /* RMTLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTLoginViewController.m; sourceTree = "<group>"; };
-		C174CADB1B82202F00694C9B /* RMTLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMTLoginViewController.xib; sourceTree = "<group>"; };
-		C174CADC1B82202F00694C9B /* RMTRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTRegisterViewController.h; sourceTree = "<group>"; };
-		C174CADD1B82202F00694C9B /* RMTRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTRegisterViewController.m; sourceTree = "<group>"; };
-		C174CADE1B82202F00694C9B /* RMTRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMTRegisterViewController.xib; sourceTree = "<group>"; };
 		C174CAE01B82202F00694C9B /* RMTNetworkKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTNetworkKit.h; sourceTree = "<group>"; };
 		C174CAE11B82202F00694C9B /* RMTNetworkKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTNetworkKit.m; sourceTree = "<group>"; };
 		C174CAE21B82202F00694C9B /* RMTUPPayBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTUPPayBridge.h; sourceTree = "<group>"; };
@@ -413,6 +395,17 @@
 			);
 			path = ForgotPassword;
 			sourceTree = "<group>";
+		};
+		C126C0531B8563910090A4FF /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				C126C0541B8563D50090A4FF /* RMTRegistersViewController.h */,
+				C126C0551B8563D50090A4FF /* RMTRegistersViewController.m */,
+				C126C0561B8563D50090A4FF /* RMTRegistersViewController.xib */,
+			);
+			name = Register;
+			path = LandlordTools/Controller/User/Register;
+			sourceTree = SOURCE_ROOT;
 		};
 		C174C9681B82182B00694C9B = {
 			isa = PBXGroup;
@@ -691,26 +684,13 @@
 		C174CAD01B82202F00694C9B /* User */ = {
 			isa = PBXGroup;
 			children = (
-				C174CAD11B82202F00694C9B /* RMTAgreementViewController.h */,
-				C174CAD21B82202F00694C9B /* RMTAgreementViewController.m */,
-				C174CAD31B82202F00694C9B /* RMTAgreementViewController.xib */,
-				C174CAD41B82202F00694C9B /* RMTCountryPickerView.h */,
-				C174CAD51B82202F00694C9B /* RMTCountryPickerView.m */,
-				C174CAD61B82202F00694C9B /* RMTFindPasswordViewController.h */,
-				C174CAD71B82202F00694C9B /* RMTFindPasswordViewController.m */,
-				C174CAD81B82202F00694C9B /* RMTFindPasswordViewController.xib */,
-				C174CAD91B82202F00694C9B /* RMTLoginViewController.h */,
-				C174CADA1B82202F00694C9B /* RMTLoginViewController.m */,
-				C174CADB1B82202F00694C9B /* RMTLoginViewController.xib */,
-				C174CADC1B82202F00694C9B /* RMTRegisterViewController.h */,
-				C174CADD1B82202F00694C9B /* RMTRegisterViewController.m */,
-				C174CADE1B82202F00694C9B /* RMTRegisterViewController.xib */,
 				C158DA061B842EEC00795B62 /* RMTLoginEnterViewController.h */,
 				C158DA071B842EEC00795B62 /* RMTLoginEnterViewController.m */,
 				C158DA081B842EEC00795B62 /* RMTLoginEnterViewController.xib */,
 				C158DA0B1B84448300795B62 /* RMTLoginInputPassWorldViewController.h */,
 				C158DA0C1B84448300795B62 /* RMTLoginInputPassWorldViewController.m */,
 				C158DA0D1B84448300795B62 /* RMTLoginInputPassWorldViewController.xib */,
+				C126C0531B8563910090A4FF /* Register */,
 				C126C0481B8462AB0090A4FF /* ForgotPassword */,
 			);
 			path = User;
@@ -996,7 +976,6 @@
 				C174CB411B82202F00694C9B /* AddHouseViewCell.xib in Resources */,
 				C174CB811B82207300694C9B /* ConfigLastMothControllViewController.xib in Resources */,
 				C174CA911B8218F100694C9B /* slider-default-handle@2x.png in Resources */,
-				C174CB341B82202F00694C9B /* RMTRegisterViewController.xib in Resources */,
 				C174CA9C1B8218F100694C9B /* slider-default7-trackBackground.png in Resources */,
 				C126C04D1B8462D70090A4FF /* RMTLoginForgotViewController.xib in Resources */,
 				C174CA8F1B8218F100694C9B /* slider-default-handle-highlighted@2x.png in Resources */,
@@ -1011,13 +990,13 @@
 				C174CB791B82207300694C9B /* AddLastMothWaterTableViewCell.xib in Resources */,
 				C174C9821B82182B00694C9B /* Images.xcassets in Resources */,
 				C174CB471B82202F00694C9B /* MenuLeftViewController.xib in Resources */,
+				C126C0581B8563D50090A4FF /* RMTRegistersViewController.xib in Resources */,
 				C174CAA51B8218F100694C9B /* slider-metal-track@2x.png in Resources */,
 				C174CAA61B8218F100694C9B /* slider-metal-trackBackground.png in Resources */,
 				C158DA0A1B842EEC00795B62 /* RMTLoginEnterViewController.xib in Resources */,
 				C174CB731B82207300694C9B /* AddFloorWaterDataViewControll.xib in Resources */,
 				C126C0521B848DA00090A4FF /* RMTChangePassWorldViewController.xib in Resources */,
 				C174CA9D1B8218F100694C9B /* slider-default7-trackBackground@2x.png in Resources */,
-				C174CB321B82202F00694C9B /* RMTLoginViewController.xib in Resources */,
 				C174CB1E1B82202F00694C9B /* GetAmmeterViewController.xib in Resources */,
 				C174CAA11B8218F100694C9B /* slider-metal-handle-highlighted@2x.png in Resources */,
 				C174CAA01B8218F100694C9B /* slider-metal-handle-highlighted.png in Resources */,
@@ -1026,10 +1005,8 @@
 				C174CAA71B8218F100694C9B /* slider-metal-trackBackground@2x.png in Resources */,
 				C174CB231B82202F00694C9B /* avatar@2x.jpg in Resources */,
 				C174CAAE1B8218F100694C9B /* WaterViewController.xib in Resources */,
-				C174CB2D1B82202F00694C9B /* RMTAgreementViewController.xib in Resources */,
 				C174CA9B1B8218F100694C9B /* slider-default7-track@2x.png in Resources */,
 				C158DA0F1B84448300795B62 /* RMTLoginInputPassWorldViewController.xib in Resources */,
-				C174CB301B82202F00694C9B /* RMTFindPasswordViewController.xib in Resources */,
 				C174CB7D1B82207300694C9B /* ConfigHouseEditCell.xib in Resources */,
 				C174CB7F1B82207300694C9B /* ConfigHouseViewController.xib in Resources */,
 				C174CAA41B8218F100694C9B /* slider-metal-track.png in Resources */,
@@ -1093,7 +1070,6 @@
 				C174CAAB1B8218F100694C9B /* RMTPopoverView.m in Sources */,
 				C174CB391B82202F00694C9B /* RMTUserLogic.m in Sources */,
 				C174CB741B82207300694C9B /* AddLastMonthDataControll.m in Sources */,
-				C174CB2C1B82202F00694C9B /* RMTAgreementViewController.m in Sources */,
 				C174CAA81B8218F100694C9B /* NMRangeSlider.m in Sources */,
 				C174CB421B82202F00694C9B /* AddHouseViewController.m in Sources */,
 				C174CA8D1B8218F100694C9B /* JBLineChartView.m in Sources */,
@@ -1115,11 +1091,9 @@
 				C174CB2A1B82202F00694C9B /* TabTableViewCell.m in Sources */,
 				C174CAA91B8218F100694C9B /* Reachability.m in Sources */,
 				C174CB3F1B82202F00694C9B /* RMTUtilityUpdate.m in Sources */,
-				C174CB311B82202F00694C9B /* RMTLoginViewController.m in Sources */,
 				C174CB381B82202F00694C9B /* RMTUserData.m in Sources */,
 				C174CB7E1B82207300694C9B /* ConfigHouseViewController.m in Sources */,
-				C174CB331B82202F00694C9B /* RMTRegisterViewController.m in Sources */,
-				C174CB2F1B82202F00694C9B /* RMTFindPasswordViewController.m in Sources */,
+				C126C0571B8563D50090A4FF /* RMTRegistersViewController.m in Sources */,
 				C174CB721B82207300694C9B /* AddFloorWaterDataViewControll.m in Sources */,
 				C158DA0E1B84448300795B62 /* RMTLoginInputPassWorldViewController.m in Sources */,
 				C174CB1D1B82202F00694C9B /* GetAmmeterViewController.m in Sources */,
@@ -1139,7 +1113,6 @@
 				C174CB761B82207300694C9B /* AddLastMothDataTableViewCell.m in Sources */,
 				C174CAAA1B8218F100694C9B /* RMTPopoverSlider.m in Sources */,
 				C158DA051B83178500795B62 /* ConfigSystem.m in Sources */,
-				C174CB2E1B82202F00694C9B /* RMTCountryPickerView.m in Sources */,
 				C174CB7A1B82207300694C9B /* ConfigEditHouseData.m in Sources */,
 				C174CB4A1B82202F00694C9B /* REFrostedViewController.m in Sources */,
 				C126C0471B844A0C0090A4FF /* LoginModelData.m in Sources */,

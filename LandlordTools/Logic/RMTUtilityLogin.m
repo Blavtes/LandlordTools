@@ -24,6 +24,7 @@ static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countr
 {
     RMTUserData *userData;
     NSArray *countryCodeList;
+   
 }
 
 @end
@@ -134,12 +135,12 @@ static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countr
 
 //注册请求
 -(void)requestRegisterUserWithData:(RMTRegisterUserData *)data
-                          complete:(void (^)(NSError *error,NSString *logid))handler
+                          complete:(void (^)(NSError *error,LoginPassworldBack *login))handler
 {
     NSMutableDictionary *reqDic = [NSMutableDictionary new];
     
     [reqDic setValue:data.mobile forKey:@"mobile"];
-    [reqDic setValue:data.userType forKey:@"userType"];
+    [reqDic setValue:@(data.userType) forKey:@"userType"];
 //    [reqDic setValue:[self getMD5String:data.password] forKey:@"password"];
     [reqDic setValue:data.token forKey:@"token"];
      [reqDic setValue:data.password forKey:@"password"];
@@ -159,29 +160,10 @@ static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countr
                                             return;
                                         }
                                         
-                                        NSNumber *rtnObject = [dic valueForKey:@"code"];
-                                        if (!rtnObject) {
-                                            NSDictionary *userInfo = @{NSLocalizedDescriptionKey: NSLocalizedString(@"服务器错误，请重试", nil)};
-                                            NSError *customError = [NSError errorWithDomain:@"RMTUtilityLoginErrorDomain"
-                                                                                       code:10000
-                                                                                   userInfo:userInfo];
-                                            handler(customError,nil);
-                                            return;
-                                        }
+                                        NSError *jsonError = nil;
                                         
-                                        int code = [rtnObject intValue];
-                                        if (code == 1) {
-                                            NSString *loginId = [dic objectForKey:@"loginId"];
-                                            handler(nil,loginId);
-                                            return;
-                                        }
-                                        
-                                        NSString *errMsg =  [dic valueForKey:@"message"];
-                                        NSDictionary *userInfo = @{NSLocalizedDescriptionKey: NSLocalizedString(errMsg, nil)};
-                                        NSError *customError = [NSError errorWithDomain:@"RMTUtilityLoginErrorDomain"
-                                                                                   code:code
-                                                                               userInfo:userInfo];
-                                        handler(customError,nil);
+                                        LoginPassworldBack *obj = [[LoginPassworldBack alloc] initWithDictionary:dic error:&jsonError];
+                                        handler(jsonError,obj);
                                         return;
                                     }];
 }

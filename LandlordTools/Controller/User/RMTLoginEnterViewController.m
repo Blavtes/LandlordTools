@@ -8,7 +8,7 @@
 
 #import "RMTLoginEnterViewController.h"
 #import "RMTLoginInputPassWorldViewController.h"
-
+#import "RMTRegistersViewController.h"
 #import "RMTUtilityLogin.h"
 
 @interface RMTLoginEnterViewController () <UITextFieldDelegate>
@@ -42,7 +42,13 @@
 }
 */
 - (IBAction)backClick:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    for (UIViewController *controller in self.navigationController.viewControllers) {
+        if ([controller isKindOfClass:NSClassFromString(@"MainContentControlViewController")]) {
+            [self.navigationController popToViewController:controller animated:YES];
+            
+            return;
+        }
+    }
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
@@ -67,7 +73,9 @@
             vc.mobile = mobile;
             [self.navigationController pushViewController:vc animated:YES];
         } else if (obj.code == RMTRegisterCodeNotRegist){
-            
+            RMTRegistersViewController *vc = [[RMTRegistersViewController alloc] init];
+            vc.mobile = mobile;
+            [self.navigationController pushViewController:vc animated:YES];
         } else {
             _notifyLabel.text = @"数据异常";
         }

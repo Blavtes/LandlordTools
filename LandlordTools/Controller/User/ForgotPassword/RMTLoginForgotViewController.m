@@ -89,10 +89,7 @@
 
 - (IBAction)verifyNextClick:(id)sender
 {
-    if ([_verifyTextField.text length] == 0) {
-         _notifyLabel1.text  = @"验证码错误";
-        return;
-    }
+ 
     [[RMTUtilityLogin sharedInstance] requestCheckVerifyWithPhoneNumber:_mobile
                                                             checkVerify:_verifyTextField.text
                                                               vcodeType:RMTVerificationCodeFindWorld
@@ -136,6 +133,7 @@
                                                                   complete:^(NSError *error,LoginCheckoutVerifyData *obj) {
                                                                       if (obj.code == RMTRequestBackCodeSucceed) {
                                                                           _notifyLabel3.text = obj.message;
+                                                                          
                                                                       }
                                                                   }];
 }
@@ -145,7 +143,7 @@
 {
     NSDate *now = [NSDate date];
     NSInteger interval = (NSInteger)[now timeIntervalSinceDate:_sendDate];
-    if (interval >= 60) {
+    if (interval >= RMTVerfyTimeCount) {
         _verifyBt.enabled = YES;
         [_verifyBt setTitle:@"验证码" forState:UIControlStateNormal];
         [_timer invalidate];
@@ -154,8 +152,8 @@
     else
     {
         _verifyBt.enabled = NO;
-        [_verifyBt setTitle:[NSString stringWithFormat:@"%ld秒后重发", (long)(60 - interval)] forState:UIControlStateNormal];
-        [_verifyBt setTitle:[NSString stringWithFormat:@"%ld秒后重发", (long)(60 - interval)] forState:UIControlStateDisabled];
+        [_verifyBt setTitle:[NSString stringWithFormat:@"%ld秒后重发", (long)(RMTVerfyTimeCount - interval)] forState:UIControlStateNormal];
+        [_verifyBt setTitle:[NSString stringWithFormat:@"%ld秒后重发", (long)(RMTVerfyTimeCount - interval)] forState:UIControlStateDisabled];
     }
 }
 

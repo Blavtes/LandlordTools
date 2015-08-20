@@ -17,6 +17,10 @@ typedef enum _RMTRequestBackCode{
     RMTRequestBackCodeSucceed = 1
 }RMTRequestBackCode;
 
+typedef enum _RMTVerfyTime {
+        RMTVerfyTimeCount = 60
+}RMTVerfyTime;
+
 typedef enum _RMTRegisterCode{
     RMTRegisterCodeErr = -1,// error
     RMTRegisterCodeNotRegist = 0, // no regist
@@ -28,6 +32,11 @@ typedef enum _RMTVerificationCode {
     RMTVerificationCodeRegister = 1, //  regist
     RMTVerificationCodeFindWorld = 2 //  find
 }RMTVerificationCode;
+
+typedef enum _RMTRegisterType {
+    RMTRegisterLandlordsType = 1, //房东
+    RMTRegisterTenantType = 2 //房客
+}RMTRegisterType;
 
 typedef enum _RMTUpdataMyBuildType {
     RMTUpdataMyBuildAddType = 1,
@@ -54,7 +63,7 @@ typedef enum _RMTUpdataMyBuildType {
 
 //注册请求
 -(void)requestRegisterUserWithData:(RMTRegisterUserData *)data
-                          complete:(void (^)(NSError *error,NSString *loginId))handler;
+                          complete:(void (^)(NSError *error,LoginPassworldBack *loginId))handler;
 
 //使用手机号码找回密码
 -(void)requestFindPasswordWithPhoneNumber:(NSString *)phoneNumber
