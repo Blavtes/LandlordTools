@@ -125,3 +125,26 @@
     return YES;
 }
 @end
+
+
+@implementation RoomByIdObj
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
+
+
+@end
+
+@implementation RoomDescriptionObj
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
+
++(JSONKeyMapper*)keyMapper
+{
+    return [[JSONKeyMapper alloc] initWithDictionary:@{@"id": @"_id"}];
+}
+
+@end

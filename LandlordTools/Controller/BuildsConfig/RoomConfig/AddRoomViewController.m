@@ -18,12 +18,15 @@
 @interface AddRoomViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+
+@property (nonatomic, strong) NSMutableArray *roomsArr;
 @end
 
 @implementation AddRoomViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _roomsArr = [NSMutableArray arrayWithCapacity:0];
     [[RMTUtilityLogin  sharedInstance] requestGetFloorsByBuildingId:_buildingData._id
                                                         withLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
                                                            complete:^(NSError *error, FloorsByBuildingObj *obj) {
