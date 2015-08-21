@@ -5,13 +5,13 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>ED703AE4-9A91-4EE7-ABF5-E0669C2AC2F5</string>
+	<string>40BDCBC6-2ACE-4D84-8E59-7D6E4DC33AF5</string>
 	<key>IDESourceControlProjectName</key>
 	<string>LandlordTools</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>A4EE1835AC02EC7471FFF7334B50B768D5CCB4A3</key>
-		<string>github.com:Blavtes/LandlordTools.git</string>
+		<string>https://github.com/Blavtes/LandlordTools.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>LandlordTools.xcworkspace</string>
@@ -21,7 +21,7 @@
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>github.com:Blavtes/LandlordTools.git</string>
+	<string>https://github.com/Blavtes/LandlordTools.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
