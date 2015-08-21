@@ -35,6 +35,29 @@
 }
 @end
 
+
+@implementation EditBuildingsIdObj
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
+
++(JSONKeyMapper*)keyMapper
+{
+    return [[JSONKeyMapper alloc] initWithDictionary:@{@"id": @"_id"}];
+}
+
+
+@end
+
+@implementation EditBuildingsBackObj
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
+
+@end
+
 @implementation BackOject
 +(BOOL)propertyIsOptional:(NSString*)propertyName
 {

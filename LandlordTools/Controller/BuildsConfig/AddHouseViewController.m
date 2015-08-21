@@ -163,13 +163,17 @@
     data.waterPrice = 6;
     data.payRentDay = 10;
     data.isShowDataList = NO;
+    data.tmpId = ((AddBuildArrayData*)[_buildArr lastObject])._id;
     data.oprType = RMTUpdataMyBuildAddType;
     
     NSArray *arr = [NSArray arrayWithObjects:data, nil];
     [self showHUDView];
     __weak __typeof(self)weakSelf = self;
-    [[RMTUtilityLogin sharedInstance] requestUpdateMyBuilingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId] whithBuildData:arr complete:^(NSError *error, BackOject *object) {
+    [[RMTUtilityLogin sharedInstance] requestUpdateMyBuilingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId]
+                                                          whithBuildData:arr
+                                                                complete:^(NSError *error, EditBuildingsBackObj *object) {
         if (object.code == RMTRequestBackCodeSucceed) {
+            
             [_buildArr addObject:data];
             [_tableView reloadData];
         }
@@ -188,7 +192,7 @@
     data.oprType = RMTUpdataMyBuildUpdataType;
     [self showHUDView];
     __weak __typeof(self)weakSelf = self;
-    [[RMTUtilityLogin sharedInstance] requestUpdateMyBuilingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId] whithBuildData:[NSArray arrayWithObject:data] complete:^(NSError *error, BackOject *object) {
+    [[RMTUtilityLogin sharedInstance] requestUpdateMyBuilingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId] whithBuildData:[NSArray arrayWithObject:data] complete:^(NSError *error, EditBuildingsBackObj *object) {
         if (object.code == RMTRequestBackCodeSucceed) {
            [_buildArr replaceObjectAtIndex:row withObject:data];
         }
@@ -206,7 +210,7 @@
         data.oprType = RMTUpdataMyBuildDeletedType;
         [self showHUDView];
         __weak __typeof(self)weakSelf = self;
-        [[RMTUtilityLogin sharedInstance] requestUpdateMyBuilingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId] whithBuildData:[NSArray arrayWithObject:data] complete:^(NSError *error, BackOject *object) {
+        [[RMTUtilityLogin sharedInstance] requestUpdateMyBuilingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId] whithBuildData:[NSArray arrayWithObject:data] complete:^(NSError *error, EditBuildingsBackObj *object) {
             if (object.code == RMTRequestBackCodeSucceed) {
                 [_buildArr removeObjectAtIndex:row];
                 [_tableView reloadData];
@@ -249,7 +253,7 @@
             __weak __typeof(self)weakSelf = self;
             [[RMTUtilityLogin sharedInstance] requestUpdateMyBuilingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId]
                                                                   whithBuildData:_buildArr
-                                                                        complete:^(NSError *error, BackOject *object) {
+                                                                        complete:^(NSError *error, EditBuildingsBackObj *object) {
                                                                             if (object.code == RMTRequestBackCodeSucceed) {
                                                                                 
                                                                             }

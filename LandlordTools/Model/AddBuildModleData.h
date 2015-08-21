@@ -26,8 +26,24 @@
 //ui
 @property (nonatomic, assign) BOOL isShowDataList;
 @property (nonatomic, assign) int oprType; // 1 添加 2 更新 3 删除
+@property (nonatomic, assign) int tmpId;//临时楼宇id(用于添加，返回时tmpId与新增id一一对应)
 @end
 
+
+@interface EditBuildingsIdObj : JSONModel
+@property (nonatomic, assign) int _id;
+@property (nonatomic, assign) int tmpId;
+
+@end
+
+@protocol EditBuildingsIdObj <NSObject>
+
+@end
+@interface EditBuildingsBackObj : JSONModel
+@property (nonatomic, assign) int code;
+@property (nonatomic, strong) NSString *message;
+@property (nonatomic, strong) NSArray <EditBuildingsIdObj,Optional> *buildings;
+@end
 
 @protocol AddBuildArrayData <NSObject>
 @end
@@ -88,4 +104,32 @@
 @end
 @interface EditFloorsByModle : JSONModel
 @property (nonatomic, strong) NSArray <EditFloorsByArrModle,Optional> *floors;
+@end
+
+
+@interface RoomDescriptionObj : JSONModel
+@property (nonatomic, assign) int _id;
+@property (nonatomic, strong) NSString *number;
+@property (nonatomic, assign) float deposit;
+@property (nonatomic, assign) float preElectricCount;
+@property (nonatomic, assign) float electricCount;
+@property (nonatomic, assign) float electricPrice;
+@property (nonatomic, assign) float preWaterCount;
+@property (nonatomic, assign) float waterCount;
+@property (nonatomic, assign) float waterPrice;
+@property (nonatomic, assign) float rentCost;
+@property (nonatomic, assign) float broadbandCost;
+@property (nonatomic, assign) float othersCost;
+@property (nonatomic, assign) int payRentDay;
+@property (nonatomic, strong) NSString *payRentDayStr;
+@property (nonatomic, assign) int isPayRent;
+@property (nonatomic, assign) int isInit;
+@end
+
+@protocol RoomDescriptionObj <NSObject>
+@end
+@interface RoomByIdObj : JSONModel
+@property (nonatomic, assign) int code;
+@property (nonatomic, strong) NSString *message;
+@property (nonatomic, strong) RoomDescriptionObj *room;
 @end

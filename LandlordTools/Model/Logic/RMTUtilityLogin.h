@@ -44,6 +44,17 @@ typedef enum _RMTUpdataMyBuildType {
     RMTUpdataMyBuildDeletedType = 3
 }RMTUpdataMyBuildType;
 
+
+typedef enum _RMTIsPayRent{
+    RMTIsPayRentNot = 0, //未交租
+    RMTIsPayRentDo = 1 //已交租
+}RMTIsPayRent;
+
+typedef enum _RMTIsInit {
+    RMTIsInitNot = 0, //未初始化
+    RMTIsInitDo = 1 //已初始化
+}RMTIsInit;
+
 @interface RMTUtilityLogin : NSObject
 
 
@@ -118,7 +129,7 @@ typedef enum _RMTUpdataMyBuildType {
 //更新楼宇
 - (void)requestUpdateMyBuilingsWithLogicId:(NSString*)logicId
                           whithBuildData:(NSArray*)data
-                                complete:(void (^)(NSError *error,BackOject *object))handler;
+                                complete:(void (^)(NSError *error,EditBuildingsBackObj *object))handler;
 
 //根据楼宇id获取楼层和房间
 - (void)requestGetFloorsByBuildingId:(int)buildid
@@ -130,5 +141,16 @@ typedef enum _RMTUpdataMyBuildType {
                       withBuildindId:(int)buildid
                           withFloors:(NSArray*) floors
                             complete:(void (^)(NSError *error, BackOject* obj))handler;
+
+//根据id获取房间详情
+- (void)requestGetRoomByRoomId:(int)roomId
+                   withLoginId:(NSString*)loginId
+                      complete:(void (^)(NSError *error, RoomByIdObj* obj))handler;
+//编辑房间详情
+
+- (void)requestEditRoomWithLoginId:(NSString*)loginId
+                          withRoom:(RoomDescriptionObj*)room
+                          complete:(void (^)(NSError *error, BackOject* obj))handler;
+
 
 @end
