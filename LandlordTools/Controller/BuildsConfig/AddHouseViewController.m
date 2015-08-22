@@ -64,6 +64,7 @@
                 [_tableView reloadData];
             } else {
                 [_buildArr addObjectsFromArray:buildData.buildings];
+                NSLog(@"bulid %@",buildData);
                 [_tableView reloadData];
             }
         }

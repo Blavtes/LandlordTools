@@ -11,6 +11,9 @@
 #import "AddBuildModleData.h"
 #import "LoginModelData.h"
 
+#define kBackGroundColorStr     @"2A2A2A" //424242
+#define KYellowFontColorStr     @"EBBE2C" // 黄色
+
 typedef enum _RMTRequestBackCode{
     RMTRequestBackCodeException = -1,
     RMTRequestBackCodeFailure = 0,

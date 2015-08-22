@@ -18,7 +18,6 @@
 #import "LoginModelData.h"
 
 static const NSString *kUCBaseUrl = @"http://112.74.26.14:8080/rentcloud";
-static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countryCode/getlist";
 
 @interface RMTUtilityLogin()
 {
@@ -648,6 +647,8 @@ static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countr
                                             handler(customError,nil);
                                             return;
                                         }
+                                        
+                                        NSLog(@"buildings dict %@",dic);
                                         NSError *jsonError = nil;
                                         FloorsByBuildingObj *data = [[FloorsByBuildingObj alloc] initWithDictionary:dic error:&jsonError];
                                         
@@ -686,7 +687,7 @@ static const NSString *kCountryCodeListUrl = @"http://clotho.d3dstore.com/countr
     
     
     [dic setValue:list forKey:@"floors"];
-    
+    NSLog(@"dict %@",dic);
     NSString *url = [NSString stringWithFormat:@"%@/floor/editFloors", kUCBaseUrl];
     NSDictionary *headerFields = [self getHTTPHeaderFields];
     [[RMTURLSession sharedInstance] requestApiWithUrl:url
