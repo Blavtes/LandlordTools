@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddRoomViewController">
             <connections>
+                <outlet property="hubView" destination="j0G-ES-Sc0" id="50V-in-8eD"/>
                 <outlet property="tableView" destination="KgV-EZ-dMi" id="0LH-D6-E5m"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -233,34 +234,52 @@
                         </mask>
                     </variation>
                 </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j0G-ES-Sc0">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="5iY-rq-AdO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3yz-8h-drp"/>
+                <constraint firstAttribute="trailing" secondItem="j0G-ES-Sc0" secondAttribute="trailing" id="5UZ-Jd-gFu"/>
                 <constraint firstAttribute="trailing" secondItem="5iY-rq-AdO" secondAttribute="trailing" id="YpB-Br-Bgn"/>
                 <constraint firstAttribute="bottom" secondItem="5iY-rq-AdO" secondAttribute="bottom" id="ZOR-YT-6wl"/>
+                <constraint firstItem="j0G-ES-Sc0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dSG-ip-67U"/>
                 <constraint firstItem="5iY-rq-AdO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="g9Y-DA-IFl"/>
+                <constraint firstAttribute="bottom" secondItem="j0G-ES-Sc0" secondAttribute="bottom" id="kUF-aV-sF3"/>
+                <constraint firstItem="j0G-ES-Sc0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="xYy-v2-TTR"/>
             </constraints>
             <variation key="default">
                 <mask key="subviews">
                     <exclude reference="5iY-rq-AdO"/>
+                    <exclude reference="j0G-ES-Sc0"/>
                 </mask>
                 <mask key="constraints">
                     <exclude reference="3yz-8h-drp"/>
                     <exclude reference="YpB-Br-Bgn"/>
                     <exclude reference="ZOR-YT-6wl"/>
                     <exclude reference="g9Y-DA-IFl"/>
+                    <exclude reference="5UZ-Jd-gFu"/>
+                    <exclude reference="dSG-ip-67U"/>
+                    <exclude reference="kUF-aV-sF3"/>
+                    <exclude reference="xYy-v2-TTR"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
                 <mask key="subviews">
                     <include reference="5iY-rq-AdO"/>
+                    <include reference="j0G-ES-Sc0"/>
                 </mask>
                 <mask key="constraints">
                     <include reference="3yz-8h-drp"/>
                     <include reference="YpB-Br-Bgn"/>
                     <include reference="ZOR-YT-6wl"/>
                     <include reference="g9Y-DA-IFl"/>
+                    <include reference="5UZ-Jd-gFu"/>
+                    <include reference="dSG-ip-67U"/>
+                    <include reference="kUF-aV-sF3"/>
+                    <include reference="xYy-v2-TTR"/>
                 </mask>
             </variation>
         </view>

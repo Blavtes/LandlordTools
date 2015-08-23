@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -39,7 +39,7 @@
                                                         <variation key="heightClass=regular-widthClass=compact" constant="40"/>
                                                     </constraint>
                                                 </constraints>
-                                                <state key="normal" image="bt_level-">
+                                                <state key="normal">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="default">
@@ -54,10 +54,6 @@
                                                         <include reference="hHs-F0-vKO"/>
                                                     </mask>
                                                 </variation>
-                                                <connections>
-                                                    <action selector="deleteClcik:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ud6-mS-PaQ"/>
-                                                    <action selector="deletedClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="m5c-ao-TC6"/>
-                                                </connections>
                                             </button>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NIS-fu-DFR">
                                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
@@ -413,38 +409,38 @@
                                                 <exclude reference="ECP-MR-ENZ"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <exclude reference="7UW-Yb-aGH"/>
-                                                <exclude reference="BVP-aD-S7G"/>
-                                                <exclude reference="2a9-dJ-l41"/>
-                                                <exclude reference="Lw3-4g-l6N"/>
-                                                <exclude reference="aV6-rh-na1"/>
-                                                <exclude reference="jfS-dd-yZP"/>
+                                                <exclude reference="9CU-Gs-Vkx"/>
+                                                <exclude reference="f9t-CQ-rk3"/>
+                                                <exclude reference="lJ6-oj-ZkC"/>
+                                                <exclude reference="woC-zS-2AW"/>
                                                 <exclude reference="GiE-kM-K0H"/>
                                                 <exclude reference="JLB-YR-9Ly"/>
                                                 <exclude reference="U0u-9N-93z"/>
+                                                <exclude reference="7qN-0m-HB7"/>
+                                                <exclude reference="GGw-ut-dgJ"/>
+                                                <exclude reference="kcg-hf-B84"/>
+                                                <exclude reference="RV8-pc-xvL"/>
+                                                <exclude reference="W41-HG-fIs"/>
+                                                <exclude reference="vAc-6D-Isx"/>
                                                 <exclude reference="4S4-sn-UZt"/>
                                                 <exclude reference="Tns-HR-AgV"/>
                                                 <exclude reference="rJb-Jc-66V"/>
+                                                <exclude reference="08I-st-HEF"/>
+                                                <exclude reference="FIb-9S-Yjy"/>
+                                                <exclude reference="7UW-Yb-aGH"/>
+                                                <exclude reference="BVP-aD-S7G"/>
+                                                <exclude reference="XkT-Ux-Oiz"/>
+                                                <exclude reference="szZ-a3-IQQ"/>
                                                 <exclude reference="2Qg-tx-76D"/>
                                                 <exclude reference="3qw-J8-Qdu"/>
                                                 <exclude reference="GEU-3L-lYl"/>
                                                 <exclude reference="KdF-za-SbZ"/>
                                                 <exclude reference="MDs-Qt-sz7"/>
                                                 <exclude reference="rQV-Mq-sbF"/>
-                                                <exclude reference="08I-st-HEF"/>
-                                                <exclude reference="FIb-9S-Yjy"/>
-                                                <exclude reference="RV8-pc-xvL"/>
-                                                <exclude reference="W41-HG-fIs"/>
-                                                <exclude reference="vAc-6D-Isx"/>
-                                                <exclude reference="GGw-ut-dgJ"/>
-                                                <exclude reference="kcg-hf-B84"/>
-                                                <exclude reference="7qN-0m-HB7"/>
-                                                <exclude reference="9CU-Gs-Vkx"/>
-                                                <exclude reference="f9t-CQ-rk3"/>
-                                                <exclude reference="lJ6-oj-ZkC"/>
-                                                <exclude reference="woC-zS-2AW"/>
-                                                <exclude reference="XkT-Ux-Oiz"/>
-                                                <exclude reference="szZ-a3-IQQ"/>
+                                                <exclude reference="2a9-dJ-l41"/>
+                                                <exclude reference="Lw3-4g-l6N"/>
+                                                <exclude reference="aV6-rh-na1"/>
+                                                <exclude reference="jfS-dd-yZP"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
@@ -462,38 +458,38 @@
                                                 <include reference="ECP-MR-ENZ"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <include reference="7UW-Yb-aGH"/>
-                                                <include reference="BVP-aD-S7G"/>
-                                                <include reference="2a9-dJ-l41"/>
-                                                <include reference="Lw3-4g-l6N"/>
-                                                <include reference="aV6-rh-na1"/>
-                                                <include reference="jfS-dd-yZP"/>
+                                                <include reference="9CU-Gs-Vkx"/>
+                                                <include reference="f9t-CQ-rk3"/>
+                                                <include reference="lJ6-oj-ZkC"/>
+                                                <include reference="woC-zS-2AW"/>
                                                 <include reference="GiE-kM-K0H"/>
                                                 <include reference="JLB-YR-9Ly"/>
                                                 <include reference="U0u-9N-93z"/>
+                                                <include reference="7qN-0m-HB7"/>
+                                                <include reference="GGw-ut-dgJ"/>
+                                                <include reference="kcg-hf-B84"/>
+                                                <include reference="RV8-pc-xvL"/>
+                                                <include reference="W41-HG-fIs"/>
+                                                <include reference="vAc-6D-Isx"/>
                                                 <include reference="4S4-sn-UZt"/>
                                                 <include reference="Tns-HR-AgV"/>
                                                 <include reference="rJb-Jc-66V"/>
+                                                <include reference="08I-st-HEF"/>
+                                                <include reference="FIb-9S-Yjy"/>
+                                                <include reference="7UW-Yb-aGH"/>
+                                                <include reference="BVP-aD-S7G"/>
+                                                <include reference="XkT-Ux-Oiz"/>
+                                                <include reference="szZ-a3-IQQ"/>
                                                 <exclude reference="2Qg-tx-76D"/>
                                                 <include reference="3qw-J8-Qdu"/>
                                                 <include reference="GEU-3L-lYl"/>
                                                 <include reference="KdF-za-SbZ"/>
                                                 <exclude reference="MDs-Qt-sz7"/>
                                                 <include reference="rQV-Mq-sbF"/>
-                                                <include reference="08I-st-HEF"/>
-                                                <include reference="FIb-9S-Yjy"/>
-                                                <include reference="RV8-pc-xvL"/>
-                                                <include reference="W41-HG-fIs"/>
-                                                <include reference="vAc-6D-Isx"/>
-                                                <include reference="GGw-ut-dgJ"/>
-                                                <include reference="kcg-hf-B84"/>
-                                                <include reference="7qN-0m-HB7"/>
-                                                <include reference="9CU-Gs-Vkx"/>
-                                                <include reference="f9t-CQ-rk3"/>
-                                                <include reference="lJ6-oj-ZkC"/>
-                                                <include reference="woC-zS-2AW"/>
-                                                <include reference="XkT-Ux-Oiz"/>
-                                                <include reference="szZ-a3-IQQ"/>
+                                                <include reference="2a9-dJ-l41"/>
+                                                <include reference="Lw3-4g-l6N"/>
+                                                <include reference="aV6-rh-na1"/>
+                                                <include reference="jfS-dd-yZP"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -519,7 +515,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <action selector="downClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="mI9-O8-FCe"/>
+                                            <action selector="deleteClcik:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="5fK-vQ-2BI"/>
                                         </connections>
                                     </button>
                                 </subviews>

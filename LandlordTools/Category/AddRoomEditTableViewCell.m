@@ -13,6 +13,9 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    _oneTextField.delegate = self;
+    _twoTextField.delegate = self;
+    _threeTextField.delegate = self;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -91,15 +94,41 @@
     }
 }
 
-- (IBAction)editNumber:(id)sender {
-    UITextField *field = (UITextField*)sender;
-    int index = (int)_indexPath.row * 3 + (int)field.tag - 21;
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    int index = 0;
+    if (_oneTextField == textField) {
+        index = (int)_indexPath.row * 3;
+    }
+    
+    if (_twoTextField == textField) {
+        index = (int)_indexPath.row * 3 + 1;
+    }
+    
+    if (_threeTextField == textField) {
+        index = (int)_indexPath.row * 3 + 2;
+    }
+    
+    UITextField *field = (UITextField*)textField;
+    NSLog(@"_index path %ld",_indexPath.row);
+//    int index = (int)_indexPath.row * 3 + (int)field.tag - 21;
     
     RoomsByArrObj *obj =  [_data.rooms objectAtIndex:index];
     obj.number = field.text;
     if ([_delegate respondsToSelector:@selector(reflashDataWithSection:andIndex:andData:)]) {
         [_delegate reflashDataWithSection:(int)_indexPath.section andIndex:index andData:obj];
     }
+}
+
+- (IBAction)editNumber:(id)sender {
+//    UITextField *field = (UITextField*)sender;
+//    int index = (int)_indexPath.row * 3 + (int)field.tag - 21;
+//    
+//    RoomsByArrObj *obj =  [_data.rooms objectAtIndex:index];
+//    obj.number = field.text;
+//    if ([_delegate respondsToSelector:@selector(reflashDataWithSection:andIndex:andData:)]) {
+//        [_delegate reflashDataWithSection:(int)_indexPath.section andIndex:index andData:obj];
+//    }
 }
 
 

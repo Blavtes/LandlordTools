@@ -19,7 +19,7 @@
 - (void)reflashDataWithSection:(int)section andIndex:(int)index andData:(RoomsByArrObj*)data;
 @end
 
-@interface AddRoomEditTableViewCell : UITableViewCell
+@interface AddRoomEditTableViewCell : UITableViewCell <UITextFieldDelegate>
 
 @property (nonatomic, assign) id<AddBuildRoomsDelegate>delegate;
 
