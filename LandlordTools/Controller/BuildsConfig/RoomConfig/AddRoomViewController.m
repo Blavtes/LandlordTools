@@ -24,12 +24,15 @@
 
 @property (nonatomic, strong) NSMutableArray *roomsArr;
 @property (nonatomic, strong) NSMutableArray *sectionArr;
+@property (weak, nonatomic) IBOutlet UILabel *titleLable;
+
 @end
 
 @implementation AddRoomViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _titleLable.text = _buildingData.buildingName;
     _roomsArr = [NSMutableArray arrayWithCapacity:0];
     _sectionArr = [NSMutableArray arrayWithCapacity:0];
         // Do any additional setup after loading the view from its nib.

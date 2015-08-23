@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="hubView" destination="j0G-ES-Sc0" id="50V-in-8eD"/>
                 <outlet property="tableView" destination="KgV-EZ-dMi" id="0LH-D6-E5m"/>
+                <outlet property="titleLable" destination="fQ4-2E-0DE" id="JoK-gi-YAC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
