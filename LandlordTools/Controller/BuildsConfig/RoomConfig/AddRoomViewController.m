@@ -22,6 +22,7 @@
 
 
 @property (nonatomic, strong) NSMutableArray *roomsArr;
+@property (nonatomic, strong) NSMutableArray *sectionArr;
 @end
 
 @implementation AddRoomViewController
@@ -29,6 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _roomsArr = [NSMutableArray arrayWithCapacity:0];
+    _sectionArr = [NSMutableArray arrayWithCapacity:0];
         // Do any additional setup after loading the view from its nib.
     UINib *nib = [UINib nibWithNibName:@"AddRoomEditTableViewCell" bundle:[NSBundle mainBundle]];
     [_tableView registerNib:nib forCellReuseIdentifier:@"AddRoomEditTableViewCell"];
@@ -37,18 +39,72 @@
 }
 
 
+- (void)reloadSectionArr
+{
+    if ([_roomsArr count] == 0) {
+        [_sectionArr addObject:@"one"];
+        NSLog(@"reload null");
+        return;
+    }
+    
+
+    FloorsByArrObj *one = [_roomsArr firstObject];
+    if (one.count != 1) {
+        [_sectionArr addObject:@"one"];
+       
+    }
+     [_sectionArr addObject:one];
+    for (int i = 1 ; i < [_roomsArr count] ; i ++) {
+        FloorsByArrObj *current = [_roomsArr objectAtIndex:i];
+        FloorsByArrObj *last = [_roomsArr objectAtIndex:i-1];
+        if (current.count - last.count > 1) {
+
+            [_sectionArr addObject:@"one"];
+            [_sectionArr addObject:current];
+        } else {
+            [_sectionArr addObject:current];
+        }
+        
+    }
+    
+    NSLog(@"sectonArr count %ld",_sectionArr.count);
+}
+
+- (void)sortRoomArr {
+
+    for (int i = 0 ; i < _roomsArr.count - 1; i++) {
+        for (int j = i + 1; j < _roomsArr.count; j++) {
+            FloorsByArrObj *a =   (FloorsByArrObj*)[ self.roomsArr objectAtIndex:i];;
+            FloorsByArrObj *b =   (FloorsByArrObj*)[ self.roomsArr objectAtIndex:j];
+            NSLog(@"sort %d %d",i,j);
+            if (a.count > b.count) {
+                [_roomsArr exchangeObjectAtIndex:i withObjectAtIndex:j];
+            }
+        }
+    }
+    NSLog(@"sort over");
+}
+
 - (void)reloadBuildings
 {
+    [_sectionArr removeAllObjects];
     [_roomsArr removeAllObjects];
+    __weak __typeof(&*self)weakSelf = self;
+
     [[RMTUtilityLogin  sharedInstance] requestGetFloorsByBuildingId:_buildingData._id
                                                         withLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
                                                            complete:^(NSError *error, FloorsByBuildingObj *obj) {
                                                                if (obj.code == RMTRequestBackCodeSucceed) {
                                                                    if (obj.floors.count == 0) {
                                                                        
+                                                                   } else {
+                                                                       [_roomsArr addObjectsFromArray:obj.floors];
+                                                                        [weakSelf sortRoomArr];
                                                                    }
                                                                    NSLog(@"obj %@",obj);
-                                                                   [_roomsArr addObjectsFromArray:obj.floors];
+                                                                   
+                                                                  
+                                                                   [weakSelf reloadSectionArr];
                                                                    [_tableView reloadData];
                                                                }
                                                                NSLog(@"requestGetFloorsBy floors count %ld",obj.floors.count);
@@ -81,60 +137,82 @@
     ///1 第一区 为 空时  该区 不为空 （显示+楼层）
     //2 当前 为 空 并且 上一区不为空 （该区 显示添加 楼层 1
     // 最后 一区 加 1；
-    int section = 0;
-    for (int i = 0 ; i < [_roomsArr count] ; i ++) {
-        FloorsByArrObj *obj = [_roomsArr objectAtIndex:i];
-        if (obj.rooms.count == 0 && i == 0) {
-            section++;
-        } else  if (obj.rooms.count == 0 && i != 0) {
-            FloorsByArrObj *last = [_roomsArr objectAtIndex:i-1];
-            if (last.rooms.count != 0) {
-                section++;
-            }
-        } else {
-            section++;
-        }
-    }
-    return section;
+//    if ([_roomsArr count] == 0) {
+//
+//        return 1;
+//    }
+//
+//     int section = 0;
+//    FloorsByArrObj *one = [_roomsArr firstObject];
+//    if (one.count != 1) {
+//        section++;
+//    }
+//    
+//   
+//    for (int i = 1 ; i < [_roomsArr count] ; i ++) {
+//        FloorsByArrObj *current = [_roomsArr objectAtIndex:i];
+//        FloorsByArrObj *last = [_roomsArr objectAtIndex:i-1];
+//        if (current.count - last.count != 1) {
+//            section++;
+//        } else {
+//        }
+//       
+//    }
+//    section += _roomsArr.count;
+//    NSLog(@"section %d",section);
+    return _sectionArr.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     //如果 楼层断了，+添加
     // 如果最后 添加 +
-    int row = 0;
-    if ((((NSArray*)((FloorsByArrObj*)[ self.roomsArr objectAtIndex:section]).rooms).count == 0
-         && section == 0)
-        || (((NSArray*)((FloorsByArrObj*)[ self.roomsArr objectAtIndex:section]).rooms).count == 0
-            && section != 0
-            && ((NSArray*)((FloorsByArrObj*)[ self.roomsArr objectAtIndex:section - 1]).rooms).count == 0)) {
-        //1 第一区 为 空时 加 1
-        //2 当前 为 空 并且 上一区不为空 加 1
-        // 最后 一区 加 1；
-            row ++;
-        
+//    if (_roomsArr.count == 0) {
+//        [_sectionArr addObject:@"one"];
+//        return 1;
+//
+    if (_roomsArr.count == 0) {
+        return 1;
     }
-    if (((NSArray*)((FloorsByArrObj*)[ self.roomsArr objectAtIndex:section - 1]).rooms).count == 0) {
-        return row;
+    NSLog(@"section %ld ,srr count %d, _secArr %@",section,_sectionArr.count,_sectionArr);
+    id  selectStr = [_sectionArr objectAtIndex:section];
+    if ([selectStr isKindOfClass:[NSString class]] && [selectStr isEqualToString:@"one"]) {
+        return 1;
     }
-   
     
-    return ((NSArray*)((FloorsByArrObj*)[ self.roomsArr objectAtIndex:section]).rooms).count / 3  + (((NSArray*)((FloorsByArrObj*)[ self.roomsArr objectAtIndex:section]).rooms).count % 3 == 0 ? 1 :0) + row;
+    int row = 0;
+    if (section == [_sectionArr count] - 1) {
+        row ++;
+    }
+    
+    NSLog(@"current section row %ld",((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:section]).rooms).count / 3  + (((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:section]).rooms).count % 3 == 0 ? 1 :1) + row);
+    NSLog(@"current %ld",((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:section]).rooms).count);
+    return ((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:section]).rooms).count / 3  + (((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:section]).rooms).count % 3 == 0 ? 1 :1) + row;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = nil;
-    if ((((NSArray*)((FloorsByArrObj*)[ self.roomsArr objectAtIndex:indexPath.section]).rooms).count == 0
-         && indexPath.section == 0)
-        || (((NSArray*)((FloorsByArrObj*)[ self.roomsArr objectAtIndex:indexPath.section]).rooms).count == 0
-            && indexPath.section != 0
-            && ((NSArray*)((FloorsByArrObj*)[ self.roomsArr objectAtIndex:indexPath.section - 1]).rooms).count != 0)) {
-        
+    BOOL isOne = YES;
+    if (_sectionArr.count == 0) {
+        isOne = YES;
+    } else {
+        id selectStr = [_sectionArr objectAtIndex:indexPath.section];
+
+        if (([selectStr isKindOfClass:[NSString class]] &&  [selectStr isEqualToString:@"one"]) || (([[ self.sectionArr objectAtIndex:indexPath.section] isKindOfClass:[FloorsByArrObj class]]) &&
+            indexPath.row == ((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:indexPath.section]).rooms).count / 3  + (((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:indexPath.section]).rooms).count % 3 == 0 ? 1 :1) )) {
+            isOne = YES;
+           
+        } else {
+            isOne = NO;
+        }
+    }
+    
+    if (isOne) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"AddRoomDefalutCell"];
         UIButton *btn = [UIButton new];
         [btn setImage:[UIImage imageNamed:@"bt_level+"] forState:UIControlStateNormal];
-
+        [btn setTag:indexPath.section];
         [btn addTarget:self action:@selector(addBuildingsDta:) forControlEvents:UIControlEventTouchUpInside];
         [btn setBackgroundColor:[UIColor colorWithRed:42.0f/255.0f green:42.0f/255.0f blue:42.0f/255.0f alpha:1]];
         [cell addSubview:btn];
@@ -159,7 +237,7 @@
     } else {
         cell = (AddRoomEditTableViewCell*)[_tableView dequeueReusableCellWithIdentifier:@"AddRoomEditTableViewCell"];
         AddRoomEditTableViewCell *editCell = (AddRoomEditTableViewCell*)cell;
-        [editCell setCellContentData:[_roomsArr objectAtIndex:indexPath.section] withRow:indexPath];
+        [editCell setCellContentData:[_sectionArr objectAtIndex:indexPath.section] withRow:indexPath];
         editCell.delegate = self;
         NSLog(@"indexpth section %ld",indexPath.section);
 
@@ -174,21 +252,63 @@
 
 - (void)addBuildingsDta:(id)sender
 {
-    int count = (int)[_roomsArr count];
+    UIButton *btn = (UIButton*)sender;
+    int count = 1;
+    int _id = 1;
+    RMTUpdataMyBuildType oprType = RMTUpdataMyBuildAddType;
+    
+    if ([_roomsArr count ] != 0) {
+        id obj = [_sectionArr objectAtIndex:btn.tag];
+        
+        if ([obj isKindOfClass:[NSString class]] && ([obj isEqualToString:@"one"])) {
+            if (btn.tag - 2 > 0) {
+                id obj2 = [_sectionArr objectAtIndex:btn.tag - 2];
+                if ([obj2 isKindOfClass:[FloorsByArrObj class]]) {
+                    count = ((FloorsByArrObj*)obj2).count + 1;
+                }
+            } else if (btn.tag - 2 == -1 || btn.tag - 2 == 0) {
+                id obj2 = [_sectionArr objectAtIndex:btn.tag - 1];
+                if ([obj2 isKindOfClass:[FloorsByArrObj class]]) {
+                    count = ((FloorsByArrObj*)obj2).count + 1;
+                }
+            }
+            if (count == 0) {
+                count = 1;
+            }
+        } else {
+            count = ((FloorsByArrObj*)obj).count + 1;
+            if ([_roomsArr count] != 0) {
+                FloorsByArrObj *floors  = (FloorsByArrObj*)[_sectionArr objectAtIndex:btn.tag];
+                NSLog(@"floors ob j %@",floors);
+                if (floors.rooms.count == 0) {
+
+                    _id =  ((FloorsByArrObj*)obj)._id;
+                    oprType = RMTUpdataMyBuildUpdataType;
+                } else {
+
+                    _id = ((FloorsByArrObj*)obj)._id + 1;
+                }
+            }
+        }
+        
+    }
+ 
+   
+    
     NSMutableArray *floos = [NSMutableArray arrayWithCapacity:0];
     for (int i = 0 ; i <1 ;i ++) {
         EditFloorsByArrObj *obj = [[EditFloorsByArrObj alloc] init];
-        obj._id = i +1;
+        obj._id = _id;
         obj.tmpId = i +1*10;
-        obj.oprType = RMTUpdataMyBuildAddType;
-        obj.count = i +1;
+        obj.oprType = oprType;
+        obj.count = count ;
         NSMutableArray *rooArr = [NSMutableArray arrayWithCapacity:0];
         for (int j = 1; j < 5; j ++) {
             EditRoomsByArrObj *room = [[EditRoomsByArrObj alloc] init];
             room._id = j ;
             room.tmpId = j*20;
             room.oprType = RMTUpdataMyBuildAddType;
-            room.number = [NSString stringWithFormat:@"%d",(i +1)*100 *(count +1) + j];
+            room.number = [NSString stringWithFormat:@"%d",(i +1)*100 *(count) + j];
             [rooArr addObject:room];
         }
         obj.rooms = rooArr;
@@ -204,7 +324,7 @@
 
 - (void)addRoomWithSection:(int)section
 {
-    FloorsByArrObj *floors =  [_roomsArr objectAtIndex:section];
+    FloorsByArrObj *floors =  [_sectionArr objectAtIndex:section];
     RoomsByArrObj *objs = [floors.rooms lastObject];
     
     NSMutableArray *floos = [NSMutableArray arrayWithCapacity:0];
@@ -236,7 +356,7 @@
 
 - (void)deletedBuildindsWithSection:(int)section
 {
-    FloorsByArrObj *floors =  [_roomsArr objectAtIndex:section];
+    FloorsByArrObj *floors =  [_sectionArr objectAtIndex:section];
 //    RoomsByArrObj *objs = [floors.rooms ];
     
     NSMutableArray *floos = [NSMutableArray arrayWithCapacity:0];
@@ -268,7 +388,7 @@
 
 - (void)deletedRoomWithSection:(int)section
 {
-    FloorsByArrObj *floors =  [_roomsArr objectAtIndex:section];
+    FloorsByArrObj *floors =  [_sectionArr objectAtIndex:section];
     RoomsByArrObj *objs = [floors.rooms lastObject];
     if ([floors.rooms count] == 0) {
         return;
