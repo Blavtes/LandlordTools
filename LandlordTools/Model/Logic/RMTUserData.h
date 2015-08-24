@@ -55,7 +55,7 @@
 @property (nonatomic, assign) int tmpId;
 @property (nonatomic, assign) int count;
 @property (nonatomic, assign) int oprType;
-@property (nonatomic, strong) NSArray <EditRoomsByArrObj> *rooms;
+@property (nonatomic, strong) NSMutableArray <EditRoomsByArrObj> *rooms;
 @end
 
 @protocol EditFloorsByArrObj <NSObject>

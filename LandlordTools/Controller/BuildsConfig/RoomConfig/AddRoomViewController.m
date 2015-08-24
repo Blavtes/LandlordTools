@@ -28,6 +28,8 @@
 
 @end
 
+#define kSpaceStr @"oneSpaceStr"
+
 @implementation AddRoomViewController
 
 - (void)viewDidLoad {
@@ -47,7 +49,7 @@
 - (void)reloadSectionArr
 {
     if ([_roomsArr count] == 0) {
-        [_sectionArr addObject:@"one"];
+        [_sectionArr addObject:kSpaceStr];
         NSLog(@"reload null");
         return;
     }
@@ -55,7 +57,7 @@
 
     FloorsByArrObj *one = [_roomsArr firstObject];
     if (one.count != 1) {
-        [_sectionArr addObject:@"one"];
+        [_sectionArr addObject:kSpaceStr];
        
     }
      [_sectionArr addObject:one];
@@ -64,7 +66,7 @@
         FloorsByArrObj *last = [_roomsArr objectAtIndex:i-1];
         if (current.count - last.count > 1) {
 
-            [_sectionArr addObject:@"one"];
+            [_sectionArr addObject:kSpaceStr];
             [_sectionArr addObject:current];
         } else {
             [_sectionArr addObject:current];
@@ -180,9 +182,9 @@
     if (_roomsArr.count == 0) {
         return 1;
     }
-    NSLog(@"section %ld ,srr count %d, _secArr %@",section,_sectionArr.count,_sectionArr);
+    NSLog(@"section %ld ,srr count %ld, _secArr %@",section,_sectionArr.count,_sectionArr);
     id  selectStr = [_sectionArr objectAtIndex:section];
-    if ([selectStr isKindOfClass:[NSString class]] && [selectStr isEqualToString:@"one"]) {
+    if ([selectStr isKindOfClass:[NSString class]] && [selectStr isEqualToString:kSpaceStr]) {
         return 1;
     }
     
@@ -205,7 +207,8 @@
     } else {
         id selectStr = [_sectionArr objectAtIndex:indexPath.section];
 
-        if (([selectStr isKindOfClass:[NSString class]] &&  [selectStr isEqualToString:@"one"]) || (([[ self.sectionArr objectAtIndex:indexPath.section] isKindOfClass:[FloorsByArrObj class]]) &&
+        if (([selectStr isKindOfClass:[NSString class]] &&  [selectStr isEqualToString:kSpaceStr])
+            || (([[ self.sectionArr objectAtIndex:indexPath.section] isKindOfClass:[FloorsByArrObj class]]) &&
             indexPath.row == ((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:indexPath.section]).rooms).count / 3  + (((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:indexPath.section]).rooms).count % 3 == 0 ? 1 :1) )) {
             isOne = YES;
            
@@ -266,7 +269,7 @@
     if ([_roomsArr count ] != 0) {
         id obj = [_sectionArr objectAtIndex:btn.tag];
         
-        if ([obj isKindOfClass:[NSString class]] && ([obj isEqualToString:@"one"])) {
+        if ([obj isKindOfClass:[NSString class]] && ([obj isEqualToString:kSpaceStr])) {
             if (btn.tag - 2 > 0) {
                 id obj2 = [_sectionArr objectAtIndex:btn.tag - 2];
                 if ([obj2 isKindOfClass:[FloorsByArrObj class]]) {
@@ -317,7 +320,7 @@
             room.number = [NSString stringWithFormat:@"%d",(i +1)*100 *(count) + j];
             [rooArr addObject:room];
         }
-        obj.rooms = rooArr;
+        [obj.rooms addObjectsFromArray: rooArr];
         [floos addObject:obj];
     }
     [self showHUDView];
@@ -351,7 +354,7 @@
             room.number = [NSString stringWithFormat:@"%d",[objs.number intValue] +1];
             [rooArr addObject:room];
         }
-        obj.rooms = rooArr;
+        [obj.rooms addObjectsFromArray: rooArr];
         [floos addObject:obj];
     }
     [self showHUDView];
@@ -385,7 +388,7 @@
             room.number = [NSString stringWithFormat:@"%@",objs.number];
             [rooArr addObject:room];
         }
-        obj.rooms = rooArr;
+        [obj.rooms addObjectsFromArray: rooArr];
         [floos addObject:obj];
     }
     [self showHUDView];
@@ -420,7 +423,7 @@
             room.number = [NSString stringWithFormat:@"%@",objs.number];
             [rooArr addObject:room];
         }
-        obj.rooms = rooArr;
+        [obj.rooms addObjectsFromArray: rooArr];
         [floos addObject:obj];
     }
     [self showHUDView];
@@ -456,7 +459,7 @@
             room.number = [NSString stringWithFormat:@"%@",data.number];
             [rooArr addObject:room];
         }
-        obj.rooms = rooArr;
+        [obj.rooms addObjectsFromArray: rooArr];
         [floos addObject:obj];
     }
     [self showHUDView];
