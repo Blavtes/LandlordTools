@@ -7,7 +7,7 @@
 //
 
 #import "ConfigHouseEditCell.h"
-
+#import "RMTUtilityLogin.h"
 
 @implementation ConfigHouseEditCell
 
@@ -57,12 +57,79 @@
 }
 
 
+- (void) setCellContentData:(FloorsByArrObj *)array withRow:(NSIndexPath*)indexPath
+{//FloorsByArrObj
+    self.indexPath = indexPath;
+    _data = array;
+    NSLog(@"array Count %@",array);
+    if (indexPath.row * 3 < array.rooms.count) {
+        RoomsByArrObj *obj =  [array.rooms objectAtIndex:indexPath.row * 3];
+        [self.oneBt setTitle:obj.number forState:UIControlStateNormal];
+        self.oneBt.tag = (indexPath.section +1)* 10000 + indexPath.row *3;
+        NSLog(@"romt one %ld",indexPath.row*3);
+        self.oneBt.hidden = NO;
+        if (obj.isInit == RMTIsInitNot) {
+            _infoOne.hidden = YES;
+        } else {
+            _infoOne.hidden = NO;
+        }
+    } else {
+        self.oneHouseVIew.hidden = YES;
+    }
+    if (indexPath.row * 3+1 < array.rooms.count) {
+        self.twoBt.tag = (indexPath.section +1) * 10000 + indexPath.row *3 +1;
+        RoomsByArrObj *obj =  [array.rooms objectAtIndex:indexPath.row * 3 + 1];
+        if (obj.isInit == RMTIsInitNot) {
+            _infoTwo.hidden = YES;
+        } else {
+            _infoTwo.hidden = NO;
+        }
+        [self.twoBt setTitle:obj.number forState:UIControlStateNormal];
+        NSLog(@"romTow  %ld",indexPath.row *3+1);
+        self.twoBt.hidden = NO;
+    } else {
+        self.twoHouseView.hidden = YES;
+    }
+    if (indexPath.row * 3+2 < array.rooms.count) {
+        self.threeBt.tag = (indexPath.section +1) * 10000 + indexPath.row *3 + 2;
+        RoomsByArrObj *obj =  [array.rooms objectAtIndex:indexPath.row * 3 + 2];
+        if (obj.isInit == RMTIsInitNot) {
+            _infoThree.hidden = YES;
+        } else {
+              _infoThree.hidden = NO;
+        }
+        [self.threeBt setTitle:obj.number forState:UIControlStateNormal];
+        NSLog(@"romThre  %ld",indexPath.row* 3+2);
+        self.threeBt.hidden = NO;
+    } else {
+        self.threeHouseView.hidden = YES;
+    }
+    
+}
+
+
 
 - (IBAction)houseConfigClick:(id)sender {
+    
     UIButton *bt = (UIButton*)sender;
+    int index = 0;
+    if (bt == _oneBt) {
+        index = (int)_indexPath.row * 3;
+    }
+    
+    if (bt == _twoBt) {
+        index = (int)_indexPath.row * 3 + 1;
+    }
+    
+    if (bt == _threeBt) {
+        index = (int)_indexPath.row * 3 + 2;
+    }
+    
+    
+    
     NSLog(@"bt tag %ld",bt.tag);
-    if (_delegate && [_delegate respondsToSelector:@selector(currentHouseEditWith:)]) {
-        [_delegate currentHouseEditWith:bt.titleLabel.text];
+    if (_delegate && [_delegate respondsToSelector:@selector(configRoomDataWithSection:andIndex:)]) {
+        [_delegate configRoomDataWithSection:(int)_indexPath.section andIndex:index];
     }
 }
 

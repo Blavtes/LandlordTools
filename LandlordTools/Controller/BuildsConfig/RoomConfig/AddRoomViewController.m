@@ -15,6 +15,8 @@
 #import "MBProgressHUD.h"
 #import "RMTUserShareData.h"
 #import "AddRoomEditTableViewCell.h"
+#import "ConfigHouseEditCell.h"
+
 
 @interface AddRoomViewController () <UITableViewDelegate,UITableViewDataSource,AddBuildRoomsDelegate>
 
@@ -28,7 +30,10 @@
 
 @end
 
-#define kSpaceStr @"oneSpaceStr"
+#define kSpaceStr                           @"oneSpaceStr"
+
+#define kAddRoomCellIdentifier              @"AddRoomEditTableViewCell"
+#define KConfigRoomCellIdentifier           @"ConfigHouseEditCell"
 
 @implementation AddRoomViewController
 
@@ -38,8 +43,12 @@
     _roomsArr = [NSMutableArray arrayWithCapacity:0];
     _sectionArr = [NSMutableArray arrayWithCapacity:0];
         // Do any additional setup after loading the view from its nib.
-    UINib *nib = [UINib nibWithNibName:@"AddRoomEditTableViewCell" bundle:[NSBundle mainBundle]];
-    [_tableView registerNib:nib forCellReuseIdentifier:@"AddRoomEditTableViewCell"];
+    UINib *nib = [UINib nibWithNibName:kAddRoomCellIdentifier bundle:[NSBundle mainBundle]];
+    [_tableView registerNib:nib forCellReuseIdentifier:kAddRoomCellIdentifier];
+    
+    UINib *nib2 = [UINib nibWithNibName:KConfigRoomCellIdentifier bundle:[NSBundle mainBundle]];
+    [_tableView registerNib:nib2 forCellReuseIdentifier:KConfigRoomCellIdentifier];
+    
     [_tableView reloadData];
     [self showHUDView];
     [self reloadBuildings];
@@ -124,10 +133,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)saveClick:(id)sender
-{
-    
-}
+
 - (IBAction)backClick:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
@@ -244,7 +250,7 @@
             make.height.mas_equalTo(1.0f);
         }];
     } else {
-        cell = (AddRoomEditTableViewCell*)[_tableView dequeueReusableCellWithIdentifier:@"AddRoomEditTableViewCell"];
+        cell = (AddRoomEditTableViewCell*)[_tableView dequeueReusableCellWithIdentifier:kAddRoomCellIdentifier];
         AddRoomEditTableViewCell *editCell = (AddRoomEditTableViewCell*)cell;
         [editCell setCellContentData:[_sectionArr objectAtIndex:indexPath.section] withRow:indexPath];
         editCell.delegate = self;
@@ -471,6 +477,17 @@
 
     }];
 }
+
+
+- (IBAction)saveClick:(id)sender
+{
+    if ([[RMTUtilityLogin sharedInstance] getLogId] != nil ) {
+        
+    } else {
+        
+    }
+}
+
 
 - (void)showHUDView
 {
