@@ -16,7 +16,7 @@
 #import "RMTUserShareData.h"
 #import "AddRoomEditTableViewCell.h"
 #import "ConfigHouseEditCell.h"
-
+#import "RMTLoginEnterViewController.h"
 
 @interface AddRoomViewController () <UITableViewDelegate,UITableViewDataSource,AddBuildRoomsDelegate>
 
@@ -644,6 +644,8 @@
         
     } else {
         //login
+        RMTLoginEnterViewController *vc =  [[RMTLoginEnterViewController alloc] init];
+        
     }
 }
 
