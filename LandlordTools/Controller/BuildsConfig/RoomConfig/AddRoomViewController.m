@@ -27,6 +27,7 @@
 @property (nonatomic, strong) NSMutableArray *roomsArr;
 @property (nonatomic, strong) NSMutableArray *sectionArr;
 @property (weak, nonatomic) IBOutlet UILabel *titleLable;
+@property (nonatomic, assign) BOOL isSaveRoom;
 
 @end
 
@@ -42,7 +43,7 @@
     _titleLable.text = _buildingData.buildingName;
     _roomsArr = [NSMutableArray arrayWithCapacity:0];
     _sectionArr = [NSMutableArray arrayWithCapacity:0];
-        // Do any additional setup after loading the view from its nib.
+    // Do any additional setup after loading the view from its nib.
     UINib *nib = [UINib nibWithNibName:kAddRoomCellIdentifier bundle:[NSBundle mainBundle]];
     [_tableView registerNib:nib forCellReuseIdentifier:kAddRoomCellIdentifier];
     
@@ -63,18 +64,18 @@
         return;
     }
     
-
+    
     FloorsByArrObj *one = [_roomsArr firstObject];
     if (one.count != 1) {
         [_sectionArr addObject:kSpaceStr];
-       
+        
     }
-     [_sectionArr addObject:one];
+    [_sectionArr addObject:one];
     for (int i = 1 ; i < [_roomsArr count] ; i ++) {
         FloorsByArrObj *current = [_roomsArr objectAtIndex:i];
         FloorsByArrObj *last = [_roomsArr objectAtIndex:i-1];
         if (current.count - last.count > 1) {
-
+            
             [_sectionArr addObject:kSpaceStr];
             [_sectionArr addObject:current];
         } else {
@@ -87,7 +88,7 @@
 }
 
 - (void)sortRoomArr {
-
+    
     for (int i = 0 ; i < _roomsArr.count - 1; i++) {
         for (int j = i + 1; j < _roomsArr.count; j++) {
             FloorsByArrObj *a =   (FloorsByArrObj*)[ self.roomsArr objectAtIndex:i];;
@@ -105,28 +106,29 @@
 {
     [_sectionArr removeAllObjects];
     [_roomsArr removeAllObjects];
+    
     __weak __typeof(&*self)weakSelf = self;
     
     [[RMTUtilityLogin  sharedInstance] requestGetFloorsByBuildingId:_buildingData._id
                                                         withLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
                                                            complete:^(NSError *error, FloorsByBuildingObj *obj) {
-                                                               if (obj.code == RMTRequestBackCodeSucceed) {
+                                                               if (obj.code == RMTRequestBackCodeSucceed || obj.code == RMTRequestBackCodeFailure) {
                                                                    if (obj.floors.count == 0) {
                                                                        
                                                                    } else {
                                                                        [_roomsArr addObjectsFromArray:obj.floors];
-                                                                        [weakSelf sortRoomArr];
+                                                                       [weakSelf sortRoomArr];
                                                                    }
                                                                    NSLog(@"obj %@",obj);
                                                                    
-                                                                  
+                                                                   
                                                                    [weakSelf reloadSectionArr];
                                                                    [_tableView reloadData];
                                                                }
-                                                                       [weakSelf hideHUDView];
+                                                               [weakSelf hideHUDView];
                                                                NSLog(@"requestGetFloorsBy floors count %ld",obj.floors.count);
                                                            }];
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -151,29 +153,29 @@
     ///1 第一区 为 空时  该区 不为空 （显示+楼层）
     //2 当前 为 空 并且 上一区不为空 （该区 显示添加 楼层 1
     // 最后 一区 加 1；
-//    if ([_roomsArr count] == 0) {
-//
-//        return 1;
-//    }
-//
-//     int section = 0;
-//    FloorsByArrObj *one = [_roomsArr firstObject];
-//    if (one.count != 1) {
-//        section++;
-//    }
-//    
-//   
-//    for (int i = 1 ; i < [_roomsArr count] ; i ++) {
-//        FloorsByArrObj *current = [_roomsArr objectAtIndex:i];
-//        FloorsByArrObj *last = [_roomsArr objectAtIndex:i-1];
-//        if (current.count - last.count != 1) {
-//            section++;
-//        } else {
-//        }
-//       
-//    }
-//    section += _roomsArr.count;
-//    NSLog(@"section %d",section);
+    //    if ([_roomsArr count] == 0) {
+    //
+    //        return 1;
+    //    }
+    //
+    //     int section = 0;
+    //    FloorsByArrObj *one = [_roomsArr firstObject];
+    //    if (one.count != 1) {
+    //        section++;
+    //    }
+    //
+    //
+    //    for (int i = 1 ; i < [_roomsArr count] ; i ++) {
+    //        FloorsByArrObj *current = [_roomsArr objectAtIndex:i];
+    //        FloorsByArrObj *last = [_roomsArr objectAtIndex:i-1];
+    //        if (current.count - last.count != 1) {
+    //            section++;
+    //        } else {
+    //        }
+    //
+    //    }
+    //    section += _roomsArr.count;
+    //    NSLog(@"section %d",section);
     return _sectionArr.count;
 }
 
@@ -181,10 +183,10 @@
 {
     //如果 楼层断了，+添加
     // 如果最后 添加 +
-//    if (_roomsArr.count == 0) {
-//        [_sectionArr addObject:@"one"];
-//        return 1;
-//
+    //    if (_roomsArr.count == 0) {
+    //        [_sectionArr addObject:@"one"];
+    //        return 1;
+    //
     if (_roomsArr.count == 0) {
         return 1;
     }
@@ -199,7 +201,7 @@
         row ++;
     }
     
-    NSLog(@"current section row %ld",((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:section]).rooms).count / 3  + (((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:section]).rooms).count % 3 == 0 ? 1 :1) + row);
+    //    NSLog(@"current section row %ld",((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:section]).rooms).count / 3  + (((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:section]).rooms).count % 3 == 0 ? 1 :1) + row);
     NSLog(@"current %ld",((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:section]).rooms).count);
     return ((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:section]).rooms).count / 3  + (((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:section]).rooms).count % 3 == 0 ? 1 :1) + row;
 }
@@ -212,15 +214,15 @@
         isOne = YES;
     } else {
         id selectStr = [_sectionArr objectAtIndex:indexPath.section];
-
+        
         if (([selectStr isKindOfClass:[NSString class]] &&  [selectStr isEqualToString:kSpaceStr])
             || (([[ self.sectionArr objectAtIndex:indexPath.section] isKindOfClass:[FloorsByArrObj class]]) &&
-            indexPath.row == ((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:indexPath.section]).rooms).count / 3  + (((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:indexPath.section]).rooms).count % 3 == 0 ? 1 :1) )) {
-            isOne = YES;
-           
-        } else {
-            isOne = NO;
-        }
+                indexPath.row == ((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:indexPath.section]).rooms).count / 3  + (((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:indexPath.section]).rooms).count % 3 == 0 ? 1 :1) )) {
+                isOne = YES;
+                
+            } else {
+                isOne = NO;
+            }
     }
     
     if (isOne) {
@@ -255,13 +257,13 @@
         [editCell setCellContentData:[_sectionArr objectAtIndex:indexPath.section] withRow:indexPath];
         editCell.delegate = self;
         NSLog(@"indexpth section %ld",indexPath.section);
-
+        
     }
-//    [cell setSeparatorInset:UIEdgeInsetsMake(0, 40, 0, 30)];
+    //    [cell setSeparatorInset:UIEdgeInsetsMake(0, 40, 0, 30)];
     cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
     cell.selectedBackgroundView.backgroundColor = [UIColor colorWithHex:kBackGroundColorStr];
     return cell;
-
+    
 }
 
 
@@ -296,46 +298,116 @@
                 FloorsByArrObj *floors  = (FloorsByArrObj*)[_sectionArr objectAtIndex:btn.tag];
                 NSLog(@"floors ob j %@",floors);
                 if (floors.rooms.count == 0) {
-
+                    
                     _id =  ((FloorsByArrObj*)obj)._id;
                     oprType = RMTUpdataMyBuildUpdataType;
                 } else {
-
+                    
                     _id = ((FloorsByArrObj*)obj)._id + 1;
                 }
             }
         }
         
     }
- 
-   
+    
+    
     
     NSMutableArray *floos = [NSMutableArray arrayWithCapacity:0];
-    for (int i = 0 ; i <1 ;i ++) {
-        EditFloorsByArrObj *obj = [[EditFloorsByArrObj alloc] init];
-        obj._id = _id;
-        obj.tmpId = i +1*10;
-        obj.oprType = oprType;
-        obj.count = count ;
-        NSMutableArray *rooArr = [NSMutableArray arrayWithCapacity:0];
-        for (int j = 1; j < 5; j ++) {
-            EditRoomsByArrObj *room = [[EditRoomsByArrObj alloc] init];
-            room._id = j ;
-            room.tmpId = j*20;
-            room.oprType = RMTUpdataMyBuildAddType;
-            room.number = [NSString stringWithFormat:@"%d",(i +1)*100 *(count) + j];
-            [rooArr addObject:room];
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    if ([[RMTUtilityLogin sharedInstance] getLogId]) {
+        for (int i = 0 ; i <1 ;i ++) {
+            EditFloorsByArrObj *obj = [[EditFloorsByArrObj alloc] init];
+            obj._id = _id;
+            obj.tmpId = i +1*10;
+            obj.oprType = oprType;
+            obj.count = count ;
+            NSMutableArray *rooArr = [NSMutableArray arrayWithCapacity:0];
+            for (int j = 1; j < 5; j ++) {
+                EditRoomsByArrObj *room = [[EditRoomsByArrObj alloc] init];
+                room._id = j ;
+                room.tmpId = j*20;
+                room.oprType = RMTUpdataMyBuildAddType;
+                room.number = [NSString stringWithFormat:@"%d",(i +1)*100 *(count) + j];
+                [rooArr addObject:room];
+            }
+            obj.rooms = rooArr;
+            [floos addObject:obj];
         }
-        obj.rooms = rooArr;
-        [floos addObject:obj];
+    } else {
+        //        for (int i = 0 ; i <1 ;i ++) {
+        //            FloorsByArrObj *obj = [[FloorsByArrObj alloc] init];
+        //            obj._id = _id;
+        //            obj.count = count ;
+        //            NSMutableArray *rooArr = [NSMutableArray arrayWithCapacity:0];
+        //            for (int j = 1; j < 5; j ++) {
+        //                RoomsByArrObj *room = [[RoomsByArrObj alloc] init];
+        //                room._id = j ;
+        //                room.number = [NSString stringWithFormat:@"%d",(i +1)*100 *(count) + j];
+        //                [rooArr addObject:room];
+        //            }
+        //            obj.rooms = rooArr;
+        //            [floos addObject:obj];
+        //        }
+        for (int i = 0 ; i <1 ;i ++) {
+            NSMutableArray *roomArr = [NSMutableArray arrayWithCapacity:0];
+            for (int j = 1; j < 5; j ++) {
+                
+                NSMutableDictionary *dict = [NSMutableDictionary
+                                             dictionaryWithDictionary:@{@"id":@(j),
+                                                                        @"isInit":@(0),
+                                                                        @"number":[NSString stringWithFormat:@"%d",(i +1)*100 *(count) + j]}];
+                [roomArr addObject:dict];
+            }
+            NSMutableDictionary *dict = [NSMutableDictionary
+                                         dictionaryWithDictionary:@{@"id":@(_id),
+                                                                    @"count":@(count),
+                                                                    @"rooms":roomArr}];
+            [floos addObject:dict];
+        }
+        
+        
+        [dic setValue:@(1) forKey:@"code"];
+        [dic setValue:@"add build" forKey:@"message"];
+        [dic setValue:floos forKey:@"floors"];
     }
+    
     [self showHUDView];
-     __weak __typeof(&*self)weakSelf = self;
-    [[RMTUtilityLogin sharedInstance] requestEditFloorsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId] withBuildindId:_buildingData._id withFloors:floos complete:^(NSError *error, BackOject *obj) {
-        NSLog(@"obj %d %@",obj.code, obj.message);
-        [weakSelf reloadBuildings];
+    __weak __typeof(&*self)weakSelf = self;
+    if ([[RMTUtilityLogin sharedInstance] getLogId]) {
+        [[RMTUtilityLogin sharedInstance] requestEditFloorsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
+                                                        withBuildindId:_buildingData._id
+                                                            withFloors:floos
+                                                              complete:^(NSError *error, BackOject *obj) {
+                                                                  NSLog(@"add  obj %d %@",obj.code, obj.message);;
+                                                                  if (obj.code == RMTRequestBackCodeFailure) {
+                                                                      [_sectionArr addObject:floos];
+                                                                      [_roomsArr addObject:floos];
+                                                                      [_tableView reloadData];
+                                                                  } else {
+                                                                      [weakSelf reloadBuildings];
+                                                                  }
+                                                                  
+                                                                  
+                                                              }];
+    } else {
+        NSLog(@"dict %@",dic);
+        FloorsByBuildingObj *data = [[FloorsByBuildingObj alloc] initWithDictionary:dic error:nil];
+        //        NSLog(@"florrs %@",[data.floors objectAtIndex:0]);
+        if ([_sectionArr count] == 1 && [[_sectionArr firstObject] isKindOfClass:[NSString class]]) {
+            [_sectionArr removeAllObjects];
+        }
+        [_sectionArr addObjectsFromArray:data.floors];
+        [_roomsArr addObjectsFromArray:floos];
+        [_tableView reloadData];
+        [self hideHUDView];
+    }
+    
+}
 
-    }];
+
+- (void)addRoomWithNotLoginId
+{
+    
 }
 
 
@@ -345,38 +417,75 @@
     RoomsByArrObj *objs = [floors.rooms lastObject];
     
     NSMutableArray *floos = [NSMutableArray arrayWithCapacity:0];
-    for (int i = 0 ; i <1 ;i ++) {
-        EditFloorsByArrObj *obj = [[EditFloorsByArrObj alloc] init];
-        obj._id = floors._id;
-        obj.tmpId = floors._id;
-        obj.oprType = RMTUpdataMyBuildUpdataType;
-        obj.count = floors.count;
-        NSMutableArray *rooArr = [NSMutableArray arrayWithCapacity:0];
-        for (int j = 1; j < 2; j ++) {
-            EditRoomsByArrObj *room = [[EditRoomsByArrObj alloc] init];
-            room._id = objs._id +1;
-            room.tmpId = objs._id +1;
-            room.oprType = RMTUpdataMyBuildAddType;
-            room.number = [NSString stringWithFormat:@"%d",[objs.number intValue] +1];
-            [rooArr addObject:room];
+    
+    
+    if ([[RMTUtilityLogin sharedInstance] getLogId]) {
+        for (int i = 0 ; i <1 ;i ++) {
+            EditFloorsByArrObj *obj = [[EditFloorsByArrObj alloc] init];
+            obj._id = floors._id;
+            obj.tmpId = floors._id;
+            obj.oprType = RMTUpdataMyBuildUpdataType;
+            obj.count = floors.count;
+            NSMutableArray *rooArr = [NSMutableArray arrayWithCapacity:0];
+            for (int j = 1; j < 2; j ++) {
+                EditRoomsByArrObj *room = [[EditRoomsByArrObj alloc] init];
+                room._id = objs._id +1;
+                room.tmpId = objs._id +1;
+                room.oprType = RMTUpdataMyBuildAddType;
+                room.number = [NSString stringWithFormat:@"%d",[objs.number intValue] +1];
+                [rooArr addObject:room];
+            }
+            obj.rooms = rooArr;
+            [floos addObject:obj];
         }
-        obj.rooms = rooArr;
-        [floos addObject:obj];
+    } else {
+        for (int i = 0 ; i <1 ;i ++) {
+            FloorsByArrObj *obj = [[FloorsByArrObj alloc] init];
+            obj._id = floors._id;
+            obj.count = floors.count ;
+            NSMutableArray *rooArr = [NSMutableArray arrayWithCapacity:0];
+            for (int j = 1; j < 5; j ++) {
+                RoomsByArrObj *room = [[RoomsByArrObj alloc] init];
+                room._id = j ;
+                room.number = [NSString stringWithFormat:@"%d",(i +1)*100 *(floors.count) + j];
+                [rooArr addObject:room];
+            }
+            obj.rooms = rooArr;
+            [floos addObject:obj];
+        }
     }
+    
     [self showHUDView];
-      __weak __typeof(&*self)weakSelf = self;
-    [[RMTUtilityLogin sharedInstance] requestEditFloorsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId] withBuildindId:_buildingData._id withFloors:floos complete:^(NSError *error, BackOject *obj) {
-        NSLog(@"obj %d %@",obj.code, obj.message);
-
-        [weakSelf reloadBuildings];
-
-    }];
+    __weak __typeof(&*self)weakSelf = self;
+    if ([[RMTUtilityLogin sharedInstance] getLogId]) {
+        [[RMTUtilityLogin sharedInstance] requestEditFloorsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
+                                                        withBuildindId:_buildingData._id
+                                                            withFloors:floos
+                                                              complete:^(NSError *error, BackOject *obj) {
+                                                                  NSLog(@"obj %d %@",obj.code, obj.message);
+                                                                  
+                                                                  if (obj.code == RMTRequestBackCodeFailure) {
+                                                                      [_sectionArr addObject:floos];
+                                                                      [_roomsArr addObject:floos];
+                                                                      [_tableView reloadData];
+                                                                  } else {
+                                                                      [weakSelf reloadBuildings];
+                                                                  }
+                                                                  
+                                                              }];
+    } else {
+        [self hideHUDView];
+        [_sectionArr addObjectsFromArray:floos];
+        [_roomsArr addObjectsFromArray:floos];
+        [_tableView reloadData];
+    }
+    
 }
 
 - (void)deletedBuildindsWithSection:(int)section
 {
     FloorsByArrObj *floors =  [_sectionArr objectAtIndex:section];
-//    RoomsByArrObj *objs = [floors.rooms ];
+    //    RoomsByArrObj *objs = [floors.rooms ];
     
     NSMutableArray *floos = [NSMutableArray arrayWithCapacity:0];
     for (int i = 0 ; i <1 ;i ++) {
@@ -399,11 +508,28 @@
     }
     [self showHUDView];
     __weak __typeof(&*self)weakSelf = self;
-    [[RMTUtilityLogin sharedInstance] requestEditFloorsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId] withBuildindId:_buildingData._id withFloors:floos complete:^(NSError *error, BackOject *obj) {
-        NSLog(@"deletedBuildindsWithSection %d %@",obj.code, obj.message);
-        [weakSelf reloadBuildings];
-
-    }];
+    if ([[RMTUtilityLogin sharedInstance] getLogId]) {
+        [[RMTUtilityLogin sharedInstance] requestEditFloorsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
+                                                        withBuildindId:_buildingData._id
+                                                            withFloors:floos
+                                                              complete:^(NSError *error, BackOject *obj) {
+                                                                  NSLog(@"deletedBuildindsWithSection %d %@",obj.code, obj.message);
+                                                                  
+                                                                  if (obj.code == RMTRequestBackCodeFailure) {
+                                                                      [_sectionArr removeObject:floors];
+                                                                      [_roomsArr removeObject:floos];
+                                                                      [_tableView reloadData];
+                                                                  } else {
+                                                                      [weakSelf reloadBuildings];
+                                                                  }
+                                                              }];
+    } else {
+        [self hideHUDView];
+        [_sectionArr removeObject:floors];
+        [_roomsArr removeObject:floos];
+        [_tableView reloadData];
+    }
+    
 }
 
 - (void)deletedRoomWithSection:(int)section
@@ -434,12 +560,32 @@
     }
     [self showHUDView];
     __weak __typeof(&*self)weakSelf = self;
-    [[RMTUtilityLogin sharedInstance] requestEditFloorsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId] withBuildindId:_buildingData._id withFloors:floos complete:^(NSError *error, BackOject *obj) {
-        NSLog(@"obj %d %@",obj.code, obj.message);
+    if ([[RMTUtilityLogin sharedInstance] getLogId]) {
+        [[RMTUtilityLogin sharedInstance] requestEditFloorsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
+                                                        withBuildindId:_buildingData._id
+                                                            withFloors:floos
+                                                              complete:^(NSError *error, BackOject *obj) {
+                                                                  NSLog(@"obj %d %@",obj.code, obj.message);
+                                                                  
+                                                                  if (obj.code == RMTRequestBackCodeFailure) {
+                                                                      [_sectionArr removeObject:floors];
+                                                                      [_roomsArr removeObject:floos];
+                                                                      [_tableView reloadData];
+                                                                  } else {
+                                                                      [weakSelf reloadBuildings];
+                                                                  }
+                                                                  
+                                                              }];
+    } else {
+        NSMutableArray *arr = [NSMutableArray arrayWithCapacity:0];
+        [arr addObjectsFromArray:floors.rooms];
+        [arr removeLastObject];
+        floors.rooms = arr;
+        [self hideHUDView];
+        [_sectionArr replaceObjectAtIndex:section withObject:floors];
         
-        [weakSelf reloadBuildings];
-
-    }];
+        [_tableView reloadData];
+    }
     
 }
 
@@ -447,7 +593,7 @@
 {
     NSLog(@"reflash section %d index %d and data %@",section,index,data);
     FloorsByArrObj *floors =  [_sectionArr objectAtIndex:section];
-
+    
     
     NSMutableArray *floos = [NSMutableArray arrayWithCapacity:0];
     for (int i = 0 ; i <1 ;i ++) {
@@ -470,12 +616,25 @@
     }
     [self showHUDView];
     __weak __typeof(&*self)weakSelf = self;
-    [[RMTUtilityLogin sharedInstance] requestEditFloorsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId] withBuildindId:_buildingData._id withFloors:floos complete:^(NSError *error, BackOject *obj) {
-        NSLog(@"obj %d %@",obj.code, obj.message);
+    if ([[RMTUtilityLogin sharedInstance] getLogId]) {
+        [[RMTUtilityLogin sharedInstance] requestEditFloorsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId] withBuildindId:_buildingData._id withFloors:floos complete:^(NSError *error, BackOject *obj) {
+            NSLog(@"obj %d %@",obj.code, obj.message);
+            
+            if (obj.code == RMTRequestBackCodeFailure) {
+                [_sectionArr replaceObjectAtIndex:section withObject:data];
+                
+                [_tableView reloadData];
+            } else {
+                [weakSelf reloadBuildings];
+            }
+            
+        }];
+    } else {
+        [self hideHUDView];
+        [_sectionArr replaceObjectAtIndex:section withObject:data];
         
-        [weakSelf reloadBuildings];
-
-    }];
+        [_tableView reloadData];
+    }
 }
 
 
@@ -484,7 +643,7 @@
     if ([[RMTUtilityLogin sharedInstance] getLogId] != nil ) {
         
     } else {
-        
+        //login
     }
 }
 
@@ -502,13 +661,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

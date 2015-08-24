@@ -53,24 +53,31 @@
             if (buildData.buildings.count == 0 )
             {
                 //init
-                AddBuildArrayData *data = [[AddBuildArrayData alloc] init];
-//                data._id = 1;
-                data.buildingName = @"我的1号楼";
-                data.electricPrice = 1;
-                data.waterPrice = 6;
-                data.payRentDay = 10;
-                data.isShowDataList = NO;
-                [_buildArr addObject:data];
-                [_tableView reloadData];
-            } else {
+                [weakSelf initBuildArrayData];
+            }  else if (buildData.code == RMTRequestBackCodeFailure){
                 [_buildArr addObjectsFromArray:buildData.buildings];
                 NSLog(@"bulid %@",buildData);
                 [_tableView reloadData];
             }
+        } else {
+            [weakSelf initBuildArrayData];
         }
         [weakSelf hideHUDView];
     }];
     // Do any additional setup after loading the view from its nib.
+}
+
+- (void)initBuildArrayData
+{
+    AddBuildArrayData *data = [[AddBuildArrayData alloc] init];
+    //                data._id = 1;
+    data.buildingName = @"我的1号楼";
+    data.electricPrice = 1;
+    data.waterPrice = 6;
+    data.payRentDay = 10;
+    data.isShowDataList = NO;
+    [_buildArr addObject:data];
+    [_tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -158,7 +165,7 @@
 {
     
     AddBuildArrayData *data = [[AddBuildArrayData alloc] init];
-//    data._id = 1;
+    data._id = 1;
     data.buildingName = @"我的1号楼";
     data.electricPrice = 1;
     data.waterPrice = 6;
@@ -173,7 +180,7 @@
     [[RMTUtilityLogin sharedInstance] requestUpdateMyBuilingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId]
                                                           whithBuildData:arr
                                                                 complete:^(NSError *error, EditBuildingsBackObj *object) {
-        if (object.code == RMTRequestBackCodeSucceed) {
+        if (object.code == RMTRequestBackCodeSucceed || object.code == RMTRequestBackCodeFailure) {
             
             [_buildArr addObject:data];
             [_tableView reloadData];
@@ -194,7 +201,7 @@
     [self showHUDView];
     __weak __typeof(self)weakSelf = self;
     [[RMTUtilityLogin sharedInstance] requestUpdateMyBuilingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId] whithBuildData:[NSArray arrayWithObject:data] complete:^(NSError *error, EditBuildingsBackObj *object) {
-        if (object.code == RMTRequestBackCodeSucceed) {
+        if (object.code == RMTRequestBackCodeSucceed || object.code == RMTRequestBackCodeFailure) {
            [_buildArr replaceObjectAtIndex:row withObject:data];
         }
         NSLog(@"reflashData code %d %@",object.code,object.message);
@@ -212,7 +219,7 @@
         [self showHUDView];
         __weak __typeof(self)weakSelf = self;
         [[RMTUtilityLogin sharedInstance] requestUpdateMyBuilingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId] whithBuildData:[NSArray arrayWithObject:data] complete:^(NSError *error, EditBuildingsBackObj *object) {
-            if (object.code == RMTRequestBackCodeSucceed) {
+            if (object.code == RMTRequestBackCodeSucceed || object.code == RMTRequestBackCodeFailure) {
                 [_buildArr removeObjectAtIndex:row];
                 [_tableView reloadData];
             }
@@ -249,13 +256,13 @@
         for (AddBuildArrayData *data  in _buildArr) {
             data.oprType = RMTUpdataMyBuildUpdataType;
         }
-        if ([[RMTUtilityLogin sharedInstance] getLogId]) {
+//        if ([[RMTUtilityLogin sharedInstance] getLogId]) {
             [self showHUDView];
             __weak __typeof(self)weakSelf = self;
             [[RMTUtilityLogin sharedInstance] requestUpdateMyBuilingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId]
                                                                   whithBuildData:_buildArr
                                                                         complete:^(NSError *error, EditBuildingsBackObj *object) {
-                                                                            if (object.code == RMTRequestBackCodeSucceed) {
+                                                                            if (object.code == RMTRequestBackCodeSucceed || object.code == RMTRequestBackCodeFailure) {
                                                                                 
                                                                             }
                                                                             NSLog(@"delet code %d %@",object.code,object.message);
@@ -264,10 +271,10 @@
                                                                             [_tableView reloadData];
                                                                             
                                                                         }];
-        } else {
-            RMTLoginEnterViewController *vc = [[RMTLoginEnterViewController alloc] init];
-            [self.navigationController pushViewController:vc animated:YES];
-        }
+//        } else {
+//            RMTLoginEnterViewController *vc = [[RMTLoginEnterViewController alloc] init];
+//            [self.navigationController pushViewController:vc animated:YES];
+//        }
     } else {
         [_saveBt setTitle:@"保存" forState:UIControlStateNormal];
         self.isEdit = YES;
