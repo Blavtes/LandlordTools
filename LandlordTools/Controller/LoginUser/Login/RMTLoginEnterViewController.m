@@ -42,13 +42,18 @@
 }
 */
 - (IBAction)backClick:(id)sender {
+    NSString *classStr = @"MainContentControlViewController";
+    if ([[RMTUtilityLogin sharedInstance] getIsTempData]) {
+        classStr = @"AddRoomViewController";
+    }
     for (UIViewController *controller in self.navigationController.viewControllers) {
-        if ([controller isKindOfClass:NSClassFromString(@"MainContentControlViewController")]) {
+        if ([controller isKindOfClass:NSClassFromString(classStr)]) {
             [self.navigationController popToViewController:controller animated:YES];
             
             return;
         }
     }
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
@@ -64,6 +69,8 @@
         return;
     }
     NSString *mobile = _inputNumberTextField.text;
+    __weak __typeof(self)weakSelf = self;
+
     [[RMTUtilityLogin sharedInstance] requestIsRegisterUserWith:mobile  complete:^(NSError *error,BackOject *obj) {
         if (obj.code == RMTRegisterCodeErr) {
 
@@ -71,11 +78,11 @@
         } else if (obj.code == RMTRegisterCodeHaveRegist) {
             RMTLoginInputPassWorldViewController *vc = [[RMTLoginInputPassWorldViewController alloc] init];
             vc.mobile = mobile;
-            [self.navigationController pushViewController:vc animated:YES];
+            [weakSelf.navigationController pushViewController:vc animated:YES];
         } else if (obj.code == RMTRegisterCodeNotRegist){
             RMTRegistersViewController *vc = [[RMTRegistersViewController alloc] init];
             vc.mobile = mobile;
-            [self.navigationController pushViewController:vc animated:YES];
+            [weakSelf.navigationController pushViewController:vc animated:YES];
         } else {
             _notifyLabel.text = @"数据异常";
         }

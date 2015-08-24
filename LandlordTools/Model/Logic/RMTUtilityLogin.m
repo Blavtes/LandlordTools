@@ -23,6 +23,7 @@ static const NSString *kUCBaseUrl = @"http://112.74.26.14:8080/rentcloud";
 {
     RMTUserData *userData;
     NSArray *countryCodeList;
+    BOOL _isHaveTempData;
    
 }
 
@@ -53,6 +54,16 @@ static const NSString *kUCBaseUrl = @"http://112.74.26.14:8080/rentcloud";
         instance = [[self alloc] initSingle];
     });
     return instance;
+}
+
+- (void)setHaveTempData:(BOOL)isTemp
+{
+    _isHaveTempData = isTemp;
+}
+
+- (BOOL)getIsTempData
+{
+    return _isHaveTempData;
 }
 
 - (NSString*)getLogId

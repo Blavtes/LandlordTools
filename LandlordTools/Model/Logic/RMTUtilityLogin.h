@@ -70,6 +70,9 @@ typedef enum _RMTIsInit {
 - (RMTUserData *)getUserData;
 - (NSString *)getLogId;
 
+- (BOOL)getIsTempData;
+- (void)setHaveTempData:(BOOL)isTemp;
+
 
 
 //是否注册

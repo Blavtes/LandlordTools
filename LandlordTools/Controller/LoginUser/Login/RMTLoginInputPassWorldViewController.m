@@ -32,16 +32,20 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 - (IBAction)backClick:(id)sender
 {
+    if ([[RMTUtilityLogin sharedInstance] getIsTempData]) {
+        [self.navigationController popViewControllerAnimated:YES];
+        return;
+    }
     for (UIViewController *controller in self.navigationController.viewControllers) {
         if ([controller isKindOfClass:NSClassFromString(@"MainContentControlViewController")]) {
             [self.navigationController popToViewController:controller animated:YES];
@@ -62,24 +66,28 @@
         _notifyLabel.text = @"密码不能为空";
         return;
     }
-     _notifyLabel.text = @"";
+    _notifyLabel.text = @"";
     [[RMTUserLogic sharedInstance] requestLoginName:_mobile
                                            password:_inputPassWordTextField.text
                                            complete:^(NSError *error, RMTUserData *data) {
-
-      
-        NSLog(@"login %@",data.loginId);
-        _notifyLabel.text = data.message;
-        [[RMTUserShareData sharedInstance] updataUserData:data];
-        for (UIViewController *controller in self.navigationController.viewControllers) {
-           if ([controller isKindOfClass:NSClassFromString(@"MainContentControlViewController")]) {
-               [self.navigationController popToViewController:controller animated:YES];
-               
-               return;
-           }
-        }
-    }];
-
+                                               
+                                               
+                                               NSLog(@"login %@",data.loginId);
+                                               _notifyLabel.text = data.message;
+                                               [[RMTUserShareData sharedInstance] updataUserData:data];
+                                               NSString *classStr = @"MainContentControlViewController";
+                                               if ([[RMTUtilityLogin sharedInstance] getIsTempData]) {
+                                                   classStr = @"AddRoomViewController";
+                                               }
+                                               for (UIViewController *controller in self.navigationController.viewControllers) {
+                                                   if ([controller isKindOfClass:NSClassFromString(classStr)]) {
+                                                       [self.navigationController popToViewController:controller animated:YES];
+                                                       
+                                                       return;
+                                                   }
+                                               }
+                                           }];
+    
     
 }
 

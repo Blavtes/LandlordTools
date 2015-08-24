@@ -18,11 +18,12 @@
 #import "ConfigHouseEditCell.h"
 #import "RMTLoginEnterViewController.h"
 
-@interface AddRoomViewController () <UITableViewDelegate,UITableViewDataSource,AddBuildRoomsDelegate>
+@interface AddRoomViewController () <UITableViewDelegate,UITableViewDataSource,AddBuildRoomsDelegate,ConfigHouseEditDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (weak, nonatomic) IBOutlet UIView *hubView;
+@property (weak, nonatomic) IBOutlet UIButton *saveBt;
 
 @property (nonatomic, strong) NSMutableArray *roomsArr;
 @property (nonatomic, strong) NSMutableArray *sectionArr;
@@ -187,6 +188,9 @@
     //        [_sectionArr addObject:@"one"];
     //        return 1;
     //
+    if (_isSaveRoom) {
+        return ((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:section]).rooms).count / 3  + (((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:section]).rooms).count % 3 == 0 ? 0 :1);
+    }
     if (_roomsArr.count == 0) {
         return 1;
     }
@@ -209,59 +213,69 @@
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = nil;
-    BOOL isOne = YES;
-    if (_sectionArr.count == 0) {
-        isOne = YES;
+    if (!_isSaveRoom) {
+        
+        
+        BOOL isOne = YES;
+        if (_sectionArr.count == 0) {
+            isOne = YES;
+        } else {
+            id selectStr = [_sectionArr objectAtIndex:indexPath.section];
+            
+            if (([selectStr isKindOfClass:[NSString class]] &&  [selectStr isEqualToString:kSpaceStr])
+                || (([[ self.sectionArr objectAtIndex:indexPath.section] isKindOfClass:[FloorsByArrObj class]]) &&
+                    indexPath.row == ((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:indexPath.section]).rooms).count / 3  + (((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:indexPath.section]).rooms).count % 3 == 0 ? 1 :1) )) {
+                    isOne = YES;
+                    
+                } else {
+                    isOne = NO;
+                }
+        }
+        
+        if (isOne) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"AddRoomDefalutCell"];
+            UIButton *btn = [UIButton new];
+            [btn setImage:[UIImage imageNamed:@"bt_level+"] forState:UIControlStateNormal];
+            [btn setTag:indexPath.section];
+            [btn addTarget:self action:@selector(addBuildingsDta:) forControlEvents:UIControlEventTouchUpInside];
+            [btn setBackgroundColor:[UIColor colorWithRed:42.0f/255.0f green:42.0f/255.0f blue:42.0f/255.0f alpha:1]];
+            [cell addSubview:btn];
+            [cell setBackgroundColor:[UIColor colorWithHex:kBackGroundColorStr]];
+            
+            UILabel *lab = [UILabel new];
+            [lab setBackgroundColor:[UIColor colorWithHex:KYellowFontColorStr]];
+            [cell addSubview:lab];
+            
+            [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.centerY.mas_equalTo(cell.mas_centerY);
+                make.left.mas_equalTo(cell.mas_left).with.offset(10);
+                make.size.mas_equalTo(CGSizeMake(40, 40));
+            }];
+            
+            [lab mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.centerY.mas_equalTo(btn.mas_centerY);
+                make.left.mas_equalTo(btn.mas_right).with.offset(-8);
+                make.right.mas_equalTo(cell.mas_right).with.offset(-30.0f);
+                make.height.mas_equalTo(1.0f);
+            }];
+        } else {
+            cell = (AddRoomEditTableViewCell*)[_tableView dequeueReusableCellWithIdentifier:kAddRoomCellIdentifier];
+            AddRoomEditTableViewCell *editCell = (AddRoomEditTableViewCell*)cell;
+            [editCell setCellContentData:[_sectionArr objectAtIndex:indexPath.section] withRow:indexPath];
+            editCell.delegate = self;
+            NSLog(@"indexpth section %ld",indexPath.section);
+            
+        }
+        //    [cell setSeparatorInset:UIEdgeInsetsMake(0, 40, 0, 30)];
+        cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
+        cell.selectedBackgroundView.backgroundColor = [UIColor colorWithHex:kBackGroundColorStr];
     } else {
-        id selectStr = [_sectionArr objectAtIndex:indexPath.section];
-        
-        if (([selectStr isKindOfClass:[NSString class]] &&  [selectStr isEqualToString:kSpaceStr])
-            || (([[ self.sectionArr objectAtIndex:indexPath.section] isKindOfClass:[FloorsByArrObj class]]) &&
-                indexPath.row == ((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:indexPath.section]).rooms).count / 3  + (((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:indexPath.section]).rooms).count % 3 == 0 ? 1 :1) )) {
-                isOne = YES;
-                
-            } else {
-                isOne = NO;
-            }
-    }
-    
-    if (isOne) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"AddRoomDefalutCell"];
-        UIButton *btn = [UIButton new];
-        [btn setImage:[UIImage imageNamed:@"bt_level+"] forState:UIControlStateNormal];
-        [btn setTag:indexPath.section];
-        [btn addTarget:self action:@selector(addBuildingsDta:) forControlEvents:UIControlEventTouchUpInside];
-        [btn setBackgroundColor:[UIColor colorWithRed:42.0f/255.0f green:42.0f/255.0f blue:42.0f/255.0f alpha:1]];
-        [cell addSubview:btn];
-        [cell setBackgroundColor:[UIColor colorWithHex:kBackGroundColorStr]];
-        
-        UILabel *lab = [UILabel new];
-        [lab setBackgroundColor:[UIColor colorWithHex:KYellowFontColorStr]];
-        [cell addSubview:lab];
-        
-        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.mas_equalTo(cell.mas_centerY);
-            make.left.mas_equalTo(cell.mas_left).with.offset(10);
-            make.size.mas_equalTo(CGSizeMake(40, 40));
-        }];
-        
-        [lab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.mas_equalTo(btn.mas_centerY);
-            make.left.mas_equalTo(btn.mas_right).with.offset(-8);
-            make.right.mas_equalTo(cell.mas_right).with.offset(-30.0f);
-            make.height.mas_equalTo(1.0f);
-        }];
-    } else {
-        cell = (AddRoomEditTableViewCell*)[_tableView dequeueReusableCellWithIdentifier:kAddRoomCellIdentifier];
-        AddRoomEditTableViewCell *editCell = (AddRoomEditTableViewCell*)cell;
+        cell = [_tableView dequeueReusableCellWithIdentifier:KConfigRoomCellIdentifier];
+        ConfigHouseEditCell *editCell = (ConfigHouseEditCell*)cell;
         [editCell setCellContentData:[_sectionArr objectAtIndex:indexPath.section] withRow:indexPath];
         editCell.delegate = self;
         NSLog(@"indexpth section %ld",indexPath.section);
-        
     }
-    //    [cell setSeparatorInset:UIEdgeInsetsMake(0, 40, 0, 30)];
-    cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
-    cell.selectedBackgroundView.backgroundColor = [UIColor colorWithHex:kBackGroundColorStr];
     return cell;
     
 }
@@ -637,16 +651,44 @@
     }
 }
 
+- (void)configRoomDataWithSection:(int)section andIndex:(int)index
+{
+    FloorsByArrObj *floors =  [_sectionArr objectAtIndex:section];
+    if (floors && index < floors.rooms.count) {
+        RoomsByArrObj *room = [floors.rooms objectAtIndex:index];        
+    }
+}
+
 
 - (IBAction)saveClick:(id)sender
 {
-    if ([[RMTUtilityLogin sharedInstance] getLogId] != nil ) {
-        
+    
+    if (!_isSaveRoom) {
+        _isSaveRoom = YES;
+        [_saveBt setTitle:@"编辑" forState:UIControlStateNormal];
+        if ([[RMTUtilityLogin sharedInstance] getLogId] != nil ) {
+            _isSaveRoom = YES;
+            [_saveBt setTitle:@"编辑" forState:UIControlStateNormal];
+            for (int i = (int)_sectionArr.count - 1; i >= 0; i--) {
+                id obj = [_sectionArr objectAtIndex:i];
+                if ([obj isKindOfClass:[NSString class]]) {
+                    [_sectionArr removeObjectAtIndex:i];
+                }
+            }
+            [_tableView reloadData];
+        } else {
+            //login
+            RMTLoginEnterViewController *vc =  [[RMTLoginEnterViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+            [[RMTUtilityLogin sharedInstance] setHaveTempData:YES];
+            _isSaveRoom = YES;
+        }
     } else {
-        //login
-        RMTLoginEnterViewController *vc =  [[RMTLoginEnterViewController alloc] init];
-        
+        _isSaveRoom = NO;
+        [_saveBt setTitle:@"保存" forState:UIControlStateNormal];
+        [_tableView reloadData];
     }
+    
 }
 
 

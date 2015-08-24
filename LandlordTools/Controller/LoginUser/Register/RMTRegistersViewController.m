@@ -114,6 +114,8 @@
 
 - (IBAction)registeClick:(id)sender
 {
+    __weak __typeof(self)weakSelf = self;
+
     [[RMTUtilityLogin sharedInstance] requestRegisterUserWithData:_registerData
                                                          complete:^(NSError *error,LoginPassworldBack*login) {
                                                              if (login.code == RMTRequestBackCodeSucceed) {
@@ -122,13 +124,18 @@
                                                                  data.token = _registerData.token;
                                                                  data.loginId = login.loginId;
                                                                  [[RMTUserShareData sharedInstance] updataUserData:data];
-                                                                 for (UIViewController *controller in self.navigationController.viewControllers) {
-                                                                     if ([controller isKindOfClass:NSClassFromString(@"MainContentControlViewController")]) {
-                                                                         [self.navigationController popToViewController:controller animated:YES];
+                                                                 NSString *classStr = @"MainContentControlViewController";
+                                                                 if ([[RMTUtilityLogin sharedInstance] getIsTempData]) {
+                                                                     classStr = @"AddRoomViewController";
+                                                                 }
+                                                                 for (UIViewController *controller in weakSelf.navigationController.viewControllers) {
+                                                                     if ([controller isKindOfClass:NSClassFromString(classStr)]) {
+                                                                         [weakSelf.navigationController popToViewController:controller animated:YES];
                                                                          
                                                                          return;
                                                                      }
                                                                  }
+                                                                 
                                                              } else {
                                                                  _notifyLabel.text = login.message;
                                                              }
