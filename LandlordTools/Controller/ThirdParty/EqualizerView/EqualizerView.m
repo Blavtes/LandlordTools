@@ -54,7 +54,7 @@
                     NSString* bandTitleString = [self.dataSource titleForBand:self withIndex:i];
                     bandTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
                     bandTitleLabel.font = [UIFont systemFontOfSize:12];
-                    bandTitleLabel.textAlignment = UITextAlignmentCenter;
+                    bandTitleLabel.textAlignment = NSTextAlignmentCenter;
                     bandTitleLabel.textColor = [UIColor whiteColor];
                     bandTitleLabel.text = bandTitleString;
                     [self addSubview:bandTitleLabel];
@@ -100,7 +100,7 @@
 
 - (void)eqSliderValueChanged:(EqualizerSlider*)slider {
     if ([self.delegate respondsToSelector:@selector(eqSliderValueChanged:value:withIndex:)]) {
-        [self.delegate eqSliderValueChanged:self value:slider.value withIndex:slider.tag];
+        [self.delegate eqSliderValueChanged:self value:slider.value withIndex:(int)slider.tag];
     }
 }
 

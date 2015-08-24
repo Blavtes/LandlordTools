@@ -328,7 +328,7 @@ static UIColor *kJBLineChartViewDefaultDotSelectionColor = nil;
                             NSInteger middleBandLevel = [self.dataSource middleBandLevelString:self];
                             NSInteger maxBandLevel = [self.dataSource maxBandLevelString:self];
                             
-                            minBandLevel = fabs(minBandLevel);
+                            minBandLevel = labs(minBandLevel);
                             
                             CGFloat yOffsetSpace = self.center.y /( MAX(minBandLevel, maxBandLevel) / 10 + 2);
                             
@@ -395,7 +395,7 @@ static UIColor *kJBLineChartViewDefaultDotSelectionColor = nil;
                             NSInteger middleBandLevel = [self.dataSource middleBandLevelString:self];
                             NSInteger maxBandLevel = [self.dataSource maxBandLevelString:self];
                             
-                            minBandLevel = fabs(minBandLevel);
+                            minBandLevel = labs(minBandLevel);
                             
                             CGFloat yOffsetSpace = self.center.y /( MAX(minBandLevel, maxBandLevel) / 10 + 2);
                             

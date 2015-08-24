@@ -98,7 +98,7 @@
             return ;
         }
         
-        NSError *jsonError = nil;
+//        NSError *jsonError = nil;
 //        RMTResponsePurchasedListInfo *info = [[RMTResponsePurchasedListInfo alloc] initWithDictionary:dic error:&jsonError];
 //        if (jsonError) {
 //            handler(jsonError, nil);

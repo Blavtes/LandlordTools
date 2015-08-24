@@ -22,7 +22,6 @@
 
 
 @implementation EditFloorsByArrObj
-
 @end
 
 @implementation EditFloorsByObj

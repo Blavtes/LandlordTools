@@ -320,7 +320,7 @@
             room.number = [NSString stringWithFormat:@"%d",(i +1)*100 *(count) + j];
             [rooArr addObject:room];
         }
-        [obj.rooms addObjectsFromArray: rooArr];
+        obj.rooms = rooArr;
         [floos addObject:obj];
     }
     [self showHUDView];
@@ -354,7 +354,7 @@
             room.number = [NSString stringWithFormat:@"%d",[objs.number intValue] +1];
             [rooArr addObject:room];
         }
-        [obj.rooms addObjectsFromArray: rooArr];
+        obj.rooms = rooArr;
         [floos addObject:obj];
     }
     [self showHUDView];
@@ -388,7 +388,7 @@
             room.number = [NSString stringWithFormat:@"%@",objs.number];
             [rooArr addObject:room];
         }
-        [obj.rooms addObjectsFromArray: rooArr];
+        obj.rooms = rooArr;
         [floos addObject:obj];
     }
     [self showHUDView];
@@ -423,7 +423,7 @@
             room.number = [NSString stringWithFormat:@"%@",objs.number];
             [rooArr addObject:room];
         }
-        [obj.rooms addObjectsFromArray: rooArr];
+        obj.rooms = rooArr;
         [floos addObject:obj];
     }
     [self showHUDView];
@@ -459,7 +459,7 @@
             room.number = [NSString stringWithFormat:@"%@",data.number];
             [rooArr addObject:room];
         }
-        [obj.rooms addObjectsFromArray: rooArr];
+        obj.rooms = rooArr;
         [floos addObject:obj];
     }
     [self showHUDView];

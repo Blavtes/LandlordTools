@@ -468,8 +468,8 @@
 
 - (void)resetContentViewScale
 {
-    CGAffineTransform t = self.contentViewContainer.transform;
-    CGFloat scale = sqrt(t.a * t.a + t.c * t.c);
+//    CGAffineTransform t = self.contentViewContainer.transform;
+//    CGFloat scale = sqrt(t.a * t.a + t.c * t.c);
     CGRect frame = self.contentViewContainer.frame;
     self.contentViewContainer.transform = CGAffineTransformIdentity;
     self.contentViewContainer.transform = CGAffineTransformMakeScale(1, 1);
@@ -648,7 +648,7 @@
         }
         
         if (contentViewScale > 1) {
-            CGFloat oppositeScale = (1 - (contentViewScale - 1));
+//            CGFloat oppositeScale = (1 - (contentViewScale - 1));
             self.contentViewContainer.transform = CGAffineTransformMakeScale(1, 1);
             self.contentViewContainer.transform = CGAffineTransformTranslate(self.contentViewContainer.transform, point.x, 0);
         } else {
@@ -671,7 +671,7 @@
             self.visible = NO;
             self.rightMenuVisible = NO;
         }
-           NSLog(@"self.view.bounds %f %f %f",self.view.bounds.size.width,self.view.bounds.size.height, self.contentViewContainer.transform );
+//           NSLog(@"self.view.bounds %f %f %f",self.view.bounds.size.width,self.view.bounds.size.height, self.contentViewContainer.transform );
         [self statusBarNeedsAppearanceUpdate];
     }
     
