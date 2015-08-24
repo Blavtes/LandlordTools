@@ -49,38 +49,6 @@
             endingLineNumber = "322"
             landmarkName = "-addBuildingsDta:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[AddRoomViewController addBuildingsDta:]"
-                  moduleName = "LandlordTools"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yangyong/Documents/workPlace/LandlordTools/LandlordTools/Controller/BuildsConfig/RoomConfig/AddRoomViewController.m"
-                  timestampString = "462030831.521468"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "318"
-                  endingLineNumber = "318"
-                  offsetFromSymbolStart = "1884">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__41-[AddRoomViewController addBuildingsDta:]_block_invoke"
-                  moduleName = "LandlordTools"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yangyong/Documents/workPlace/LandlordTools/LandlordTools/Controller/BuildsConfig/RoomConfig/AddRoomViewController.m"
-                  timestampString = "462030831.52161"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "318"
-                  endingLineNumber = "318"
-                  offsetFromSymbolStart = "67">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -143,7 +111,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "668"
             endingLineNumber = "668"
-            landmarkName = "-requestEditFloorsWithLoginId:withBuildindId:withFloors:complete:"
+            landmarkName = "-requestGetFloorsByBuildingId:withLoginId:complete:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -159,7 +127,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "663"
             endingLineNumber = "663"
-            landmarkName = "-requestEditFloorsWithLoginId:withBuildindId:withFloors:complete:"
+            landmarkName = "-requestGetFloorsByBuildingId:withLoginId:complete:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -309,6 +277,38 @@
             endingLineNumber = "299"
             landmarkName = "-addBuildingsDta:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AddRoomViewController addBuildingsDta:]"
+                  moduleName = "LandlordTools"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yangyong/Documents/workPlace/LandlordTools/LandlordTools/Controller/BuildsConfig/RoomConfig/AddRoomViewController.m"
+                  timestampString = "462122237.465092"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "300"
+                  endingLineNumber = "300"
+                  offsetFromSymbolStart = "589">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AddRoomViewController addBuildingsDta:]"
+                  moduleName = "LandlordTools"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yangyong/Documents/workPlace/LandlordTools/LandlordTools/Controller/BuildsConfig/RoomConfig/AddRoomViewController.m"
+                  timestampString = "462122237.465194"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "300"
+                  endingLineNumber = "300"
+                  offsetFromSymbolStart = "599">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -516,6 +516,38 @@
             startingLineNumber = "100"
             endingLineNumber = "100"
             landmarkName = "-textFieldDidEndEditing:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LandlordTools/Controller/BuildsConfig/RoomConfig/AddRoomViewController.m"
+            timestampString = "462122237.398621"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "664"
+            endingLineNumber = "664"
+            landmarkName = "-configRoomDataWithSection:andIndex:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LandlordTools/Controller/BuildsConfig/RoomConfig/AddRoomViewController.m"
+            timestampString = "462122256.247135"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "666"
+            endingLineNumber = "666"
+            landmarkName = "-configRoomDataWithSection:andIndex:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

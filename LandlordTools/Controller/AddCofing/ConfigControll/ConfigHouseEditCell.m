@@ -68,7 +68,7 @@
         self.oneBt.tag = (indexPath.section +1)* 10000 + indexPath.row *3;
         NSLog(@"romt one %ld",indexPath.row*3);
         self.oneBt.hidden = NO;
-        if (obj.isInit == RMTIsInitNot) {
+        if (obj.isInit != RMTIsInitNot) {
             _infoOne.hidden = YES;
         } else {
             _infoOne.hidden = NO;
@@ -79,7 +79,7 @@
     if (indexPath.row * 3+1 < array.rooms.count) {
         self.twoBt.tag = (indexPath.section +1) * 10000 + indexPath.row *3 +1;
         RoomsByArrObj *obj =  [array.rooms objectAtIndex:indexPath.row * 3 + 1];
-        if (obj.isInit == RMTIsInitNot) {
+        if (obj.isInit != RMTIsInitNot) {
             _infoTwo.hidden = YES;
         } else {
             _infoTwo.hidden = NO;
@@ -93,7 +93,7 @@
     if (indexPath.row * 3+2 < array.rooms.count) {
         self.threeBt.tag = (indexPath.section +1) * 10000 + indexPath.row *3 + 2;
         RoomsByArrObj *obj =  [array.rooms objectAtIndex:indexPath.row * 3 + 2];
-        if (obj.isInit == RMTIsInitNot) {
+        if (obj.isInit != RMTIsInitNot) {
             _infoThree.hidden = YES;
         } else {
               _infoThree.hidden = NO;

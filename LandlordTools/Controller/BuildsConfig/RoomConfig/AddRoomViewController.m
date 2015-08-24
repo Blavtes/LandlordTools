@@ -496,6 +496,14 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (_isSaveRoom) {
+        [_tableView reloadData];
+    }
+}
+
 - (void)deletedBuildindsWithSection:(int)section
 {
     FloorsByArrObj *floors =  [_sectionArr objectAtIndex:section];

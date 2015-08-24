@@ -13,6 +13,7 @@
 
 @protocol ConfigHouseEditDelegate <NSObject>
 
+@optional
 - (void)currentHouseEditWith:(NSString*)houseNumber;
 - (void)configRoomDataWithSection:(int)section andIndex:(int)index;
 @end
