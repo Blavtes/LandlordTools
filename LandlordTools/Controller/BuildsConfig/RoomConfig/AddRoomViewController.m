@@ -240,7 +240,7 @@
         [lab mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.mas_equalTo(btn.mas_centerY);
             make.left.mas_equalTo(btn.mas_right).with.offset(-8);
-            make.right.mas_equalTo(cell.mas_right).with.offset(30.0f);
+            make.right.mas_equalTo(cell.mas_right).with.offset(-30.0f);
             make.height.mas_equalTo(1.0f);
         }];
     } else {
@@ -251,7 +251,7 @@
         NSLog(@"indexpth section %ld",indexPath.section);
 
     }
-    
+//    [cell setSeparatorInset:UIEdgeInsetsMake(0, 40, 0, 30)];
     cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
     cell.selectedBackgroundView.backgroundColor = [UIColor colorWithHex:kBackGroundColorStr];
     return cell;

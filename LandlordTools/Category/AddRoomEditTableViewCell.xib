@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -158,14 +158,14 @@
                                     <mask key="constraints">
                                         <exclude reference="HUL-f3-gJX"/>
                                         <exclude reference="dXz-pg-Nce"/>
-                                        <exclude reference="0Zl-ib-BMt"/>
-                                        <exclude reference="Isv-Va-G1U"/>
-                                        <exclude reference="WIi-Zd-MYN"/>
-                                        <exclude reference="mjx-PJ-CbG"/>
                                         <exclude reference="a5W-nt-dC5"/>
                                         <exclude reference="hey-yO-xlg"/>
                                         <exclude reference="xaf-GZ-eiU"/>
                                         <exclude reference="z6N-vE-Sre"/>
+                                        <exclude reference="0Zl-ib-BMt"/>
+                                        <exclude reference="Isv-Va-G1U"/>
+                                        <exclude reference="WIi-Zd-MYN"/>
+                                        <exclude reference="mjx-PJ-CbG"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -176,14 +176,14 @@
                                     <mask key="constraints">
                                         <include reference="HUL-f3-gJX"/>
                                         <include reference="dXz-pg-Nce"/>
-                                        <include reference="0Zl-ib-BMt"/>
-                                        <include reference="Isv-Va-G1U"/>
-                                        <include reference="WIi-Zd-MYN"/>
-                                        <include reference="mjx-PJ-CbG"/>
                                         <include reference="a5W-nt-dC5"/>
                                         <include reference="hey-yO-xlg"/>
                                         <include reference="xaf-GZ-eiU"/>
                                         <include reference="z6N-vE-Sre"/>
+                                        <include reference="0Zl-ib-BMt"/>
+                                        <include reference="Isv-Va-G1U"/>
+                                        <include reference="WIi-Zd-MYN"/>
+                                        <include reference="mjx-PJ-CbG"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -196,7 +196,7 @@
                                     </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.92156862745098034" green="0.74509803921568629" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.2470588235" green="0.24313725489999999" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -214,6 +214,9 @@
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="ZGt-Xc-ze0" secondAttribute="centerX" id="4IQ-qg-UEu"/>
                             <constraint firstItem="I7q-BH-adk" firstAttribute="centerY" secondItem="H5u-GB-tG8" secondAttribute="centerY" constant="-18" id="5MI-NG-QsT">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="UNu-1I-8D1" firstAttribute="trailing" secondItem="mBG-rE-fhQ" secondAttribute="trailing" constant="-4" id="7pR-UP-I25">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstAttribute="bottom" secondItem="UNu-1I-8D1" secondAttribute="bottom" constant="10.5" id="821-Cm-h8d">
@@ -258,6 +261,7 @@
                                 <exclude reference="eew-FO-eT1"/>
                                 <exclude reference="KjC-bF-Rcp"/>
                                 <exclude reference="iBC-lO-iC1"/>
+                                <exclude reference="7pR-UP-I25"/>
                                 <exclude reference="821-Cm-h8d"/>
                                 <exclude reference="XJO-g6-rJc"/>
                                 <exclude reference="abQ-Ei-h2A"/>
@@ -286,9 +290,10 @@
                                 <include reference="eew-FO-eT1"/>
                                 <include reference="KjC-bF-Rcp"/>
                                 <include reference="iBC-lO-iC1"/>
+                                <include reference="7pR-UP-I25"/>
                                 <include reference="821-Cm-h8d"/>
                                 <include reference="XJO-g6-rJc"/>
-                                <include reference="abQ-Ei-h2A"/>
+                                <exclude reference="abQ-Ei-h2A"/>
                                 <include reference="4IQ-qg-UEu"/>
                                 <include reference="wrh-O7-oB4"/>
                                 <exclude reference="AgC-ON-hjO"/>
