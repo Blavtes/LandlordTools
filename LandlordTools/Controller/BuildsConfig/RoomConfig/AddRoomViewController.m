@@ -670,6 +670,8 @@
         RoomsByArrObj *room = [floors.rooms objectAtIndex:index];
         AddLastMonthDataControll *vc = [[AddLastMonthDataControll alloc] init];
         vc.roomDataObj = room;
+        vc.isConfigMode = YES;
+        vc.buildingData = _buildingData;
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

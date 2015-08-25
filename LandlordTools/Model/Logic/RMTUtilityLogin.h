@@ -162,5 +162,9 @@ typedef enum _RMTIsInit {
                           withRoom:(RoomDescriptionObj*)room
                           complete:(void (^)(NSError *error, BackOject* obj))handler;
 
+//获取要抄电表的房间
+- (void)requestGetToCheckElectricCostRoomsWithLoginId:(NSString*)loginid
+                                       withBuildingId:(int)buildingid
+                                             complete:(void (^)(NSError *error, BackOject* obj))handler;
 
 @end

@@ -7,14 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddLastMothDataTableViewCell.h"
 
-@interface AddLastMothWaterTableViewCell : UITableViewCell <UITextFieldDelegate>
+@interface AddLastMothWaterTableViewCell : UITableViewCell <UITextFieldDelegate,AddLastMonthDataConfigDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *titleLable;
 
+@property (nonatomic, assign) id<AddLastMonthDataConfigDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UIImageView *editImageView;
 @property (weak, nonatomic) IBOutlet UITextField *numberTextField;
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 @property (weak, nonatomic) IBOutlet UILabel *monyLabel;
-- (void)setComtentData:(NSString*)title withField:(NSString*)fieldText;
+@property (nonatomic, strong) NSIndexPath *sectionPath;
+- (void)setComtentData:(NSString*)title withField:(NSString*)fieldText withPath:(NSIndexPath*)path;
 
 @end

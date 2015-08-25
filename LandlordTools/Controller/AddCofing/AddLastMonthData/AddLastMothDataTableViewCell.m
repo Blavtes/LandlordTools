@@ -24,7 +24,9 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-
+    if ([_delegate respondsToSelector:@selector(postCurrentData:withPath:)]) {
+        [_delegate postCurrentData:textField.text withPath:_sectionPath];
+    }
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
@@ -33,10 +35,11 @@
    
 }
 
-- (void)setComtentData:(NSString *)title withField:(NSString *)fieldText
+- (void)setComtentData:(NSString *)title withField:(NSString *)fieldText withPath:(NSIndexPath *)path
 {
     _titleLabel.text = title;
     _editTextField.text = [NSString stringWithFormat:@"%.2f",[fieldText floatValue]];
+    self.sectionPath = path;
 
 
 }

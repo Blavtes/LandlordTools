@@ -133,3 +133,34 @@
 @property (nonatomic, strong) NSString *message;
 @property (nonatomic, strong) RoomDescriptionObj *room;
 @end
+
+
+
+@interface CheckoutRoomObj : JSONModel
+@property (nonatomic, assign) int _id;
+
+@property (nonatomic, strong) NSString *number;
+@property (nonatomic, assign) float price;
+@property (nonatomic, assign) float preCount;
+
+
+@end
+
+
+@interface CheckoutRoomsArrObj : JSONModel
+@property (nonatomic, assign) int _id;
+@property (nonatomic, assign) int count;
+@property (nonatomic, strong) CheckoutRoomObj *room;
+
+
+@end
+
+@protocol CheckoutRoomsArrObj <NSObject>
+@end
+//抄电表的房间
+@interface CheckElectricCostRoomsObj : JSONModel
+@property (nonatomic, assign) int code;
+@property (nonatomic, strong) NSString *message;
+@property (nonatomic, strong) CheckoutRoomsArrObj *room;
+
+@end

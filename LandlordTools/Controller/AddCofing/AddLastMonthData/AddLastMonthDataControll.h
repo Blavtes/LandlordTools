@@ -13,4 +13,6 @@
 @interface AddLastMonthDataControll : UIViewController
 @property (nonatomic, assign) BOOL isConfigMode;
 @property (nonatomic, strong) RoomsByArrObj *roomDataObj;
+@property (nonatomic, strong) AddBuildArrayData *buildingData;
+
 @end

@@ -24,8 +24,8 @@
 {
 
     _myTItleLabel.text = data.buildingName;
-    _waterlabel.text = [NSString stringWithFormat:@"%.1f",data.waterPrice];
-    _electyLabel.text = [NSString stringWithFormat:@"%.1f",data.electricPrice];
+    _waterlabel.text = [NSString stringWithFormat:@"水价：%.1f",data.waterPrice];
+    _electyLabel.text = [NSString stringWithFormat:@"电价：%.1f",data.electricPrice];
     _cellRow = row;
     _renpayLabel.text = [NSString stringWithFormat:@"%d号抄表",data.payRentDay];
 }

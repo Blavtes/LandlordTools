@@ -15,7 +15,7 @@
 #import "RMTUtilityLogin.h"
 #import <Masonry.h>
 
-@interface AddLastMonthDataControll () <UITableViewDataSource,UITableViewDelegate,SelectRenyPayDayDelegate>
+@interface AddLastMonthDataControll () <UITableViewDataSource,UITableViewDelegate,SelectRenyPayDayDelegate,AddLastMonthDataConfigDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *notiLabel;
@@ -42,6 +42,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _titleLabel.text = _roomDataObj.number;
+    _everyMothLabel.text = [NSString stringWithFormat:@"8月%d号",_buildingData.payRentDay];
+    _notiLabel.text = @"请添加上个月的数据";
     UINib* nib = [UINib nibWithNibName:kLastMothDataTableViewCellIdentifier bundle:[NSBundle mainBundle]];
     [_tableView registerNib:nib forCellReuseIdentifier:kLastMothDataTableViewCellIdentifier];
     nib = [UINib nibWithNibName:kLastMothWaterTableViewCellIdentifier bundle:[NSBundle mainBundle]];
@@ -138,12 +141,13 @@
     if (indexPath.section <= 1) {
         UITableViewCell *editCell = [tableView dequeueReusableCellWithIdentifier:kLastMothWaterTableViewCellIdentifier];
         AddLastMothWaterTableViewCell *cell = (AddLastMothWaterTableViewCell*)editCell;
+        cell.delegate = self;
         NSArray *arr = [_dataArr objectAtIndex:indexPath.section];
         NSArray *arr2 = [arr objectAtIndex:indexPath.row];
         
         cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
         cell.selectedBackgroundView.backgroundColor = [UIColor colorWithHex:kBackGroundColorStr];
-        [cell setComtentData:[arr2 objectAtIndex:0] withField:[arr2 objectAtIndex:1]];
+        [cell setComtentData:[arr2 objectAtIndex:0] withField:[arr2 objectAtIndex:1] withPath:indexPath];
         return cell;
         
     }
@@ -194,8 +198,8 @@
        NSArray *arr2 = [arr objectAtIndex:indexPath.row];
     cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
     cell.selectedBackgroundView.backgroundColor = [UIColor colorWithHex:K35ColorStr];
-    
-    [cell setComtentData:[arr2 objectAtIndex:0] withField:[arr2 objectAtIndex:1]];
+    cell.delegate = self;
+    [cell setComtentData:[arr2 objectAtIndex:0] withField:[arr2 objectAtIndex:1] withPath:indexPath];
     return cell;
 }
 
@@ -217,13 +221,54 @@
 
 - (void)postSelectRenyPayDay:(NSString *)day
 {
-    NSLog(@"postSelectRenyPayDay %@",day);
     _isSelectDay = NO;
     _roomConfigData.room.payRentDay = [day intValue];
     [self reloadArrayData];
      [self.tableView setContentOffset:CGPointMake(0, self.tableView.contentSize.height -self.tableView.bounds.size.height) animated:NO];
+    NSLog(@"postSelectRenyPayDay %@",_buildingData);
 
 }
+
+- (void)postCurrentData:(NSString *)data withPath:(NSIndexPath *)path
+{
+    NSLog(@"data %@ path %ld %ld",data,path.section,path.row);
+    if (path.section == 0) {
+        _roomConfigData.room.waterCount = [data floatValue];
+    } else if (path.section == 1) {
+        _roomConfigData.room.electricCount = [data floatValue];
+    } else if (path.section == 2 && path.row == 0) {
+        _roomConfigData.room.rentCost = [data floatValue];
+
+    } else if (path.section == 2 && path.row == 1) {
+        _roomConfigData.room.broadbandCost = [data floatValue];
+        
+    } else if (path.section == 2 && path.row == 2) {
+        _roomConfigData.room.othersCost = [data floatValue];
+        
+    } else if (path.section == 3) {
+        _roomConfigData.room.deposit = [data floatValue];
+        
+    }
+    
+    NSLog(@"mode %@",_roomConfigData.room);
+        
+}
+
+- (IBAction)saveClick:(id)sender
+{
+    if (_roomConfigData.room.rentCost == 0 || _roomConfigData.room.deposit == 0) {
+        _notiLabel.text = @"房租、押金必填哦~";
+        
+    } else if (_roomConfigData.room.payRentDay == -1) {
+        _notiLabel.text = @"请选择交租日期";
+    } else {
+        [[RMTUtilityLogin sharedInstance] requestEditRoomWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId] withRoom:_roomConfigData.room complete:^(NSError *error, BackOject *obj) {
+            
+        }];
+    }
+    NSLog(@"saveClick %@",_buildingData);
+}
+
 
 - (IBAction)lastMothClick:(id)sender
 {

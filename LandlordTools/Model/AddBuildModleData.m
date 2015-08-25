@@ -148,3 +148,40 @@
 }
 
 @end
+
+@implementation CheckoutRoomObj
+
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
+
++(JSONKeyMapper*)keyMapper
+{
+    return [[JSONKeyMapper alloc] initWithDictionary:@{@"id": @"_id"}];
+}
+
+@end
+
+@implementation CheckoutRoomsArrObj
+
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
++(JSONKeyMapper*)keyMapper
+{
+    return [[JSONKeyMapper alloc] initWithDictionary:@{@"id": @"_id"}];
+}
+
+@end
+
+@implementation CheckElectricCostRoomsObj
+
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
+
+
+@end
