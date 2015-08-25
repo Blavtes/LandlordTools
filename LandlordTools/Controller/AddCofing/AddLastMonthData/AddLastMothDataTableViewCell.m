@@ -42,4 +42,9 @@
 
 }
 
+- (IBAction)editBtClick:(id)sender {
+    [_editTextField becomeFirstResponder];
+}
+
+
 @end

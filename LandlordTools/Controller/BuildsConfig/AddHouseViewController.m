@@ -49,12 +49,12 @@
     __weak __typeof(self)weakSelf = self;
     [[RMTUtilityLogin sharedInstance] requestGetMyBuildingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId] complete:^(NSError *error, AddBuildModleData *buildData) {
         NSLog(@"builrd %@",buildData);
-        if (buildData.code == RMTRequestBackCodeSucceed) {
+        if (buildData.code == RMTRequestBackCodeSucceed || buildData.code == RMTRequestBackCodeFailure) {
             if (buildData.buildings.count == 0 )
             {
                 //init
                 [weakSelf initBuildArrayData];
-            }  else if (buildData.code == RMTRequestBackCodeFailure){
+            } else {
                 [_buildArr addObjectsFromArray:buildData.buildings];
                 NSLog(@"bulid %@",buildData);
                 [_tableView reloadData];
@@ -251,12 +251,13 @@
 - (IBAction)saveClick:(id)sender {
 
     if (self.isEdit) {
-        [_saveBt setTitle:@"编辑" forState:UIControlStateNormal];
-        
-        for (AddBuildArrayData *data  in _buildArr) {
-            data.oprType = RMTUpdataMyBuildUpdataType;
-        }
-//        if ([[RMTUtilityLogin sharedInstance] getLogId]) {
+        if (_buildArr.count > 0) {
+            [_saveBt setTitle:@"编辑" forState:UIControlStateNormal];
+            
+            for (AddBuildArrayData *data  in _buildArr) {
+                data.oprType = RMTUpdataMyBuildUpdataType;
+            }
+            //        if ([[RMTUtilityLogin sharedInstance] getLogId]) {
             [self showHUDView];
             __weak __typeof(self)weakSelf = self;
             [[RMTUtilityLogin sharedInstance] requestUpdateMyBuilingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId]
@@ -271,6 +272,8 @@
                                                                             [_tableView reloadData];
                                                                             
                                                                         }];
+        }
+  
 //        } else {
 //            RMTLoginEnterViewController *vc = [[RMTLoginEnterViewController alloc] init];
 //            [self.navigationController pushViewController:vc animated:YES];

@@ -51,14 +51,14 @@
     [self.navigationController.navigationBar setHidden:YES];
     NSLog(@"MainContentControlViewControllerviewDidLoad  ");
     
-//    [[RMTUserLogic sharedInstance] requestLoginName:@"13538101601"
-//                                           password:@"222222"
-//                                           complete:^(NSError *error, RMTUserData *data) {
-//                                               
-//                                               
-//                                               NSLog(@"login %@",data.loginId);
-//                                               [[RMTUserShareData sharedInstance] updataUserData:data];
-//    }];
+    [[RMTUserLogic sharedInstance] requestLoginName:@"13538101601"
+                                           password:@"222222"
+                                           complete:^(NSError *error, RMTUserData *data) {
+                                               
+                                               
+                                               NSLog(@"login %@",data.loginId);
+                                               [[RMTUserShareData sharedInstance] updataUserData:data];
+    }];
     // Do any additional setup after loading the view from its nib.
 }
 

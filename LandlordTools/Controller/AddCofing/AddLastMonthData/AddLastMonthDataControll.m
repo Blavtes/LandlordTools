@@ -9,11 +9,22 @@
 #import "AddLastMonthDataControll.h"
 #import "AddLastMothDataTableViewCell.h"
 #import "AddLastMothWaterTableViewCell.h"
+#import "UIColor+Hexadecimal.h"
 
+#import "RMTUtilityLogin.h"
 #import <Masonry.h>
 
 @interface AddLastMonthDataControll () <UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *notiLabel;
+@property (weak, nonatomic) IBOutlet UIButton *payRentStatusBt;
+@property (weak, nonatomic) IBOutlet UIImageView *lastMothImage;
+@property (weak, nonatomic) IBOutlet UILabel *everyMothLabel;
+
+
+
+
 @property (nonatomic, strong) NSMutableArray *dataArr;
 @end
 
@@ -56,7 +67,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
      if (indexPath.section <= 1) {
-         return 55;
+         return 60;
      }
     return 40;
 }
@@ -65,14 +76,15 @@
 {
     NSLog(@"section %ld row %ld",indexPath.section,indexPath.row);
 
-    
+  
     if (indexPath.section <= 1) {
         UITableViewCell *editCell = [tableView dequeueReusableCellWithIdentifier:@"AddLastMothWaterTableViewCell"];
         AddLastMothWaterTableViewCell *cell = (AddLastMothWaterTableViewCell*)editCell;
         NSArray *arr = [_dataArr objectAtIndex:indexPath.section];
         NSArray *arr2 = [arr objectAtIndex:indexPath.row];
         
-        
+        cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
+        cell.selectedBackgroundView.backgroundColor = [UIColor colorWithHex:kBackGroundColorStr];
         [cell setComtentData:[arr2 objectAtIndex:0] withField:[arr2 objectAtIndex:1]];
         return cell;
         
@@ -101,11 +113,14 @@
             make.centerX.equalTo(cell.mas_centerX).with.multipliedBy(1.5);
             make.centerY.equalTo(cell.mas_centerY);
         }];
+        cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
+        cell.selectedBackgroundView.backgroundColor = [UIColor colorWithHex:kBackGroundColorStr];
         return cell;
     }
     NSArray *arr = [_dataArr objectAtIndex:indexPath.section];
        NSArray *arr2 = [arr objectAtIndex:indexPath.row];
-   
+    cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
+    cell.selectedBackgroundView.backgroundColor = [UIColor colorWithHex:kBackGroundColorStr];
     
     [cell setComtentData:[arr2 objectAtIndex:0] withField:[arr2 objectAtIndex:1]];
     return cell;
@@ -115,6 +130,18 @@
 {
     NSLog(@"btCLick");
 }
+
+- (IBAction)lastMothClick:(id)sender
+{
+    NSLog(@"last");
+}
+
+- (IBAction)nextMothClick:(id)sender
+{
+    NSLog(@"next");
+}
+
+
 
 /*
 #pragma mark - Navigation
@@ -126,9 +153,7 @@
 }
 */
 - (IBAction)backClick:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

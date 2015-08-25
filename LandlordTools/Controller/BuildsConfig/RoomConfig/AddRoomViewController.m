@@ -17,6 +17,7 @@
 #import "AddRoomEditTableViewCell.h"
 #import "ConfigHouseEditCell.h"
 #import "RMTLoginEnterViewController.h"
+#import "AddLastMonthDataControll.h"
 
 @interface AddRoomViewController () <UITableViewDelegate,UITableViewDataSource,AddBuildRoomsDelegate,ConfigHouseEditDelegate>
 
@@ -500,7 +501,10 @@
 {
     [super viewWillAppear:animated];
     if (_isSaveRoom) {
-        [_tableView reloadData];
+        if (_roomsArr.count > 0) {
+             [_tableView reloadData];
+        }
+       
     }
 }
 
@@ -663,7 +667,9 @@
 {
     FloorsByArrObj *floors =  [_sectionArr objectAtIndex:section];
     if (floors && index < floors.rooms.count) {
-        RoomsByArrObj *room = [floors.rooms objectAtIndex:index];        
+        RoomsByArrObj *room = [floors.rooms objectAtIndex:index];
+        AddLastMonthDataControll *vc = [[AddLastMonthDataControll alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 
@@ -672,25 +678,28 @@
 {
     
     if (!_isSaveRoom) {
-        _isSaveRoom = YES;
-        [_saveBt setTitle:@"编辑" forState:UIControlStateNormal];
-        if ([[RMTUtilityLogin sharedInstance] getLogId] != nil ) {
+        if (_roomsArr.count > 0) {
             _isSaveRoom = YES;
             [_saveBt setTitle:@"编辑" forState:UIControlStateNormal];
-            for (int i = (int)_sectionArr.count - 1; i >= 0; i--) {
-                id obj = [_sectionArr objectAtIndex:i];
-                if ([obj isKindOfClass:[NSString class]]) {
-                    [_sectionArr removeObjectAtIndex:i];
+            if ([[RMTUtilityLogin sharedInstance] getLogId] != nil ) {
+                _isSaveRoom = YES;
+                [_saveBt setTitle:@"编辑" forState:UIControlStateNormal];
+                for (int i = (int)_sectionArr.count - 1; i >= 0; i--) {
+                    id obj = [_sectionArr objectAtIndex:i];
+                    if ([obj isKindOfClass:[NSString class]]) {
+                        [_sectionArr removeObjectAtIndex:i];
+                    }
                 }
+                [_tableView reloadData];
+            } else {
+                //login
+                RMTLoginEnterViewController *vc =  [[RMTLoginEnterViewController alloc] init];
+                [self.navigationController pushViewController:vc animated:YES];
+                [[RMTUtilityLogin sharedInstance] setHaveTempData:YES];
+                _isSaveRoom = YES;
             }
-            [_tableView reloadData];
-        } else {
-            //login
-            RMTLoginEnterViewController *vc =  [[RMTLoginEnterViewController alloc] init];
-            [self.navigationController pushViewController:vc animated:YES];
-            [[RMTUtilityLogin sharedInstance] setHaveTempData:YES];
-            _isSaveRoom = YES;
         }
+      
     } else {
         _isSaveRoom = NO;
         [_saveBt setTitle:@"保存" forState:UIControlStateNormal];

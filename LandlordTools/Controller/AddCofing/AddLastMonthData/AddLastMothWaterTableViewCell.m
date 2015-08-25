@@ -31,6 +31,9 @@
 {
     _resultLabel.text = textField.text;
 }
+- (IBAction)editBTClick:(id)sender {
+    [_numberTextField becomeFirstResponder];
+}
 
 
 @end
