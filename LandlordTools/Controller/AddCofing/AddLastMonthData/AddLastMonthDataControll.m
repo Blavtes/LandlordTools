@@ -30,6 +30,8 @@
 
 
 @property (nonatomic, strong) NSMutableArray *dataArr;
+
+@property (nonatomic, strong) RoomByIdObj *roomConfigData;
 @end
 
 #define kLastMothDataTableViewCellIdentifier         @"AddLastMothDataTableViewCell"
@@ -48,9 +50,14 @@
     [_tableView registerNib:nib forCellReuseIdentifier:kLastTodayDataTableViewCellIdentifier];
 
     _dataArr = [NSMutableArray arrayWithCapacity:0];
-    [self reloadArrayData];
-    // Do any additional setup after loading the view from its nib.
     
+    // Do any additional setup after loading the view from its nib.
+    [[RMTUtilityLogin sharedInstance] requestGetRoomByRoomId:_roomDataObj._id
+                                                 withLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
+                                                    complete:^(NSError *error, RoomByIdObj *obj) {
+                                                        _roomConfigData = obj;
+                                                        [self reloadArrayData];
+    }];
     _payRentStatusBt.hidden     = _isConfigMode;
     _messageImageView.hidden    = _isConfigMode;
     _lastMothBt.hidden          = _isConfigMode;
@@ -62,17 +69,18 @@
 - (void)reloadArrayData
 {
     [_dataArr removeAllObjects];
-    [_dataArr addObject:@[@[@"水表：",@"0.0"]]];
-    [_dataArr addObject:@[@[@"电表：",@"0.0"]]];
+
+    [_dataArr addObject:@[@[@"水表：",@(_roomConfigData.room.waterCount)]]];
+    [_dataArr addObject:@[@[@"电表：",@(_roomConfigData.room.electricCount)]]];
     if (!_isSelectDay) {
         
-        [_dataArr addObject:@[@[@"房租：",@"0.0"],@[@"网费：",@"0.0"],@[@"其他：",@"0.0"]]];
+        [_dataArr addObject:@[@[@"房租：",@(_roomConfigData.room.rentCost)],@[@"网费：",@(_roomConfigData.room.broadbandCost)],@[@"其他：",@(  _roomConfigData.room.othersCost)]]];
         //        [_dataArr addObject:@[@"网费：",@"0元/月"]];
         //        [_dataArr addObject:@[@"其他：",@"0元/月"]];
-        [_dataArr addObject:@[@[@"押金：",@"0.0"]]];
+        [_dataArr addObject:@[@[@"押金：",@( _roomConfigData.room.deposit)]]];
     }
     
-    [_dataArr addObject:@[@[@"afafds"]]];
+    [_dataArr addObject:@[@[@"payRentDay",@( _roomConfigData.room.payRentDay)]]];
     [_tableView reloadData];
 }
 
@@ -81,13 +89,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIView *view = [UIView new];
-    [view setFrame:CGRectMake(0, 0, self.view.frame.size.width, 40)];
-    [view setBackgroundColor:[UIColor colorWithHex:kBackGroundColorStr]];
-    return view;
-}
+//- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+//{
+//    UIView *view = [UIView new];
+//    [view setFrame:CGRectMake(0, 0, self.view.frame.size.width, 40)];
+//    [view setBackgroundColor:[UIColor colorWithHex:kBackGroundColorStr]];
+//    return view;
+//}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -121,6 +129,7 @@
 //        NSArray *arr = [_dataArr objectAtIndex:indexPath.section];
 //        NSArray *arr2 = [arr objectAtIndex:indexPath.row];
         cell.delegate = self;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
         cell.selectedBackgroundView.backgroundColor = [UIColor colorWithHex:kBackGroundColorStr];
 //        [cell setComtentData:[arr2 objectAtIndex:0] withField:[arr2 objectAtIndex:1]];
@@ -142,20 +151,35 @@
     UITableViewCell *defalutCell = [tableView dequeueReusableCellWithIdentifier:kLastMothDataTableViewCellIdentifier];
     AddLastMothDataTableViewCell *cell = (AddLastMothDataTableViewCell*)defalutCell;
     if (indexPath.section == [_dataArr count] - 1) {
-        UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"addsell"];
-        UILabel *label = [UILabel new];
-        label.text = @"每月10号交房租";
+        UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"payRentDay"];
+        cell.backgroundColor = [UIColor colorWithHex:kBackGroundColorStr];
+        UIView *backview = [UIView new];
+        backview.backgroundColor = [UIColor colorWithHex:kBlackColorStr];
+        [cell addSubview:backview];
         
+        UILabel *label = [UILabel new];
+        NSString *dayStr = [[[_dataArr lastObject] objectAtIndex:0] objectAtIndex:1];
+        label.text = [NSString stringWithFormat:@"%@",[dayStr intValue] == 0 ? @"空房" :[NSString stringWithFormat:@"每月%@号交租",dayStr]];
+        label.textColor = [UIColor colorWithHex:kTitleColorStr];
+        label.textAlignment = NSTextAlignmentRight;
         [cell addSubview:label];
         
         UIButton *bt = [UIButton new];
-        [bt setTitle:@"^^" forState:UIControlStateNormal];
+        [bt setImage:[UIImage imageNamed:@"bt_up"] forState:UIControlStateNormal];
         [bt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [bt addTarget:self action:@selector(btClick:) forControlEvents:UIControlEventTouchUpInside];
         [cell addSubview:bt];
         
+        
+        [backview mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(cell.mas_top);
+            make.bottom.mas_equalTo(cell.mas_bottom);
+            make.left.equalTo(cell.mas_left).with.offset(20);
+            make.right.equalTo(cell.mas_right).with.offset(-20);
+        }];
+        
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.equalTo(cell.mas_centerX).with.multipliedBy(0.5);
+            make.trailing.equalTo(cell.mas_centerX).with.multipliedBy(1);
             make.centerY.equalTo(cell.mas_centerY);
         }];
         [bt mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -169,7 +193,7 @@
     NSArray *arr = [_dataArr objectAtIndex:indexPath.section];
        NSArray *arr2 = [arr objectAtIndex:indexPath.row];
     cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
-    cell.selectedBackgroundView.backgroundColor = [UIColor colorWithHex:kBackGroundColorStr];
+    cell.selectedBackgroundView.backgroundColor = [UIColor colorWithHex:K35ColorStr];
     
     [cell setComtentData:[arr2 objectAtIndex:0] withField:[arr2 objectAtIndex:1]];
     return cell;
@@ -183,11 +207,22 @@
  
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == _dataArr.count -1) {
+        _isSelectDay = YES;
+        [self reloadArrayData];
+    }
+}
+
 - (void)postSelectRenyPayDay:(NSString *)day
 {
     NSLog(@"postSelectRenyPayDay %@",day);
     _isSelectDay = NO;
+    _roomConfigData.room.payRentDay = [day intValue];
     [self reloadArrayData];
+     [self.tableView setContentOffset:CGPointMake(0, self.tableView.contentSize.height -self.tableView.bounds.size.height) animated:NO];
+
 }
 
 - (IBAction)lastMothClick:(id)sender

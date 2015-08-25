@@ -24,7 +24,7 @@
 - (void)setComtentData:(NSString*)title withField:(NSString*)fieldText
 {
     _titleLable.text = title;
-    _numberTextField.text = fieldText;
+    _numberTextField.text = [NSString stringWithFormat:@"%.2f",[fieldText floatValue]];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField

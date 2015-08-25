@@ -106,22 +106,22 @@
 @property (nonatomic, strong) NSArray <EditFloorsByArrModle,Optional> *floors;
 @end
 
-
+//根据id获取房间详情
 @interface RoomDescriptionObj : JSONModel
 @property (nonatomic, assign) int _id;
 @property (nonatomic, strong) NSString *number;
-@property (nonatomic, assign) float deposit;
-@property (nonatomic, assign) float preElectricCount;
-@property (nonatomic, assign) float electricCount;
+@property (nonatomic, assign) float deposit; // 押金
+@property (nonatomic, assign) float preElectricCount; //上月电表底数
+@property (nonatomic, assign) float electricCount; //电表底数
 @property (nonatomic, assign) float electricPrice;
-@property (nonatomic, assign) float preWaterCount;
-@property (nonatomic, assign) float waterCount;
-@property (nonatomic, assign) float waterPrice;
-@property (nonatomic, assign) float rentCost;
-@property (nonatomic, assign) float broadbandCost;
+@property (nonatomic, assign) float preWaterCount; //上月水表底数
+@property (nonatomic, assign) float waterCount; //水表底数
+@property (nonatomic, assign) float waterPrice; //水价
+@property (nonatomic, assign) float rentCost; //房租
+@property (nonatomic, assign) float broadbandCost; //网费
 @property (nonatomic, assign) float othersCost;
 @property (nonatomic, assign) int payRentDay;
-@property (nonatomic, strong) NSString *payRentDayStr;
+@property (nonatomic, strong) NSString *payRentDayStr; //交租日字符串
 @property (nonatomic, assign) int isPayRent;
 @property (nonatomic, assign) int isInit;
 @end

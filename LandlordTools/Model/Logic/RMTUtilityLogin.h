@@ -13,6 +13,10 @@
 
 #define kBackGroundColorStr     @"2A2A2A" //424242
 #define KYellowFontColorStr     @"EBBE2C" // 黄色
+#define kBlackColorStr          @"040404" //4 4 4
+#define kTitleColorStr          @"CCCCCC" //灰白色
+#define k42ColorStr             @"2A2A2A"
+#define K35ColorStr             @"242424"
 
 typedef enum _RMTRequestBackCode{
     RMTRequestBackCodeException = -1,

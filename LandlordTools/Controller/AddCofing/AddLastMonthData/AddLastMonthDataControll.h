@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#import "AddBuildModleData.h"
+
 @interface AddLastMonthDataControll : UIViewController
 @property (nonatomic, assign) BOOL isConfigMode;
+@property (nonatomic, strong) RoomsByArrObj *roomDataObj;
 @end

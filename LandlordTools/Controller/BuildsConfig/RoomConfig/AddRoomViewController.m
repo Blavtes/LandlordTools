@@ -669,6 +669,7 @@
     if (floors && index < floors.rooms.count) {
         RoomsByArrObj *room = [floors.rooms objectAtIndex:index];
         AddLastMonthDataControll *vc = [[AddLastMonthDataControll alloc] init];
+        vc.roomDataObj = room;
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

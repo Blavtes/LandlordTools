@@ -36,9 +36,8 @@
 - (void)setComtentData:(NSString *)title withField:(NSString *)fieldText
 {
     _titleLabel.text = title;
-    _placeHoldStr = fieldText;
-    NSLog(@"title %@  fiel %@",title,fieldText);
-    _editTextField.placeholder = fieldText;
+    _editTextField.text = [NSString stringWithFormat:@"%.2f",[fieldText floatValue]];
+
 
 }
 
