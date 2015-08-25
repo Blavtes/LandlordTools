@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface AddLastMonthDataControll : UIViewController
-
+@property (nonatomic, assign) BOOL isConfigMode;
 @end

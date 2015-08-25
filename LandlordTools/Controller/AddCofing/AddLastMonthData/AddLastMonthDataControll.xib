@@ -10,7 +10,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddLastMonthDataControll">
             <connections>
                 <outlet property="everyMothLabel" destination="Q38-En-BBh" id="Tj2-n5-1SN"/>
-                <outlet property="lastMothImage" destination="b0t-XM-5QZ" id="Ago-vg-IMM"/>
+                <outlet property="lastMothBt" destination="1zl-yr-0me" id="ucQ-EF-pBi"/>
+                <outlet property="messageImageView" destination="b0t-XM-5QZ" id="FpP-NG-DQJ"/>
+                <outlet property="nextMothBt" destination="mBi-b8-8wA" id="kgj-mP-jrk"/>
                 <outlet property="notiLabel" destination="hMo-mB-Yyz" id="CKZ-Tv-BTk"/>
                 <outlet property="payRentStatusBt" destination="NId-SF-Df1" id="MeA-hM-qDK"/>
                 <outlet property="tableView" destination="3Xl-p7-cmw" id="bMl-Ic-dI9"/>
@@ -174,6 +176,10 @@
                                         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gO-Mi-5Pd">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="datebackgorund" translatesAutoresizingMaskIntoConstraints="NO" id="Cms-Kb-5gO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zl-yr-0me" userLabel="last">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                                     <constraints>
@@ -201,9 +207,9 @@
                                                         <action selector="lastMothClick:" destination="-1" eventType="touchUpInside" id="Wi0-DI-wVm"/>
                                                     </connections>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b0t-XM-5QZ">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message" translatesAutoresizingMaskIntoConstraints="NO" id="b0t-XM-5QZ">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                    <color key="backgroundColor" red="0.59999999999999998" green="0.20000000000000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="b0t-XM-5QZ" secondAttribute="height" id="Dqc-5E-eRj"/>
                                                         <constraint firstAttribute="width" constant="100" id="Kzb-Jn-ps6">
@@ -238,10 +244,6 @@
                                                         <action selector="nextMothClick:" destination="-1" eventType="touchUpInside" id="Bgy-TI-s1G"/>
                                                     </connections>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="datebackgorund" translatesAutoresizingMaskIntoConstraints="NO" id="Cms-Kb-5gO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -284,14 +286,22 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
+                                                    <exclude reference="Cms-Kb-5gO"/>
                                                     <exclude reference="1zl-yr-0me"/>
                                                     <exclude reference="b0t-XM-5QZ"/>
                                                     <exclude reference="Q38-En-BBh"/>
                                                     <exclude reference="mBi-b8-8wA"/>
-                                                    <exclude reference="Cms-Kb-5gO"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="zye-F2-eYx"/>
+                                                    <exclude reference="UhL-Ck-MfU"/>
+                                                    <exclude reference="r7U-xm-9pL"/>
+                                                    <exclude reference="Afl-o0-lVV"/>
+                                                    <exclude reference="jNh-WY-RJ4"/>
+                                                    <exclude reference="39F-dD-29i"/>
+                                                    <exclude reference="90w-CX-mcw"/>
+                                                    <exclude reference="ZTR-DK-SgF"/>
+                                                    <exclude reference="t5a-Hs-4Ad"/>
                                                     <exclude reference="5Ml-UU-2ah"/>
                                                     <exclude reference="CAX-I6-4Sv"/>
                                                     <exclude reference="HJQ-qH-du7"/>
@@ -299,30 +309,30 @@
                                                     <exclude reference="dGd-Lk-bQq"/>
                                                     <exclude reference="kpH-1I-JBC"/>
                                                     <exclude reference="r8F-4v-AoV"/>
-                                                    <exclude reference="Afl-o0-lVV"/>
-                                                    <exclude reference="jNh-WY-RJ4"/>
                                                     <exclude reference="3tk-ac-Bjn"/>
                                                     <exclude reference="DDD-aT-N48"/>
                                                     <exclude reference="rAv-M7-geF"/>
                                                     <exclude reference="xpj-gc-gjN"/>
-                                                    <exclude reference="UhL-Ck-MfU"/>
-                                                    <exclude reference="r7U-xm-9pL"/>
-                                                    <exclude reference="39F-dD-29i"/>
-                                                    <exclude reference="90w-CX-mcw"/>
-                                                    <exclude reference="ZTR-DK-SgF"/>
-                                                    <exclude reference="t5a-Hs-4Ad"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <mask key="subviews">
+                                                    <include reference="Cms-Kb-5gO"/>
                                                     <include reference="1zl-yr-0me"/>
                                                     <include reference="b0t-XM-5QZ"/>
                                                     <include reference="Q38-En-BBh"/>
                                                     <include reference="mBi-b8-8wA"/>
-                                                    <include reference="Cms-Kb-5gO"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="zye-F2-eYx"/>
+                                                    <include reference="UhL-Ck-MfU"/>
+                                                    <include reference="r7U-xm-9pL"/>
+                                                    <include reference="Afl-o0-lVV"/>
+                                                    <include reference="jNh-WY-RJ4"/>
+                                                    <exclude reference="39F-dD-29i"/>
+                                                    <include reference="90w-CX-mcw"/>
+                                                    <include reference="ZTR-DK-SgF"/>
+                                                    <include reference="t5a-Hs-4Ad"/>
                                                     <exclude reference="5Ml-UU-2ah"/>
                                                     <exclude reference="CAX-I6-4Sv"/>
                                                     <include reference="HJQ-qH-du7"/>
@@ -330,18 +340,10 @@
                                                     <include reference="dGd-Lk-bQq"/>
                                                     <include reference="kpH-1I-JBC"/>
                                                     <include reference="r8F-4v-AoV"/>
-                                                    <include reference="Afl-o0-lVV"/>
-                                                    <include reference="jNh-WY-RJ4"/>
                                                     <exclude reference="3tk-ac-Bjn"/>
                                                     <include reference="DDD-aT-N48"/>
                                                     <exclude reference="rAv-M7-geF"/>
                                                     <include reference="xpj-gc-gjN"/>
-                                                    <include reference="UhL-Ck-MfU"/>
-                                                    <include reference="r7U-xm-9pL"/>
-                                                    <exclude reference="39F-dD-29i"/>
-                                                    <include reference="90w-CX-mcw"/>
-                                                    <include reference="ZTR-DK-SgF"/>
-                                                    <include reference="t5a-Hs-4Ad"/>
                                                 </mask>
                                             </variation>
                                         </view>
@@ -381,11 +383,11 @@
                                             <exclude reference="olH-3S-Zrw"/>
                                             <exclude reference="7nd-ZM-pd6"/>
                                             <exclude reference="CYo-kS-NWh"/>
+                                            <exclude reference="7Jb-Xl-qm4"/>
+                                            <exclude reference="mwD-v1-EqV"/>
                                             <exclude reference="Ai0-2v-hA6"/>
                                             <exclude reference="ure-Kf-NVY"/>
                                             <exclude reference="yO3-zZ-nLP"/>
-                                            <exclude reference="7Jb-Xl-qm4"/>
-                                            <exclude reference="mwD-v1-EqV"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
@@ -398,20 +400,20 @@
                                             <include reference="olH-3S-Zrw"/>
                                             <include reference="7nd-ZM-pd6"/>
                                             <include reference="CYo-kS-NWh"/>
+                                            <include reference="7Jb-Xl-qm4"/>
+                                            <include reference="mwD-v1-EqV"/>
                                             <include reference="Ai0-2v-hA6"/>
                                             <include reference="ure-Kf-NVY"/>
                                             <include reference="yO3-zZ-nLP"/>
-                                            <include reference="7Jb-Xl-qm4"/>
-                                            <include reference="mwD-v1-EqV"/>
                                         </mask>
                                     </variation>
                                 </view>
                                 <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OhS-mV-jba">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     <subviews>
-                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3Xl-p7-cmw">
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="3Xl-p7-cmw">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="separatorColor" red="0.16470588235294117" green="0.16470588235294117" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -561,5 +563,6 @@
         <image name="bt_left" width="9" height="15"/>
         <image name="bt_right" width="9" height="15"/>
         <image name="datebackgorund" width="180" height="40"/>
+        <image name="message" width="8" height="8"/>
     </resources>
 </document>

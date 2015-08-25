@@ -137,6 +137,8 @@
 		C1D353A41B85C6F4003AC2FB /* LoginModelData.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D3532F1B85C6F3003AC2FB /* LoginModelData.m */; };
 		C1D353A81B85CCAD003AC2FB /* AddRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D353A61B85CCAD003AC2FB /* AddRoomViewController.m */; };
 		C1D353A91B85CCAD003AC2FB /* AddRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1D353A71B85CCAD003AC2FB /* AddRoomViewController.xib */; };
+		C1D353B21B8C458D003AC2FB /* AddLastTodayDataTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D353B01B8C458D003AC2FB /* AddLastTodayDataTableViewCell.m */; };
+		C1D353B31B8C458D003AC2FB /* AddLastTodayDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1D353B11B8C458D003AC2FB /* AddLastTodayDataTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -357,6 +359,9 @@
 		C1D353A51B85CCAD003AC2FB /* AddRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddRoomViewController.h; path = LandlordTools/Controller/BuildsConfig/RoomConfig/AddRoomViewController.h; sourceTree = SOURCE_ROOT; };
 		C1D353A61B85CCAD003AC2FB /* AddRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddRoomViewController.m; path = LandlordTools/Controller/BuildsConfig/RoomConfig/AddRoomViewController.m; sourceTree = SOURCE_ROOT; };
 		C1D353A71B85CCAD003AC2FB /* AddRoomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddRoomViewController.xib; path = LandlordTools/Controller/BuildsConfig/RoomConfig/AddRoomViewController.xib; sourceTree = SOURCE_ROOT; };
+		C1D353AF1B8C458D003AC2FB /* AddLastTodayDataTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddLastTodayDataTableViewCell.h; sourceTree = "<group>"; };
+		C1D353B01B8C458D003AC2FB /* AddLastTodayDataTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddLastTodayDataTableViewCell.m; sourceTree = "<group>"; };
+		C1D353B11B8C458D003AC2FB /* AddLastTodayDataTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddLastTodayDataTableViewCell.xib; sourceTree = "<group>"; };
 		E59BEDF2FF6B761CCC47BCB1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FA3467288651B61433E13F22 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -516,6 +521,9 @@
 				C1D352631B85C6F3003AC2FB /* AddLastMothWaterTableViewCell.h */,
 				C1D352641B85C6F3003AC2FB /* AddLastMothWaterTableViewCell.m */,
 				C1D352651B85C6F3003AC2FB /* AddLastMothWaterTableViewCell.xib */,
+				C1D353AF1B8C458D003AC2FB /* AddLastTodayDataTableViewCell.h */,
+				C1D353B01B8C458D003AC2FB /* AddLastTodayDataTableViewCell.m */,
+				C1D353B11B8C458D003AC2FB /* AddLastTodayDataTableViewCell.xib */,
 			);
 			path = AddLastMonthData;
 			sourceTree = "<group>";
@@ -1052,6 +1060,7 @@
 				C1D353751B85C6F3003AC2FB /* slider-default7-track@2x.png in Resources */,
 				C174C9821B82182B00694C9B /* Images.xcassets in Resources */,
 				C1D353791B85C6F3003AC2FB /* slider-default7-trackCrossedOver@2x.png in Resources */,
+				C1D353B31B8C458D003AC2FB /* AddLastTodayDataTableViewCell.xib in Resources */,
 				C1D353601B85C6F3003AC2FB /* RentMainViewController.xib in Resources */,
 				C1D3537F1B85C6F3003AC2FB /* slider-metal-track@2x.png in Resources */,
 				C1D353371B85C6F3003AC2FB /* AddLastMothWaterTableViewCell.xib in Resources */,
@@ -1112,6 +1121,7 @@
 				C1D353A41B85C6F4003AC2FB /* LoginModelData.m in Sources */,
 				C1D353901B85C6F4003AC2FB /* TabTableViewCell.m in Sources */,
 				C1D353341B85C6F3003AC2FB /* AddLastMothDataTableViewCell.m in Sources */,
+				C1D353B21B8C458D003AC2FB /* AddLastTodayDataTableViewCell.m in Sources */,
 				C1D3538A1B85C6F4003AC2FB /* DEMOFirstViewController.m in Sources */,
 				C1D3534A1B85C6F3003AC2FB /* RMTLoginForgotViewController.m in Sources */,
 				C1D353541B85C6F3003AC2FB /* MenuLeftViewController.m in Sources */,
