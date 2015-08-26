@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *waterBt;
 @property (weak, nonatomic) IBOutlet UIButton *elericBt;
 @property (weak, nonatomic) IBOutlet UIButton *rentBt;
+@property (weak, nonatomic) IBOutlet UIView *menuView;
 
 @end
 
@@ -86,9 +87,25 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)checkoutMenuViewFrame:(float)x
+{
+    [UIView animateWithDuration:0.3f animations:^{
+        _menuView.frame = CGRectMake(x, _menuView.frame.origin.y, _menuView.frame.size.width, _menuView.frame.size.height);
+        if (x == 0) {
+            _menuView.alpha = 1;
+        } else {
+            _menuView.alpha = 0;
+        }
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
 - (IBAction)menuClick:(id)sender
 {
-    [self presentLeftMenuViewController:self];
+//    [self presentLeftMenuViewController:self];
+    
+    [self checkoutMenuViewFrame:0];
 }
 
 - (void)checkoutImageViewFrame:(id)sender
@@ -143,5 +160,20 @@
     AddHouseViewController *vc = [[AddHouseViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+
+- (IBAction)managerClick:(id)sender {
+      [self checkoutMenuViewFrame:-_menuView.frame.size.width];
+}
+
+- (IBAction)managerClicked:(id)sender {
+      [self checkoutMenuViewFrame:-_menuView.frame.size.width];
+}
+
+
+- (IBAction)goinClick:(id)sender {
+      [self checkoutMenuViewFrame:-_menuView.frame.size.width];
+}
+
 
 @end
