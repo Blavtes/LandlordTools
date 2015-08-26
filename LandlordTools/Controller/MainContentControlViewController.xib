@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -24,121 +24,231 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3kL-aG-WVx">
                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                    <state key="normal" title="登陆/注册">
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="H6Z-TA-8hi"/>
+                                        <constraint firstAttribute="width" constant="66" id="hVZ-jU-fXO"/>
+                                    </constraints>
+                                    <state key="normal" title="L">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="H6Z-TA-8hi"/>
+                                            <exclude reference="hVZ-jU-fXO"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="H6Z-TA-8hi"/>
+                                            <include reference="hVZ-jU-fXO"/>
+                                        </mask>
+                                    </variation>
                                     <connections>
                                         <action selector="logicClick:" destination="-1" eventType="touchUpInside" id="FWX-IJ-Ype"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2T-u0-N4a">
+                                <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rH6-Hh-HBj" userLabel="water">
                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                    <state key="normal" title="抄水表">
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="75" id="2nz-KT-ddp">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="90"/>
+                                        </constraint>
+                                        <constraint firstAttribute="width" constant="55" id="cTq-RD-7Uk">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="45"/>
+                                        </constraint>
+                                    </constraints>
+                                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
+                                    <inset key="titleEdgeInsets" minX="-45" minY="0.0" maxX="0.0" maxY="-80"/>
+                                    <state key="normal" title="a" image="icon_water_off">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
-                                    <connections>
-                                        <action selector="getWaterClick:" destination="-1" eventType="touchUpInside" id="JdY-bq-caL"/>
-                                    </connections>
+                                    <state key="highlighted" image="icon_water_on">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="2nz-KT-ddp"/>
+                                            <exclude reference="cTq-RD-7Uk"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="2nz-KT-ddp"/>
+                                            <include reference="cTq-RD-7Uk"/>
+                                        </mask>
+                                    </variation>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQX-RO-81f">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXS-zt-sg8" userLabel="eleric">
                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                    <state key="normal" title="抄电表">
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="45" id="KJz-Zn-v7H"/>
+                                        <constraint firstAttribute="height" constant="45" id="sdi-U2-A7Z">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="90"/>
+                                        </constraint>
+                                    </constraints>
+                                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
+                                    <inset key="titleEdgeInsets" minX="-45" minY="0.0" maxX="0.0" maxY="-80"/>
+                                    <state key="normal" title="b" image="icon_ammeter_off">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
-                                    <connections>
-                                        <action selector="getAmmeterClick:" destination="-1" eventType="touchUpInside" id="EyM-Vy-A9G"/>
-                                    </connections>
+                                    <state key="highlighted" title="b" image="icon_ammeter_on">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="KJz-Zn-v7H"/>
+                                            <exclude reference="sdi-U2-A7Z"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="KJz-Zn-v7H"/>
+                                            <include reference="sdi-U2-A7Z"/>
+                                        </mask>
+                                    </variation>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FrC-B9-UOe">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2P-xN-mlc" userLabel="eleric">
                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                    <state key="normal" title="收房租">
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="45" id="oyw-VU-Vxn"/>
+                                        <constraint firstAttribute="height" constant="45" id="xGz-Um-5xu">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="90"/>
+                                        </constraint>
+                                    </constraints>
+                                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
+                                    <inset key="titleEdgeInsets" minX="-45" minY="0.0" maxX="0.0" maxY="-80"/>
+                                    <state key="normal" title="c" image="icon_ rent _off">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
-                                    <connections>
-                                        <action selector="getRentClick:" destination="-1" eventType="touchUpInside" id="S2S-w2-RBK"/>
-                                    </connections>
+                                    <state key="highlighted" image="icon_ rent _on">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="oyw-VU-Vxn"/>
+                                            <exclude reference="xGz-Um-5xu"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="oyw-VU-Vxn"/>
+                                            <include reference="xGz-Um-5xu"/>
+                                        </mask>
+                                    </variation>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPk-gK-pnr">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPk-gK-pnr">
                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                    <state key="normal" title="房屋管理">
+                                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-1"/>
+                                    <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-3"/>
+                                    <state key="normal" title="d" image="roomManageicon1">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                        <rect key="frame" x="20" y="30" width="97" height="23"/>
+                                    </variation>
                                     <connections>
                                         <action selector="menuClick:" destination="-1" eventType="touchUpInside" id="Tzz-Ms-eYN"/>
                                     </connections>
                                 </button>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkoutNoti" translatesAutoresizingMaskIntoConstraints="NO" id="oOW-bs-9F3">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="37" id="d2V-vX-9ou"/>
+                                        <constraint firstAttribute="height" constant="18" id="sdI-7E-8k4"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="d2V-vX-9ou"/>
+                                            <exclude reference="sdI-7E-8k4"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="d2V-vX-9ou"/>
+                                            <include reference="sdI-7E-8k4"/>
+                                        </mask>
+                                    </variation>
+                                </imageView>
                             </subviews>
                             <color key="backgroundColor" red="0.98039215690000003" green="0.59999999999999998" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstItem="o2T-u0-N4a" firstAttribute="centerY" secondItem="AA4-LS-xtd" secondAttribute="centerY" multiplier="1.8" id="3FK-Hx-XhP">
-                                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
-                                </constraint>
-                                <constraint firstItem="o2T-u0-N4a" firstAttribute="centerX" secondItem="AA4-LS-xtd" secondAttribute="centerX" multiplier="0.3" id="4jy-rr-hGZ">
+                                <constraint firstItem="rH6-Hh-HBj" firstAttribute="centerX" secondItem="oOW-bs-9F3" secondAttribute="centerX" id="5ib-Ci-FC4"/>
+                                <constraint firstAttribute="centerX" secondItem="YXS-zt-sg8" secondAttribute="centerX" constant="0.5" id="6n7-MD-lw9">
                                     <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                 </constraint>
                                 <constraint firstItem="hPk-gK-pnr" firstAttribute="leading" secondItem="AA4-LS-xtd" secondAttribute="leading" constant="17" id="7Ex-TQ-yGe">
                                     <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                                 </constraint>
+                                <constraint firstAttribute="bottom" secondItem="oOW-bs-9F3" secondAttribute="bottom" constant="69" id="AGc-Ke-EUM">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                </constraint>
+                                <constraint firstAttribute="bottom" secondItem="q2P-xN-mlc" secondAttribute="bottom" constant="52" id="B7P-yA-vmR">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                                </constraint>
+                                <constraint firstItem="rH6-Hh-HBj" firstAttribute="centerX" secondItem="AA4-LS-xtd" secondAttribute="centerX" multiplier="0.45" id="IZt-Pv-agl"/>
                                 <constraint firstAttribute="trailing" secondItem="3kL-aG-WVx" secondAttribute="trailing" constant="46" id="Kf5-hX-11O">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                                </constraint>
+                                <constraint firstAttribute="bottom" secondItem="YXS-zt-sg8" secondAttribute="bottom" constant="52" id="RLB-sw-Men">
                                     <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                                 </constraint>
                                 <constraint firstItem="hPk-gK-pnr" firstAttribute="top" secondItem="AA4-LS-xtd" secondAttribute="top" constant="22" id="RSJ-r9-Jtq">
                                     <variation key="heightClass=regular-widthClass=compact" constant="30"/>
                                 </constraint>
-                                <constraint firstItem="FrC-B9-UOe" firstAttribute="centerX" secondItem="AA4-LS-xtd" secondAttribute="centerX" multiplier="1.7" id="SxC-JP-8hs">
-                                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
-                                </constraint>
-                                <constraint firstItem="IQX-RO-81f" firstAttribute="centerY" secondItem="AA4-LS-xtd" secondAttribute="centerY" multiplier="1.8" id="XUz-GU-hhx">
-                                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
-                                </constraint>
-                                <constraint firstAttribute="centerX" secondItem="IQX-RO-81f" secondAttribute="centerX" id="YN3-Bc-aqA"/>
-                                <constraint firstItem="FrC-B9-UOe" firstAttribute="centerY" secondItem="AA4-LS-xtd" secondAttribute="centerY" multiplier="1.8" id="h9a-7k-kD4">
-                                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                <constraint firstItem="q2P-xN-mlc" firstAttribute="centerX" secondItem="AA4-LS-xtd" secondAttribute="centerX" multiplier="1.55" id="c3A-uk-E3j"/>
+                                <constraint firstAttribute="bottom" secondItem="rH6-Hh-HBj" secondAttribute="bottom" constant="8" id="fCn-Tc-GsJ">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                                 </constraint>
                                 <constraint firstItem="3kL-aG-WVx" firstAttribute="top" secondItem="AA4-LS-xtd" secondAttribute="top" constant="30" id="vqh-kz-viD"/>
                             </constraints>
                             <variation key="default">
                                 <mask key="subviews">
                                     <exclude reference="3kL-aG-WVx"/>
-                                    <exclude reference="o2T-u0-N4a"/>
-                                    <exclude reference="IQX-RO-81f"/>
-                                    <exclude reference="FrC-B9-UOe"/>
+                                    <exclude reference="rH6-Hh-HBj"/>
+                                    <exclude reference="YXS-zt-sg8"/>
+                                    <exclude reference="q2P-xN-mlc"/>
                                     <exclude reference="hPk-gK-pnr"/>
+                                    <exclude reference="oOW-bs-9F3"/>
                                 </mask>
                                 <mask key="constraints">
-                                    <exclude reference="Kf5-hX-11O"/>
-                                    <exclude reference="vqh-kz-viD"/>
-                                    <exclude reference="SxC-JP-8hs"/>
-                                    <exclude reference="h9a-7k-kD4"/>
-                                    <exclude reference="XUz-GU-hhx"/>
-                                    <exclude reference="YN3-Bc-aqA"/>
                                     <exclude reference="7Ex-TQ-yGe"/>
                                     <exclude reference="RSJ-r9-Jtq"/>
-                                    <exclude reference="3FK-Hx-XhP"/>
-                                    <exclude reference="4jy-rr-hGZ"/>
+                                    <exclude reference="5ib-Ci-FC4"/>
+                                    <exclude reference="IZt-Pv-agl"/>
+                                    <exclude reference="fCn-Tc-GsJ"/>
+                                    <exclude reference="6n7-MD-lw9"/>
+                                    <exclude reference="RLB-sw-Men"/>
+                                    <exclude reference="AGc-Ke-EUM"/>
+                                    <exclude reference="Kf5-hX-11O"/>
+                                    <exclude reference="vqh-kz-viD"/>
+                                    <exclude reference="B7P-yA-vmR"/>
+                                    <exclude reference="c3A-uk-E3j"/>
                                 </mask>
                             </variation>
                             <variation key="heightClass=regular-widthClass=compact">
                                 <mask key="subviews">
                                     <include reference="3kL-aG-WVx"/>
-                                    <include reference="o2T-u0-N4a"/>
-                                    <include reference="IQX-RO-81f"/>
-                                    <include reference="FrC-B9-UOe"/>
+                                    <include reference="rH6-Hh-HBj"/>
+                                    <include reference="YXS-zt-sg8"/>
+                                    <include reference="q2P-xN-mlc"/>
                                     <include reference="hPk-gK-pnr"/>
+                                    <include reference="oOW-bs-9F3"/>
                                 </mask>
                                 <mask key="constraints">
-                                    <include reference="Kf5-hX-11O"/>
-                                    <include reference="vqh-kz-viD"/>
-                                    <include reference="SxC-JP-8hs"/>
-                                    <include reference="h9a-7k-kD4"/>
-                                    <include reference="XUz-GU-hhx"/>
-                                    <include reference="YN3-Bc-aqA"/>
                                     <include reference="7Ex-TQ-yGe"/>
                                     <include reference="RSJ-r9-Jtq"/>
-                                    <include reference="3FK-Hx-XhP"/>
-                                    <include reference="4jy-rr-hGZ"/>
+                                    <include reference="5ib-Ci-FC4"/>
+                                    <include reference="IZt-Pv-agl"/>
+                                    <include reference="fCn-Tc-GsJ"/>
+                                    <include reference="6n7-MD-lw9"/>
+                                    <include reference="RLB-sw-Men"/>
+                                    <include reference="AGc-Ke-EUM"/>
+                                    <include reference="Kf5-hX-11O"/>
+                                    <include reference="vqh-kz-viD"/>
+                                    <include reference="B7P-yA-vmR"/>
+                                    <include reference="c3A-uk-E3j"/>
                                 </mask>
                             </variation>
                         </view>
@@ -154,9 +264,25 @@
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y7O-k2-gwH">
                                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                            <state key="normal" title="添加房屋 +">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="0VT-Km-haf"/>
+                                                <constraint firstAttribute="width" constant="74" id="1tT-EP-rQg"/>
+                                            </constraints>
+                                            <state key="normal" title="c">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="0VT-Km-haf"/>
+                                                    <exclude reference="1tT-EP-rQg"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="0VT-Km-haf"/>
+                                                    <include reference="1tT-EP-rQg"/>
+                                                </mask>
+                                            </variation>
                                             <connections>
                                                 <action selector="addRoomClcik:" destination="-1" eventType="touchUpInside" id="pGz-6d-lY8"/>
                                             </connections>
@@ -311,4 +437,14 @@
             </variation>
         </view>
     </objects>
+    <resources>
+        <image name="checkoutNoti" width="24" height="10"/>
+        <image name="icon_ rent _off" width="41" height="44"/>
+        <image name="icon_ rent _on" width="41" height="44"/>
+        <image name="icon_ammeter_off" width="45" height="45"/>
+        <image name="icon_ammeter_on" width="45" height="45"/>
+        <image name="icon_water_off" width="45" height="45"/>
+        <image name="icon_water_on" width="45" height="45"/>
+        <image name="roomManageicon1" width="19" height="24"/>
+    </resources>
 </document>

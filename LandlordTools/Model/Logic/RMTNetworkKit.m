@@ -39,7 +39,7 @@
         completionHandler:(void (^)(NSError *error, NSDictionary *dic))handler
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager.requestSerializer setTimeoutInterval:8];
+    [manager.requestSerializer setTimeoutInterval:15];
     [manager GET:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"request url is %@, response JSON: %@", urlString, responseObject);
         handler(nil, responseObject);
@@ -58,7 +58,7 @@
                                                                                 URLString:urlString
                                                                                parameters:parameters
                                                                                     error:nil];
-    [request setTimeoutInterval:8];
+    [request setTimeoutInterval:15];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]
                                          initWithRequest:request];

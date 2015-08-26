@@ -140,16 +140,16 @@
 @property (nonatomic, assign) int _id;
 
 @property (nonatomic, strong) NSString *number;
-@property (nonatomic, assign) float price;
-@property (nonatomic, assign) float preCount;
+@property (nonatomic, assign) float price;// 价格。水 或 电
+@property (nonatomic, assign) float preCount; // 上月底数
 
 
 @end
 
 
 @interface CheckoutRoomsArrObj : JSONModel
-@property (nonatomic, assign) int _id;
-@property (nonatomic, assign) int count;
+@property (nonatomic, assign) int _id; //楼层id
+@property (nonatomic, assign) int count;//楼层
 @property (nonatomic, strong) CheckoutRoomObj *room;
 
 

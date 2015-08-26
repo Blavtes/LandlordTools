@@ -165,6 +165,35 @@ typedef enum _RMTIsInit {
 //获取要抄电表的房间
 - (void)requestGetToCheckElectricCostRoomsWithLoginId:(NSString*)loginid
                                        withBuildingId:(int)buildingid
-                                             complete:(void (^)(NSError *error, BackOject* obj))handler;
+                                             complete:(void (^)(NSError *error, CheckoutRoomsArrObj* obj))handler;
 
+
+//获取要抄水表的房间
+- (void)requestGetToCheckWaterCostRoomsWithLoginId:(NSString*)loginId
+                                    withBuildingId:(int)buildingid
+                                          complete:(void (^)(NSError *error, CheckoutRoomsArrObj* obj))handler;
+
+//获取要交租的房间
+- (void)requestGetToPayRentCostRoomsWithLoginId:(NSString*)loginId
+                                 withBuildingId:(int)buildingid
+                                       complete:(void (^)(NSError *error, CheckoutRoomsArrObj* obj))handler;
+
+//抄电表 数值
+
+- (void)requestCheckElectricCostWithLoginId:(NSString*)loginId
+                                 withRoomId:(int)roomId
+                                  withCount:(float)electricCost
+                                   complete:(void (^)(NSError *error, BackOject* obj))handler;
+
+//抄水表
+
+- (void)requestCheckWaterCostWithLoginId:(NSString*)loginId
+                                 withRoomId:(int)roomId
+                                  withCount:(float)WaterCost
+                                   complete:(void (^)(NSError *error, BackOject* obj))handler;
+//交房租
+- (void)requestPayRentCostWithLoginId:(NSString*)loginId
+                              withRoomId:(int)roomId
+                               withCount:(float)payRentCost
+                                complete:(void (^)(NSError *error, BackOject* obj))handler;
 @end
