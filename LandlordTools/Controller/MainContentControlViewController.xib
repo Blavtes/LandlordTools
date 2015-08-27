@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainContentControlViewController">
             <connections>
+                <outlet property="addBuildView" destination="7hK-bl-Gf7" id="yxX-G4-o2z"/>
                 <outlet property="checkOutImageView" destination="oOW-bs-9F3" id="eNG-ya-umw"/>
                 <outlet property="elericBt" destination="YXS-zt-sg8" id="ehU-0d-qWs"/>
                 <outlet property="loginBt" destination="3kL-aG-WVx" id="gI1-La-k1w"/>
@@ -110,7 +111,7 @@
                                     <state key="normal" title="抄电表" image="icon_ammeter_off">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
-                                    <state key="highlighted" title="b" image="icon_ammeter_on">
+                                    <state key="highlighted" title="抄电表" image="icon_ammeter_on">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <variation key="default">
@@ -456,11 +457,11 @@
                                     <color key="separatorColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="sectionIndexBackgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableView>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WZA-ND-YUd" userLabel="romView">
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WZA-ND-YUd" userLabel="romView">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.24313725489999999" green="0.24313725489999999" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7hK-bl-Gf7" userLabel="notView">
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7hK-bl-Gf7" userLabel="notView">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y7O-k2-gwH">
@@ -469,7 +470,7 @@
                                                 <constraint firstAttribute="height" constant="30" id="0VT-Km-haf"/>
                                                 <constraint firstAttribute="width" constant="74" id="1tT-EP-rQg"/>
                                             </constraints>
-                                            <state key="normal" title="c">
+                                            <state key="normal" title="添加房产 +">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <variation key="default">

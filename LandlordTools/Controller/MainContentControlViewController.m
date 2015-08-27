@@ -33,6 +33,7 @@
 @property (weak, nonatomic) IBOutlet UIView *titleView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLable;
 
+@property (weak, nonatomic) IBOutlet UIView *addBuildView;
 
 @property (nonatomic, assign) int selectIndex;
 
@@ -70,24 +71,40 @@
     return self;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     if ([[RMTUtilityLogin sharedInstance] getLogId]) {
         _loginBt.hidden = YES;
+        __weak __typeof(self)weakSelf = self;
+
         [[RMTUtilityLogin sharedInstance] requestGetMyBuildingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId]
                                                                   complete:^(NSError *error, AddBuildModleData *obj) {
                                                                       if (obj.buildings.count >0) {
-                                                                          _arrBuildModleData = obj;
+                                                                          weakSelf.arrBuildModleData = obj;
                                                                           _titleLable.text = ((AddBuildArrayData*)[_arrBuildModleData.buildings firstObject]).buildingName;
                                                                           _titleView.hidden = NO;
-
+//                                                                          _addBuildView.hidden = YES;
+                                                                      } else {
+                                                                          _addBuildView.hidden = NO;
+                                                                          
+                                                                          _selectIndex = 3;
+                                                                          [weakSelf checkoutImageViewFrame:_rentBt];
                                                                       }
                                                                      
+
                                                                   }];
+
+        
     } else {
         _titleView.hidden = YES;
         _titleTableListView.hidden = YES;
+        _addBuildView.hidden = NO;
     }
     
     
@@ -95,7 +112,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _selectIndex = 1;
+    if (_addBuildView.isHidden) {
+        _selectIndex = 1;
+
+    } else {
+        _selectIndex = 3;
+        [self checkoutImageViewFrame:_rentBt];
+    }
     [self.navigationController.navigationBar setHidden:YES];
     NSLog(@"MainContentControlViewControllerviewDidLoad  ");
     
@@ -162,7 +185,7 @@
     [_rentBt setImage:[UIImage imageNamed:@"icon_ rent _off"] forState:UIControlStateNormal];
     [_elericBt setImage:[UIImage imageNamed:@"icon_ammeter_off"] forState:UIControlStateNormal];
     [UIView animateWithDuration:0.3f animations:^{
-        _checkOutImageView.frame = CGRectMake(((UIButton*)sender).frame.origin.x, _checkOutImageView.frame.origin.y, _checkOutImageView.frame.size.width, _checkOutImageView.frame.size.height);
+        _checkOutImageView.frame = CGRectMake(((UIButton*)sender).frame.origin.x + 10 , _checkOutImageView.frame.origin.y, _checkOutImageView.frame.size.width, _checkOutImageView.frame.size.height);
         
     } completion:^(BOOL finished) {
         
@@ -199,6 +222,8 @@
             
         }];
     }
+    
+     [self getWaterArr];
     //    GetAmmeterViewController *vc = [[GetAmmeterViewController alloc] init];
     //    [self.navigationController pushViewController:vc animated:YES];
     
@@ -262,10 +287,19 @@
     return 40;
 }
 
+- (void)getWaterArr
+{
+    if ([[RMTUtilityLogin sharedInstance] getLogId]) {
+        [[RMTUtilityLogin sharedInstance] requestGetToCheckWaterCostRoomsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId] withBuildingId:_currentBuildData._id complete:^(NSError *error, CheckoutRoomsArrObj *obj) {
+            NSLog(@"getwater %@ ",obj);
+        }];
+    }
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (tableView == _titleTableView) {
-        _currentBuildData = ((AddBuildArrayData*)[_arrBuildModleData.buildings objectAtIndex:indexPath.row]);
+        self.currentBuildData = ((AddBuildArrayData*)[_arrBuildModleData.buildings objectAtIndex:indexPath.row]);
         _titleLable.text = _currentBuildData.buildingName;
         _titleTableListView.hidden = YES;
         _titleView.hidden = NO;
