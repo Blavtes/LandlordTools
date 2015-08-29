@@ -37,6 +37,11 @@
     }
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    _numberTextField.text = @"";
+}
+
 - (IBAction)editBTClick:(id)sender {
     [_numberTextField becomeFirstResponder];
 }

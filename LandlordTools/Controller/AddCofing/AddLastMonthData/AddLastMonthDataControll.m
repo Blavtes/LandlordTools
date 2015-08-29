@@ -206,7 +206,7 @@
 - (void)btClick:(id)sender
 {
     NSLog(@"btCLick");
-    _isSelectDay = YES;
+    _isSelectDay = !_isSelectDay;
     [self reloadArrayData];
  
 }

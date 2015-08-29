@@ -32,6 +32,7 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     NSLog(@"begin edit");
+    _editTextField.text = @"";
    
 }
 

@@ -132,6 +132,8 @@
     } else {
         _selectIndex = 3;
         [self checkoutImageViewFrame:_rentBt];
+        [_rentBt setImage:[UIImage imageNamed:@"icon_ rent _on"] forState:UIControlStateNormal];
+        [_rentBt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     }
     [self.navigationController.navigationBar setHidden:YES];
     NSLog(@"MainContentControlViewControllerviewDidLoad  ");
@@ -224,7 +226,7 @@
     [_rentBt setImage:[UIImage imageNamed:@"icon_ rent _off"] forState:UIControlStateNormal];
     [_elericBt setImage:[UIImage imageNamed:@"icon_ammeter_off"] forState:UIControlStateNormal];
     [UIView animateWithDuration:0.3f animations:^{
-        _checkOutImageView.frame = CGRectMake(((UIButton*)sender).frame.origin.x + 10 , _checkOutImageView.frame.origin.y, _checkOutImageView.frame.size.width, _checkOutImageView.frame.size.height);
+        _checkOutImageView.frame = CGRectMake(((UIButton*)sender).frame.origin.x +2 , _checkOutImageView.frame.origin.y, _checkOutImageView.frame.size.width, _checkOutImageView.frame.size.height);
         
     } completion:^(BOOL finished) {
         
