@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AddLastMothDataTableViewCell.h"
 
-@interface AddLastMothWaterTableViewCell : UITableViewCell <UITextFieldDelegate,AddLastMonthDataConfigDelegate>
+@interface AddLastMothWaterTableViewCell : UITableViewCell <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *titleLable;
 
 @property (nonatomic, assign) id<AddLastMonthDataConfigDelegate> delegate;
