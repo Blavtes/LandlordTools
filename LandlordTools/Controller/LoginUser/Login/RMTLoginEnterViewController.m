@@ -22,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     _notifyLabel.text = @"";
     _inputNumberTextField.delegate = self;
     // Do any additional setup after loading the view from its nib.
@@ -48,12 +49,12 @@
     }
     for (UIViewController *controller in self.navigationController.viewControllers) {
         if ([controller isKindOfClass:NSClassFromString(classStr)]) {
-            [self.navigationController popToViewController:controller animated:YES];
+            [self.navigationController popToViewController:controller animated:NO];
             
             return;
         }
     }
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:NO];
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
@@ -78,11 +79,11 @@
         } else if (obj.code == RMTRegisterCodeHaveRegist) {
             RMTLoginInputPassWorldViewController *vc = [[RMTLoginInputPassWorldViewController alloc] init];
             vc.mobile = mobile;
-            [weakSelf.navigationController pushViewController:vc animated:YES];
+            [weakSelf.navigationController pushViewController:vc animated:NO];
         } else if (obj.code == RMTRegisterCodeNotRegist){
             RMTRegistersViewController *vc = [[RMTRegistersViewController alloc] init];
             vc.mobile = mobile;
-            [weakSelf.navigationController pushViewController:vc animated:YES];
+            [weakSelf.navigationController pushViewController:vc animated:NO];
         } else {
             _notifyLabel.text = @"数据异常";
         }

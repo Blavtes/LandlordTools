@@ -173,13 +173,14 @@
         MyBuildingsViewCell *cell = (MyBuildingsViewCell*)deqCell;
 
         cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
-        cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:42/ 255.0f green:42/255.0f blue:42/255.0f alpha:1];
+        cell.selectedBackgroundView.backgroundColor = [UIColor clearColor];
         [cell setCellData:((AddBuildArrayData*)[_buildArr objectAtIndex:indexPath.section]) andCellRow:(int)indexPath.section];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+
     if(!_isEdit) {
         AddBuildArrayData * buildid = [_buildArr objectAtIndex:indexPath.section];
         AddRoomViewController *vc = [[AddRoomViewController alloc] init];

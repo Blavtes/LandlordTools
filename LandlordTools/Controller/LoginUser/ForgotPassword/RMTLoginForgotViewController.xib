@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -37,10 +37,12 @@
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="tZU-2D-364" secondAttribute="height" id="9q9-Je-vFl"/>
                                         <constraint firstAttribute="width" constant="9" id="IYE-aQ-4E0">
-                                            <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                                            <variation key="heightClass=regular-widthClass=compact" constant="60"/>
                                         </constraint>
                                     </constraints>
-                                    <state key="normal" image="bt_left">
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                    <state key="normal" title=" 返回" image="bt_back_balck">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <variation key="default">
@@ -123,7 +125,7 @@
                                         </constraint>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="0.73725490199999999" green="0.41960784309999999" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="0.80000000000000004" green="0.0039215686269999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                     <variation key="default">
                                         <mask key="constraints">
@@ -141,7 +143,7 @@
                                     <color key="backgroundColor" red="0.95686274510000002" green="0.91764705879999997" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="0ZM-oh-eUj">
-                                            <variation key="heightClass=regular-widthClass=compact" constant="1"/>
+                                            <variation key="heightClass=regular-widthClass=compact" constant="2"/>
                                         </constraint>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -165,7 +167,7 @@
                                             <variation key="heightClass=regular-widthClass=compact" constant="80"/>
                                         </constraint>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                     <variation key="default">
                                         <mask key="constraints">
@@ -183,7 +185,7 @@
                                     <color key="backgroundColor" red="0.95686274510000002" green="0.91764705879999997" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="D0t-cd-SV6">
-                                            <variation key="heightClass=regular-widthClass=compact" constant="1"/>
+                                            <variation key="heightClass=regular-widthClass=compact" constant="2"/>
                                         </constraint>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -205,7 +207,7 @@
                                     <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="hYG-BS-fRt">
-                                            <variation key="heightClass=regular-widthClass=compact" constant="60"/>
+                                            <variation key="heightClass=regular-widthClass=compact" constant="54"/>
                                         </constraint>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -250,7 +252,7 @@
                                     <variation key="heightClass=regular-widthClass=compact" constant="-30"/>
                                 </constraint>
                                 <constraint firstItem="JIc-Xi-fif" firstAttribute="bottom" secondItem="JsR-9e-0u0" secondAttribute="bottom" constant="-273" id="aph-dB-WNc">
-                                    <variation key="heightClass=regular-widthClass=compact" constant="-150"/>
+                                    <variation key="heightClass=regular-widthClass=compact" constant="-114"/>
                                 </constraint>
                                 <constraint firstItem="A40-25-jhA" firstAttribute="leading" secondItem="cBa-7j-bZT" secondAttribute="leading" constant="179" id="cNS-0C-FYQ">
                                     <variation key="heightClass=regular-widthClass=compact" constant="40"/>
@@ -273,9 +275,6 @@
                                     <exclude reference="JsR-9e-0u0"/>
                                 </mask>
                                 <mask key="constraints">
-                                    <exclude reference="2WU-F4-Tfa"/>
-                                    <exclude reference="C5i-Jy-tAr"/>
-                                    <exclude reference="Z8m-vV-7Vx"/>
                                     <exclude reference="Apb-Ac-Mjp"/>
                                     <exclude reference="cNS-0C-FYQ"/>
                                     <exclude reference="qzM-Aq-pMb"/>
@@ -288,6 +287,9 @@
                                     <exclude reference="dOJ-Ij-bsx"/>
                                     <exclude reference="gGc-Bv-0R8"/>
                                     <exclude reference="mzv-ON-j8F"/>
+                                    <exclude reference="2WU-F4-Tfa"/>
+                                    <exclude reference="C5i-Jy-tAr"/>
+                                    <exclude reference="Z8m-vV-7Vx"/>
                                 </mask>
                             </variation>
                             <variation key="heightClass=regular-widthClass=compact">
@@ -299,9 +301,6 @@
                                     <include reference="JsR-9e-0u0"/>
                                 </mask>
                                 <mask key="constraints">
-                                    <include reference="2WU-F4-Tfa"/>
-                                    <include reference="C5i-Jy-tAr"/>
-                                    <include reference="Z8m-vV-7Vx"/>
                                     <include reference="Apb-Ac-Mjp"/>
                                     <include reference="cNS-0C-FYQ"/>
                                     <include reference="qzM-Aq-pMb"/>
@@ -314,6 +313,9 @@
                                     <include reference="dOJ-Ij-bsx"/>
                                     <include reference="gGc-Bv-0R8"/>
                                     <include reference="mzv-ON-j8F"/>
+                                    <include reference="2WU-F4-Tfa"/>
+                                    <include reference="C5i-Jy-tAr"/>
+                                    <include reference="Z8m-vV-7Vx"/>
                                 </mask>
                             </variation>
                         </view>
@@ -328,7 +330,7 @@
                                         </constraint>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="0.73725490199999999" green="0.41960784309999999" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="0.80000000000000004" green="0.0039215686269999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                     <variation key="default">
                                         <mask key="constraints">
@@ -346,7 +348,7 @@
                                     <color key="backgroundColor" red="0.95686274510000002" green="0.91764705879999997" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="uUK-or-uph">
-                                            <variation key="heightClass=regular-widthClass=compact" constant="1"/>
+                                            <variation key="heightClass=regular-widthClass=compact" constant="2"/>
                                         </constraint>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -363,14 +365,14 @@
                                         </mask>
                                     </variation>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入验证码" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jFO-Q3-jlh" userLabel="输入验证码">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入验证码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jFO-Q3-jlh" userLabel="输入验证码">
                                     <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="DjP-TV-RLi">
                                             <variation key="heightClass=regular-widthClass=compact" constant="80"/>
                                         </constraint>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                     <variation key="default">
                                         <mask key="constraints">
@@ -388,7 +390,7 @@
                                     <color key="backgroundColor" red="0.95686274510000002" green="0.91764705879999997" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="0cg-dO-eiW">
-                                            <variation key="heightClass=regular-widthClass=compact" constant="1"/>
+                                            <variation key="heightClass=regular-widthClass=compact" constant="2"/>
                                         </constraint>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -410,7 +412,7 @@
                                     <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="nsI-rh-ziO">
-                                            <variation key="heightClass=regular-widthClass=compact" constant="60"/>
+                                            <variation key="heightClass=regular-widthClass=compact" constant="54"/>
                                         </constraint>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -440,7 +442,7 @@
                                             <variation key="heightClass=regular-widthClass=compact" constant="50"/>
                                         </constraint>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                     <state key="normal" title="验证码" backgroundImage="validationoff">
                                         <color key="titleColor" red="1" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -467,7 +469,7 @@
                             <color key="backgroundColor" red="0.91764705879999997" green="0.74117647060000003" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="jFO-Q3-jlh" firstAttribute="leading" secondItem="Tsg-Ou-p63" secondAttribute="leading" constant="200" id="38t-1d-iP8">
-                                    <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                                    <variation key="heightClass=regular-widthClass=compact" constant="64"/>
                                 </constraint>
                                 <constraint firstItem="v9R-Ac-cwp" firstAttribute="leading" secondItem="Tsg-Ou-p63" secondAttribute="leading" constant="179" id="77m-JU-9ar">
                                     <variation key="heightClass=regular-widthClass=compact" constant="40"/>
@@ -489,7 +491,7 @@
                                 </constraint>
                                 <constraint firstItem="ZxF-pE-MSG" firstAttribute="centerX" secondItem="v9R-Ac-cwp" secondAttribute="centerX" id="Sxa-tB-KFV"/>
                                 <constraint firstItem="ZxF-pE-MSG" firstAttribute="bottom" secondItem="PTH-a5-v8L" secondAttribute="bottom" constant="-273" id="UXm-Nl-iqH">
-                                    <variation key="heightClass=regular-widthClass=compact" constant="-150"/>
+                                    <variation key="heightClass=regular-widthClass=compact" constant="-114"/>
                                 </constraint>
                                 <constraint firstItem="jFO-Q3-jlh" firstAttribute="centerY" secondItem="rmw-HE-OfJ" secondAttribute="centerY" constant="-267" id="WcS-pW-tzu">
                                     <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
@@ -523,10 +525,6 @@
                                     <exclude reference="9cs-lY-xHm"/>
                                     <exclude reference="XjB-jZ-6sD"/>
                                     <exclude reference="b54-WT-X4L"/>
-                                    <exclude reference="77m-JU-9ar"/>
-                                    <exclude reference="DNP-Cl-uY8"/>
-                                    <exclude reference="ffk-yx-YgS"/>
-                                    <exclude reference="sMZ-Hd-fca"/>
                                     <exclude reference="BJm-yG-oiP"/>
                                     <exclude reference="FZV-qd-BPW"/>
                                     <exclude reference="Jhv-sS-QmF"/>
@@ -539,6 +537,10 @@
                                     <exclude reference="DQm-g3-82i"/>
                                     <exclude reference="F8C-Id-SvD"/>
                                     <exclude reference="WcS-pW-tzu"/>
+                                    <exclude reference="77m-JU-9ar"/>
+                                    <exclude reference="DNP-Cl-uY8"/>
+                                    <exclude reference="ffk-yx-YgS"/>
+                                    <exclude reference="sMZ-Hd-fca"/>
                                 </mask>
                             </variation>
                             <variation key="heightClass=regular-widthClass=compact">
@@ -554,10 +556,6 @@
                                     <include reference="9cs-lY-xHm"/>
                                     <include reference="XjB-jZ-6sD"/>
                                     <include reference="b54-WT-X4L"/>
-                                    <include reference="77m-JU-9ar"/>
-                                    <include reference="DNP-Cl-uY8"/>
-                                    <include reference="ffk-yx-YgS"/>
-                                    <include reference="sMZ-Hd-fca"/>
                                     <include reference="BJm-yG-oiP"/>
                                     <include reference="FZV-qd-BPW"/>
                                     <include reference="Jhv-sS-QmF"/>
@@ -570,6 +568,10 @@
                                     <exclude reference="DQm-g3-82i"/>
                                     <exclude reference="F8C-Id-SvD"/>
                                     <include reference="WcS-pW-tzu"/>
+                                    <include reference="77m-JU-9ar"/>
+                                    <include reference="DNP-Cl-uY8"/>
+                                    <include reference="ffk-yx-YgS"/>
+                                    <include reference="sMZ-Hd-fca"/>
                                 </mask>
                             </variation>
                         </view>
@@ -602,7 +604,7 @@
                                     <color key="backgroundColor" red="0.95686274510000002" green="0.91764705879999997" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="J3k-qT-xQ4">
-                                            <variation key="heightClass=regular-widthClass=compact" constant="1"/>
+                                            <variation key="heightClass=regular-widthClass=compact" constant="2"/>
                                         </constraint>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -626,7 +628,7 @@
                                             <variation key="heightClass=regular-widthClass=compact" constant="80"/>
                                         </constraint>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <variation key="default">
                                         <mask key="constraints">
@@ -665,7 +667,7 @@
                                     <color key="backgroundColor" red="0.95686274510000002" green="0.91764705879999997" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="1aG-eB-iGk">
-                                            <variation key="heightClass=regular-widthClass=compact" constant="1"/>
+                                            <variation key="heightClass=regular-widthClass=compact" constant="2"/>
                                         </constraint>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -687,7 +689,7 @@
                                     <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="Tbm-Yw-Ol1">
-                                            <variation key="heightClass=regular-widthClass=compact" constant="60"/>
+                                            <variation key="heightClass=regular-widthClass=compact" constant="54"/>
                                         </constraint>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -713,7 +715,7 @@
                             <color key="backgroundColor" red="0.91764705879999997" green="0.74117647060000003" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="xE1-gq-A5k" firstAttribute="bottom" secondItem="7pN-4k-SO3" secondAttribute="bottom" constant="-273" id="1aM-F9-2St">
-                                    <variation key="heightClass=regular-widthClass=compact" constant="-150"/>
+                                    <variation key="heightClass=regular-widthClass=compact" constant="-114"/>
                                 </constraint>
                                 <constraint firstItem="rCx-Z1-bsf" firstAttribute="top" secondItem="1zL-pE-meG" secondAttribute="top" constant="-24" id="3Bf-3p-vzz">
                                     <variation key="heightClass=regular-widthClass=compact" constant="-30"/>
@@ -760,12 +762,14 @@
                                     <exclude reference="7pN-4k-SO3"/>
                                 </mask>
                                 <mask key="constraints">
-                                    <exclude reference="3Bf-3p-vzz"/>
-                                    <exclude reference="KaH-JP-BqM"/>
-                                    <exclude reference="k1G-kW-yvg"/>
                                     <exclude reference="FD7-0a-WNP"/>
                                     <exclude reference="r3I-zz-QoU"/>
                                     <exclude reference="yED-qL-gzs"/>
+                                    <exclude reference="KFm-Kx-I7X"/>
+                                    <exclude reference="KgM-zr-kn6"/>
+                                    <exclude reference="3Bf-3p-vzz"/>
+                                    <exclude reference="KaH-JP-BqM"/>
+                                    <exclude reference="k1G-kW-yvg"/>
                                     <exclude reference="1aM-F9-2St"/>
                                     <exclude reference="Djq-s5-nqF"/>
                                     <exclude reference="G9h-bY-nOU"/>
@@ -775,8 +779,6 @@
                                     <exclude reference="cML-I6-9ml"/>
                                     <exclude reference="fMU-uL-Y7e"/>
                                     <exclude reference="p2a-ul-Gcj"/>
-                                    <exclude reference="KFm-Kx-I7X"/>
-                                    <exclude reference="KgM-zr-kn6"/>
                                 </mask>
                             </variation>
                             <variation key="heightClass=regular-widthClass=compact">
@@ -789,12 +791,14 @@
                                     <include reference="7pN-4k-SO3"/>
                                 </mask>
                                 <mask key="constraints">
-                                    <include reference="3Bf-3p-vzz"/>
-                                    <include reference="KaH-JP-BqM"/>
-                                    <include reference="k1G-kW-yvg"/>
                                     <include reference="FD7-0a-WNP"/>
                                     <include reference="r3I-zz-QoU"/>
                                     <include reference="yED-qL-gzs"/>
+                                    <include reference="KFm-Kx-I7X"/>
+                                    <include reference="KgM-zr-kn6"/>
+                                    <include reference="3Bf-3p-vzz"/>
+                                    <include reference="KaH-JP-BqM"/>
+                                    <include reference="k1G-kW-yvg"/>
                                     <include reference="1aM-F9-2St"/>
                                     <include reference="Djq-s5-nqF"/>
                                     <include reference="G9h-bY-nOU"/>
@@ -804,8 +808,6 @@
                                     <include reference="cML-I6-9ml"/>
                                     <include reference="fMU-uL-Y7e"/>
                                     <include reference="p2a-ul-Gcj"/>
-                                    <include reference="KFm-Kx-I7X"/>
-                                    <include reference="KgM-zr-kn6"/>
                                 </mask>
                             </variation>
                         </view>
@@ -914,7 +916,7 @@
         </view>
     </objects>
     <resources>
-        <image name="bt_left" width="9" height="15"/>
+        <image name="bt_back_balck" width="12" height="18"/>
         <image name="validationoff" width="75" height="36"/>
         <image name="validationon" width="75" height="36"/>
     </resources>
