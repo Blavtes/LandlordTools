@@ -10,5 +10,5 @@
 
 @interface AddHouseViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+- (instancetype)initWithEdit:(BOOL)edit;
 @end

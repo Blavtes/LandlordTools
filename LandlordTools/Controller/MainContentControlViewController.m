@@ -201,7 +201,7 @@
     [_waterBt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     if (_currentBuildData.buildingName) {
         [[RMTUtilityLogin sharedInstance] requestGetToCheckWaterCostRoomsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId] withBuildingId:_currentBuildData._id complete:^(NSError *error, CheckoutRoomsArrObj *obj) {
-            
+            NSLog(@"obj %@",obj);
         }];
     }
     //    WaterViewController *vc = [[WaterViewController alloc] init];
@@ -219,7 +219,8 @@
     
     if (_currentBuildData.buildingName) {
         [[RMTUtilityLogin sharedInstance] requestGetToCheckElectricCostRoomsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId] withBuildingId:_currentBuildData._id complete:^(NSError *error, CheckoutRoomsArrObj *obj) {
-            
+            NSLog(@"obj %@",obj);
+
         }];
     }
     
@@ -237,7 +238,8 @@
     [_rentBt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     if (_currentBuildData.buildingName) {
         [[RMTUtilityLogin sharedInstance] requestGetToPayRentCostRoomsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId] withBuildingId:_currentBuildData._id complete:^(NSError *error, CheckoutRoomsArrObj *obj) {
-            
+            NSLog(@"obj %@",obj);
+
         }];
     }
     //    RentMainViewController *vc = [[RentMainViewController alloc] init];
@@ -246,7 +248,7 @@
 
 - (IBAction)addRoomClcik:(id)sender
 {
-    AddHouseViewController *vc = [[AddHouseViewController alloc] init];
+    AddHouseViewController *vc = [[AddHouseViewController alloc] initWithEdit:YES];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -255,8 +257,10 @@
       [self checkoutMenuViewFrame:-_menuView.frame.size.width];
 }
 
-- (IBAction)managerClicked:(id)sender {
+- (IBAction)managerCheckoutClicked:(id)sender {
       [self checkoutMenuViewFrame:-_menuView.frame.size.width];
+    AddHouseViewController *vc = [[AddHouseViewController alloc] initWithEdit:NO];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

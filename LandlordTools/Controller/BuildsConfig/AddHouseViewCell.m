@@ -82,6 +82,7 @@
 - (void) setCellData:(AddBuildArrayData*)data andCellRow:(int)row
 {
     _showData = data.isShowDataList;
+    _dataAllView.hidden = !_showData;
     _titleTextField.text = data.buildingName;
     _waterTextField.text = [NSString stringWithFormat:@"%.1f",data.waterPrice];
     _ammterTextField.text = [NSString stringWithFormat:@"%.1f",data.electricPrice];

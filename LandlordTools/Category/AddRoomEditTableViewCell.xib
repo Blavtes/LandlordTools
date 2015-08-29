@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -256,9 +256,10 @@
                                 <exclude reference="UNu-1I-8D1"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="5MI-NG-QsT"/>
-                                <exclude reference="Ajg-3o-FNL"/>
-                                <exclude reference="eew-FO-eT1"/>
+                                <exclude reference="HJn-Ed-29H"/>
+                                <exclude reference="RAs-Lm-InO"/>
+                                <exclude reference="ccD-vS-OUS"/>
+                                <exclude reference="gv2-ho-nPH"/>
                                 <exclude reference="KjC-bF-Rcp"/>
                                 <exclude reference="iBC-lO-iC1"/>
                                 <exclude reference="7pR-UP-I25"/>
@@ -267,12 +268,11 @@
                                 <exclude reference="abQ-Ei-h2A"/>
                                 <exclude reference="4IQ-qg-UEu"/>
                                 <exclude reference="wrh-O7-oB4"/>
+                                <exclude reference="5MI-NG-QsT"/>
+                                <exclude reference="Ajg-3o-FNL"/>
+                                <exclude reference="eew-FO-eT1"/>
                                 <exclude reference="AgC-ON-hjO"/>
                                 <exclude reference="UWx-ql-MGU"/>
-                                <exclude reference="HJn-Ed-29H"/>
-                                <exclude reference="RAs-Lm-InO"/>
-                                <exclude reference="ccD-vS-OUS"/>
-                                <exclude reference="gv2-ho-nPH"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -285,9 +285,10 @@
                                 <include reference="UNu-1I-8D1"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="5MI-NG-QsT"/>
-                                <exclude reference="Ajg-3o-FNL"/>
-                                <include reference="eew-FO-eT1"/>
+                                <include reference="HJn-Ed-29H"/>
+                                <include reference="RAs-Lm-InO"/>
+                                <include reference="ccD-vS-OUS"/>
+                                <include reference="gv2-ho-nPH"/>
                                 <include reference="KjC-bF-Rcp"/>
                                 <include reference="iBC-lO-iC1"/>
                                 <include reference="7pR-UP-I25"/>
@@ -296,12 +297,11 @@
                                 <exclude reference="abQ-Ei-h2A"/>
                                 <include reference="4IQ-qg-UEu"/>
                                 <include reference="wrh-O7-oB4"/>
+                                <include reference="5MI-NG-QsT"/>
+                                <exclude reference="Ajg-3o-FNL"/>
+                                <include reference="eew-FO-eT1"/>
                                 <exclude reference="AgC-ON-hjO"/>
                                 <exclude reference="UWx-ql-MGU"/>
-                                <include reference="HJn-Ed-29H"/>
-                                <include reference="RAs-Lm-InO"/>
-                                <include reference="ccD-vS-OUS"/>
-                                <include reference="gv2-ho-nPH"/>
                             </mask>
                         </variation>
                     </view>

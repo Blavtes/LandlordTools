@@ -34,10 +34,18 @@
 
 @implementation AddHouseViewController
 
+- (instancetype)initWithEdit:(BOOL)edit
+{
+    if (self = [super init]) {
+        self.isEdit = edit;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _isEdit = YES;
-    _editBt.enabled = NO;  
+//    _isEdit = YES;
+    _editBt.enabled = !_isEdit;
     UINib* nib1 = [UINib nibWithNibName:@"AddHouseViewCell" bundle:[NSBundle mainBundle]];
     [_tableView registerNib:nib1 forCellReuseIdentifier:@"AddHouseViewCell"];
     
@@ -87,7 +95,26 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    return 1;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return _buildArr.count + (_isEdit  == YES ? 1 : 0);
+}
+
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *view  = [UIView new];
+    view.backgroundColor = [UIColor colorWithHex:kBackGroundColorStr];
+    return view;
+}
+
+- (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *view  = [UIView new];
+    view.backgroundColor = [UIColor colorWithHex:kBackGroundColorStr];
+    return view;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -96,23 +123,23 @@
 //    AddHouseViewCell *cell = (AddHouseViewCell*)deqCell;
     NSLog(@"");
     if (_isEdit) {
-        if (indexPath.row == _buildArr.count) {
+        if (indexPath.section == _buildArr.count) {
             return 80;
         }
         
-        if (!((AddBuildArrayData*)[_buildArr objectAtIndex:indexPath.row]).isShowDataList) {
-            return 120;
+        if (!((AddBuildArrayData*)[_buildArr objectAtIndex:indexPath.section]).isShowDataList) {
+            return 135;
         }
         return 360;
     }
-    return 80.0f;
+    return 94;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
     if (_isEdit) {
-        if (indexPath.row == _buildArr.count) {
+        if (indexPath.section == _buildArr.count) {
             
            UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"AdddefaultCell"];
             UIButton *btn = [UIButton new];
@@ -138,7 +165,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         [cell changeDataViewFrame];
         [cell setHideView];
-        [cell setCellData:((AddBuildArrayData*)[_buildArr objectAtIndex:indexPath.row]) andCellRow:(int)indexPath.row];
+        [cell setCellData:((AddBuildArrayData*)[_buildArr objectAtIndex:indexPath.section]) andCellRow:(int)indexPath.section];
         return cell;
     }
     
@@ -147,14 +174,14 @@
 
         cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
         cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:42/ 255.0f green:42/255.0f blue:42/255.0f alpha:1];
-        [cell setCellData:((AddBuildArrayData*)[_buildArr objectAtIndex:indexPath.row]) andCellRow:(int)indexPath.row];
+        [cell setCellData:((AddBuildArrayData*)[_buildArr objectAtIndex:indexPath.section]) andCellRow:(int)indexPath.section];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(!_isEdit) {
-        AddBuildArrayData * buildid = [_buildArr objectAtIndex:indexPath.row];
+        AddBuildArrayData * buildid = [_buildArr objectAtIndex:indexPath.section];
         AddRoomViewController *vc = [[AddRoomViewController alloc] init];
         vc.buildingData = buildid;
         [self.navigationController pushViewController:vc animated:YES];
