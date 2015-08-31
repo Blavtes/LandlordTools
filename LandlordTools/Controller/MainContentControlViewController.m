@@ -18,6 +18,7 @@
 #import "RMTUtilityLogin.h"
 #import <Masonry.h>
 #import "UIColor+Hexadecimal.h"
+#import "ConfigHouseEditCell.h"
 
 @interface MainContentControlViewController () <UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIImageView *checkOutImageView;
@@ -32,6 +33,7 @@
 @property (weak, nonatomic) IBOutlet UIView *titleTableListView;
 @property (weak, nonatomic) IBOutlet UIView *titleView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLable;
+@property (weak, nonatomic) IBOutlet UITableView *roomTableView;
 
 @property (weak, nonatomic) IBOutlet UIView *addBuildView;
 
@@ -44,6 +46,11 @@
 @property (nonatomic, strong) AddBuildModleData *arrBuildModleData;//所以 楼宇
 @property (nonatomic, strong) AddBuildArrayData *currentBuildData; //当前 楼宇
 @end
+
+
+
+#define kAddRoomCellIdentifier              @"AddRoomEditTableViewCell"
+#define KConfigRoomCellIdentifier           @"ConfigHouseEditCell"
 
 @implementation MainContentControlViewController
 
@@ -104,7 +111,7 @@
     } else {
         _titleView.hidden = YES;
         _titleTableListView.hidden = YES;
-        _addBuildView.hidden = NO;
+//        _addBuildView.hidden = NO;
     }
     
     
@@ -112,6 +119,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _waterArr = [NSMutableArray arrayWithCapacity:0];
+    _elericArr = [NSMutableArray arrayWithCapacity:0];
+    _rentArr = [NSMutableArray arrayWithCapacity:0];
     if (_addBuildView.isHidden) {
         _selectIndex = 1;
 
@@ -132,6 +142,31 @@
                                                
                                              
                                            }];
+    
+    UINib *nib = [UINib nibWithNibName:kAddRoomCellIdentifier bundle:[NSBundle mainBundle]];
+    [_roomTableView registerNib:nib forCellReuseIdentifier:kAddRoomCellIdentifier];
+    
+    UINib *nib2 = [UINib nibWithNibName:KConfigRoomCellIdentifier bundle:[NSBundle mainBundle]];
+    [_roomTableView registerNib:nib2 forCellReuseIdentifier:KConfigRoomCellIdentifier];
+
+#pragma mark -- test
+    
+    for (int i = 1; i < 4; i++) {
+        FloorsByArrObj *floors = [FloorsByArrObj new];
+        NSMutableArray *rooms = [NSMutableArray arrayWithCapacity:0];
+        for (int j = 1; j < 5; j++) {
+            RoomsByArrObj *room = [RoomsByArrObj new];
+            room._id = j;
+            room.number = [NSString stringWithFormat:@"%d0%d",i,j];
+            room.isInit = YES;
+            [rooms addObject:room];
+        }
+        floors.rooms = rooms;
+        floors._id = i;
+        floors.count = i;
+        [_waterArr addObject:floors];
+    }
+    [_roomTableView reloadData];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -200,10 +235,13 @@
     [_waterBt setImage:[UIImage imageNamed:@"icon_water_on"] forState:UIControlStateNormal];
     [_waterBt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     if (_currentBuildData.buildingName) {
-        [[RMTUtilityLogin sharedInstance] requestGetToCheckWaterCostRoomsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId] withBuildingId:_currentBuildData._id complete:^(NSError *error, CheckoutRoomsArrObj *obj) {
+        [[RMTUtilityLogin sharedInstance] requestGetToCheckWaterCostRoomsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
+                                                                      withBuildingId:_currentBuildData._id
+                                                                            complete:^(NSError *error, CheckoutRoomsArrObj *obj) {
             NSLog(@"obj %@",obj);
         }];
     }
+
     //    WaterViewController *vc = [[WaterViewController alloc] init];
     //    [self.navigationController pushViewController:vc animated:YES];
 }
@@ -218,13 +256,15 @@
     [_elericBt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
     if (_currentBuildData.buildingName) {
-        [[RMTUtilityLogin sharedInstance] requestGetToCheckElectricCostRoomsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId] withBuildingId:_currentBuildData._id complete:^(NSError *error, CheckoutRoomsArrObj *obj) {
+        [[RMTUtilityLogin sharedInstance] requestGetToCheckElectricCostRoomsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
+                                                                         withBuildingId:_currentBuildData._id
+                                                                               complete:^(NSError *error, CheckoutRoomsArrObj *obj) {
             NSLog(@"obj %@",obj);
 
         }];
     }
     
-     [self getWaterArr];
+    
     //    GetAmmeterViewController *vc = [[GetAmmeterViewController alloc] init];
     //    [self.navigationController pushViewController:vc animated:YES];
     
@@ -237,7 +277,9 @@
     [_rentBt setImage:[UIImage imageNamed:@"icon_ rent _on"] forState:UIControlStateNormal];
     [_rentBt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     if (_currentBuildData.buildingName) {
-        [[RMTUtilityLogin sharedInstance] requestGetToPayRentCostRoomsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId] withBuildingId:_currentBuildData._id complete:^(NSError *error, CheckoutRoomsArrObj *obj) {
+        [[RMTUtilityLogin sharedInstance] requestGetToPayRentCostRoomsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
+                                                                   withBuildingId:_currentBuildData._id
+                                                                         complete:^(NSError *error, CheckoutRoomsArrObj *obj) {
             NSLog(@"obj %@",obj);
 
         }];
@@ -277,24 +319,42 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (tableView == _roomTableView) {
+        return  ((NSArray*)((FloorsByArrObj*)[ _waterArr objectAtIndex:section]).rooms).count / 3
+        + (((NSArray*)((FloorsByArrObj*)[ _waterArr objectAtIndex:section]).rooms).count % 3 == 0 ? 0 :1);
+    }
+  
     if (_titleTableView == tableView) {
         return _arrBuildModleData.buildings.count;
     }
     return 1;
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    if (tableView == _roomTableView) {
+            return _waterArr.count;
+    }
+    return 1;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    float height = 40.f;
     if (_titleTableView == tableView) {
-        return 40.0f;
+        height =  40;
+    } else if (tableView == _roomTableView ) {
+        height =  60.f;
     }
-    return 40;
+    return height;
 }
 
 - (void)getWaterArr
 {
     if ([[RMTUtilityLogin sharedInstance] getLogId]) {
-        [[RMTUtilityLogin sharedInstance] requestGetToCheckWaterCostRoomsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId] withBuildingId:_currentBuildData._id complete:^(NSError *error, CheckoutRoomsArrObj *obj) {
+        [[RMTUtilityLogin sharedInstance] requestGetToCheckWaterCostRoomsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
+                                                                      withBuildingId:_currentBuildData._id
+                                                                            complete:^(NSError *error, CheckoutRoomsArrObj *obj) {
             NSLog(@"getwater %@ ",obj);
         }];
     }
@@ -343,6 +403,11 @@
         }];
         return cell;
     }
+    cell = [_roomTableView dequeueReusableCellWithIdentifier:KConfigRoomCellIdentifier];
+    ConfigHouseEditCell *editCell = (ConfigHouseEditCell*)cell;
+    [editCell setCellContentData:[_waterArr objectAtIndex:indexPath.section] withRow:indexPath];
+    editCell.delegate = self;
+    NSLog(@"indexpth section %ld",indexPath.section);
     return cell;
 }
 

@@ -301,8 +301,8 @@
                   symbolName = "-[AddRoomViewController addBuildingsDta:]"
                   moduleName = "LandlordTools"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yangyong/Documents/workPlace/LandlordTools/LandlordTools/Controller/BuildsConfig/RoomConfig/AddRoomViewController.m"
-                  timestampString = "462383412.844579"
+                  urlString = "file:///Users/yangyong/Documents/WorkPlace/work/LandlordTools/LandlordTools/Controller/BuildsConfig/RoomConfig/AddRoomViewController.m"
+                  timestampString = "462679432.796324"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "301"
@@ -316,8 +316,8 @@
                   symbolName = "-[AddRoomViewController addBuildingsDta:]"
                   moduleName = "LandlordTools"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yangyong/Documents/workPlace/LandlordTools/LandlordTools/Controller/BuildsConfig/RoomConfig/AddRoomViewController.m"
-                  timestampString = "462383412.844678"
+                  urlString = "file:///Users/yangyong/Documents/WorkPlace/work/LandlordTools/LandlordTools/Controller/BuildsConfig/RoomConfig/AddRoomViewController.m"
+                  timestampString = "462679432.796444"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "301"
@@ -558,11 +558,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LandlordTools/Controller/MainContentControlViewController.m"
-            timestampString = "462510634.985102"
+            timestampString = "462679503.814316"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "325"
-            endingLineNumber = "325"
+            startingLineNumber = "385"
+            endingLineNumber = "385"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -574,11 +574,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LandlordTools/Controller/MainContentControlViewController.m"
-            timestampString = "462383039.074751"
+            timestampString = "462679503.814316"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -590,103 +590,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LandlordTools/Controller/MainContentControlViewController.m"
-            timestampString = "462382044.69608"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "-viewWillAppear:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LandlordTools/Controller/MainContentControlViewController.m"
-            timestampString = "462382022.896186"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "-viewDidAppear:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LandlordTools/Controller/MainContentControlViewController.m"
-            timestampString = "462510634.985102"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "296"
-            endingLineNumber = "296"
-            landmarkName = "-getWaterArr"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LandlordTools/Controller/MainContentControlViewController.m"
-            timestampString = "462510634.985102"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "297"
-            endingLineNumber = "297"
-            landmarkName = "-getWaterArr"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[MainContentControlViewController getWaterArr]"
-                  moduleName = "LandlordTools"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yangyong/Documents/workPlace/LandlordTools/LandlordTools/Controller/MainContentControlViewController.m"
-                  timestampString = "462383412.852062"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "293"
-                  endingLineNumber = "293"
-                  offsetFromSymbolStart = "124">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__47-[MainContentControlViewController getWaterArr]_block_invoke"
-                  moduleName = "LandlordTools"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yangyong/Documents/workPlace/LandlordTools/LandlordTools/Controller/MainContentControlViewController.m"
-                  timestampString = "462383412.852193"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "293"
-                  endingLineNumber = "293"
-                  offsetFromSymbolStart = "74">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LandlordTools/Controller/MainContentControlViewController.m"
-            timestampString = "462383139.994357"
+            timestampString = "462679259.544708"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "88"
@@ -702,11 +606,75 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LandlordTools/Controller/MainContentControlViewController.m"
-            timestampString = "462510634.985102"
+            timestampString = "462679259.544708"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "306"
-            endingLineNumber = "306"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "-viewDidAppear:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LandlordTools/Controller/MainContentControlViewController.m"
+            timestampString = "462679503.814316"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "354"
+            endingLineNumber = "354"
+            landmarkName = "-getWaterArr"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LandlordTools/Controller/MainContentControlViewController.m"
+            timestampString = "462679503.814316"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "356"
+            endingLineNumber = "356"
+            landmarkName = "-getWaterArr"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LandlordTools/Controller/MainContentControlViewController.m"
+            timestampString = "462679259.544708"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LandlordTools/Controller/MainContentControlViewController.m"
+            timestampString = "462679503.814316"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "366"
+            endingLineNumber = "366"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -718,11 +686,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LandlordTools/Controller/MainContentControlViewController.m"
-            timestampString = "462510634.985102"
+            timestampString = "462679503.814316"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "298"
-            endingLineNumber = "298"
+            startingLineNumber = "358"
+            endingLineNumber = "358"
             landmarkName = "-getWaterArr"
             landmarkType = "5">
          </BreakpointContent>
@@ -740,6 +708,84 @@
             startingLineNumber = "849"
             endingLineNumber = "849"
             landmarkName = "-requestGetToCheckWaterCostRoomsWithLoginId:withBuildingId:complete:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LandlordTools/Controller/MainContentControlViewController.h"
+            timestampString = "462679356.963251"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LandlordTools/Controller/MainContentControlViewController.m"
+            timestampString = "462679503.814316"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "407"
+            endingLineNumber = "407"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LandlordTools/Controller/MainContentControlViewController.m"
+            timestampString = "462679503.814316"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "363"
+            endingLineNumber = "363"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LandlordTools/Controller/MainContentControlViewController.m"
+            timestampString = "462679503.814316"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "335"
+            endingLineNumber = "335"
+            landmarkName = "-numberOfSectionsInTableView:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LandlordTools/Controller/MainContentControlViewController.m"
+            timestampString = "462679503.814316"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "322"
+            endingLineNumber = "322"
+            landmarkName = "-tableView:numberOfRowsInSection:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
