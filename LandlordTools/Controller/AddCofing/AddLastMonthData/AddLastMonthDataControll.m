@@ -114,7 +114,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (_isSelectDay && indexPath.section == 1) {
-        return 180;
+        return 360;
     }
      if (indexPath.section <= 1) {
          return 75;
@@ -213,7 +213,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == _dataArr.count -1) {
+    if (indexPath.section == _dataArr.count -1) {
         _isSelectDay = YES;
         [self reloadArrayData];
     }

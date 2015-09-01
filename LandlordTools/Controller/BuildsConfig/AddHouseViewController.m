@@ -187,7 +187,9 @@
         vc.buildingData = buildid;
         [self.navigationController pushViewController:vc animated:YES];
     }
+     [_tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
 
 - (void) addBuildDta:(id)sender
 {
