@@ -41,4 +41,5 @@
 - (void)setOneData:(ConfigEditHouseData*)datao andTwoData:(ConfigEditHouseData*)andTwoData andThreeData:(ConfigEditHouseData*)thData;
 - (void) setCellContentData:(FloorsByArrObj *)array withRow:(NSIndexPath*)indexPath;
 
+- (void) setCellContentDataRooms:(CheckoutRoomsArrObj *)array withRow:(NSIndexPath*)indexPath;
 @end

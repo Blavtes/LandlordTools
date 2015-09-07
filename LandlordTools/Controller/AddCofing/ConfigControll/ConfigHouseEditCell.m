@@ -107,6 +107,56 @@
     
 }
 
+- (void)setCellContentDataRooms:(CheckoutRoomsArrObj *)array withRow:(NSIndexPath *)indexPath
+{
+    self.indexPath = indexPath;
+
+    NSLog(@"array Count %@",array);
+    if (indexPath.row * 3 < array.rooms.count) {
+        CheckoutRoomObj *obj =  [array.rooms objectAtIndex:indexPath.row * 3];
+        [self.oneBt setTitle:obj.number forState:UIControlStateNormal];
+        self.oneBt.tag = (indexPath.section +1)* 10000 + indexPath.row *3;
+        NSLog(@"romt one %ld",indexPath.row*3);
+        self.oneBt.hidden = NO;
+//        if (obj.isInit != RMTIsInitNot) {
+//            _infoOne.hidden = YES;
+//        } else {
+//            _infoOne.hidden = NO;
+//        }
+    } else {
+        self.oneHouseVIew.hidden = YES;
+    }
+    if (indexPath.row * 3+1 < array.rooms.count) {
+        self.twoBt.tag = (indexPath.section +1) * 10000 + indexPath.row *3 +1;
+        CheckoutRoomObj *obj =  [array.rooms objectAtIndex:indexPath.row * 3 + 1];
+//        if (obj.isInit != RMTIsInitNot) {
+//            _infoTwo.hidden = YES;
+//        } else {
+//            _infoTwo.hidden = NO;
+//        }
+        [self.twoBt setTitle:obj.number forState:UIControlStateNormal];
+        NSLog(@"romTow  %ld",indexPath.row *3+1);
+        self.twoBt.hidden = NO;
+    } else {
+        self.twoHouseView.hidden = YES;
+    }
+    if (indexPath.row * 3+2 < array.rooms.count) {
+        self.threeBt.tag = (indexPath.section +1) * 10000 + indexPath.row *3 + 2;
+        CheckoutRoomObj *obj =  [array.rooms objectAtIndex:indexPath.row * 3 + 2];
+//        if (obj.isInit != RMTIsInitNot) {
+//            _infoThree.hidden = YES;
+//        } else {
+//            _infoThree.hidden = NO;
+//        }
+        [self.threeBt setTitle:obj.number forState:UIControlStateNormal];
+        NSLog(@"romThre  %ld",indexPath.row* 3+2);
+        self.threeBt.hidden = NO;
+    } else {
+        self.threeHouseView.hidden = YES;
+    }
+
+}
+
 
 
 - (IBAction)houseConfigClick:(id)sender {

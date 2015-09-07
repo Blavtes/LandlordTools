@@ -62,6 +62,13 @@ typedef enum _RMTIsInit {
     RMTIsInitDo = 1 //已初始化
 }RMTIsInit;
 
+
+typedef enum _RMTSelectIndex {
+    RMTSelectIndexWater = 1, //未初始化
+    RMTSelectIndexElect = 2, //已初始化
+    RMTSelectIndexRent = 3
+}RMTSelectIndex;
+
 @interface RMTUtilityLogin : NSObject
 
 
