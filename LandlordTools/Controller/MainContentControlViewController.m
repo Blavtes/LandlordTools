@@ -36,9 +36,10 @@
 @property (weak, nonatomic) IBOutlet UITableView *roomTableView;
 
 @property (weak, nonatomic) IBOutlet UIView *addBuildView;
+@property (weak, nonatomic) IBOutlet UIButton *sortRentBt;
 
 @property (nonatomic, assign) int selectIndex;
-
+@property (nonatomic, assign) int sortRentIndex;
 @property (nonatomic, strong) NSMutableArray *waterArr;
 @property (nonatomic, strong) NSMutableArray *elericArr;
 @property (nonatomic, strong) NSMutableArray *rentArrFloor;
@@ -124,7 +125,7 @@
     _elericArr = [NSMutableArray arrayWithCapacity:0];
     _rentArrFloor = [NSMutableArray arrayWithCapacity:0];
     _rentArrTime = [NSMutableArray arrayWithCapacity:0];
-    
+    _sortRentIndex = RMTSortRentFloor;
     if (_addBuildView.isHidden) {
         _selectIndex = 1;
 
@@ -235,6 +236,7 @@
 {
     _selectIndex = RMTSelectIndexWater;
     [self checkoutImageViewFrame:sender];
+    _sortRentBt.hidden = YES;
     [_waterBt setImage:[UIImage imageNamed:@"icon_water_on"] forState:UIControlStateNormal];
     [_waterBt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     if (_currentBuildData.buildingName) {
@@ -258,7 +260,7 @@
 {
     _selectIndex = RMTSelectIndexElect;
     [self checkoutImageViewFrame:sender];
-    
+    _sortRentBt.hidden = YES;
     [_elericBt setImage:[UIImage imageNamed:@"icon_ammeter_on"] forState:UIControlStateNormal];
     
     [_elericBt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -286,6 +288,7 @@
 {
     _selectIndex = RMTSelectIndexRent;
     [self checkoutImageViewFrame:sender];
+    _sortRentBt.hidden = NO;
     [_rentBt setImage:[UIImage imageNamed:@"icon_ rent _on"] forState:UIControlStateNormal];
     [_rentBt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     if (_currentBuildData.buildingName) {
@@ -444,23 +447,40 @@
     }
     cell = [_roomTableView dequeueReusableCellWithIdentifier:KConfigRoomCellIdentifier];
     ConfigHouseEditCell *editCell = (ConfigHouseEditCell*)cell;
-    NSMutableArray *arr = [NSMutableArray arrayWithCapacity:0];
+
     if (_selectIndex == RMTSelectIndexRent) {
-        [arr addObjectsFromArray:_rentArrFloor];
+        if (_sortRentIndex == RMTSortRentFloor) {
+             [editCell setCellContentDataRoomsWithFloors:[_rentArrFloor objectAtIndex:indexPath.section] withRow:indexPath];
+        } else {
+
+            [editCell setCellContentDataRoomsWithTime:[_rentArrTime objectAtIndex:indexPath.section] withRow:indexPath];
+        }
+       
     } else if (_selectIndex == RMTSelectIndexWater) {
-        [arr addObjectsFromArray:_waterArr];
+          [editCell setCellContentDataRooms:[_waterArr objectAtIndex:indexPath.section] withRow:indexPath];
     } else if (_selectIndex == RMTSelectIndexElect) {
-        [arr addObjectsFromArray:_elericArr];
+          [editCell setCellContentDataRooms:[_elericArr objectAtIndex:indexPath.section] withRow:indexPath];
     }
-    [editCell setCellContentDataRooms:[arr objectAtIndex:indexPath.section] withRow:indexPath];
+   
     editCell.delegate = self;
-    NSLog(@"indexpth section %ld %@",indexPath.section,arr);
+    NSLog(@"indexpth section %ld ",indexPath.section);
     return cell;
 }
 
 - (void)configRoomDataWithSection:(int)section andIndex:(int)index
 {
     NSLog(@"configRoomDataWithSection %d %d",section,index);
+}
+
+
+- (IBAction)sortRentClick:(id)sender {
+    if (_selectIndex == RMTSortRentFloor) {
+        _selectIndex = RMTSortRentTime;
+        [_sortRentBt setTitle:@"按楼层" forState:UIControlStateNormal];
+    } else {
+        _selectIndex = RMTSortRentFloor;
+        [_sortRentBt setTitle:@"按时间" forState:UIControlStateNormal];
+    }
 }
 
 @end

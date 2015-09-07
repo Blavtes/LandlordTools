@@ -15,6 +15,7 @@
                 <outlet property="menuView" destination="MGk-Yg-caH" id="Wud-9W-D0Y"/>
                 <outlet property="rentBt" destination="q2P-xN-mlc" id="d9B-Xy-c5V"/>
                 <outlet property="roomTableView" destination="2VD-ld-VGa" id="lPV-mB-hFs"/>
+                <outlet property="sortRentBt" destination="isD-rh-c2g" id="PZb-RW-Gqd"/>
                 <outlet property="titleLable" destination="YkK-mb-tp4" id="qF9-xH-Rf2"/>
                 <outlet property="titleTableListView" destination="x9V-eu-ehY" id="sZx-9A-1Nn"/>
                 <outlet property="titleTableView" destination="0CF-ta-NQq" id="81Y-DN-6gU"/>
@@ -452,7 +453,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8l1-Op-Bkh" userLabel="bomView">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             <subviews>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="2VD-ld-VGa">
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="5" sectionFooterHeight="5" translatesAutoresizingMaskIntoConstraints="NO" id="2VD-ld-VGa">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                     <color key="backgroundColor" red="0.015686274510000001" green="0.015686274510000001" blue="0.015686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="separatorColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -466,6 +467,16 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                     <color key="backgroundColor" red="0.24313725489999999" green="0.24313725489999999" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isD-rh-c2g">
+                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                    <state key="normal" title="排序">
+                                        <color key="titleColor" red="0.74509803919999995" green="0.74117647060000003" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="sortRentClick:" destination="-1" eventType="touchUpInside" id="6sz-Lz-TV6"/>
+                                    </connections>
+                                </button>
                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7hK-bl-Gf7" userLabel="notView">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                     <subviews>
@@ -525,9 +536,11 @@
                                 <constraint firstItem="2VD-ld-VGa" firstAttribute="top" secondItem="8l1-Op-Bkh" secondAttribute="top" id="076-NJ-X5e"/>
                                 <constraint firstItem="7hK-bl-Gf7" firstAttribute="leading" secondItem="8l1-Op-Bkh" secondAttribute="leading" id="EAh-Oe-6iN"/>
                                 <constraint firstAttribute="centerX" secondItem="7hK-bl-Gf7" secondAttribute="centerX" id="HhC-hB-7Ay"/>
+                                <constraint firstAttribute="trailing" secondItem="isD-rh-c2g" secondAttribute="trailing" constant="50" id="M6m-Ar-Rwe"/>
                                 <constraint firstAttribute="trailing" secondItem="WZA-ND-YUd" secondAttribute="trailing" id="QFH-nz-RsJ"/>
                                 <constraint firstAttribute="bottom" secondItem="2VD-ld-VGa" secondAttribute="bottom" id="S1l-hQ-eec"/>
                                 <constraint firstItem="WZA-ND-YUd" firstAttribute="leading" secondItem="8l1-Op-Bkh" secondAttribute="leading" id="Vil-8o-oY9"/>
+                                <constraint firstAttribute="bottom" secondItem="isD-rh-c2g" secondAttribute="bottom" constant="50" id="cnB-yz-oV5"/>
                                 <constraint firstItem="WZA-ND-YUd" firstAttribute="top" secondItem="8l1-Op-Bkh" secondAttribute="top" id="gvc-dQ-mX9"/>
                                 <constraint firstAttribute="trailing" secondItem="2VD-ld-VGa" secondAttribute="trailing" id="hZX-Yi-yQc"/>
                                 <constraint firstAttribute="bottom" secondItem="WZA-ND-YUd" secondAttribute="bottom" id="iIg-TZ-qyj"/>
@@ -540,6 +553,7 @@
                                 <mask key="subviews">
                                     <exclude reference="2VD-ld-VGa"/>
                                     <exclude reference="WZA-ND-YUd"/>
+                                    <exclude reference="isD-rh-c2g"/>
                                     <exclude reference="7hK-bl-Gf7"/>
                                 </mask>
                                 <mask key="constraints">
@@ -556,12 +570,15 @@
                                     <exclude reference="Vil-8o-oY9"/>
                                     <exclude reference="gvc-dQ-mX9"/>
                                     <exclude reference="iIg-TZ-qyj"/>
+                                    <exclude reference="M6m-Ar-Rwe"/>
+                                    <exclude reference="cnB-yz-oV5"/>
                                 </mask>
                             </variation>
                             <variation key="heightClass=regular-widthClass=compact">
                                 <mask key="subviews">
                                     <include reference="2VD-ld-VGa"/>
                                     <include reference="WZA-ND-YUd"/>
+                                    <include reference="isD-rh-c2g"/>
                                     <include reference="7hK-bl-Gf7"/>
                                 </mask>
                                 <mask key="constraints">
@@ -578,6 +595,8 @@
                                     <include reference="Vil-8o-oY9"/>
                                     <include reference="gvc-dQ-mX9"/>
                                     <include reference="iIg-TZ-qyj"/>
+                                    <include reference="M6m-Ar-Rwe"/>
+                                    <include reference="cnB-yz-oV5"/>
                                 </mask>
                             </variation>
                         </view>

@@ -64,10 +64,21 @@ typedef enum _RMTIsInit {
 
 
 typedef enum _RMTSelectIndex {
-    RMTSelectIndexWater = 1, //未初始化
-    RMTSelectIndexElect = 2, //已初始化
-    RMTSelectIndexRent = 3
+    RMTSelectIndexWater = 1, // water
+    RMTSelectIndexElect = 2, // elect
+    RMTSelectIndexRent = 3 // rent
 }RMTSelectIndex;
+
+
+typedef enum _RMTOverTime {
+    RMTOverTimeNO = 0, // 未超过7天
+    RMTOverTimeYES = 1 //超过7天
+}RMTOverTime;
+
+typedef enum _RMTSortRent {
+    RMTSortRentTime = 1, // 按时间排序
+    RMTSortRentFloor = 2 // 按楼层排序
+}RMTSortRent;
 
 @interface RMTUtilityLogin : NSObject
 

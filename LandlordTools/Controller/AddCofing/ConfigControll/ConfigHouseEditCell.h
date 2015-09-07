@@ -42,4 +42,8 @@
 - (void) setCellContentData:(FloorsByArrObj *)array withRow:(NSIndexPath*)indexPath;
 
 - (void) setCellContentDataRooms:(CheckoutRoomsArrObj *)array withRow:(NSIndexPath*)indexPath;
+
+- (void)setCellContentDataRoomsWithTime:(CheckoutToRoomsByTimeArrObj*)array withRow:(NSIndexPath*)indexPath;
+- (void)setCellContentDataRoomsWithFloors:(CheckoutToRoomsByFloorArrObj*)array withRow:(NSIndexPath*)indexPath;
+- (void)setCellContentDataRoomsWithTime:(CheckoutToRoomsByTimeArrObj*)array withRow:(NSIndexPath*)indexPath;
 @end
