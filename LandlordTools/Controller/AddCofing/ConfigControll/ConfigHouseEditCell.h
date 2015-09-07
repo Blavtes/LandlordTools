@@ -35,7 +35,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *infoThree;
 
 @property (nonatomic, strong) FloorsByArrObj *data;
-@property (nonatomic, assign) NSIndexPath *indexPath;
+@property (nonatomic, strong) NSIndexPath *indexPath;
 
 
 - (void)setOneData:(ConfigEditHouseData*)datao andTwoData:(ConfigEditHouseData*)andTwoData andThreeData:(ConfigEditHouseData*)thData;

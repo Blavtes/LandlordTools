@@ -465,7 +465,7 @@
     }
    
     editCell.delegate = self;
-    NSLog(@"indexpth section %ld ",indexPath.section);
+    NSLog(@"indexpth section %d %d",indexPath.section,indexPath.row);
     return cell;
 }
 
