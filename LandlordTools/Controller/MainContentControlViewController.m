@@ -19,6 +19,7 @@
 #import <Masonry.h>
 #import "UIColor+Hexadecimal.h"
 #import "ConfigHouseEditCell.h"
+#import "AddFloorWaterDataViewControll.h"
 
 @interface MainContentControlViewController () <UITableViewDelegate,UITableViewDataSource,ConfigHouseEditDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *checkOutImageView;
@@ -472,6 +473,39 @@
 - (void)configRoomDataWithSection:(int)section andIndex:(int)index
 {
     NSLog(@"configRoomDataWithSection %d %d",section,index);
+    AddFloorWaterDataViewControll *vc = [[AddFloorWaterDataViewControll alloc] initCheckoutWaterWithCurrentBuild:_currentBuildData andCheckoutRoomObj:[((NSArray*)((CheckoutRoomsArrObj*)[ _waterArr objectAtIndex:section]).rooms) objectAtIndex:index]];
+     [self.navigationController pushViewController:vc animated:YES];
+    switch (_selectIndex) {
+        case RMTSelectIndexWater:
+        {
+
+        }
+            break;
+        case RMTSelectIndexElect:
+        {
+//            [vc checkoutWater];
+        }
+            break;
+        case RMTSelectIndexRent:
+        {
+            switch (_sortRentIndex) {
+                case RMTSortRentTime:
+                {
+//                    [vc checkoutWater];
+                }
+                    break;
+                case RMTSortRentFloor:
+                {
+//                    [vc checkoutWater];
+                }
+                default:
+                    break;
+            }
+        }
+        default:
+            break;
+    }
+   
 }
 
 

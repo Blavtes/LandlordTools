@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -31,13 +32,33 @@
                         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Prq-O6-xN0" userLabel="topView">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="js3-1O-YrM">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TfS-Qa-gjT">
                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                    <state key="normal" title="back">
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="TfS-Qa-gjT" secondAttribute="height" id="qmU-hH-xla"/>
+                                        <constraint firstAttribute="width" constant="9" id="tNg-4G-51y">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="60"/>
+                                        </constraint>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                    <state key="normal" title=" 返回" image="bt_back_balck">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="qmU-hH-xla"/>
+                                            <exclude reference="tNg-4G-51y"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="qmU-hH-xla"/>
+                                            <include reference="tNg-4G-51y"/>
+                                        </mask>
+                                    </variation>
                                     <connections>
-                                        <action selector="backClick:" destination="-1" eventType="touchUpInside" id="Qbb-MN-ktz"/>
+                                        <action selector="backClick:" destination="-1" eventType="touchUpInside" id="M5b-8g-Aqe"/>
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3i-B8-UBX">
@@ -48,7 +69,8 @@
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nP-D5-u9s">
                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                    <state key="normal" title="save">
+                                    <state key="normal" title="保存">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
@@ -58,57 +80,60 @@
                             </subviews>
                             <color key="backgroundColor" red="0.91372549020000005" green="0.74509803919999995" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstItem="js3-1O-YrM" firstAttribute="top" secondItem="Prq-O6-xN0" secondAttribute="top" constant="17" id="2vg-U4-dHf">
-                                    <variation key="widthClass=compact" constant="22"/>
+                                <constraint firstItem="TfS-Qa-gjT" firstAttribute="leading" secondItem="Prq-O6-xN0" secondAttribute="leading" constant="20" id="6bA-Cg-iOZ">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="5"/>
                                 </constraint>
-                                <constraint firstItem="js3-1O-YrM" firstAttribute="leading" secondItem="Prq-O6-xN0" secondAttribute="leading" constant="177" id="9Q1-9M-AFh">
-                                    <variation key="widthClass=compact" constant="10"/>
+                                <constraint firstItem="TfS-Qa-gjT" firstAttribute="top" secondItem="Prq-O6-xN0" secondAttribute="top" constant="20" id="ACw-ia-cHj">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="10"/>
                                 </constraint>
                                 <constraint firstAttribute="height" constant="64" id="JSq-4D-CSP"/>
-                                <constraint firstItem="o3i-B8-UBX" firstAttribute="centerY" secondItem="js3-1O-YrM" secondAttribute="centerY" constant="8.5" id="aAz-pC-Mcb">
-                                    <variation key="widthClass=compact" constant="0.0"/>
+                                <constraint firstItem="1nP-D5-u9s" firstAttribute="centerY" secondItem="TfS-Qa-gjT" secondAttribute="centerY" constant="-13" id="WU8-Ny-yE5">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                 </constraint>
-                                <constraint firstAttribute="centerY" secondItem="o3i-B8-UBX" secondAttribute="centerY" constant="-13.5" id="ftl-HX-jOW"/>
                                 <constraint firstAttribute="trailing" secondItem="1nP-D5-u9s" secondAttribute="trailing" constant="183" id="iac-7i-ihQ">
                                     <variation key="widthClass=compact" constant="20"/>
                                 </constraint>
-                                <constraint firstAttribute="centerX" secondItem="o3i-B8-UBX" secondAttribute="centerX" id="pPK-yO-eCq"/>
-                                <constraint firstItem="1nP-D5-u9s" firstAttribute="centerY" secondItem="js3-1O-YrM" secondAttribute="centerY" constant="-5" id="rXk-4W-Sks">
-                                    <variation key="widthClass=compact" constant="0.0"/>
+                                <constraint firstItem="o3i-B8-UBX" firstAttribute="centerY" secondItem="TfS-Qa-gjT" secondAttribute="centerY" constant="-12.75" id="kYq-3R-6t8">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                 </constraint>
+                                <constraint firstAttribute="centerX" secondItem="o3i-B8-UBX" secondAttribute="centerX" id="pPK-yO-eCq"/>
                             </constraints>
                             <variation key="default">
                                 <mask key="subviews">
-                                    <exclude reference="js3-1O-YrM"/>
+                                    <exclude reference="TfS-Qa-gjT"/>
                                     <exclude reference="o3i-B8-UBX"/>
                                     <exclude reference="1nP-D5-u9s"/>
                                 </mask>
                                 <mask key="constraints">
                                     <exclude reference="JSq-4D-CSP"/>
-                                    <exclude reference="aAz-pC-Mcb"/>
-                                    <exclude reference="ftl-HX-jOW"/>
+                                    <exclude reference="6bA-Cg-iOZ"/>
+                                    <exclude reference="ACw-ia-cHj"/>
+                                    <exclude reference="kYq-3R-6t8"/>
                                     <exclude reference="pPK-yO-eCq"/>
+                                    <exclude reference="WU8-Ny-yE5"/>
                                     <exclude reference="iac-7i-ihQ"/>
-                                    <exclude reference="rXk-4W-Sks"/>
-                                    <exclude reference="2vg-U4-dHf"/>
-                                    <exclude reference="9Q1-9M-AFh"/>
                                 </mask>
                             </variation>
                             <variation key="widthClass=compact">
                                 <mask key="subviews">
-                                    <include reference="js3-1O-YrM"/>
                                     <include reference="o3i-B8-UBX"/>
                                     <include reference="1nP-D5-u9s"/>
                                 </mask>
                                 <mask key="constraints">
                                     <include reference="JSq-4D-CSP"/>
-                                    <include reference="aAz-pC-Mcb"/>
-                                    <exclude reference="ftl-HX-jOW"/>
                                     <include reference="pPK-yO-eCq"/>
                                     <include reference="iac-7i-ihQ"/>
-                                    <include reference="rXk-4W-Sks"/>
-                                    <include reference="2vg-U4-dHf"/>
-                                    <include reference="9Q1-9M-AFh"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=regular-widthClass=compact">
+                                <mask key="subviews">
+                                    <include reference="TfS-Qa-gjT"/>
+                                </mask>
+                                <mask key="constraints">
+                                    <include reference="6bA-Cg-iOZ"/>
+                                    <include reference="ACw-ia-cHj"/>
+                                    <include reference="kYq-3R-6t8"/>
+                                    <include reference="WU8-Ny-yE5"/>
                                 </mask>
                             </variation>
                         </view>
@@ -812,4 +837,7 @@
             </variation>
         </view>
     </objects>
+    <resources>
+        <image name="bt_back_balck" width="12" height="18"/>
+    </resources>
 </document>

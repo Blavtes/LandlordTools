@@ -7,6 +7,11 @@
 //
 
 #import "AddFloorWaterDataViewControll.h"
+#import "RMTUserLogic.h"
+#import "RMTUserShareData.h"
+#import "RMTUtilityLogin.h"
+#import <Masonry.h>
+#import "UIColor+Hexadecimal.h"
 
 @interface AddFloorWaterDataViewControll () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -20,14 +25,34 @@
 
 @property (weak, nonatomic) IBOutlet UIView *notiVIew;
 
-
+@property (nonatomic, strong) AddBuildArrayData *buildData;
+@property (nonatomic, strong) CheckoutRoomObj *roomObj;
 @end
 
 @implementation AddFloorWaterDataViewControll
 
+- (instancetype)initCheckoutWaterWithCurrentBuild:(AddBuildArrayData *)build andCheckoutRoomObj:(CheckoutRoomObj *)roomObj
+{
+    if (self = [super init]) {
+        _buildData = build;
+        _roomObj = roomObj;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.titleLabel.text = _buildData.buildingName;
+    self.roomNumberLabel.text = _roomObj.number;
+    self.lastDataLabel.text = [NSString stringWithFormat:@"%.2f", _roomObj.preCount];
     // Do any additional setup after loading the view from its nib.
+}
+
+- (void)checkoutWaterWithCurrentBuild:(AddBuildArrayData*)build andCheckoutRoomObj:(CheckoutRoomObj *)roomObj
+{
+    NSLog(@"checkoutWater");
+    self.titleLabel.text = build.buildingName;
+    self.roomNumberLabel.text = roomObj.number;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,9 +77,7 @@
 }
 
 - (IBAction)backClick:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 
