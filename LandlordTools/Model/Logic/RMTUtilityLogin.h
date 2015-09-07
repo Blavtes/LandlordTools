@@ -165,18 +165,18 @@ typedef enum _RMTIsInit {
 //获取要抄电表的房间
 - (void)requestGetToCheckElectricCostRoomsWithLoginId:(NSString*)loginid
                                        withBuildingId:(int)buildingid
-                                             complete:(void (^)(NSError *error, CheckoutRoomsArrObj* obj))handler;
+                                             complete:(void (^)(NSError *error, CheckElectricCostRoomsObj* obj))handler;
 
 
 //获取要抄水表的房间
 - (void)requestGetToCheckWaterCostRoomsWithLoginId:(NSString*)loginId
                                     withBuildingId:(int)buildingid
-                                          complete:(void (^)(NSError *error, CheckoutRoomsArrObj* obj))handler;
+                                          complete:(void (^)(NSError *error, CheckElectricCostRoomsObj* obj))handler;
 
 //获取要交租的房间
 - (void)requestGetToPayRentCostRoomsWithLoginId:(NSString*)loginId
                                  withBuildingId:(int)buildingid
-                                       complete:(void (^)(NSError *error, CheckoutRoomsArrObj* obj))handler;
+                                       complete:(void (^)(NSError *error, CheckoutToPayRentCostRooms* obj))handler;
 
 //抄电表 数值
 
@@ -196,4 +196,24 @@ typedef enum _RMTIsInit {
                               withRoomId:(int)roomId
                                withCount:(float)payRentCost
                                 complete:(void (^)(NSError *error, BackOject* obj))handler;
+
+//入住房间
+
+- (void)requestCheckInWithLoginId:(NSString*)loginId
+                         withRoom:(RoomDescriptionObj*)room
+                         complete:(void (^)(NSError *error, BackOject* obj))handler;
+
+//退房
+- (void)requestCheckoutWithLoginId:(NSString*)loginId
+                          withRoom:(RoomDescriptionObj*)room
+                          complete:(void (^)(NSError *error, BackOject* obj))handler;
+
+//获取已租房间
+- (void)requestGetRentedRoomsWithLoginId:(NSString*)logindId
+                         withBuildingId:(NSString*)buildingId
+                               complete:(void (^)(NSError *error, FloorsByBuildingObj* obj))handler;
+//获取未出租房间
+- (void)requestGetNotRentedRoomsWithLoginId:(NSString*)logindId
+                             withBuildingId:(NSString*)buildingId
+                                   complete:(void (^)(NSError *error, FloorsByBuildingObj* obj))handler;
 @end

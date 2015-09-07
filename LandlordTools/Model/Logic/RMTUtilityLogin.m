@@ -793,7 +793,7 @@ static const NSString *kUCBaseUrl = @"http://112.74.26.14:8080/rentcloud";
 
 - (void)requestGetToCheckElectricCostRoomsWithLoginId:(NSString *)loginid
                                        withBuildingId:(int)buildingid
-                                             complete:(void (^)(NSError *, CheckoutRoomsArrObj *))handler
+                                             complete:(void (^)(NSError *, CheckElectricCostRoomsObj *))handler
 {
     NSMutableDictionary *dic = [NSMutableDictionary new];
     [dic setValue:loginid forKey:@"loginId"];
@@ -815,7 +815,7 @@ static const NSString *kUCBaseUrl = @"http://112.74.26.14:8080/rentcloud";
                                             return;
                                         }
                                         NSError *jsonError = nil;
-                                        CheckoutRoomsArrObj *data = [[CheckoutRoomsArrObj alloc] initWithDictionary:dic error:&jsonError];
+                                        CheckElectricCostRoomsObj *data = [[CheckElectricCostRoomsObj alloc] initWithDictionary:dic error:&jsonError];
                                         
                                         handler(jsonError,data);
                                         return;
@@ -824,7 +824,7 @@ static const NSString *kUCBaseUrl = @"http://112.74.26.14:8080/rentcloud";
 
 - (void)requestGetToCheckWaterCostRoomsWithLoginId:(NSString *)loginId
                                     withBuildingId:(int)buildingid
-                                          complete:(void (^)(NSError *, CheckoutRoomsArrObj *))handler
+                                          complete:(void (^)(NSError *, CheckElectricCostRoomsObj *))handler
 {
     NSMutableDictionary *dic = [NSMutableDictionary new];
     [dic setValue:loginId forKey:@"loginId"];
@@ -846,14 +846,16 @@ static const NSString *kUCBaseUrl = @"http://112.74.26.14:8080/rentcloud";
                                             return;
                                         }
                                         NSError *jsonError = nil;
-                                        CheckoutRoomsArrObj *data = [[CheckoutRoomsArrObj alloc] initWithDictionary:dic error:&jsonError];
+                                        CheckElectricCostRoomsObj *data = [[CheckElectricCostRoomsObj alloc] initWithDictionary:dic error:&jsonError];
                                         
                                         handler(jsonError,data);
                                         return;
                                     }];
 }
 
-- (void)requestGetToPayRentCostRoomsWithLoginId:(NSString *)loginId withBuildingId:(int)buildingid complete:(void (^)(NSError *, CheckoutRoomsArrObj *))handler
+- (void)requestGetToPayRentCostRoomsWithLoginId:(NSString *)loginId
+                                 withBuildingId:(int)buildingid
+                                       complete:(void (^)(NSError *, CheckoutToPayRentCostRooms *))handler
 {
     NSMutableDictionary *dic = [NSMutableDictionary new];
     [dic setValue:loginId forKey:@"loginId"];
@@ -875,7 +877,7 @@ static const NSString *kUCBaseUrl = @"http://112.74.26.14:8080/rentcloud";
                                             return;
                                         }
                                         NSError *jsonError = nil;
-                                        CheckoutRoomsArrObj *data = [[CheckoutRoomsArrObj alloc] initWithDictionary:dic error:&jsonError];
+                                        CheckoutToPayRentCostRooms *data = [[CheckoutToPayRentCostRooms alloc] initWithDictionary:dic error:&jsonError];
                                         
                                         handler(jsonError,data);
                                         return;
@@ -983,5 +985,153 @@ static const NSString *kUCBaseUrl = @"http://112.74.26.14:8080/rentcloud";
                                         return;
                                     }];
 }
+
+
+//入住
+- (void)requestCheckInWithLoginId:(NSString *)loginId
+                         withRoom:(RoomDescriptionObj *)room
+                         complete:(void (^)(NSError *, BackOject *))handler
+{
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    [dic setValue:loginId forKey:@"loginId"];
+    NSMutableDictionary *roomObj = [NSMutableDictionary dictionaryWithDictionary:@{@"id":@(room._id),
+                                                                                   @"deposit":@(room.deposit),
+                                                                                   @"electricCount":@(room.electricCount),
+                                                                                   @"electricPrice":@(room.electricPrice),
+                                                                                   @"waterCount":@(room.waterCount),
+                                                                                   @"waterPrice":@(room.waterPrice),
+                                                                                   @"rentCost":@(room.rentCost),
+                                                                                   @"broadbandCost":@(room.broadbandCost),
+                                                                                   @"othersCost":@(room.othersCost),
+                                                                                   @"payRentDay":@(room.payRentDay)}];
+    [dic setValue:roomObj forKey:@"room"];
+    
+    NSString *url = [NSString stringWithFormat:@"%@/room/checkIn", kUCBaseUrl];
+    NSDictionary *headerFields = [self getHTTPHeaderFields];
+    [[RMTURLSession sharedInstance] requestApiWithUrl:url
+                                           parameters:dic
+                               customHTTPHeaderFields:headerFields
+                                    completionHandler:^(NSError *error, NSDictionary *dic) {
+                                        if (error || !dic) {
+                                            NSLog(@"<%s : %d : %s> error:%@", __FILE__, __LINE__, __FUNCTION__, error);
+                                            NSDictionary *userInfo = @{NSLocalizedDescriptionKey: NSLocalizedString(@"网络错误", nil)};
+                                            NSError *customError = [NSError errorWithDomain:error.domain
+                                                                                       code:error.code
+                                                                                   userInfo:userInfo];
+                                            handler(customError,nil);
+                                            return;
+                                        }
+                                        NSError *jsonError = nil;
+                                        BackOject *data = [[BackOject alloc] initWithDictionary:dic error:&jsonError];
+                                        
+                                        handler(jsonError,data);
+                                        return;
+                                    }];
+}
+
+- (void)requestCheckoutWithLoginId:(NSString *)loginId
+                          withRoom:(RoomDescriptionObj *)room
+                          complete:(void (^)(NSError *, BackOject *))handler
+{
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    [dic setValue:loginId forKey:@"loginId"];
+    NSMutableDictionary *roomObj = [NSMutableDictionary dictionaryWithDictionary:@{@"id":@(room._id)}];
+    if (room.electricCount) {
+        [roomObj setObject:@(room.electricCount) forKey:@"waterCount"];
+    }
+    if (room.waterCount) {
+         [roomObj setObject:@(room.waterCount) forKey:@"electricCount"];
+    }
+    [dic setValue:roomObj forKey:@"room"];
+    
+    NSString *url = [NSString stringWithFormat:@"%@/room/checkOut", kUCBaseUrl];
+    NSDictionary *headerFields = [self getHTTPHeaderFields];
+    [[RMTURLSession sharedInstance] requestApiWithUrl:url
+                                           parameters:dic
+                               customHTTPHeaderFields:headerFields
+                                    completionHandler:^(NSError *error, NSDictionary *dic) {
+                                        if (error || !dic) {
+                                            NSLog(@"<%s : %d : %s> error:%@", __FILE__, __LINE__, __FUNCTION__, error);
+                                            NSDictionary *userInfo = @{NSLocalizedDescriptionKey: NSLocalizedString(@"网络错误", nil)};
+                                            NSError *customError = [NSError errorWithDomain:error.domain
+                                                                                       code:error.code
+                                                                                   userInfo:userInfo];
+                                            handler(customError,nil);
+                                            return;
+                                        }
+                                        NSError *jsonError = nil;
+                                        BackOject *data = [[BackOject alloc] initWithDictionary:dic error:&jsonError];
+                                        
+                                        handler(jsonError,data);
+                                        return;
+                                    }];
+}
+
+- (void)requestGetRentedRoomsWithLoginId:(NSString *)logindId
+                         withBuildingId:(NSString *)buildingId
+                               complete:(void (^)(NSError *, FloorsByBuildingObj *))handler
+
+{
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    [dic setValue:logindId forKey:@"loginId"];
+   
+    [dic setValue:buildingId forKey:@"buildingId"];
+    
+    NSString *url = [NSString stringWithFormat:@"%@/room/getRentedRooms", kUCBaseUrl];
+    NSDictionary *headerFields = [self getHTTPHeaderFields];
+    [[RMTURLSession sharedInstance] requestApiWithUrl:url
+                                           parameters:dic
+                               customHTTPHeaderFields:headerFields
+                                    completionHandler:^(NSError *error, NSDictionary *dic) {
+                                        if (error || !dic) {
+                                            NSLog(@"<%s : %d : %s> error:%@", __FILE__, __LINE__, __FUNCTION__, error);
+                                            NSDictionary *userInfo = @{NSLocalizedDescriptionKey: NSLocalizedString(@"网络错误", nil)};
+                                            NSError *customError = [NSError errorWithDomain:error.domain
+                                                                                       code:error.code
+                                                                                   userInfo:userInfo];
+                                            handler(customError,nil);
+                                            return;
+                                        }
+                                        NSError *jsonError = nil;
+                                        FloorsByBuildingObj *data = [[FloorsByBuildingObj alloc] initWithDictionary:dic error:&jsonError];
+                                        
+                                        handler(jsonError,data);
+                                        return;
+                                    }];
+}
+
+
+- (void)requestGetNotRentedRoomsWithLoginId:(NSString *)logindId
+                             withBuildingId:(NSString *)buildingId
+                                   complete:(void (^)(NSError *, FloorsByBuildingObj *))handler
+{
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    [dic setValue:logindId forKey:@"loginId"];
+    
+    [dic setValue:buildingId forKey:@"buildingId"];
+    
+    NSString *url = [NSString stringWithFormat:@"%@/room/getNotRentedRooms", kUCBaseUrl];
+    NSDictionary *headerFields = [self getHTTPHeaderFields];
+    [[RMTURLSession sharedInstance] requestApiWithUrl:url
+                                           parameters:dic
+                               customHTTPHeaderFields:headerFields
+                                    completionHandler:^(NSError *error, NSDictionary *dic) {
+                                        if (error || !dic) {
+                                            NSLog(@"<%s : %d : %s> error:%@", __FILE__, __LINE__, __FUNCTION__, error);
+                                            NSDictionary *userInfo = @{NSLocalizedDescriptionKey: NSLocalizedString(@"网络错误", nil)};
+                                            NSError *customError = [NSError errorWithDomain:error.domain
+                                                                                       code:error.code
+                                                                                   userInfo:userInfo];
+                                            handler(customError,nil);
+                                            return;
+                                        }
+                                        NSError *jsonError = nil;
+                                        FloorsByBuildingObj *data = [[FloorsByBuildingObj alloc] initWithDictionary:dic error:&jsonError];
+                                        
+                                        handler(jsonError,data);
+                                        return;
+                                    }];
+}
+
 
 @end

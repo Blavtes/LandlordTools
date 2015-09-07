@@ -183,5 +183,41 @@
     return YES;
 }
 
+@end
 
+
+@implementation CheckoutToPayRentCostRooms
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
+@end
+
+@implementation CheckoutToRoomsByTimeArrObj
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
+@end
+
+@implementation CheckoutToRoomsByTimeObj
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
++(JSONKeyMapper*)keyMapper
+{
+    return [[JSONKeyMapper alloc] initWithDictionary:@{@"id": @"_id"}];
+}
+@end
+
+@implementation CheckoutToRoomsByFloorArrObj
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
++(JSONKeyMapper*)keyMapper
+{
+    return [[JSONKeyMapper alloc] initWithDictionary:@{@"id": @"_id"}];
+}
 @end

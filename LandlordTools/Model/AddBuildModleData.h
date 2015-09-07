@@ -124,6 +124,7 @@
 @property (nonatomic, strong) NSString *payRentDayStr; //交租日字符串
 @property (nonatomic, assign) int isPayRent;
 @property (nonatomic, assign) int isInit;
+@property (nonatomic, assign) float arrearage; //以住欠费
 @end
 
 @protocol RoomDescriptionObj <NSObject>
@@ -146,11 +147,12 @@
 
 @end
 
-
+@protocol CheckoutRoomObj <NSObject>
+@end
 @interface CheckoutRoomsArrObj : JSONModel
 @property (nonatomic, assign) int _id; //楼层id
 @property (nonatomic, assign) int count;//楼层
-@property (nonatomic, strong) CheckoutRoomObj *room;
+@property (nonatomic, strong) NSArray<CheckoutRoomObj,Optional>*rooms;
 
 
 @end
@@ -161,6 +163,42 @@
 @interface CheckElectricCostRoomsObj : JSONModel
 @property (nonatomic, assign) int code;
 @property (nonatomic, strong) NSString *message;
-@property (nonatomic, strong) CheckoutRoomsArrObj *room;
+@property (nonatomic, strong) NSArray<CheckoutRoomsArrObj,Optional> *floors;
 
 @end
+
+
+#pragma mark --- PayRent ----
+
+@protocol CheckoutToRoomsByTimeObj <NSObject>
+@end
+@interface CheckoutToRoomsByFloorArrObj : JSONModel
+@property (nonatomic, assign) int count;
+@property (nonatomic, assign) int _id;
+@property (nonatomic, strong) NSArray<CheckoutToRoomsByTimeObj, Optional> *rooms;
+@end
+
+@interface CheckoutToRoomsByTimeObj : JSONModel
+@property (nonatomic, assign) int _id;
+@property (nonatomic, strong) NSString *number;
+@property (nonatomic, strong) NSString *date;
+@property (nonatomic, assign) int overTime;
+@end
+
+
+@interface CheckoutToRoomsByTimeArrObj : JSONModel
+@property (nonatomic, strong) NSString *date;
+@property (nonatomic, strong) NSArray<CheckoutToRoomsByTimeObj, Optional> *rooms;
+@end
+
+@protocol CheckoutToRoomsByTimeArrObj <NSObject>
+@end
+@protocol  CheckoutToRoomsByFloorArrObj <NSObject>
+@end
+@interface CheckoutToPayRentCostRooms : JSONModel
+@property (nonatomic, assign) int code;
+@property (nonatomic, strong) NSString *message;
+@property (nonatomic, strong) NSArray<CheckoutToRoomsByFloorArrObj, Optional> *roomsByFloor;
+@property (nonatomic, strong) NSArray<CheckoutToRoomsByTimeArrObj, Optional> *roomsByTime;
+@end
+#pragma mark --- PayRent  end----
