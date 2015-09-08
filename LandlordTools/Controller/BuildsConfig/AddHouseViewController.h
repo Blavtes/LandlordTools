@@ -10,5 +10,6 @@
 
 @interface AddHouseViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic ,assign) int userCheckoutType; //初始化，入住，退房
 - (instancetype)initWithEdit:(BOOL)edit;
 @end

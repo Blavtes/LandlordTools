@@ -185,7 +185,9 @@
         AddBuildArrayData * buildid = [_buildArr objectAtIndex:indexPath.section];
         AddRoomViewController *vc = [[AddRoomViewController alloc] init];
         vc.buildingData = buildid;
+        vc.userCheckoutType = _userCheckoutType;
         [self.navigationController pushViewController:vc animated:YES];
+        
     }
      [_tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

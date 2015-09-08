@@ -29,7 +29,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *threeTextField;
 @property (weak, nonatomic) IBOutlet UIView *stepperView;
 @property (nonatomic, strong) FloorsByArrObj *data;
-@property (nonatomic, assign) NSIndexPath *indexPath;
+@property (nonatomic, strong) NSIndexPath *indexPath;
 
 @property (weak, nonatomic) IBOutlet UILabel *lineLable;
 

@@ -11,4 +11,5 @@
 
 @interface AddRoomViewController : UIViewController
 @property (nonatomic, strong) AddBuildArrayData *buildingData;
+@property (nonatomic, assign) int userCheckoutType;
 @end

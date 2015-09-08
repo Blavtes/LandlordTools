@@ -679,6 +679,7 @@
         vc.roomDataObj = room;
         vc.isConfigMode = YES;
         vc.buildingData = _buildingData;
+        vc.userCheckoutType = _userCheckoutType;
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

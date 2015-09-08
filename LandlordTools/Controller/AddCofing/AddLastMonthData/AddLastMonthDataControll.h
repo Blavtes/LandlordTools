@@ -14,5 +14,6 @@
 @property (nonatomic, assign) BOOL isConfigMode;
 @property (nonatomic, strong) RoomsByArrObj *roomDataObj;
 @property (nonatomic, strong) AddBuildArrayData *buildingData;
+@property (nonatomic, assign) int userCheckoutType;
 
 @end

@@ -80,6 +80,12 @@ typedef enum _RMTSortRent {
     RMTSortRentFloor = 2 // 按楼层排序
 }RMTSortRent;
 
+typedef enum _RMTUserRoomType {
+    RMTUserRoomTypeInit = 1, // init
+    RMTUserRoomTypeLogIn = 2, // 入住
+    RMTUserRoomTypeLogOut = 3 //退房
+}RMTUserRoomType;
+
 @interface RMTUtilityLogin : NSObject
 
 

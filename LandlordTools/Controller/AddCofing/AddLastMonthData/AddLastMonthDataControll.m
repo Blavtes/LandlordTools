@@ -262,11 +262,34 @@
     } else if (_roomConfigData.room.payRentDay == -1) {
         _notiLabel.text = @"请选择交租日期";
     } else {
-        [[RMTUtilityLogin sharedInstance] requestEditRoomWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
-                                                            withRoom:_roomConfigData.room
-                                                            complete:^(NSError *error, BackOject *obj) {
-                                                                NSLog(@"save obj %@",obj);
-        }];
+        switch (_userCheckoutType) {
+            case RMTUserRoomTypeInit:
+            {
+                [[RMTUtilityLogin sharedInstance] requestEditRoomWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
+                                                                    withRoom:_roomConfigData.room
+                                                                    complete:^(NSError *error, BackOject *obj) {
+                                                                        NSLog(@"save init obj %@",obj);
+                                                                    }];
+            }
+                break;
+            case RMTUserRoomTypeLogIn:
+            {
+                [[RMTUtilityLogin sharedInstance] requestCheckInWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId] withRoom:_roomConfigData.room complete:^(NSError *error, BackOject *obj) {
+                    NSLog(@"save login %@",obj);
+                }];
+            }
+                break;
+            case RMTUserRoomTypeLogOut:
+            {
+                [[RMTUtilityLogin sharedInstance] requestCheckoutWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId] withRoom:_roomConfigData.room complete:^(NSError *error, BackOject *obj) {
+                     NSLog(@"save logout %@",obj);
+                }];
+            }
+                break;
+            default:
+                break;
+        }
+     
     }
     NSLog(@"saveClick %@",_buildingData);
 }
