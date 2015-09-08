@@ -669,7 +669,7 @@ static const NSString *kUCBaseUrl = @"http://112.74.26.14:8080/rentcloud";
 }
 
 
-- (void)requestEditFloorsWithLoginId:(NSString *)loginId withBuildindId:(int)buildid withFloors:(NSArray *)floors complete:(void (^)(NSError *, BackOject *))handler
+- (void)requestEditFloorsWithLoginId:(NSString *)loginId withBuildindId:(int)buildid withFloors:(NSArray *)floors complete:(void (^)(NSError *, EditFloorsBackObj *))handler
 {
     NSMutableDictionary *dic = [NSMutableDictionary new];
     [dic setValue:loginId forKey:@"loginId"];
@@ -715,7 +715,7 @@ static const NSString *kUCBaseUrl = @"http://112.74.26.14:8080/rentcloud";
                                             return;
                                         }
                                         NSError *jsonError = nil;
-                                        BackOject *data = [[BackOject alloc] initWithDictionary:dic error:&jsonError];
+                                        EditFloorsBackObj *data = [[EditFloorsBackObj alloc] initWithDictionary:dic error:&jsonError];
                                         
                                         handler(jsonError,data);
                                         return;

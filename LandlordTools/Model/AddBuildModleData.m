@@ -58,6 +58,44 @@
 
 @end
 
+#pragma mark ---editfloor
+
+@implementation EditBackRoomsObj
+
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
++(JSONKeyMapper*)keyMapper
+{
+    return [[JSONKeyMapper alloc] initWithDictionary:@{@"id": @"_id"}];
+}
+
+
+@end
+
+@implementation EditFloorBackObj
+
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
++(JSONKeyMapper*)keyMapper
+{
+    return [[JSONKeyMapper alloc] initWithDictionary:@{@"id": @"_id"}];
+}
+
+@end
+
+@implementation EditFloorsBackObj
+
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
+@end
+
+#pragma mark ---editfloor end--
 @implementation BackOject
 +(BOOL)propertyIsOptional:(NSString*)propertyName
 {

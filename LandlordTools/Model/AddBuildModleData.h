@@ -106,6 +106,32 @@
 @property (nonatomic, strong) NSArray <EditFloorsByArrModle,Optional> *floors;
 @end
 
+#pragma mark --edit floors
+
+@interface EditBackRoomsObj : JSONModel
+@property (nonatomic, assign) int _id;
+@property (nonatomic, assign) int tmpId;
+
+@end
+@protocol EditBackRoomsObj <NSObject>
+@end
+@interface EditFloorBackObj : JSONModel
+@property (nonatomic, assign) int _id;
+@property (nonatomic, assign) int tmpId;
+@property (nonatomic, strong) NSArray <EditBackRoomsObj,Optional> *rooms;
+@end
+
+@protocol EditFloorBackObj <NSObject>
+@end
+@interface EditFloorsBackObj : JSONModel
+@property (nonatomic, assign) int code;
+@property (nonatomic, strong) NSString *message;
+@property (nonatomic, strong) NSArray <EditFloorBackObj,Optional> *floors;
+
+@end
+
+
+
 //根据id获取房间详情
 @interface RoomDescriptionObj : JSONModel
 @property (nonatomic, assign) int _id;

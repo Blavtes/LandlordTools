@@ -396,7 +396,7 @@
         [[RMTUtilityLogin sharedInstance] requestEditFloorsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
                                                         withBuildindId:_buildingData._id
                                                             withFloors:floos
-                                                              complete:^(NSError *error, BackOject *obj) {
+                                                              complete:^(NSError *error, EditFloorsBackObj *obj) {
                                                                   NSLog(@"add  obj %d %@",obj.code, obj.message);;
                                                                   if (obj.code == RMTRequestBackCodeFailure) {
                                                                       [_sectionArr addObject:floos];
@@ -480,7 +480,7 @@
         [[RMTUtilityLogin sharedInstance] requestEditFloorsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
                                                         withBuildindId:_buildingData._id
                                                             withFloors:floos
-                                                              complete:^(NSError *error, BackOject *obj) {
+                                                              complete:^(NSError *error, EditFloorsBackObj *obj) {
                                                                   NSLog(@"obj %d %@",obj.code, obj.message);
                                                                   
                                                                   if (obj.code == RMTRequestBackCodeFailure) {
@@ -542,7 +542,7 @@
         [[RMTUtilityLogin sharedInstance] requestEditFloorsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
                                                         withBuildindId:_buildingData._id
                                                             withFloors:floos
-                                                              complete:^(NSError *error, BackOject *obj) {
+                                                              complete:^(NSError *error, EditFloorsBackObj *obj) {
                                                                   NSLog(@"deletedBuildindsWithSection %d %@",obj.code, obj.message);
                                                                   
                                                                   if (obj.code == RMTRequestBackCodeFailure) {
@@ -594,7 +594,7 @@
         [[RMTUtilityLogin sharedInstance] requestEditFloorsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
                                                         withBuildindId:_buildingData._id
                                                             withFloors:floos
-                                                              complete:^(NSError *error, BackOject *obj) {
+                                                              complete:^(NSError *error, EditFloorsBackObj *obj) {
                                                                   NSLog(@"obj %d %@",obj.code, obj.message);
                                                                   
                                                                   if (obj.code == RMTRequestBackCodeFailure) {
@@ -647,7 +647,10 @@
     [self showHUDView];
     __weak __typeof(&*self)weakSelf = self;
     if ([[RMTUtilityLogin sharedInstance] getLogId]) {
-        [[RMTUtilityLogin sharedInstance] requestEditFloorsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId] withBuildindId:_buildingData._id withFloors:floos complete:^(NSError *error, BackOject *obj) {
+        [[RMTUtilityLogin sharedInstance] requestEditFloorsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
+                                                        withBuildindId:_buildingData._id
+                                                            withFloors:floos
+                                                              complete:^(NSError *error, EditFloorsBackObj *obj) {
             NSLog(@"obj %d %@",obj.code, obj.message);
             
             if (obj.code == RMTRequestBackCodeFailure) {

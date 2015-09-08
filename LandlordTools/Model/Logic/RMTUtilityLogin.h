@@ -168,7 +168,7 @@ typedef enum _RMTSortRent {
 - (void)requestEditFloorsWithLoginId:(NSString*)loginId
                       withBuildindId:(int)buildid
                           withFloors:(NSArray*) floors
-                            complete:(void (^)(NSError *error, BackOject* obj))handler;
+                            complete:(void (^)(NSError *error, EditFloorsBackObj* obj))handler;
 
 //根据id获取房间详情
 - (void)requestGetRoomByRoomId:(int)roomId

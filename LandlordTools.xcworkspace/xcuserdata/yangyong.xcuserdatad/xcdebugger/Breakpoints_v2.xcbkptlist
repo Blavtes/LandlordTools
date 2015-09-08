@@ -302,7 +302,7 @@
                   moduleName = "LandlordTools"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yangyong/Documents/WorkPlace/work/LandlordTools/LandlordTools/Controller/BuildsConfig/RoomConfig/AddRoomViewController.m"
-                  timestampString = "463369129.424675"
+                  timestampString = "463371377.382317"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "305"
@@ -317,7 +317,7 @@
                   moduleName = "LandlordTools"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yangyong/Documents/WorkPlace/work/LandlordTools/LandlordTools/Controller/BuildsConfig/RoomConfig/AddRoomViewController.m"
-                  timestampString = "463369129.424777"
+                  timestampString = "463371377.382421"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "305"
@@ -834,6 +834,54 @@
             startingLineNumber = "89"
             endingLineNumber = "89"
             landmarkName = "-textFieldDidEndEditing:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LandlordTools/Controller/AddCofing/AddLastMonthData/AddLastMonthDataControll.m"
+            timestampString = "463370824.346117"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LandlordTools/Controller/AddCofing/AddLastMonthData/AddLastMonthDataControll.m"
+            timestampString = "463370983.069672"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LandlordTools/Model/Logic/RMTUtilityLogin.m"
+            timestampString = "463371066.466667"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "748"
+            endingLineNumber = "748"
+            landmarkName = "-requestGetRoomByRoomId:withLoginId:complete:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
