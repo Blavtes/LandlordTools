@@ -262,8 +262,10 @@
     } else if (_roomConfigData.room.payRentDay == -1) {
         _notiLabel.text = @"请选择交租日期";
     } else {
-        [[RMTUtilityLogin sharedInstance] requestEditRoomWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId] withRoom:_roomConfigData.room complete:^(NSError *error, BackOject *obj) {
-            
+        [[RMTUtilityLogin sharedInstance] requestEditRoomWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
+                                                            withRoom:_roomConfigData.room
+                                                            complete:^(NSError *error, BackOject *obj) {
+                                                                NSLog(@"save obj %@",obj);
         }];
     }
     NSLog(@"saveClick %@",_buildingData);

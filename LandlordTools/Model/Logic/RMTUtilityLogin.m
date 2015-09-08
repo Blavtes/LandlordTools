@@ -477,60 +477,7 @@ static const NSString *kUCBaseUrl = @"http://112.74.26.14:8080/rentcloud";
 
 - (NSString *)getErrorMessageWithErrorCode:(NSInteger)code
 {
-   
-    if (code == 20002) {
-        return @"邮箱不正确，请重新输入";
-    }
-    if (code == 20003) {
-        return @"该手机号已注册，请直接登录";
-    }
-    if (code == 20004) {
-        return @"手机号不正确，请重新输入";
-    }
-    if (code == 20005) {
-        return @"两次密码不一致，请重新输入";
-    }
-    if (code == 20006) {
-        return @"短信验证码错误，请重新输入";
-    }
-    if (code == 20007) {
-        return @"邮件认证超时，请重新注册";
-    }
-    if (code == 20008) {
-        return @"验证码输入错误，请重新输入";
-    }
-    if (code == 20009) {
-        return @"账号或密码有误，请重新输入";
-    }
 
-    if (code == 0) {
-        return @"该手机号未注册或不存在，请输入正确的手机号";
-    }
-    if (code == 20013) {
-        return @"密码输入不正确";
-    }
-    if (code == 20014) {
-        return @"短信验证码失效，请重新发送验证码";
-    }
-    if (code == 20015) {
-        return @"上传图像错误";
-    }
-    if (code == 20016) {
-        return @"不合法的图像格式";
-    }
-    if (code == 20017) {
-        return @"超过上传文件大小限制";
-    }
-    if (code == 20018) {
-        return @"账号没有被激活";
-    }
-    if (code == 26001) {
-        return @"短信发送频率过高";
-    }
-    if (code == 26002) {
-        return @"短信发送失败，请稍后重新发送";
-    }
-    
     return @"未知错误";
 }
 
@@ -752,7 +699,9 @@ static const NSString *kUCBaseUrl = @"http://112.74.26.14:8080/rentcloud";
 }
 
 
-- (void)requestEditRoomWithLoginId:(NSString *)loginId withRoom:(RoomDescriptionObj *)room complete:(void (^)(NSError *, BackOject *))handler
+- (void)requestEditRoomWithLoginId:(NSString *)loginId
+                          withRoom:(RoomDescriptionObj *)room
+                          complete:(void (^)(NSError *, BackOject *))handler
 {
     NSMutableDictionary *dic = [NSMutableDictionary new];
     [dic setValue:loginId forKey:@"loginId"];
