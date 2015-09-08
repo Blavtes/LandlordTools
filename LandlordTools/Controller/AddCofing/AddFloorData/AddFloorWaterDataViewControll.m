@@ -27,22 +27,34 @@
 
 @property (nonatomic, strong) AddBuildArrayData *buildData;
 @property (nonatomic, strong) CheckoutRoomObj *roomObj;
+@property (nonatomic, strong) NSMutableArray *floors;
+@property (nonatomic, assign) int floorSection;
+@property (nonatomic, assign) int roomIndex;
 @end
 
 @implementation AddFloorWaterDataViewControll
 
-- (instancetype)initCheckoutWaterWithCurrentBuild:(AddBuildArrayData *)build andCheckoutRoomObj:(CheckoutRoomObj *)roomObj
+- (instancetype)initCheckoutWaterWithCurrentBuild:(AddBuildArrayData *)build
+                              andCheckoutRoomsObj:(NSArray *)rooms
+                                    andFloorIndex:(int)floorSe
+                                     andRoomIndex:(int)roomindex
 {
     if (self = [super init]) {
         _buildData = build;
-        _roomObj = roomObj;
+        _floors = [NSMutableArray arrayWithCapacity:0];
+        [_floors addObjectsFromArray:rooms];
+//        _roomObj = roomObj;
+        _floorSection = floorSe;
+        _roomIndex = roomindex;
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _currentDataTextField.delegate = self;
     self.titleLabel.text = _buildData.buildingName;
+    _roomObj = [((CheckoutRoomsArrObj*)[_floors objectAtIndex:_floorSection]).rooms objectAtIndex:_roomIndex];
     self.roomNumberLabel.text = _roomObj.number;
     self.lastDataLabel.text = [NSString stringWithFormat:@"%.2f", _roomObj.preCount];
     // Do any additional setup after loading the view from its nib.
@@ -74,6 +86,8 @@
 {
     //chekcout noti label
     // count
+    _currentUseDataLabel.text = [NSString stringWithFormat:@"%f",[textField.text floatValue] - _roomObj.preCount];
+    _currentMonyLabel.text = [NSString stringWithFormat:@"%f",([textField.text floatValue] - _roomObj.preCount) * _roomObj.price];
 }
 
 - (IBAction)backClick:(id)sender {
@@ -82,6 +96,10 @@
 
 
 - (IBAction)saveClick:(id)sender {
+    
+    [[RMTUtilityLogin sharedInstance] requestCheckWaterCostWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId] withRoomId:_roomObj._id withCount:[_currentDataTextField.text floatValue] complete:^(NSError *error, BackOject *obj) {
+        NSLog(@"obj %@",obj);
+    }];
 }
 
 

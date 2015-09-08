@@ -251,7 +251,7 @@
                                                                                     [_waterArr addObjectsFromArray:obj.floors];
                                                                                     [_roomTableView reloadData];
                                                                                 }
-                                                                                NSLog(@"obj %@",obj);
+                                                                                NSLog(@"water obj %@",obj);
         }];
     }
 
@@ -272,7 +272,7 @@
         [[RMTUtilityLogin sharedInstance] requestGetToCheckElectricCostRoomsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
                                                                          withBuildingId:_currentBuildData._id
                                                                                complete:^(NSError *error, CheckElectricCostRoomsObj *obj) {
-                                                                                   NSLog(@"obj %@",obj);
+                                                                                   NSLog(@"elect obj %@",obj);
                                                                                    if (obj.code == RMTRequestBackCodeSucceed) {
                                                                                        [_elericArr removeAllObjects];
                                                                                        [_elericArr addObjectsFromArray:obj.floors];
@@ -298,7 +298,7 @@
         [[RMTUtilityLogin sharedInstance] requestGetToPayRentCostRoomsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
                                                                    withBuildingId:_currentBuildData._id
                                                                          complete:^(NSError *error, CheckoutToPayRentCostRooms *obj) {
-                                                                             NSLog(@"obj %@",obj);
+                                                                             NSLog(@"rent obj %@",obj);
                                                                              if (obj.code == RMTRequestBackCodeSucceed) {
                                                                                  [_rentArrTime removeAllObjects];
                                                                                  [_rentArrFloor removeAllObjects];
@@ -473,7 +473,9 @@
 - (void)configRoomDataWithSection:(int)section andIndex:(int)index
 {
     NSLog(@"configRoomDataWithSection %d %d",section,index);
-    AddFloorWaterDataViewControll *vc = [[AddFloorWaterDataViewControll alloc] initCheckoutWaterWithCurrentBuild:_currentBuildData andCheckoutRoomObj:[((NSArray*)((CheckoutRoomsArrObj*)[ _waterArr objectAtIndex:section]).rooms) objectAtIndex:index]];
+    AddFloorWaterDataViewControll *vc = [[AddFloorWaterDataViewControll alloc]
+                                         initCheckoutWaterWithCurrentBuild:_currentBuildData
+                                         andCheckoutRoomsObj:_waterArr andFloorIndex:section andRoomIndex:index];
      [self.navigationController pushViewController:vc animated:YES];
     switch (_selectIndex) {
         case RMTSelectIndexWater:

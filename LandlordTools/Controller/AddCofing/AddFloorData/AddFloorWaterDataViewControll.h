@@ -11,6 +11,6 @@
 #import "AddBuildModleData.h"
 
 @interface AddFloorWaterDataViewControll : UIViewController
-- (instancetype)initCheckoutWaterWithCurrentBuild:(AddBuildArrayData*)build andCheckoutRoomObj:(CheckoutRoomObj*)roomObj;
+- (instancetype)initCheckoutWaterWithCurrentBuild:(AddBuildArrayData*)build andCheckoutRoomsObj:(NSArray*)roomsObj andFloorIndex:(int)floor andRoomIndex:(int)roomindex;
 - (void)checkoutWaterWithCurrentBuild:(AddBuildArrayData*)build andCheckoutRoomObj:(CheckoutRoomObj*)roomObj;
 @end
