@@ -33,11 +33,12 @@
 @property (weak, nonatomic) IBOutlet UITableView *titleTableView;
 @property (weak, nonatomic) IBOutlet UIView *titleTableListView;
 @property (weak, nonatomic) IBOutlet UIView *titleView;
-@property (weak, nonatomic) IBOutlet UILabel *titleLable;
+@property (weak, nonatomic) IBOutlet UIButton *titleLable;
 @property (weak, nonatomic) IBOutlet UITableView *roomTableView;
 
 @property (weak, nonatomic) IBOutlet UIView *addBuildView;
 @property (weak, nonatomic) IBOutlet UIButton *sortRentBt;
+@property (weak, nonatomic) IBOutlet UILabel *loginLable;
 
 @property (nonatomic, assign) int selectIndex;
 @property (nonatomic, assign) int sortRentIndex;
@@ -97,7 +98,7 @@
                                                                   complete:^(NSError *error, AddBuildModleData *obj) {
                                                                       if (obj.buildings.count >0) {
                                                                           weakSelf.arrBuildModleData = obj;
-                                                                          _titleLable.text = ((AddBuildArrayData*)[_arrBuildModleData.buildings firstObject]).buildingName;
+                                                                          [_titleLable setTitle: ((AddBuildArrayData*)[_arrBuildModleData.buildings firstObject]).buildingName forState:UIControlStateNormal];
                                                                           _titleView.hidden = NO;
 //                                                                          _addBuildView.hidden = YES;
                                                                       } else {
@@ -129,7 +130,8 @@
     _sortRentIndex = RMTSortRentFloor;
     if (_addBuildView.isHidden) {
         _selectIndex = 1;
-
+        [_waterBt setImage:[UIImage imageNamed:@"icon_water_on"] forState:UIControlStateNormal];
+        [_waterBt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     } else {
         _selectIndex = 3;
         [self checkoutImageViewFrame:_rentBt];
@@ -216,10 +218,15 @@
 //    [self presentLeftMenuViewController:self];
     
     [self checkoutMenuViewFrame:0];
+    _loginLable.text = [[RMTUtilityLogin sharedInstance] getUserData].mobile;
 }
 
 - (void)checkoutImageViewFrame:(id)sender
 {
+    if ([[RMTUtilityLogin sharedInstance] getLogId]) {
+        _titleTableListView.hidden = YES;
+        _titleView.hidden = NO;
+    }
     [_waterBt setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_rentBt setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_elericBt setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -289,6 +296,7 @@
 
 - (IBAction)getRentClick:(id)sender
 {
+    
     _selectIndex = RMTSelectIndexRent;
     [self checkoutImageViewFrame:sender];
     _sortRentBt.hidden = NO;
@@ -333,6 +341,7 @@
 
 
 - (IBAction)goinClick:(id)sender {
+    
       [self checkoutMenuViewFrame:-_menuView.frame.size.width];
     AddHouseViewController *vc = [[AddHouseViewController alloc] initWithEdit:NO];
     vc.userCheckoutType = RMTUserRoomTypeLogIn;
@@ -415,7 +424,7 @@
 {
     if (tableView == _titleTableView) {
         self.currentBuildData = ((AddBuildArrayData*)[_arrBuildModleData.buildings objectAtIndex:indexPath.row]);
-        _titleLable.text = _currentBuildData.buildingName;
+        [_titleLable setTitle: _currentBuildData.buildingName forState:UIControlStateNormal];
         _titleTableListView.hidden = YES;
         _titleView.hidden = NO;
         
@@ -525,10 +534,10 @@
 - (IBAction)sortRentClick:(id)sender {
     if (_selectIndex == RMTSortRentFloor) {
         _selectIndex = RMTSortRentTime;
-        [_sortRentBt setTitle:@"按楼层" forState:UIControlStateNormal];
+        [_sortRentBt setTitle:@"楼层" forState:UIControlStateNormal];
     } else {
         _selectIndex = RMTSortRentFloor;
-        [_sortRentBt setTitle:@"按时间" forState:UIControlStateNormal];
+        [_sortRentBt setTitle:@"时间" forState:UIControlStateNormal];
     }
 }
 

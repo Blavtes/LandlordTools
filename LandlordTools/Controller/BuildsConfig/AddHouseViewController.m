@@ -46,6 +46,19 @@
     [super viewDidLoad];
 //    _isEdit = YES;
     _editBt.enabled = !_isEdit;
+    if (_isEdit) {
+
+        _editBt.hidden = YES;
+        _saveBt.hidden = NO;
+        _editBt.enabled = NO;
+        _saveBt.enabled = YES;
+    } else {
+
+        _editBt.hidden = NO;
+        _saveBt.hidden = YES;
+        _editBt.enabled = YES;
+        _saveBt.enabled = NO;
+    }
     UINib* nib1 = [UINib nibWithNibName:@"AddHouseViewCell" bundle:[NSBundle mainBundle]];
     [_tableView registerNib:nib1 forCellReuseIdentifier:@"AddHouseViewCell"];
     

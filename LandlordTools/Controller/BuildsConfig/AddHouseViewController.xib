@@ -57,9 +57,9 @@
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hd4-pH-KYP">
                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <state key="normal" title="保存">
-                                        <color key="titleColor" red="0.59607843140000005" green="0.59607843140000005" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
@@ -68,13 +68,13 @@
                                 </button>
                                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGN-Kt-xxE">
                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <state key="normal" title="编辑">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
                                         <action selector="editClick:" destination="-1" eventType="touchUpInside" id="k78-o4-REI"/>
-                                        <action selector="saveClick:" destination="-1" eventType="touchUpInside" id="vNc-t8-Src"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -88,7 +88,10 @@
                                 </constraint>
                                 <constraint firstAttribute="trailing" secondItem="f97-hO-3Xs" secondAttribute="trailing" constant="335" id="aAA-ss-hPw"/>
                                 <constraint firstItem="f97-hO-3Xs" firstAttribute="top" secondItem="HED-VB-FuK" secondAttribute="top" constant="17" id="fSw-Ib-1mW">
-                                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                                    <variation key="heightClass=regular-widthClass=compact" constant="10"/>
+                                </constraint>
+                                <constraint firstItem="f97-hO-3Xs" firstAttribute="centerY" secondItem="Hd4-pH-KYP" secondAttribute="centerY" constant="-6.5" id="g1l-zh-mgU">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                 </constraint>
                                 <constraint firstAttribute="height" id="kHN-dc-YIF">
                                     <variation key="heightClass=regular-widthClass=compact" constant="64"/>
@@ -101,7 +104,7 @@
                                 </constraint>
                                 <constraint firstItem="sGN-Kt-xxE" firstAttribute="width" secondItem="Hd4-pH-KYP" secondAttribute="height" multiplier="34:33" id="r9d-Pt-qvs"/>
                                 <constraint firstItem="f97-hO-3Xs" firstAttribute="leading" secondItem="HED-VB-FuK" secondAttribute="leading" constant="19" id="tAT-l1-BPz">
-                                    <variation key="heightClass=regular-widthClass=compact" constant="4"/>
+                                    <variation key="heightClass=regular-widthClass=compact" constant="5"/>
                                 </constraint>
                             </constraints>
                             <variation key="default">
@@ -112,11 +115,12 @@
                                 </mask>
                                 <mask key="constraints">
                                     <exclude reference="kHN-dc-YIF"/>
-                                    <exclude reference="802-pA-VxT"/>
-                                    <exclude reference="mYz-eK-dLq"/>
                                     <exclude reference="aAA-ss-hPw"/>
                                     <exclude reference="fSw-Ib-1mW"/>
+                                    <exclude reference="g1l-zh-mgU"/>
                                     <exclude reference="tAT-l1-BPz"/>
+                                    <exclude reference="802-pA-VxT"/>
+                                    <exclude reference="mYz-eK-dLq"/>
                                     <exclude reference="Na9-eV-l18"/>
                                     <exclude reference="pBU-W1-2Pn"/>
                                     <exclude reference="r9d-Pt-qvs"/>
@@ -130,11 +134,12 @@
                                 </mask>
                                 <mask key="constraints">
                                     <include reference="kHN-dc-YIF"/>
-                                    <include reference="802-pA-VxT"/>
-                                    <include reference="mYz-eK-dLq"/>
                                     <exclude reference="aAA-ss-hPw"/>
                                     <include reference="fSw-Ib-1mW"/>
+                                    <include reference="g1l-zh-mgU"/>
                                     <include reference="tAT-l1-BPz"/>
+                                    <include reference="802-pA-VxT"/>
+                                    <exclude reference="mYz-eK-dLq"/>
                                     <include reference="Na9-eV-l18"/>
                                     <include reference="pBU-W1-2Pn"/>
                                     <include reference="r9d-Pt-qvs"/>

@@ -12,11 +12,12 @@
                 <outlet property="checkOutImageView" destination="oOW-bs-9F3" id="eNG-ya-umw"/>
                 <outlet property="elericBt" destination="YXS-zt-sg8" id="ehU-0d-qWs"/>
                 <outlet property="loginBt" destination="3kL-aG-WVx" id="gI1-La-k1w"/>
+                <outlet property="loginLable" destination="BqG-XL-QRA" id="LzY-A6-QKp"/>
                 <outlet property="menuView" destination="MGk-Yg-caH" id="Wud-9W-D0Y"/>
                 <outlet property="rentBt" destination="q2P-xN-mlc" id="d9B-Xy-c5V"/>
                 <outlet property="roomTableView" destination="2VD-ld-VGa" id="lPV-mB-hFs"/>
                 <outlet property="sortRentBt" destination="isD-rh-c2g" id="PZb-RW-Gqd"/>
-                <outlet property="titleLable" destination="YkK-mb-tp4" id="qF9-xH-Rf2"/>
+                <outlet property="titleLable" destination="bWI-dv-V6G" id="IO6-qg-uAf"/>
                 <outlet property="titleTableListView" destination="x9V-eu-ehY" id="sZx-9A-1Nn"/>
                 <outlet property="titleTableView" destination="0CF-ta-NQq" id="81Y-DN-6gU"/>
                 <outlet property="titleView" destination="xJ4-N6-Qgu" id="8cA-92-tJf"/>
@@ -231,23 +232,46 @@
                                                 <action selector="CheckoutBuildsClick:" destination="-1" eventType="touchUpInside" id="BRj-1y-wyF"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的花样年华A座afafas" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkK-mb-tp4">
-                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.24313725489999999" green="0.24313725489999999" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWI-dv-V6G" userLabel="tit">
+                                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="157" id="CGs-7f-a40">
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="160"/>
+                                                </constraint>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <state key="normal">
+                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="CGs-7f-a40"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="CGs-7f-a40"/>
+                                                </mask>
+                                            </variation>
+                                            <connections>
+                                                <action selector="CheckoutBuildsClick:" destination="-1" eventType="touchUpInside" id="If1-cN-78G"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
+                                        <constraint firstItem="kmc-HR-ksL" firstAttribute="leading" secondItem="bWI-dv-V6G" secondAttribute="trailing" constant="52" id="2mI-9b-t3t">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="5"/>
+                                        </constraint>
                                         <constraint firstAttribute="trailing" secondItem="kmc-HR-ksL" secondAttribute="trailing" constant="46" id="6Bw-LF-aek">
                                             <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                         </constraint>
-                                        <constraint firstItem="YkK-mb-tp4" firstAttribute="leading" secondItem="xJ4-N6-Qgu" secondAttribute="leading" id="CxJ-R6-pm5"/>
-                                        <constraint firstItem="kmc-HR-ksL" firstAttribute="leading" secondItem="YkK-mb-tp4" secondAttribute="trailing" constant="2.5" id="PdF-ld-dWJ">
-                                            <variation key="heightClass=regular-widthClass=compact" constant="2"/>
+                                        <constraint firstItem="kmc-HR-ksL" firstAttribute="centerY" secondItem="bWI-dv-V6G" secondAttribute="centerY" constant="12" id="Xg5-FP-CrE">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                         </constraint>
-                                        <constraint firstAttribute="bottom" secondItem="YkK-mb-tp4" secondAttribute="bottom" constant="11.5" id="fhq-Wd-ji3">
+                                        <constraint firstItem="kmc-HR-ksL" firstAttribute="bottom" secondItem="bWI-dv-V6G" secondAttribute="bottom" constant="12" id="hGe-Fd-s1O">
                                             <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                         </constraint>
                                         <constraint firstAttribute="bottom" secondItem="kmc-HR-ksL" secondAttribute="bottom" constant="-0.5" id="yeR-dl-WcP">
@@ -257,26 +281,26 @@
                                     <variation key="default">
                                         <mask key="subviews">
                                             <exclude reference="kmc-HR-ksL"/>
-                                            <exclude reference="YkK-mb-tp4"/>
+                                            <exclude reference="bWI-dv-V6G"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <exclude reference="CxJ-R6-pm5"/>
-                                            <exclude reference="fhq-Wd-ji3"/>
+                                            <exclude reference="2mI-9b-t3t"/>
                                             <exclude reference="6Bw-LF-aek"/>
-                                            <exclude reference="PdF-ld-dWJ"/>
+                                            <exclude reference="Xg5-FP-CrE"/>
+                                            <exclude reference="hGe-Fd-s1O"/>
                                             <exclude reference="yeR-dl-WcP"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
                                         <mask key="subviews">
                                             <include reference="kmc-HR-ksL"/>
-                                            <include reference="YkK-mb-tp4"/>
+                                            <include reference="bWI-dv-V6G"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <include reference="CxJ-R6-pm5"/>
-                                            <include reference="fhq-Wd-ji3"/>
+                                            <include reference="2mI-9b-t3t"/>
                                             <include reference="6Bw-LF-aek"/>
-                                            <include reference="PdF-ld-dWJ"/>
+                                            <include reference="Xg5-FP-CrE"/>
+                                            <include reference="hGe-Fd-s1O"/>
                                             <include reference="yeR-dl-WcP"/>
                                         </mask>
                                     </variation>
@@ -467,12 +491,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                     <color key="backgroundColor" red="0.24313725489999999" green="0.24313725489999999" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
-                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isD-rh-c2g">
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isD-rh-c2g">
                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                    <state key="normal" title="排序">
-                                        <color key="titleColor" red="0.74509803919999995" green="0.74117647060000003" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
+                                    <state key="normal" title="时间" backgroundImage="rentno"/>
                                     <connections>
                                         <action selector="sortRentClick:" destination="-1" eventType="touchUpInside" id="6sz-Lz-TV6"/>
                                     </connections>
@@ -487,6 +508,7 @@
                                                 <constraint firstAttribute="width" constant="74" id="1tT-EP-rQg"/>
                                             </constraints>
                                             <state key="normal" title="添加房产 +">
+                                                <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <variation key="default">
@@ -1042,6 +1064,7 @@
         <image name="icon_ammeter_on" width="45" height="45"/>
         <image name="icon_water_off" width="45" height="45"/>
         <image name="icon_water_on" width="45" height="45"/>
+        <image name="rentno" width="60" height="36"/>
         <image name="roomManageicon1" width="19" height="24"/>
         <image name="show" width="14" height="8"/>
     </resources>
