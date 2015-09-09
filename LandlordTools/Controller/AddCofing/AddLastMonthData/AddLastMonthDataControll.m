@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *messageImageView;
 @property (weak, nonatomic) IBOutlet UIButton *lastMothBt;
 @property (weak, nonatomic) IBOutlet UIButton *nextMothBt;
+@property (weak, nonatomic) IBOutlet UIButton *saveBt;
 
 @property (nonatomic, assign) BOOL isSelectDay; // 选择日期
 
@@ -42,6 +43,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    switch (_userCheckoutType) {
+        case RMTUserRoomTypeInit:
+        {
+            [_saveBt setTitle:@"保存" forState:UIControlStateNormal];
+        }
+            break;
+        case RMTUserRoomTypeLogIn:
+        {
+            [_saveBt setTitle:@"入住" forState:UIControlStateNormal];
+        }
+            break;
+        case RMTUserRoomTypeLogOut:
+        {
+            [_saveBt setTitle:@"退房" forState:UIControlStateNormal];
+        }
+            break;
+        default:
+            break;
+    }
     _titleLabel.text = _roomDataObj.number;
     _everyMothLabel.text = [NSString stringWithFormat:@"8月%d号",_buildingData.payRentDay];
     _notiLabel.text = @"请添加上个月的数据";
@@ -303,6 +323,8 @@
             {
                 [[RMTUtilityLogin sharedInstance] requestCheckInWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId] withRoom:_roomConfigData.room complete:^(NSError *error, BackOject *obj) {
                     NSLog(@"save login %@",obj);
+                    [_saveBt setTitle:@" 已入住" forState:UIControlStateNormal];
+                    
                 }];
             }
                 break;
