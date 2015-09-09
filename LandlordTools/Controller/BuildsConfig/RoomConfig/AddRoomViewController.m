@@ -216,6 +216,14 @@
     return ((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:section]).rooms).count / 3  + (((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:section]).rooms).count % 3 == 0 ? 1 :1) + row;
 }
 
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+        UIView *view = [UIView new];
+        [view setFrame:CGRectMake(0, 0, self.view.frame.size.width, 1)];
+        [view setBackgroundColor:[UIColor colorWithHex:kBackGroundColorStr]];
+        return view;
+}
+
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = nil;
@@ -261,7 +269,7 @@
             [lab mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.centerY.mas_equalTo(btn.mas_centerY);
                 make.left.mas_equalTo(btn.mas_right).with.offset(-8);
-                make.right.mas_equalTo(cell.mas_right).with.offset(-30.0f);
+                make.right.mas_equalTo(cell.mas_right).with.offset(-20.0f);
                 make.height.mas_equalTo(1.0f);
             }];
         } else {
@@ -288,7 +296,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [_tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    [_tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 }
 
 - (void)addBuildingsDta:(id)sender
@@ -681,7 +691,7 @@
     if (floors && index < floors.rooms.count) {
         RoomsByArrObj *room = [floors.rooms objectAtIndex:index];
       
-        if (_userCheckoutType == RMTUserRoomTypeLogIn) {
+        if (_userCheckoutType == RMTUserRoomTypeLogIn ) {
             if (room.isInit == RMTIsInitNot) {
                 AddLastMonthDataControll *vc = [[AddLastMonthDataControll alloc] init];
                 vc.roomDataObj = room;
@@ -699,7 +709,7 @@
                                                                                                                     andType:RMTSelectIndexWater];
                 [self.navigationController pushViewController:vc animated:YES];
             }
-        } else if (_userCheckoutType == RMTUserRoomTypeInit) {
+        } else if (_userCheckoutType == RMTUserRoomTypeInit || _userCheckoutType == RMTUserRoomTypeManage) {
             AddLastMonthDataControll *vc = [[AddLastMonthDataControll alloc] init];
             vc.roomDataObj = room;
             

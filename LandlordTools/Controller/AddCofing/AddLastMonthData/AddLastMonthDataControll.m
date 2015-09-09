@@ -43,6 +43,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+     _notiLabel.text = @"请添加上个月的数据";
+    _payRentStatusBt.hidden     = _isConfigMode;
+    _messageImageView.hidden    = _isConfigMode;
+    _lastMothBt.hidden          = _isConfigMode;
+    _nextMothBt.hidden          = _isConfigMode;
+    _notiLabel.hidden           = !_isConfigMode;
+    
     switch (_userCheckoutType) {
         case RMTUserRoomTypeInit:
         {
@@ -59,12 +66,26 @@
             [_saveBt setTitle:@"退房" forState:UIControlStateNormal];
         }
             break;
+        case RMTUserRoomTypeManage:
+        {
+            [_saveBt setTitle:@"保存" forState:UIControlStateNormal];
+            if (_roomDataObj.isInit == RMTIsInitNot) {
+                _notiLabel.hidden = NO;
+                
+            } else {
+                _notiLabel.hidden = NO;
+                _notiLabel.text = [NSString stringWithFormat:@"¥%.2f",_roomConfigData.room.deposit + _roomConfigData.room.broadbandCost
+                                   + _roomConfigData.room.othersCost + _roomConfigData.room.rentCost];
+                _payRentStatusBt.hidden = NO;
+            }
+            break;
+        }
         default:
             break;
     }
     _titleLabel.text = _roomDataObj.number;
     _everyMothLabel.text = [NSString stringWithFormat:@"8月%d号",_buildingData.payRentDay];
-    _notiLabel.text = @"请添加上个月的数据";
+   
     UINib* nib = [UINib nibWithNibName:kLastMothDataTableViewCellIdentifier bundle:[NSBundle mainBundle]];
     [_tableView registerNib:nib forCellReuseIdentifier:kLastMothDataTableViewCellIdentifier];
     nib = [UINib nibWithNibName:kLastMothWaterTableViewCellIdentifier bundle:[NSBundle mainBundle]];
@@ -92,11 +113,7 @@
                                                         }
                                                        
     }];
-    _payRentStatusBt.hidden     = _isConfigMode;
-    _messageImageView.hidden    = _isConfigMode;
-    _lastMothBt.hidden          = _isConfigMode;
-    _nextMothBt.hidden          = _isConfigMode;
-    _notiLabel.hidden           = !_isConfigMode;
+  
     
 }
 

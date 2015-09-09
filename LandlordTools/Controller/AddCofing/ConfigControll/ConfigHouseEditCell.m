@@ -67,7 +67,7 @@
         RoomsByArrObj *obj =  [array.rooms objectAtIndex:indexPath.row * 3];
         [self.oneBt setTitle:obj.number forState:UIControlStateNormal];
         self.oneBt.tag = (indexPath.section +1)* 10000 + indexPath.row *3;
-        NSLog(@"romt one %ld",indexPath.row*3);
+        NSLog(@"romt one %ld %@",indexPath.row*3,obj);
         self.oneBt.hidden = NO;
         if (obj.isInit != RMTIsInitNot) {
             _infoOne.hidden = YES;

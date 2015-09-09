@@ -335,7 +335,7 @@
 - (IBAction)managerCheckoutClicked:(id)sender {
       [self checkoutMenuViewFrame:-_menuView.frame.size.width];
     AddHouseViewController *vc = [[AddHouseViewController alloc] initWithEdit:NO];
-    vc.userCheckoutType = RMTUserRoomTypeInit;
+    vc.userCheckoutType = RMTUserRoomTypeManage;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

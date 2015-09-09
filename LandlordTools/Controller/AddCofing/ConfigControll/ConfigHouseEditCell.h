@@ -29,10 +29,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *twoBt;
 @property (weak, nonatomic) IBOutlet UIButton *threeBt;
 
-@property (weak, nonatomic) IBOutlet UILabel *infoOne;
+@property (weak, nonatomic) IBOutlet UIButton *infoOne;
 
-@property (weak, nonatomic) IBOutlet UILabel *infoTwo;
-@property (weak, nonatomic) IBOutlet UILabel *infoThree;
+@property (weak, nonatomic) IBOutlet UIButton *infoTwo;
+@property (weak, nonatomic) IBOutlet UIButton *infoThree;
 
 @property (nonatomic, strong) FloorsByArrObj *data;
 @property (nonatomic, strong) NSIndexPath *indexPath;
