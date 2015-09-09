@@ -904,14 +904,16 @@ static const NSString *kUCBaseUrl = @"http://112.74.26.14:8080/rentcloud";
 }
 //交房租
 - (void)requestPayRentCostWithLoginId:(NSString*)loginId
-                           withRoomId:(int)roomId
-                            withCount:(float)payRentCost
+                            withCostCount:(RoomDescriptionObj*)payRentCost
                              complete:(void (^)(NSError *error, BackOject* obj))handler
 {
     NSMutableDictionary *dic = [NSMutableDictionary new];
     [dic setValue:loginId forKey:@"loginId"];
-    [dic setValue:@(roomId) forKey:@"roomId"];
-    
+    NSMutableDictionary *roomObj = [NSMutableDictionary dictionaryWithDictionary:@{@"id":@(payRentCost._id),
+                                                                                   @"electricCount":@(payRentCost.electricCount),
+                                                                                   @"waterCount":@(payRentCost.waterCount)}];
+    [dic setValue:roomObj forKey:@"room"];
+
     NSString *url = [NSString stringWithFormat:@"%@/rent/payRentCost", kUCBaseUrl];
     NSDictionary *headerFields = [self getHTTPHeaderFields];
     [[RMTURLSession sharedInstance] requestApiWithUrl:url

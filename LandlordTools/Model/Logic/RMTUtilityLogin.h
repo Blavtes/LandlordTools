@@ -64,6 +64,7 @@ typedef enum _RMTIsInit {
 
 
 typedef enum _RMTSelectIndex {
+    RMTSelectIndexError = -1,
     RMTSelectIndexWater = 1, // water
     RMTSelectIndexElect = 2, // elect
     RMTSelectIndexRent = 3 // rent
@@ -217,8 +218,7 @@ typedef enum _RMTUserRoomType {
                                    complete:(void (^)(NSError *error, BackOject* obj))handler;
 //交房租
 - (void)requestPayRentCostWithLoginId:(NSString*)loginId
-                              withRoomId:(int)roomId
-                               withCount:(float)payRentCost
+                               withCostCount:(RoomDescriptionObj*)payRentCost
                                 complete:(void (^)(NSError *error, BackOject* obj))handler;
 
 //入住房间

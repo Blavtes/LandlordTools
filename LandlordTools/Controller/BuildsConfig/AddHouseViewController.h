@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RMTUtilityLogin.h"
 
 @interface AddHouseViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic ,assign) int userCheckoutType; //初始化，入住，退房
+@property (nonatomic ,assign) RMTUserRoomType userCheckoutType; //初始化，入住，退房
 - (instancetype)initWithEdit:(BOOL)edit;
 @end

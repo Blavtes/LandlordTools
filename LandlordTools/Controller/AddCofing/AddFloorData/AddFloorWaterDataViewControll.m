@@ -12,6 +12,8 @@
 #import "RMTUtilityLogin.h"
 #import <Masonry.h>
 #import "UIColor+Hexadecimal.h"
+#import "AddLastMonthDataControll.h"
+
 
 @interface AddFloorWaterDataViewControll () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -30,6 +32,7 @@
 @property (nonatomic, strong) NSMutableArray *floors;
 @property (nonatomic, assign) int floorSection;
 @property (nonatomic, assign) int roomIndex;
+@property (nonatomic, assign) RMTSelectIndex selectType;
 @end
 
 @implementation AddFloorWaterDataViewControll
@@ -46,6 +49,24 @@
 //        _roomObj = roomObj;
         _floorSection = floorSe;
         _roomIndex = roomindex;
+        _selectType = RMTSelectIndexError;
+    }
+    return self;
+}
+
+
+- (instancetype)initCheckoutDataWithCurrentBuild:(AddBuildArrayData *)build
+                              andCheckoutRoomObj:(CheckoutRoomObj *)roomObj
+                                         andType:(RMTSelectIndex)selec
+{
+    if (self = [super init]) {
+        _buildData = build;
+        _floors = [NSMutableArray arrayWithCapacity:0];
+        [_floors addObject:roomObj];
+        //        _roomObj = roomObj;
+        _floorSection = 0;
+        _roomIndex = 0;
+        _selectType = selec;
     }
     return self;
 }
@@ -54,7 +75,12 @@
     [super viewDidLoad];
     _currentDataTextField.delegate = self;
     self.titleLabel.text = _buildData.buildingName;
-    _roomObj = [((CheckoutRoomsArrObj*)[_floors objectAtIndex:_floorSection]).rooms objectAtIndex:_roomIndex];
+    if (_selectType == RMTSelectIndexError) {
+        _roomObj = [((CheckoutRoomsArrObj*)[_floors objectAtIndex:_floorSection]).rooms objectAtIndex:_roomIndex];
+    } else {
+        _roomObj = (CheckoutRoomObj*) [_floors objectAtIndex:0];
+    }
+  
     self.roomNumberLabel.text = _roomObj.number;
     self.lastDataLabel.text = [NSString stringWithFormat:@"%.2f", _roomObj.preCount];
     // Do any additional setup after loading the view from its nib.
@@ -86,8 +112,14 @@
 {
     //chekcout noti label
     // count
-    _currentUseDataLabel.text = [NSString stringWithFormat:@"%f",[textField.text floatValue] - _roomObj.preCount];
-    _currentMonyLabel.text = [NSString stringWithFormat:@"%f",([textField.text floatValue] - _roomObj.preCount) * _roomObj.price];
+    if (_selectType == RMTSelectIndexWater) {
+        _currentUseDataLabel.text = [NSString stringWithFormat:@"%.2f(吨)",[textField.text floatValue] - _roomObj.preCount];
+        _currentMonyLabel.text = [NSString stringWithFormat:@"%.2f(元)",([textField.text floatValue] - _roomObj.preCount) * _buildData.waterPrice];
+    } else if (_selectType == RMTSelectIndexElect) {
+        _currentUseDataLabel.text = [NSString stringWithFormat:@"%.2f(度)",[textField.text floatValue] - _roomObj.preCount];
+        _currentMonyLabel.text = [NSString stringWithFormat:@"%.2f(元)",([textField.text floatValue] - _roomObj.preCount) * _buildData.electricPrice];
+    }
+ 
 }
 
 - (IBAction)backClick:(id)sender {
@@ -96,10 +128,45 @@
 
 
 - (IBAction)saveClick:(id)sender {
-    
-    [[RMTUtilityLogin sharedInstance] requestCheckWaterCostWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId] withRoomId:_roomObj._id withCount:[_currentDataTextField.text floatValue] complete:^(NSError *error, BackOject *obj) {
-        NSLog(@"obj %@",obj);
-    }];
+    if (_selectType == RMTSelectIndexError) {
+        [[RMTUtilityLogin sharedInstance] requestCheckWaterCostWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
+                                                                withRoomId:_roomObj._id
+                                                                 withCount:[_currentDataTextField.text floatValue]
+                                                                  complete:^(NSError *error, BackOject *obj) {
+            NSLog(@"obj CheckWaterCost %@",obj);
+            if (obj.code == RMTRequestBackCodeSucceed) {
+                
+            }
+        }];
+    } else if (_selectType == RMTSelectIndexWater) {
+        [[RMTUtilityLogin sharedInstance] requestCheckWaterCostWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
+                                                                withRoomId:_roomObj._id
+                                                                 withCount:[_currentDataTextField.text floatValue]
+                                                                  complete:^(NSError *error, BackOject *obj) {
+            NSLog(@"objtCheckWater %@",obj);
+            if (obj.code == RMTRequestBackCodeSucceed) {
+                _selectType = RMTSelectIndexElect;
+            }
+        }];
+    } else if (_selectType == RMTSelectIndexElect){
+        [[RMTUtilityLogin sharedInstance] requestCheckElectricCostWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
+                                                                   withRoomId:_roomObj._id
+                                                                    withCount:[_currentDataTextField.text floatValue]
+                                                                     complete:^(NSError *error, BackOject *obj) {
+            NSLog(@"objCheckElectric %@",obj);
+            if (obj.code == RMTRequestBackCodeSucceed) {
+                AddLastMonthDataControll *vc = [[AddLastMonthDataControll alloc] init];
+                vc.userCheckoutType = RMTUserRoomTypeLogIn;
+                vc.roomDataObj = [RoomsByArrObj new];
+                vc.roomDataObj._id = _roomObj._id;
+                vc.roomDataObj.number = _roomObj.number;
+                vc.roomDataObj.isInit = RMTIsInitDo;
+                vc.buildingData = _buildData;
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+        }];
+    }
+   
 }
 
 

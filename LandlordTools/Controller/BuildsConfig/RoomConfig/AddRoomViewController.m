@@ -18,6 +18,7 @@
 #import "ConfigHouseEditCell.h"
 #import "RMTLoginEnterViewController.h"
 #import "AddLastMonthDataControll.h"
+#import "AddFloorWaterDataViewControll.h"
 
 @interface AddRoomViewController () <UITableViewDelegate,UITableViewDataSource,AddBuildRoomsDelegate,ConfigHouseEditDelegate>
 
@@ -42,6 +43,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if (_userCheckoutType != RMTUserRoomTypeInit) {
+        _isSaveRoom = YES;
+        [_saveBt setTitle:@"编辑" forState:UIControlStateNormal];
+    }
     _titleLable.text = _buildingData.buildingName;
     _roomsArr = [NSMutableArray arrayWithCapacity:0];
     _sectionArr = [NSMutableArray arrayWithCapacity:0];
@@ -675,12 +680,35 @@
     FloorsByArrObj *floors =  [_sectionArr objectAtIndex:section];
     if (floors && index < floors.rooms.count) {
         RoomsByArrObj *room = [floors.rooms objectAtIndex:index];
-        AddLastMonthDataControll *vc = [[AddLastMonthDataControll alloc] init];
-        vc.roomDataObj = room;
-        vc.isConfigMode = YES;
-        vc.buildingData = _buildingData;
-        vc.userCheckoutType = _userCheckoutType;
-        [self.navigationController pushViewController:vc animated:YES];
+      
+        if (_userCheckoutType == RMTUserRoomTypeLogIn) {
+            if (room.isInit == RMTIsInitNot) {
+                AddLastMonthDataControll *vc = [[AddLastMonthDataControll alloc] init];
+                vc.roomDataObj = room;
+                
+                vc.buildingData = _buildingData;
+                vc.isConfigMode = YES;
+                vc.userCheckoutType = _userCheckoutType;
+                [self.navigationController pushViewController:vc animated:YES];
+            } else if (room.isInit == RMTIsInitDo) {
+                CheckoutRoomObj *obj = [CheckoutRoomObj new];
+                obj.number = room.number;
+                obj._id = room._id;
+                AddFloorWaterDataViewControll *vc = [[AddFloorWaterDataViewControll alloc] initCheckoutDataWithCurrentBuild:_buildingData
+                                                                                                         andCheckoutRoomObj:obj
+                                                                                                                    andType:RMTSelectIndexWater];
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+        } else if (_userCheckoutType == RMTUserRoomTypeInit) {
+            AddLastMonthDataControll *vc = [[AddLastMonthDataControll alloc] init];
+            vc.roomDataObj = room;
+            
+            vc.buildingData = _buildingData;
+            vc.isConfigMode = YES;
+            vc.userCheckoutType = _userCheckoutType;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+       
     }
 }
 

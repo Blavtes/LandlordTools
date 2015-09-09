@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "RMTUtilityLogin.h"
 #import "AddBuildModleData.h"
 
 @interface AddLastMonthDataControll : UIViewController
 @property (nonatomic, assign) BOOL isConfigMode;
 @property (nonatomic, strong) RoomsByArrObj *roomDataObj;
 @property (nonatomic, strong) AddBuildArrayData *buildingData;
-@property (nonatomic, assign) int userCheckoutType;
+@property (nonatomic, assign) RMTUserRoomType userCheckoutType;
 
 @end

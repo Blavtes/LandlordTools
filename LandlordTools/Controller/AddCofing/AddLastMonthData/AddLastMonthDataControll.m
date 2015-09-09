@@ -58,8 +58,19 @@
     [[RMTUtilityLogin sharedInstance] requestGetRoomByRoomId:_roomDataObj._id
                                                  withLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
                                                     complete:^(NSError *error, RoomByIdObj *obj) {
-                                                        _roomConfigData = obj;
-                                                        [self reloadArrayData];
+                                                        if (obj.code == RMTRequestBackCodeSucceed) {
+                                                            _roomConfigData = obj;
+                                                            if (_roomConfigData.room.isPayRent == RMTIsPayRentNot) {
+                                                                [_payRentStatusBt setTitle:@"未交" forState:UIControlStateNormal];
+                                                            }
+                                                            [self reloadArrayData];
+                                                            if (_userCheckoutType == RMTUserRoomTypeLogIn) {
+                                                                _notiLabel.hidden = NO;
+                                                                _notiLabel.text = [NSString stringWithFormat:@"¥%.2f",_roomConfigData.room.deposit + _roomConfigData.room.broadbandCost
+                                                                                   + _roomConfigData.room.othersCost + _roomConfigData.room.rentCost];
+                                                            }
+                                                        }
+                                                       
     }];
     _payRentStatusBt.hidden     = _isConfigMode;
     _messageImageView.hidden    = _isConfigMode;
@@ -211,6 +222,20 @@
  
 }
 
+- (IBAction)payRentClick:(id)sender {
+    if (_roomConfigData.room.isPayRent == RMTIsPayRentNot) {
+        [[RMTUtilityLogin sharedInstance] requestPayRentCostWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
+                                                          withCostCount:_roomConfigData.room
+                                                               complete:^(NSError *error, BackOject *obj) {
+                                                                   if (obj.code == RMTRequestBackCodeSucceed) {
+                                                                       _roomConfigData.room.isPayRent = RMTIsInitDo;
+                                                                       [_payRentStatusBt setTitle:@"已交" forState:UIControlStateNormal];
+                                                                   }
+       }];
+    }
+}
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == _dataArr.count -1) {
@@ -256,6 +281,8 @@
 
 - (IBAction)saveClick:(id)sender
 {
+    //是否入住。
+#pragma mark -- wwaring add is goin.---
     if (_roomConfigData.room.rentCost == 0 || _roomConfigData.room.deposit == 0) {
         _notiLabel.text = @"房租、押金必填哦~";
         
