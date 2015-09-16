@@ -349,6 +349,7 @@
             {
                 [[RMTUtilityLogin sharedInstance] requestCheckoutWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId] withRoom:_roomConfigData.room complete:^(NSError *error, BackOject *obj) {
                      NSLog(@"save logout %@",obj);
+                      [_saveBt setTitle:@" 已退房" forState:UIControlStateNormal];
                 }];
             }
                 break;

@@ -156,7 +156,7 @@
             NSLog(@"objCheckElectric %@",obj);
             if (obj.code == RMTRequestBackCodeSucceed) {
                 AddLastMonthDataControll *vc = [[AddLastMonthDataControll alloc] init];
-                vc.userCheckoutType = RMTUserRoomTypeLogIn;
+                vc.userCheckoutType = _userCheckoutType;
                 vc.roomDataObj = [RoomsByArrObj new];
                 vc.roomDataObj._id = _roomObj._id;
                 vc.roomDataObj.number = _roomObj.number;

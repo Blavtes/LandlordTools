@@ -65,10 +65,10 @@
         
         self.stepperView.hidden = YES;
         self.deletedBt.hidden = YES;
-        self.lineLable.hidden = YES;
+//        self.lineLable.hidden = YES;
     } else {
         self.stepperView.tag = (indexPath.section +1) + 100;
-        self.lineLable.hidden = NO;
+//        self.lineLable.hidden = NO;
         self.stepperView.hidden = NO;
         self.deletedBt.hidden = NO;
     }

@@ -330,6 +330,10 @@
 
 - (IBAction)managerClick:(id)sender {
       [self checkoutMenuViewFrame:-_menuView.frame.size.width];
+    if ([[RMTUtilityLogin sharedInstance] getLogId]) {
+        _titleTableListView.hidden = YES;
+        _titleView.hidden = NO;
+    }
 }
 
 - (IBAction)managerCheckoutClicked:(id)sender {

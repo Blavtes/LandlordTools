@@ -12,6 +12,8 @@
 #import "RMTUtilityLogin.h"
 
 @interface AddFloorWaterDataViewControll : UIViewController
+@property (nonatomic, assign) RMTUserRoomType userCheckoutType;
+
 - (instancetype)initCheckoutWaterWithCurrentBuild:(AddBuildArrayData*)build andCheckoutRoomsObj:(NSArray*)roomsObj andFloorIndex:(int)floor andRoomIndex:(int)roomindex;
 - (void)checkoutWaterWithCurrentBuild:(AddBuildArrayData*)build andCheckoutRoomObj:(CheckoutRoomObj*)roomObj;
 - (instancetype)initCheckoutDataWithCurrentBuild:(AddBuildArrayData*)build andCheckoutRoomObj:(CheckoutRoomObj*)roomObj andType:(RMTSelectIndex)selec;

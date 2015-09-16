@@ -57,7 +57,7 @@
     UINib *nib2 = [UINib nibWithNibName:KConfigRoomCellIdentifier bundle:[NSBundle mainBundle]];
     [_tableView registerNib:nib2 forCellReuseIdentifier:KConfigRoomCellIdentifier];
     
-    [_tableView reloadData];
+//    [_tableView reloadData];
     [self showHUDView];
     [self reloadBuildings];
 }
@@ -65,7 +65,10 @@
 
 - (void)reloadSectionArr
 {
-    if ([_roomsArr count] == 0) {
+//    if (_isSaveRoom) {
+//        return;
+//    }
+    if ([_roomsArr count] == 0 && !_isSaveRoom) {
         [_sectionArr addObject:kSpaceStr];
         NSLog(@"reload null");
         return;
@@ -73,7 +76,7 @@
     
     
     FloorsByArrObj *one = [_roomsArr firstObject];
-    if (one.count != 1) {
+    if (one.count != 1 && !_isSaveRoom ) {
         [_sectionArr addObject:kSpaceStr];
         
     }
@@ -82,8 +85,10 @@
         FloorsByArrObj *current = [_roomsArr objectAtIndex:i];
         FloorsByArrObj *last = [_roomsArr objectAtIndex:i-1];
         if (current.count - last.count > 1) {
-            
-            [_sectionArr addObject:kSpaceStr];
+            if (!_isSaveRoom) {
+                 [_sectionArr addObject:kSpaceStr];
+            }
+           
             [_sectionArr addObject:current];
         } else {
             [_sectionArr addObject:current];
@@ -121,18 +126,21 @@
                                                            complete:^(NSError *error, FloorsByBuildingObj *obj) {
                                                                if (obj.code == RMTRequestBackCodeSucceed || obj.code == RMTRequestBackCodeFailure) {
                                                                    if (obj.floors.count == 0) {
-                                                                       
+                                                                       [weakSelf addBuildingsDta:nil];
+                                                                       [weakSelf hideHUDView];
                                                                    } else {
                                                                        [_roomsArr addObjectsFromArray:obj.floors];
                                                                        [weakSelf sortRoomArr];
+                                                                       [weakSelf reloadSectionArr];
+                                                                       [weakSelf hideHUDView];
                                                                    }
                                                                    NSLog(@"obj %@",obj);
                                                                    
                                                                    
-                                                                   [weakSelf reloadSectionArr];
+                                                                   
                                                                    [_tableView reloadData];
                                                                }
-                                                               [weakSelf hideHUDView];
+                                                               
                                                                NSLog(@"requestGetFloorsBy floors count %ld",obj.floors.count);
                                                            }];
     
@@ -195,7 +203,12 @@
     //        return 1;
     //
     if (_isSaveRoom) {
-        return ((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:section]).rooms).count / 3  + (((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:section]).rooms).count % 3 == 0 ? 0 :1);
+        id  selectStr = [_sectionArr objectAtIndex:section];
+        if ([selectStr isKindOfClass:[NSString class]] && [selectStr isEqualToString:kSpaceStr]) {
+            return 1;
+        }
+        return  self.sectionArr.count > 0 ?  ((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:section]).rooms).count / 3
+        + (((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:section]).rooms).count % 3 == 0 ? 0 :1) : 0;
     }
     if (_roomsArr.count == 0) {
         return 1;
@@ -213,15 +226,20 @@
     
     //    NSLog(@"current section row %ld",((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:section]).rooms).count / 3  + (((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:section]).rooms).count % 3 == 0 ? 1 :1) + row);
     NSLog(@"current %ld",((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:section]).rooms).count);
-    return ((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:section]).rooms).count / 3  + (((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:section]).rooms).count % 3 == 0 ? 1 :1) + row;
+    return ((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:section]).rooms).count / 3
+            + (((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:section]).rooms).count % 3 == 0 ? 1 :1) + row;
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-        UIView *view = [UIView new];
-        [view setFrame:CGRectMake(0, 0, self.view.frame.size.width, 1)];
-        [view setBackgroundColor:[UIColor colorWithHex:kBackGroundColorStr]];
-        return view;
+    NSString *color = kBackGroundColorStr;
+    if (_isSaveRoom) {
+        color = K35ColorStr;
+    }
+    UIView *view = [UIView new];
+    [view setFrame:CGRectMake(30, 0, self.view.frame.size.width-60, 1)];
+    [view setBackgroundColor:[UIColor colorWithHex:color]];
+    return view;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -238,7 +256,8 @@
             
             if (([selectStr isKindOfClass:[NSString class]] &&  [selectStr isEqualToString:kSpaceStr])
                 || (([[ self.sectionArr objectAtIndex:indexPath.section] isKindOfClass:[FloorsByArrObj class]]) &&
-                    indexPath.row == ((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:indexPath.section]).rooms).count / 3  + (((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:indexPath.section]).rooms).count % 3 == 0 ? 1 :1) )) {
+                    indexPath.row == ((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:indexPath.section]).rooms).count / 3
+                        + (((NSArray*)((FloorsByArrObj*)[ self.sectionArr objectAtIndex:indexPath.section]).rooms).count % 3 == 0 ? 1 :1) )) {
                     isOne = YES;
                     
                 } else {
@@ -322,9 +341,19 @@
                 if ([obj2 isKindOfClass:[FloorsByArrObj class]]) {
                     count = ((FloorsByArrObj*)obj2).count + 1;
                 }
-            }
+            } 
             if (count == 0) {
                 count = 1;
+            }
+            if (_sectionArr.count >= 3) {
+                for (id data in _sectionArr) {
+                    if ([data isKindOfClass:[FloorsByArrObj class]]) {
+                        if (((FloorsByArrObj*)data).count == 3) {
+                            count += 1;
+                            break;
+                        }
+                    }
+                }
             }
         } else {
             count = ((FloorsByArrObj*)obj).count + 1;
@@ -421,7 +450,7 @@
                                                                       [weakSelf reloadBuildings];
                                                                   }
                                                                   
-                                                                  
+                                                                  [weakSelf hideHUDView];
                                                               }];
     } else {
         NSLog(@"dict %@",dic);
@@ -691,7 +720,8 @@
     if (floors && index < floors.rooms.count) {
         RoomsByArrObj *room = [floors.rooms objectAtIndex:index];
       
-        if (_userCheckoutType == RMTUserRoomTypeLogIn ) {
+        if (_userCheckoutType == RMTUserRoomTypeLogIn || _userCheckoutType == RMTUserRoomTypeLogOut) {
+            NSLog(@"_userCheckout type %d",_userCheckoutType);
             if (room.isInit == RMTIsInitNot) {
                 AddLastMonthDataControll *vc = [[AddLastMonthDataControll alloc] init];
                 vc.roomDataObj = room;
@@ -707,6 +737,7 @@
                 AddFloorWaterDataViewControll *vc = [[AddFloorWaterDataViewControll alloc] initCheckoutDataWithCurrentBuild:_buildingData
                                                                                                          andCheckoutRoomObj:obj
                                                                                                                     andType:RMTSelectIndexWater];
+                vc.userCheckoutType = _userCheckoutType;
                 [self.navigationController pushViewController:vc animated:YES];
             }
         } else if (_userCheckoutType == RMTUserRoomTypeInit || _userCheckoutType == RMTUserRoomTypeManage) {
