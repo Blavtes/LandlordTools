@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -106,12 +106,12 @@
                                 </mask>
                                 <mask key="constraints">
                                     <exclude reference="JSq-4D-CSP"/>
-                                    <exclude reference="6bA-Cg-iOZ"/>
-                                    <exclude reference="ACw-ia-cHj"/>
                                     <exclude reference="kYq-3R-6t8"/>
                                     <exclude reference="pPK-yO-eCq"/>
                                     <exclude reference="WU8-Ny-yE5"/>
                                     <exclude reference="iac-7i-ihQ"/>
+                                    <exclude reference="6bA-Cg-iOZ"/>
+                                    <exclude reference="ACw-ia-cHj"/>
                                 </mask>
                             </variation>
                             <variation key="widthClass=compact">
@@ -130,10 +130,10 @@
                                     <include reference="TfS-Qa-gjT"/>
                                 </mask>
                                 <mask key="constraints">
-                                    <include reference="6bA-Cg-iOZ"/>
-                                    <include reference="ACw-ia-cHj"/>
                                     <include reference="kYq-3R-6t8"/>
                                     <include reference="WU8-Ny-yE5"/>
+                                    <include reference="6bA-Cg-iOZ"/>
+                                    <include reference="ACw-ia-cHj"/>
                                 </mask>
                             </variation>
                         </view>
@@ -197,7 +197,7 @@
                                                     <color key="textColor" red="1" green="0.93133555779999999" blue="0.22833473639999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="水表底数:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOZ-qZ-qtV">
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="水表底数:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOZ-qZ-qtV">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20.5" id="9gY-yG-1yh"/>
@@ -237,7 +237,7 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="抄入水表数值" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fhj-kD-pQ1">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="抄入水表数值" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fhj-kD-pQ1">
                                                     <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -298,7 +298,9 @@
                                                 <constraint firstItem="3xq-kO-nF0" firstAttribute="leading" secondItem="kOZ-qZ-qtV" secondAttribute="trailing" constant="-16" id="IAV-mm-BuX">
                                                     <variation key="widthClass=compact" constant="2"/>
                                                 </constraint>
-                                                <constraint firstItem="fhj-kD-pQ1" firstAttribute="height" secondItem="kOZ-qZ-qtV" secondAttribute="height" id="LzK-DL-L8a"/>
+                                                <constraint firstItem="fhj-kD-pQ1" firstAttribute="height" secondItem="kOZ-qZ-qtV" secondAttribute="height" id="LzK-DL-L8a">
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="10"/>
+                                                </constraint>
                                                 <constraint firstItem="fhj-kD-pQ1" firstAttribute="centerY" secondItem="aqC-C2-3Vs" secondAttribute="centerY" constant="-1.75" id="Mw3-06-ffc">
                                                     <variation key="widthClass=compact" constant="0.0"/>
                                                 </constraint>
@@ -448,7 +450,7 @@
                                                     <color key="textColor" red="1" green="0.93133555779999999" blue="0.22833473639999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="（元）" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECj-e5-tvh" userLabel="2Label">
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="（元）" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECj-e5-tvh" userLabel="2Label">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="42" id="k97-zR-I3j"/>
@@ -472,7 +474,7 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="（吨）" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyA-Mu-gbB" userLabel="2Label">
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="（吨）" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyA-Mu-gbB" userLabel="2Label">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="42" id="7H1-PM-N5t">

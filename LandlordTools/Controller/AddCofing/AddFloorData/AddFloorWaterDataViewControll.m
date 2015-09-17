@@ -73,6 +73,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _checkNotiLabel.hidden = YES;
     _currentDataTextField.delegate = self;
     self.titleLabel.text = _buildData.buildingName;
     if (_selectType == RMTSelectIndexError) {
@@ -82,7 +83,7 @@
     }
   
     self.roomNumberLabel.text = _roomObj.number;
-    self.lastDataLabel.text = [NSString stringWithFormat:@"%.2f", _roomObj.preCount];
+    self.lastDataLabel.text = [NSString stringWithFormat:@"水表底数：%.2f", _roomObj.preCount];
     // Do any additional setup after loading the view from its nib.
 }
 
