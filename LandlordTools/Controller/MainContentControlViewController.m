@@ -104,7 +104,7 @@
                                                                       } else {
                                                                           _addBuildView.hidden = NO;
                                                                           
-                                                                          _selectIndex = 3;
+                                                                          _selectIndex = RMTSelectIndexRent;
                                                                           [weakSelf checkoutImageViewFrame:_rentBt];
                                                                       }
                                                                      
@@ -129,11 +129,11 @@
     _rentArrTime = [NSMutableArray arrayWithCapacity:0];
     _sortRentIndex = RMTSortRentFloor;
     if (_addBuildView.isHidden) {
-        _selectIndex = 1;
+        _selectIndex = RMTSelectIndexWater;
         [_waterBt setImage:[UIImage imageNamed:@"icon_water_on"] forState:UIControlStateNormal];
         [_waterBt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     } else {
-        _selectIndex = 3;
+        _selectIndex = RMTSelectIndexRent;
         [self checkoutImageViewFrame:_rentBt];
         [_rentBt setImage:[UIImage imageNamed:@"icon_ rent _on"] forState:UIControlStateNormal];
         [_rentBt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -496,10 +496,13 @@
 
 - (void)configRoomDataWithSection:(int)section andIndex:(int)index
 {
-    NSLog(@"configRoomDataWithSection %d %d",section,index);
+    NSLog(@"configRoomDataWithSection %d %d",section,index); //抄表
     AddFloorWaterDataViewControll *vc = [[AddFloorWaterDataViewControll alloc]
                                          initCheckoutWaterWithCurrentBuild:_currentBuildData
-                                         andCheckoutRoomsObj:_waterArr andFloorIndex:section andRoomIndex:index];
+                                         andCheckoutRoomsObj:_waterArr
+                                         andFloorIndex:section
+                                         andRoomIndex:index
+                                         andType:_selectIndex];
      [self.navigationController pushViewController:vc animated:YES];
     switch (_selectIndex) {
         case RMTSelectIndexWater:

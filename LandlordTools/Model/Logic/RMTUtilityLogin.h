@@ -65,9 +65,11 @@ typedef enum _RMTIsInit {
 
 typedef enum _RMTSelectIndex {
     RMTSelectIndexError = -1,
-    RMTSelectIndexWater = 1, // water
-    RMTSelectIndexElect = 2, // elect
-    RMTSelectIndexRent = 3 // rent
+    RMTSelectIndexWater = 1, // 查水表
+    RMTSelectIndexElect = 2, // 查电表
+    RMTSelectIndexRent = 3, // 批量交房租
+    RMTSelectLogIn = 4, //入住 需要查水表，
+    RMTSelectLogOut = 5 //退房 需要查水表
 }RMTSelectIndex;
 
 
@@ -82,6 +84,7 @@ typedef enum _RMTSortRent {
 }RMTSortRent;
 
 typedef enum _RMTUserRoomType {
+    RMTUserRoomTyeError = -1,
     RMTUserRoomTypeInit = 1, // init
     RMTUserRoomTypeLogIn = 2, // 入住
     RMTUserRoomTypeLogOut = 3, //退房

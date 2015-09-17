@@ -734,9 +734,15 @@
                 CheckoutRoomObj *obj = [CheckoutRoomObj new];
                 obj.number = room.number;
                 obj._id = room._id;
+                RMTSelectIndex index = RMTSelectIndexError;
+                if (_userCheckoutType == RMTUserRoomTypeLogIn) {
+                    index = RMTSelectLogIn;
+                } else {
+                    index = RMTSelectLogOut;
+                }
                 AddFloorWaterDataViewControll *vc = [[AddFloorWaterDataViewControll alloc] initCheckoutDataWithCurrentBuild:_buildingData
                                                                                                          andCheckoutRoomObj:obj
-                                                                                                                    andType:RMTSelectIndexWater];
+                                                                                                                    andType:index];
                 vc.userCheckoutType = _userCheckoutType;
                 [self.navigationController pushViewController:vc animated:YES];
             }

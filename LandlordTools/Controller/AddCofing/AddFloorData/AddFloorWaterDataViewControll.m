@@ -33,14 +33,17 @@
 @property (nonatomic, assign) int floorSection;
 @property (nonatomic, assign) int roomIndex;
 @property (nonatomic, assign) RMTSelectIndex selectType;
+@property (nonatomic, assign) RMTSelectIndex currentSelectType; //入住时 需要的 抄水表 还 电表
 @end
 
 @implementation AddFloorWaterDataViewControll
 
+//抄表
 - (instancetype)initCheckoutWaterWithCurrentBuild:(AddBuildArrayData *)build
                               andCheckoutRoomsObj:(NSArray *)rooms
                                     andFloorIndex:(int)floorSe
                                      andRoomIndex:(int)roomindex
+                                       andType:(RMTSelectIndex)selec
 {
     if (self = [super init]) {
         _buildData = build;
@@ -49,12 +52,12 @@
 //        _roomObj = roomObj;
         _floorSection = floorSe;
         _roomIndex = roomindex;
-        _selectType = RMTSelectIndexError;
+        _selectType = selec;
     }
     return self;
 }
 
-
+//login out
 - (instancetype)initCheckoutDataWithCurrentBuild:(AddBuildArrayData *)build
                               andCheckoutRoomObj:(CheckoutRoomObj *)roomObj
                                          andType:(RMTSelectIndex)selec
@@ -67,6 +70,12 @@
         _floorSection = 0;
         _roomIndex = 0;
         _selectType = selec;
+        if (selec == RMTSelectLogIn) {
+            _userCheckoutType = RMTUserRoomTypeLogIn;
+        } else if (selec == RMTSelectLogOut) {
+            _userCheckoutType = RMTUserRoomTypeLogOut;
+        }
+        _currentSelectType = RMTSelectIndexWater;
     }
     return self;
 }
@@ -76,14 +85,23 @@
     _checkNotiLabel.hidden = YES;
     _currentDataTextField.delegate = self;
     self.titleLabel.text = _buildData.buildingName;
-    if (_selectType == RMTSelectIndexError) {
+    if (_selectType == RMTSelectIndexRent ||
+        _selectType == RMTSelectIndexWater ||
+        _selectType == RMTSelectIndexElect) {//查水表 查电表 交房租
+        
         _roomObj = [((CheckoutRoomsArrObj*)[_floors objectAtIndex:_floorSection]).rooms objectAtIndex:_roomIndex];
-    } else {
+    } else { //退房 入住
         _roomObj = (CheckoutRoomObj*) [_floors objectAtIndex:0];
     }
   
     self.roomNumberLabel.text = _roomObj.number;
-    self.lastDataLabel.text = [NSString stringWithFormat:@"水表底数：%.2f", _roomObj.preCount];
+    NSString *defalut = nil;
+    if ( _selectType == RMTSelectIndexWater) {
+        defalut = @"水表底数:";
+    } else {
+        defalut = @"电表底数:";
+    }
+    self.lastDataLabel.text = [NSString stringWithFormat:@"%@%.2f",defalut, _roomObj.preCount];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -127,45 +145,101 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (BOOL)reflashData
+{
+    _checkNotiLabel.hidden = YES;
+    if (_selectType == RMTSelectIndexRent ||
+        _selectType == RMTSelectIndexWater ||
+        _selectType == RMTSelectIndexElect) {//查水表 查电表 交房租
+        if (_roomIndex < ((CheckoutRoomsArrObj*)[_floors objectAtIndex:_floorSection]).rooms.count -1 ) {
+            _roomIndex++;
+        } else {
+            if (_floorSection < _floors.count - 1) {
+                _floorSection++;
+                _roomIndex = 0;
+            } else {
+                return NO;
+            }
+        }
+        _roomObj = [((CheckoutRoomsArrObj*)[_floors objectAtIndex:_floorSection]).rooms objectAtIndex:_roomIndex];
+    }
+    
+    self.roomNumberLabel.text = _roomObj.number;
+    NSString *defalut = nil;
+    if ( _selectType == RMTSelectIndexWater) {
+        defalut = @"水表底数:";
+    } else {
+        defalut = @"电表底数:";
+    }
+    self.lastDataLabel.text = [NSString stringWithFormat:@"%@%.2f",defalut, _roomObj.preCount];
+    return YES;
+}
 
 - (IBAction)saveClick:(id)sender {
-    if (_selectType == RMTSelectIndexError) {
+    if (_selectType == RMTSelectIndexWater) {
+        NSLog(@"chao shuib ");
         [[RMTUtilityLogin sharedInstance] requestCheckWaterCostWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
                                                                 withRoomId:_roomObj._id
                                                                  withCount:[_currentDataTextField.text floatValue]
                                                                   complete:^(NSError *error, BackOject *obj) {
-            NSLog(@"obj CheckWaterCost %@",obj);
-            if (obj.code == RMTRequestBackCodeSucceed) {
-                
-            }
+                                                                    NSLog(@"obj CheckWaterCost %@",obj);
+                                                                    if (obj.code == RMTRequestBackCodeSucceed) {
+                                                                        if ([self reflashData]) {
+                                                                            NSLog(@"切换数据成功");
+                                                                        } else {
+                                                                            NSLog(@"无下一间");
+                                                                        }
+                                                                    }
         }];
-    } else if (_selectType == RMTSelectIndexWater) {
-        [[RMTUtilityLogin sharedInstance] requestCheckWaterCostWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
+    } else if (_selectType == RMTSelectIndexElect) {
+        NSLog(@"chao elect  ");
+        [[RMTUtilityLogin sharedInstance]  requestCheckElectricCostWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
                                                                 withRoomId:_roomObj._id
                                                                  withCount:[_currentDataTextField.text floatValue]
                                                                   complete:^(NSError *error, BackOject *obj) {
-            NSLog(@"objtCheckWater %@",obj);
-            if (obj.code == RMTRequestBackCodeSucceed) {
-                _selectType = RMTSelectIndexElect;
-            }
-        }];
-    } else if (_selectType == RMTSelectIndexElect){
-        [[RMTUtilityLogin sharedInstance] requestCheckElectricCostWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
-                                                                   withRoomId:_roomObj._id
-                                                                    withCount:[_currentDataTextField.text floatValue]
-                                                                     complete:^(NSError *error, BackOject *obj) {
-            NSLog(@"objCheckElectric %@",obj);
-            if (obj.code == RMTRequestBackCodeSucceed) {
-                AddLastMonthDataControll *vc = [[AddLastMonthDataControll alloc] init];
-                vc.userCheckoutType = _userCheckoutType;
-                vc.roomDataObj = [RoomsByArrObj new];
-                vc.roomDataObj._id = _roomObj._id;
-                vc.roomDataObj.number = _roomObj.number;
-                vc.roomDataObj.isInit = RMTIsInitDo;
-                vc.buildingData = _buildData;
-                [self.navigationController pushViewController:vc animated:YES];
-            }
-        }];
+                                                                      NSLog(@"obj CheckWaterCost %@",obj);
+                                                                      if (obj.code == RMTRequestBackCodeSucceed) {
+                                                                          if ([self reflashData]) {
+                                                                              NSLog(@"切换数据成功");
+                                                                          } else {
+                                                                              NSLog(@"无下一间");
+                                                                          }
+                                                                      }
+                                                                  }];
+    } else if (_selectType == RMTSelectIndexRent) {
+         NSLog(@"rent pay ");
+    
+    } else if (_selectType == RMTSelectLogIn || _selectType == RMTSelectLogOut) {
+        if (_currentSelectType == RMTSelectIndexWater) {
+            [[RMTUtilityLogin sharedInstance] requestCheckWaterCostWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
+                                                                    withRoomId:_roomObj._id
+                                                                     withCount:[_currentDataTextField.text floatValue]
+                                                                      complete:^(NSError *error, BackOject *obj) {
+                                                                          NSLog(@"objtCheckWater %@",obj);
+                                                                          if (obj.code == RMTRequestBackCodeSucceed) {
+                                                                              _currentSelectType = RMTSelectIndexElect;
+                                                                          }
+                                                                      }];
+
+        } else {
+            [[RMTUtilityLogin sharedInstance] requestCheckElectricCostWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
+                                                                       withRoomId:_roomObj._id
+                                                                        withCount:[_currentDataTextField.text floatValue]
+                                                                         complete:^(NSError *error, BackOject *obj) {
+                NSLog(@"objCheckElectric %@",obj);
+                if (obj.code == RMTRequestBackCodeSucceed) {
+                    AddLastMonthDataControll *vc = [[AddLastMonthDataControll alloc] init];
+                    vc.userCheckoutType = _userCheckoutType;
+                    vc.roomDataObj = [RoomsByArrObj new];
+                    vc.roomDataObj._id = _roomObj._id;
+                    vc.roomDataObj.number = _roomObj.number;
+                    vc.roomDataObj.isInit = RMTIsInitDo;
+                    vc.buildingData = _buildData;
+                    [self.navigationController pushViewController:vc animated:YES];
+                }
+                                                                             
+            }];
+        }
     }
    
 }
