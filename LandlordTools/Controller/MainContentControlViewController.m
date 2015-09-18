@@ -49,6 +49,7 @@
 
 @property (nonatomic, strong) AddBuildModleData *arrBuildModleData;//所以 楼宇
 @property (nonatomic, strong) AddBuildArrayData *currentBuildData; //当前 楼宇
+@property (nonatomic, assign) CGPoint oldPoint;
 @end
 
 
@@ -121,8 +122,60 @@
     
 }
 
+- (void)handlePanGestureRecognizer:(UIPanGestureRecognizer*)paramSender
+{
+    NSLog(@"handlePanGestureRecognizer");
+    CGPoint point = [paramSender translationInView:self.view];
+    NSLog(@"X:%f;Y:%f",point.x,point.y);
+
+            if (paramSender.view.center.x > _menuView.frame.size.width / 2) {
+                [UIView animateWithDuration:0.3f animations:^{
+                    paramSender.view.alpha = 1;
+                }];
+               paramSender.view.center = CGPointMake(_menuView.frame.size.width / 2, paramSender.view.center.y);
+            }else  {
+                if (paramSender.state == UIGestureRecognizerStateEnded) {
+                    float x =  paramSender.view.center.x;
+//                    if (x >= _menuView.frame.size.width / 3 ) {
+                        if (_oldPoint.x > 0.0f) {
+                                x = _menuView.frame.size.width / 2;
+                        } else {
+                                x = - _menuView.frame.size.width / 2+10;
+                            
+                        }
+                    
+                    [UIView animateWithDuration:0.3f animations:^{
+                        paramSender.view.center = CGPointMake(x, paramSender.view.center.y);
+                        if (x < 0) {
+                            paramSender.view.alpha = 0.05f;
+                        } else {
+                               paramSender.view.alpha = 1;
+                        }
+                    }];
+
+                } else {
+                    float x = paramSender.view.center.x + point.x;
+                    if (x >  _menuView.frame.size.width / 2) {
+                        x =  _menuView.frame.size.width / 2;
+                    }
+                    [UIView animateWithDuration:0.3f animations:^{
+                         paramSender.view.alpha = 1;
+                    }];
+                   
+                    paramSender.view.center = CGPointMake(x, paramSender.view.center.y);
+
+                }
+        }
+
+    [paramSender setTranslation:CGPointMake(0, 0) inView:self.view];
+    _oldPoint = point;
+
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIPanGestureRecognizer *ges = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGestureRecognizer:)];
+    [_menuView addGestureRecognizer:ges];
     _waterArr = [NSMutableArray arrayWithCapacity:0];
     _elericArr = [NSMutableArray arrayWithCapacity:0];
     _rentArrFloor = [NSMutableArray arrayWithCapacity:0];
