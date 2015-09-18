@@ -1019,14 +1019,14 @@ static const NSString *kUCBaseUrl = @"http://112.74.26.14:8080/rentcloud";
 }
 
 - (void)requestGetRentedRoomsWithLoginId:(NSString *)logindId
-                         withBuildingId:(NSString *)buildingId
+                         withBuildingId:(int )buildingId
                                complete:(void (^)(NSError *, FloorsByBuildingObj *))handler
 
 {
     NSMutableDictionary *dic = [NSMutableDictionary new];
     [dic setValue:logindId forKey:@"loginId"];
    
-    [dic setValue:buildingId forKey:@"buildingId"];
+    [dic setValue:@(buildingId) forKey:@"buildingId"];
     
     NSString *url = [NSString stringWithFormat:@"%@/room/getRentedRooms", kUCBaseUrl];
     NSDictionary *headerFields = [self getHTTPHeaderFields];
@@ -1053,13 +1053,13 @@ static const NSString *kUCBaseUrl = @"http://112.74.26.14:8080/rentcloud";
 
 
 - (void)requestGetNotRentedRoomsWithLoginId:(NSString *)logindId
-                             withBuildingId:(NSString *)buildingId
+                             withBuildingId:(int )buildingId
                                    complete:(void (^)(NSError *, FloorsByBuildingObj *))handler
 {
     NSMutableDictionary *dic = [NSMutableDictionary new];
     [dic setValue:logindId forKey:@"loginId"];
     
-    [dic setValue:buildingId forKey:@"buildingId"];
+    [dic setValue:@(buildingId) forKey:@"buildingId"];
     
     NSString *url = [NSString stringWithFormat:@"%@/room/getNotRentedRooms", kUCBaseUrl];
     NSDictionary *headerFields = [self getHTTPHeaderFields];

@@ -238,10 +238,10 @@ typedef enum _RMTUserRoomType {
 
 //获取已租房间
 - (void)requestGetRentedRoomsWithLoginId:(NSString*)logindId
-                         withBuildingId:(NSString*)buildingId
+                         withBuildingId:(int)buildingId
                                complete:(void (^)(NSError *error, FloorsByBuildingObj* obj))handler;
 //获取未出租房间
 - (void)requestGetNotRentedRoomsWithLoginId:(NSString*)logindId
-                             withBuildingId:(NSString*)buildingId
+                             withBuildingId:(int)buildingId
                                    complete:(void (^)(NSError *error, FloorsByBuildingObj* obj))handler;
 @end

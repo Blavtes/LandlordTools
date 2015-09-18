@@ -31,6 +31,7 @@
 @property (nonatomic, strong) NSMutableArray *sectionArr;
 @property (weak, nonatomic) IBOutlet UILabel *titleLable;
 @property (nonatomic, assign) BOOL isSaveRoom;
+@property (nonatomic, assign) BOOL isReload;
 
 @end
 
@@ -60,6 +61,7 @@
 //    [_tableView reloadData];
     [self showHUDView];
     [self reloadBuildings];
+
 }
 
 
@@ -120,29 +122,87 @@
     [_roomsArr removeAllObjects];
     
     __weak __typeof(&*self)weakSelf = self;
-    
-    [[RMTUtilityLogin  sharedInstance] requestGetFloorsByBuildingId:_buildingData._id
-                                                        withLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
-                                                           complete:^(NSError *error, FloorsByBuildingObj *obj) {
-                                                               if (obj.code == RMTRequestBackCodeSucceed || obj.code == RMTRequestBackCodeFailure) {
-                                                                   if (obj.floors.count == 0) {
-                                                                       [weakSelf addBuildingsDta:nil];
-                                                                       [weakSelf hideHUDView];
-                                                                   } else {
-                                                                       [_roomsArr addObjectsFromArray:obj.floors];
-                                                                       [weakSelf sortRoomArr];
-                                                                       [weakSelf reloadSectionArr];
-                                                                       [weakSelf hideHUDView];
+    if (_userCheckoutType == RMTUserRoomTypeManage) {
+        [[RMTUtilityLogin  sharedInstance] requestGetFloorsByBuildingId:_buildingData._id
+                                                            withLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
+                                                               complete:^(NSError *error, FloorsByBuildingObj *obj) {
+                                                                   if (obj.code == RMTRequestBackCodeSucceed || obj.code == RMTRequestBackCodeFailure) {
+                                                                       if (obj.floors.count == 0) {
+                                                                           if (!_isReload) {
+                                                                                [weakSelf addBuildingsDta:nil];
+                                                                               _isReload = YES;
+                                                                           }
+                                                                          
+                                                                           [weakSelf hideHUDView];
+                                                                       } else {
+                                                                           [_roomsArr addObjectsFromArray:obj.floors];
+                                                                           [weakSelf sortRoomArr];
+                                                                           [weakSelf reloadSectionArr];
+                                                                           [weakSelf hideHUDView];
+                                                                       }
+                                                                       NSLog(@"obj %@",obj);
+                                                                       
+                                                                       
+                                                                       
+                                                                       [_tableView reloadData];
                                                                    }
-                                                                   NSLog(@"obj %@",obj);
                                                                    
-                                                                   
-                                                                   
-                                                                   [_tableView reloadData];
-                                                               }
-                                                               
-                                                               NSLog(@"requestGetFloorsBy floors count %ld",obj.floors.count);
-                                                           }];
+                                                                   NSLog(@"requestGetFloorsBy floors count %ld",obj.floors.count);
+                                                               }];
+    } else if (_userCheckoutType == RMTUserRoomTypeLogIn) {
+        [[RMTUtilityLogin sharedInstance] requestGetNotRentedRoomsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
+                                                               withBuildingId:_buildingData._id
+                                                                     complete:^(NSError *error, FloorsByBuildingObj *obj) {
+                                                                         if (obj.code == RMTRequestBackCodeSucceed || obj.code == RMTRequestBackCodeFailure) {
+                                                                             if (obj.floors.count == 0) {
+                                                                                 if (!_isReload) {
+                                                                                     [weakSelf addBuildingsDta:nil];
+                                                                                     _isReload = YES;
+                                                                                 }
+                                                                                 [weakSelf hideHUDView];
+                                                                             } else {
+                                                                                 [_roomsArr addObjectsFromArray:obj.floors];
+                                                                                 [weakSelf sortRoomArr];
+                                                                                 [weakSelf reloadSectionArr];
+                                                                                 [weakSelf hideHUDView];
+                                                                             }
+                                                                             NSLog(@"obj %@",obj);
+                                                                             
+                                                                             
+                                                                             
+                                                                             [_tableView reloadData];
+                                                                         }
+                                                                         
+                                                                         NSLog(@"requestGetFloorsBy floors count %ld",obj.floors.count);
+                                                                     }];
+    } else if (_userCheckoutType == RMTUserRoomTypeLogOut) {
+        [[RMTUtilityLogin sharedInstance] requestGetRentedRoomsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
+                                                            withBuildingId:_buildingData._id
+                                                                  complete:^(NSError *error, FloorsByBuildingObj *obj) {
+                                                                      if (obj.code == RMTRequestBackCodeSucceed || obj.code == RMTRequestBackCodeFailure) {
+                                                                          if (obj.floors.count == 0) {
+                                                                              if (!_isReload) {
+                                                                                  [weakSelf addBuildingsDta:nil];
+                                                                                  _isReload = YES;
+                                                                              }
+                                                                              [weakSelf hideHUDView];
+                                                                          } else {
+                                                                              [_roomsArr addObjectsFromArray:obj.floors];
+                                                                              [weakSelf sortRoomArr];
+                                                                              [weakSelf reloadSectionArr];
+                                                                              [weakSelf hideHUDView];
+                                                                          }
+                                                                          NSLog(@"obj %@",obj);
+                                                                          
+                                                                          
+                                                                          
+                                                                          [_tableView reloadData];
+                                                                      }
+                                                                      
+                                                                      NSLog(@"requestGetFloorsBy floors count %ld",obj.floors.count);
+        }];
+    }
+   
     
 }
 

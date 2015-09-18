@@ -85,15 +85,20 @@
     [super viewDidLoad];
     _checkNotiLabel.hidden = YES;
     _currentDataTextField.delegate = self;
-    [[RMTUtilityLogin sharedInstance] requestGetRoomByRoomId:_roomObj._id withLoginId:[[RMTUtilityLogin sharedInstance] getLogId] complete:^(NSError *error, RoomByIdObj *obj) {
-        _currentRoomDes = obj;
-        NSString *defalut = nil;
-        if ( _selectType == RMTSelectIndexWater) {
-            defalut = @"水表底数:";
-        } else {
-            defalut = @"电表底数:";
-        }
-        self.lastDataLabel.text = [NSString stringWithFormat:@"%@%.2f",defalut, _currentRoomDes.room.preWaterCount];
+    [[RMTUtilityLogin sharedInstance] requestGetRoomByRoomId:_roomObj._id
+                                                 withLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
+                                                    complete:^(NSError *error, RoomByIdObj *obj) {
+                                                        if (error.code == RMTRequestBackCodeSucceed) {
+                                                            _currentRoomDes = obj;
+                                                            NSString *defalut = nil;
+                                                            if ( _selectType == RMTSelectIndexWater) {
+                                                                defalut = @"水表底数:";
+                                                            } else {
+                                                                defalut = @"电表底数:";
+                                                            }
+                                                            self.lastDataLabel.text = [NSString stringWithFormat:@"%@%.2f",defalut, _currentRoomDes.room.preWaterCount];
+                                                        }
+     
     }];
     self.titleLabel.text = _buildData.buildingName;
     if (_selectType == RMTSelectIndexRent ||

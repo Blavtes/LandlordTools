@@ -392,7 +392,7 @@
 - (IBAction)managerCheckoutClicked:(id)sender {
       [self checkoutMenuViewFrame:-_menuView.frame.size.width];
     AddHouseViewController *vc = [[AddHouseViewController alloc] initWithEdit:NO];
-    vc.userCheckoutType = RMTUserRoomTypeManage;
+    vc.userAddHouseCheckoutType = RMTUserRoomTypeManage;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -401,14 +401,14 @@
     
       [self checkoutMenuViewFrame:-_menuView.frame.size.width];
     AddHouseViewController *vc = [[AddHouseViewController alloc] initWithEdit:NO];
-    vc.userCheckoutType = RMTUserRoomTypeLogIn;
+    vc.userAddHouseCheckoutType = RMTUserRoomTypeLogIn;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)logoutClick:(id)sender {
     [self checkoutMenuViewFrame:-_menuView.frame.size.width];
     AddHouseViewController *vc = [[AddHouseViewController alloc] initWithEdit:NO];
-    vc.userCheckoutType = RMTUserRoomTypeLogOut;
+    vc.userAddHouseCheckoutType = RMTUserRoomTypeLogOut;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

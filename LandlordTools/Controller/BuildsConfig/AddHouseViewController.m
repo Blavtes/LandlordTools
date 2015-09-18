@@ -68,6 +68,9 @@
     _buildArr = [NSMutableArray arrayWithCapacity:0];
     [self showHUDView];
     __weak __typeof(self)weakSelf = self;
+    if (_userAddHouseCheckoutType == RMTUserRoomTypeManage) {
+        
+    }
     [[RMTUtilityLogin sharedInstance] requestGetMyBuildingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId] complete:^(NSError *error, AddBuildModleData *buildData) {
         NSLog(@"builrd %@",buildData);
         if (buildData.code == RMTRequestBackCodeSucceed || buildData.code == RMTRequestBackCodeFailure) {
@@ -198,7 +201,7 @@
         AddBuildArrayData * buildid = [_buildArr objectAtIndex:indexPath.section];
         AddRoomViewController *vc = [[AddRoomViewController alloc] init];
         vc.buildingData = buildid;
-        vc.userCheckoutType = _userCheckoutType;
+        vc.userCheckoutType = _userAddHouseCheckoutType;
         [self.navigationController pushViewController:vc animated:YES];
         
     }
