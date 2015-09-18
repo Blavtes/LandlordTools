@@ -34,6 +34,7 @@
 @property (nonatomic, assign) int roomIndex;
 @property (nonatomic, assign) RMTSelectIndex selectType;
 @property (nonatomic, assign) RMTSelectIndex currentSelectType; //入住时 需要的 抄水表 还 电表
+@property (nonatomic, strong) RoomByIdObj *currentRoomDes;
 @end
 
 @implementation AddFloorWaterDataViewControll
@@ -84,6 +85,16 @@
     [super viewDidLoad];
     _checkNotiLabel.hidden = YES;
     _currentDataTextField.delegate = self;
+    [[RMTUtilityLogin sharedInstance] requestGetRoomByRoomId:_roomObj._id withLoginId:[[RMTUtilityLogin sharedInstance] getLogId] complete:^(NSError *error, RoomByIdObj *obj) {
+        _currentRoomDes = obj;
+        NSString *defalut = nil;
+        if ( _selectType == RMTSelectIndexWater) {
+            defalut = @"水表底数:";
+        } else {
+            defalut = @"电表底数:";
+        }
+        self.lastDataLabel.text = [NSString stringWithFormat:@"%@%.2f",defalut, _currentRoomDes.room.preWaterCount];
+    }];
     self.titleLabel.text = _buildData.buildingName;
     if (_selectType == RMTSelectIndexRent ||
         _selectType == RMTSelectIndexWater ||
@@ -95,13 +106,7 @@
     }
   
     self.roomNumberLabel.text = _roomObj.number;
-    NSString *defalut = nil;
-    if ( _selectType == RMTSelectIndexWater) {
-        defalut = @"水表底数:";
-    } else {
-        defalut = @"电表底数:";
-    }
-    self.lastDataLabel.text = [NSString stringWithFormat:@"%@%.2f",defalut, _roomObj.preCount];
+
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -131,14 +136,21 @@
 {
     //chekcout noti label
     // count
-    if (_selectType == RMTSelectIndexWater) {
+    if (_currentSelectType == RMTSelectIndexWater) {
         _currentUseDataLabel.text = [NSString stringWithFormat:@"%.2f(吨)",[textField.text floatValue] - _roomObj.preCount];
         _currentMonyLabel.text = [NSString stringWithFormat:@"%.2f(元)",([textField.text floatValue] - _roomObj.preCount) * _buildData.waterPrice];
-    } else if (_selectType == RMTSelectIndexElect) {
+    } else if (_currentSelectType == RMTSelectIndexElect) {
         _currentUseDataLabel.text = [NSString stringWithFormat:@"%.2f(度)",[textField.text floatValue] - _roomObj.preCount];
         _currentMonyLabel.text = [NSString stringWithFormat:@"%.2f(元)",([textField.text floatValue] - _roomObj.preCount) * _buildData.electricPrice];
     }
- 
+      NSString *defalut = nil;
+    if ( _currentSelectType == RMTSelectIndexWater) {
+        defalut = @"水表底数:";
+    } else {
+        defalut = @"电表底数:";
+    }
+    self.lastDataLabel.text = [NSString stringWithFormat:@"%@%.2f",defalut, _currentRoomDes.room.preElectricCount];
+    
 }
 
 - (IBAction)backClick:(id)sender {
@@ -218,6 +230,7 @@
                                                                           NSLog(@"objtCheckWater %@",obj);
                                                                           if (obj.code == RMTRequestBackCodeSucceed) {
                                                                               _currentSelectType = RMTSelectIndexElect;
+                                                                              
                                                                           }
                                                                       }];
 

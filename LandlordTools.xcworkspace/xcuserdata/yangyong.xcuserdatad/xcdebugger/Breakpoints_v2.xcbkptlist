@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LandlordTools/Controller/AddCofing/AddFloorData/AddFloorWaterDataViewControll.m"
-            timestampString = "464154573.287589"
+            timestampString = "464237029.107419"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "-initCheckoutWaterWithCurrentBuild:andCheckoutRoomsObj:andFloorIndex:andRoomIndex:andType:"
             landmarkType = "5">
          </BreakpointContent>
@@ -448,6 +448,86 @@
             startingLineNumber = "141"
             endingLineNumber = "141"
             landmarkName = "-handlePanGestureRecognizer:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LandlordTools/Controller/AddCofing/AddFloorData/AddFloorWaterDataViewControll.m"
+            timestampString = "464237029.107419"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "-textFieldDidEndEditing:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LandlordTools/Controller/AddCofing/AddFloorData/AddFloorWaterDataViewControll.m"
+            timestampString = "464237029.107419"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "-textFieldDidEndEditing:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LandlordTools/Controller/AddCofing/AddFloorData/AddFloorWaterDataViewControll.m"
+            timestampString = "464237029.107419"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "-textFieldDidEndEditing:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LandlordTools/Controller/BuildsConfig/RoomConfig/AddRoomViewController.m"
+            timestampString = "464236708.971004"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "743"
+            endingLineNumber = "743"
+            landmarkName = "-configRoomDataWithSection:andIndex:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LandlordTools/Controller/BuildsConfig/RoomConfig/AddRoomViewController.m"
+            timestampString = "464236709.983411"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "744"
+            endingLineNumber = "744"
+            landmarkName = "-configRoomDataWithSection:andIndex:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
