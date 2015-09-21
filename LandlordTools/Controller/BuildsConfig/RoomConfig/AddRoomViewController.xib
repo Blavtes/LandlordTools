@@ -8,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddRoomViewController">
             <connections>
-                <outlet property="hubView" destination="j0G-ES-Sc0" id="50V-in-8eD"/>
+                <outlet property="hubView" destination="nWU-Jo-eQ8" id="Dgf-f0-WNE"/>
                 <outlet property="saveBt" destination="HZY-fd-tR3" id="XFm-ON-9cR"/>
                 <outlet property="tableView" destination="KgV-EZ-dMi" id="0LH-D6-E5m"/>
                 <outlet property="titleLable" destination="fQ4-2E-0DE" id="JoK-gi-YAC"/>
@@ -58,7 +58,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQ4-2E-0DE">
                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZY-fd-tR3">
@@ -240,52 +240,55 @@
                         </mask>
                     </variation>
                 </view>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j0G-ES-Sc0">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nWU-Jo-eQ8" customClass="UIHUDCustomView">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                        <rect key="frame" x="0.0" y="32" width="400" height="736"/>
+                    </variation>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="5iY-rq-AdO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3yz-8h-drp"/>
-                <constraint firstAttribute="trailing" secondItem="j0G-ES-Sc0" secondAttribute="trailing" id="5UZ-Jd-gFu"/>
+                <constraint firstAttribute="trailing" secondItem="nWU-Jo-eQ8" secondAttribute="trailing" id="AL4-Y6-e6D"/>
+                <constraint firstItem="nWU-Jo-eQ8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="J5I-Y7-caF"/>
                 <constraint firstAttribute="trailing" secondItem="5iY-rq-AdO" secondAttribute="trailing" id="YpB-Br-Bgn"/>
                 <constraint firstAttribute="bottom" secondItem="5iY-rq-AdO" secondAttribute="bottom" id="ZOR-YT-6wl"/>
-                <constraint firstItem="j0G-ES-Sc0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dSG-ip-67U"/>
                 <constraint firstItem="5iY-rq-AdO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="g9Y-DA-IFl"/>
-                <constraint firstAttribute="bottom" secondItem="j0G-ES-Sc0" secondAttribute="bottom" id="kUF-aV-sF3"/>
-                <constraint firstItem="j0G-ES-Sc0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="xYy-v2-TTR"/>
+                <constraint firstItem="nWU-Jo-eQ8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="sNr-zT-Ljw"/>
+                <constraint firstAttribute="bottom" secondItem="nWU-Jo-eQ8" secondAttribute="bottom" constant="32" id="sjZ-Ao-yqJ"/>
             </constraints>
             <variation key="default">
                 <mask key="subviews">
                     <exclude reference="5iY-rq-AdO"/>
-                    <exclude reference="j0G-ES-Sc0"/>
+                    <exclude reference="nWU-Jo-eQ8"/>
                 </mask>
                 <mask key="constraints">
                     <exclude reference="3yz-8h-drp"/>
                     <exclude reference="YpB-Br-Bgn"/>
                     <exclude reference="ZOR-YT-6wl"/>
                     <exclude reference="g9Y-DA-IFl"/>
-                    <exclude reference="5UZ-Jd-gFu"/>
-                    <exclude reference="dSG-ip-67U"/>
-                    <exclude reference="kUF-aV-sF3"/>
-                    <exclude reference="xYy-v2-TTR"/>
+                    <exclude reference="AL4-Y6-e6D"/>
+                    <exclude reference="J5I-Y7-caF"/>
+                    <exclude reference="sNr-zT-Ljw"/>
+                    <exclude reference="sjZ-Ao-yqJ"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
                 <mask key="subviews">
                     <include reference="5iY-rq-AdO"/>
-                    <include reference="j0G-ES-Sc0"/>
+                    <include reference="nWU-Jo-eQ8"/>
                 </mask>
                 <mask key="constraints">
                     <include reference="3yz-8h-drp"/>
                     <include reference="YpB-Br-Bgn"/>
                     <include reference="ZOR-YT-6wl"/>
                     <include reference="g9Y-DA-IFl"/>
-                    <include reference="5UZ-Jd-gFu"/>
-                    <include reference="dSG-ip-67U"/>
-                    <include reference="kUF-aV-sF3"/>
-                    <include reference="xYy-v2-TTR"/>
+                    <include reference="AL4-Y6-e6D"/>
+                    <include reference="J5I-Y7-caF"/>
+                    <include reference="sNr-zT-Ljw"/>
+                    <include reference="sjZ-Ao-yqJ"/>
                 </mask>
             </variation>
         </view>

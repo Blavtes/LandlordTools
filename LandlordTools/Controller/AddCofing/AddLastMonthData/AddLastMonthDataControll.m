@@ -14,6 +14,7 @@
 #import "UIColor+Hexadecimal.h"
 #import "RMTUtilityLogin.h"
 #import <Masonry.h>
+#import "UIHUDCustomView.h"
 
 @interface AddLastMonthDataControll () <UITableViewDataSource,UITableViewDelegate,SelectRenyPayDayDelegate,AddLastMonthDataConfigDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -26,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *lastMothBt;
 @property (weak, nonatomic) IBOutlet UIButton *nextMothBt;
 @property (weak, nonatomic) IBOutlet UIButton *saveBt;
+@property (weak, nonatomic) IBOutlet UIHUDCustomView *HUDView;
 
 @property (nonatomic, assign) BOOL isSelectDay; // 选择日期
 
@@ -94,7 +96,7 @@
     [_tableView registerNib:nib forCellReuseIdentifier:kLastTodayDataTableViewCellIdentifier];
 
     _dataArr = [NSMutableArray arrayWithCapacity:0];
-    
+    [_HUDView showHUDView];
     // Do any additional setup after loading the view from its nib.
     [[RMTUtilityLogin sharedInstance] requestGetRoomByRoomId:_roomDataObj._id
                                                  withLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
@@ -111,6 +113,7 @@
                                                                                    + _roomConfigData.room.othersCost + _roomConfigData.room.rentCost];
                                                             }
                                                         }
+                                                        [_HUDView hideHUDView];
                                                        
     }];
   
@@ -260,6 +263,7 @@
 }
 
 - (IBAction)payRentClick:(id)sender {
+    [_HUDView showHUDView];
     if (_roomConfigData.room.isPayRent == RMTIsPayRentNot) {
         [[RMTUtilityLogin sharedInstance] requestPayRentCostWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
                                                           withCostCount:_roomConfigData.room
@@ -268,6 +272,7 @@
                                                                        _roomConfigData.room.isPayRent = RMTIsInitDo;
                                                                        [_payRentStatusBt setTitle:@"已交" forState:UIControlStateNormal];
                                                                    }
+                                                                   [_HUDView hideHUDView];
        }];
     }
 }
@@ -318,6 +323,7 @@
 
 - (IBAction)saveClick:(id)sender
 {
+    [_HUDView showHUDView];
     //是否入住。
 #pragma mark -- wwaring add is goin.---
     if (_roomConfigData.room.rentCost == 0 || _roomConfigData.room.deposit == 0) {
@@ -333,23 +339,36 @@
                                                                     withRoom:_roomConfigData.room
                                                                     complete:^(NSError *error, BackOject *obj) {
                                                                         NSLog(@"save init obj %@",obj);
+                                                                        [_HUDView hideHUDView];
                                                                     }];
             }
                 break;
             case RMTUserRoomTypeLogIn:
             {
-                [[RMTUtilityLogin sharedInstance] requestCheckInWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId] withRoom:_roomConfigData.room complete:^(NSError *error, BackOject *obj) {
+                [[RMTUtilityLogin sharedInstance] requestCheckInWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
+                                                                   withRoom:_roomConfigData.room
+                                                                   complete:^(NSError *error, BackOject *obj) {
                     NSLog(@"save login %@",obj);
-                    [_saveBt setTitle:@" 已入住" forState:UIControlStateNormal];
-                    
+                                                                       if (obj.code == RMTRequestBackCodeSucceed) {
+                                                                              [_saveBt setTitle:@" 已入住" forState:UIControlStateNormal];
+                                                                       }
+                 
+                                                                       [_HUDView hideHUDView];
                 }];
             }
                 break;
             case RMTUserRoomTypeLogOut:
             {
-                [[RMTUtilityLogin sharedInstance] requestCheckoutWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId] withRoom:_roomConfigData.room complete:^(NSError *error, BackOject *obj) {
-                     NSLog(@"save logout %@",obj);
-                      [_saveBt setTitle:@" 已退房" forState:UIControlStateNormal];
+                [[RMTUtilityLogin sharedInstance] requestCheckoutWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
+                                                                    withRoom:_roomConfigData.room
+                                                                    complete:^(NSError *error, BackOject *obj) {
+                                                                        if (obj.code == RMTRequestBackCodeSucceed) {
+                                                                            [_saveBt setTitle:@" 已退房" forState:UIControlStateNormal];
+                                                                        }
+                                                                        
+                                                                        [_HUDView hideHUDView];
+                                                                        NSLog(@"save logout %@",obj);
+                 
                 }];
             }
                 break;
@@ -359,6 +378,7 @@
      
     }
     NSLog(@"saveClick %@",_buildingData);
+
 }
 
 

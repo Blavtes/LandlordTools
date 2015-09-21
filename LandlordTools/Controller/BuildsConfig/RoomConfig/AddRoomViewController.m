@@ -19,12 +19,12 @@
 #import "RMTLoginEnterViewController.h"
 #import "AddLastMonthDataControll.h"
 #import "AddFloorWaterDataViewControll.h"
-
+#import "UIHUDCustomView.h"
 @interface AddRoomViewController () <UITableViewDelegate,UITableViewDataSource,AddBuildRoomsDelegate,ConfigHouseEditDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (weak, nonatomic) IBOutlet UIView *hubView;
+@property (weak, nonatomic) IBOutlet UIHUDCustomView *hubView;
 @property (weak, nonatomic) IBOutlet UIButton *saveBt;
 
 @property (nonatomic, strong) NSMutableArray *roomsArr;
@@ -59,7 +59,7 @@
     [_tableView registerNib:nib2 forCellReuseIdentifier:KConfigRoomCellIdentifier];
     
 //    [_tableView reloadData];
-    [self showHUDView];
+    [_hubView showHUDView];
     [self reloadBuildings];
 
 }
@@ -133,12 +133,12 @@
                                                                                _isReload = YES;
                                                                            }
                                                                           
-                                                                           [weakSelf hideHUDView];
+                                                                           [_hubView hideHUDView];
                                                                        } else {
                                                                            [_roomsArr addObjectsFromArray:obj.floors];
                                                                            [weakSelf sortRoomArr];
                                                                            [weakSelf reloadSectionArr];
-                                                                           [weakSelf hideHUDView];
+                                                                           [_hubView hideHUDView];
                                                                        }
                                                                        NSLog(@"obj %@",obj);
                                                                        
@@ -159,12 +159,12 @@
                                                                                      [weakSelf addBuildingsDta:nil];
                                                                                      _isReload = YES;
                                                                                  }
-                                                                                 [weakSelf hideHUDView];
+                                                                                 [_hubView hideHUDView];
                                                                              } else {
                                                                                  [_roomsArr addObjectsFromArray:obj.floors];
                                                                                  [weakSelf sortRoomArr];
                                                                                  [weakSelf reloadSectionArr];
-                                                                                 [weakSelf hideHUDView];
+                                                                                 [_hubView hideHUDView];
                                                                              }
                                                                              NSLog(@"obj %@",obj);
                                                                              
@@ -185,12 +185,12 @@
                                                                                   [weakSelf addBuildingsDta:nil];
                                                                                   _isReload = YES;
                                                                               }
-                                                                              [weakSelf hideHUDView];
+                                                                              [_hubView hideHUDView];
                                                                           } else {
                                                                               [_roomsArr addObjectsFromArray:obj.floors];
                                                                               [weakSelf sortRoomArr];
                                                                               [weakSelf reloadSectionArr];
-                                                                              [weakSelf hideHUDView];
+                                                                              [_hubView hideHUDView];
                                                                           }
                                                                           NSLog(@"obj %@",obj);
                                                                           
@@ -494,7 +494,7 @@
         [dic setValue:floos forKey:@"floors"];
     }
     
-    [self showHUDView];
+    [_hubView showHUDView];
     __weak __typeof(&*self)weakSelf = self;
     if ([[RMTUtilityLogin sharedInstance] getLogId]) {
         [[RMTUtilityLogin sharedInstance] requestEditFloorsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
@@ -510,7 +510,7 @@
                                                                       [weakSelf reloadBuildings];
                                                                   }
                                                                   
-                                                                  [weakSelf hideHUDView];
+                                                                  [_hubView hideHUDView];
                                                               }];
     } else {
         NSLog(@"dict %@",dic);
@@ -522,7 +522,7 @@
         [_sectionArr addObjectsFromArray:data.floors];
         [_roomsArr addObjectsFromArray:floos];
         [_tableView reloadData];
-        [self hideHUDView];
+        [_hubView hideHUDView];
     }
     
 }
@@ -578,7 +578,7 @@
         }
     }
     
-    [self showHUDView];
+    [_hubView showHUDView];
     __weak __typeof(&*self)weakSelf = self;
     if ([[RMTUtilityLogin sharedInstance] getLogId]) {
         [[RMTUtilityLogin sharedInstance] requestEditFloorsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
@@ -597,7 +597,7 @@
                                                                   
                                                               }];
     } else {
-        [self hideHUDView];
+        [_hubView hideHUDView];
         [_sectionArr addObjectsFromArray:floos];
         [_roomsArr addObjectsFromArray:floos];
         [_tableView reloadData];
@@ -640,7 +640,7 @@
         obj.rooms = rooArr;
         [floos addObject:obj];
     }
-    [self showHUDView];
+    [_hubView showHUDView];
     __weak __typeof(&*self)weakSelf = self;
     if ([[RMTUtilityLogin sharedInstance] getLogId]) {
         [[RMTUtilityLogin sharedInstance] requestEditFloorsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
@@ -658,7 +658,7 @@
                                                                   }
                                                               }];
     } else {
-        [self hideHUDView];
+        [_hubView hideHUDView];
         [_sectionArr removeObject:floors];
         [_roomsArr removeObject:floos];
         [_tableView reloadData];
@@ -692,7 +692,7 @@
         obj.rooms = rooArr;
         [floos addObject:obj];
     }
-    [self showHUDView];
+    [_hubView showHUDView];
     __weak __typeof(&*self)weakSelf = self;
     if ([[RMTUtilityLogin sharedInstance] getLogId]) {
         [[RMTUtilityLogin sharedInstance] requestEditFloorsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
@@ -715,7 +715,7 @@
         [arr addObjectsFromArray:floors.rooms];
         [arr removeLastObject];
         floors.rooms = arr;
-        [self hideHUDView];
+        [_hubView hideHUDView];
         [_sectionArr replaceObjectAtIndex:section withObject:floors];
         
         [_tableView reloadData];
@@ -748,7 +748,7 @@
         obj.rooms = rooArr;
         [floos addObject:obj];
     }
-    [self showHUDView];
+    [_hubView showHUDView];
     __weak __typeof(&*self)weakSelf = self;
     if ([[RMTUtilityLogin sharedInstance] getLogId]) {
         [[RMTUtilityLogin sharedInstance] requestEditFloorsWithLoginId:[[RMTUtilityLogin sharedInstance] getLogId]
@@ -767,7 +767,7 @@
             
         }];
     } else {
-        [self hideHUDView];
+        [_hubView hideHUDView];
         [_sectionArr replaceObjectAtIndex:section withObject:data];
         
         [_tableView reloadData];
@@ -854,18 +854,6 @@
     
 }
 
-
-- (void)showHUDView
-{
-    _hubView.hidden = NO;
-    [MBProgressHUD showHUDAddedTo:_hubView animated:YES];
-}
-
-- (void)hideHUDView
-{
-    _hubView.hidden = YES;
-    [MBProgressHUD hideHUDForView:_hubView animated:YES];
-}
 
 /*
  #pragma mark - Navigation

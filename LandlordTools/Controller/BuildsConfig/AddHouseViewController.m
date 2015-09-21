@@ -16,14 +16,14 @@
 #import "MBProgressHUD.h"
 #import "MyBuildingsViewCell.h"
 #import "AddRoomViewController.h"
-
+#import "UIHUDCustomView.h"
 
 
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 @interface AddHouseViewController () <UITableViewDataSource,UITableViewDelegate,AddHouseChangeCellHeightDelegate>
 @property (nonatomic, assign) BOOL showData;
 @property (nonatomic, strong) NSMutableArray *buildArr;
-@property (weak, nonatomic) IBOutlet UIView *hubView;
+@property (weak, nonatomic) IBOutlet UIHUDCustomView *hubView;
 
 @property (weak, nonatomic) IBOutlet UIButton *saveBt;
 @property (weak, nonatomic) IBOutlet UIButton *editBt;
@@ -66,7 +66,7 @@
     [_tableView registerNib:nib2 forCellReuseIdentifier:@"MyBuildingsViewCell"];
     
     _buildArr = [NSMutableArray arrayWithCapacity:0];
-    [self showHUDView];
+    [_hubView showHUDView];
     __weak __typeof(self)weakSelf = self;
     if (_userAddHouseCheckoutType == RMTUserRoomTypeManage) {
         
@@ -86,7 +86,7 @@
         } else {
             [weakSelf initBuildArrayData];
         }
-        [weakSelf hideHUDView];
+        [_hubView hideHUDView];
     }];
     // Do any additional setup after loading the view from its nib.
 }
@@ -223,7 +223,7 @@
     data.oprType = RMTUpdataMyBuildAddType;
     
     NSArray *arr = [NSArray arrayWithObjects:data, nil];
-    [self showHUDView];
+    [_hubView showHUDView];
     __weak __typeof(self)weakSelf = self;
     [[RMTUtilityLogin sharedInstance] requestUpdateMyBuilingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId]
                                                           whithBuildData:arr
@@ -234,7 +234,7 @@
             [_tableView reloadData];
         }
         NSLog(@"add code %d %@",object.code,object.message);
-        [weakSelf hideHUDView];
+        [_hubView hideHUDView];
     }];
    
 }
@@ -246,14 +246,14 @@
     }
 
     data.oprType = RMTUpdataMyBuildUpdataType;
-    [self showHUDView];
+    [_hubView showHUDView];
     __weak __typeof(self)weakSelf = self;
     [[RMTUtilityLogin sharedInstance] requestUpdateMyBuilingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId] whithBuildData:[NSArray arrayWithObject:data] complete:^(NSError *error, EditBuildingsBackObj *object) {
         if (object.code == RMTRequestBackCodeSucceed || object.code == RMTRequestBackCodeFailure) {
            [_buildArr replaceObjectAtIndex:row withObject:data];
         }
         NSLog(@"reflashData code %d %@",object.code,object.message);
-        [weakSelf hideHUDView];
+        [_hubView hideHUDView];
     }];
      
     
@@ -264,7 +264,7 @@
     if (row < _buildArr.count) {
         AddBuildArrayData *data = [_buildArr objectAtIndex:row];
         data.oprType = RMTUpdataMyBuildDeletedType;
-        [self showHUDView];
+        [_hubView showHUDView];
         __weak __typeof(self)weakSelf = self;
         [[RMTUtilityLogin sharedInstance] requestUpdateMyBuilingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId] whithBuildData:[NSArray arrayWithObject:data] complete:^(NSError *error, EditBuildingsBackObj *object) {
             if (object.code == RMTRequestBackCodeSucceed || object.code == RMTRequestBackCodeFailure) {
@@ -272,7 +272,7 @@
                 [_tableView reloadData];
             }
             NSLog(@"delet code %d %@",object.code,object.message);
-            [weakSelf hideHUDView];
+            [_hubView hideHUDView];
         }];
     }
     NSLog(@"delete build index %d",row);
@@ -306,7 +306,7 @@
                 data.oprType = RMTUpdataMyBuildUpdataType;
             }
             //        if ([[RMTUtilityLogin sharedInstance] getLogId]) {
-            [self showHUDView];
+            [_hubView showHUDView];
             __weak __typeof(self)weakSelf = self;
             [[RMTUtilityLogin sharedInstance] requestUpdateMyBuilingsWithLogicId:[[RMTUtilityLogin sharedInstance] getLogId]
                                                                   whithBuildData:_buildArr
@@ -315,7 +315,7 @@
                                                                                 
                                                                             }
                                                                             NSLog(@"delet code %d %@",object.code,object.message);
-                                                                            [weakSelf hideHUDView];
+                                                                            [_hubView hideHUDView];
                                                                             self.isEdit = NO;
                                                                             [_tableView reloadData];
                                                                             
@@ -349,17 +349,7 @@
 
 
 
-- (void)showHUDView
-{
-    _hubView.hidden = NO;
-    [MBProgressHUD showHUDAddedTo:_hubView animated:YES];
-}
 
-- (void)hideHUDView
-{
-    _hubView.hidden = YES;
-    [MBProgressHUD hideHUDForView:_hubView animated:YES];
-}
 /*
 #pragma mark - Navigation
 

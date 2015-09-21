@@ -20,6 +20,7 @@
 #import "UIColor+Hexadecimal.h"
 #import "ConfigHouseEditCell.h"
 #import "AddFloorWaterDataViewControll.h"
+#import "UIHUDCustomView.h"
 
 @interface MainContentControlViewController () <UITableViewDelegate,UITableViewDataSource,ConfigHouseEditDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *checkOutImageView;
@@ -40,6 +41,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *sortRentBt;
 @property (weak, nonatomic) IBOutlet UILabel *loginLable;
 
+@property (weak, nonatomic) IBOutlet UIHUDCustomView *HUDView;
 @property (nonatomic, assign) int selectIndex;
 @property (nonatomic, assign) int sortRentIndex;
 @property (nonatomic, strong) NSMutableArray *waterArr;

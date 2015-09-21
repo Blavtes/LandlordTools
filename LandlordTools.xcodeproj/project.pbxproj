@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AF0B97ABCF12C131065984F4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 968AF5976CDFCA8CD97FE1D5 /* libPods.a */; };
+		C14719731BAFA2DE00A14FDE /* UIHUDCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C14719721BAFA2DE00A14FDE /* UIHUDCustomView.m */; };
 		C158DA051B83178500795B62 /* ConfigSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = C158DA041B83178500795B62 /* ConfigSystem.m */; };
 		C174C9771B82182B00694C9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C174C9761B82182B00694C9B /* main.m */; };
 		C174C97A1B82182B00694C9B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C174C9791B82182B00694C9B /* AppDelegate.m */; };
@@ -153,6 +154,8 @@
 
 /* Begin PBXFileReference section */
 		968AF5976CDFCA8CD97FE1D5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C14719711BAFA2DE00A14FDE /* UIHUDCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHUDCustomView.h; sourceTree = "<group>"; };
+		C14719721BAFA2DE00A14FDE /* UIHUDCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIHUDCustomView.m; sourceTree = "<group>"; };
 		C158DA031B83178500795B62 /* ConfigSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigSystem.h; sourceTree = "<group>"; };
 		C158DA041B83178500795B62 /* ConfigSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigSystem.m; sourceTree = "<group>"; };
 		C174C9711B82182B00694C9B /* LandlordTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LandlordTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -709,6 +712,8 @@
 				C1D352C71B85C6F3003AC2FB /* NMRangeSlider */,
 				C1D352E71B85C6F3003AC2FB /* Reachability */,
 				C1D352EA1B85C6F3003AC2FB /* slider */,
+				C14719711BAFA2DE00A14FDE /* UIHUDCustomView.h */,
+				C14719721BAFA2DE00A14FDE /* UIHUDCustomView.m */,
 			);
 			name = ThirdParty;
 			path = Controller/ThirdParty;
@@ -1144,6 +1149,7 @@
 				C1D3539A1B85C6F4003AC2FB /* RMTUPPayBridge.mm in Sources */,
 				C1D3533C1B85C6F3003AC2FB /* ConfigHouseViewController.m in Sources */,
 				C1D353421B85C6F3003AC2FB /* AddHouseViewCell.m in Sources */,
+				C14719731BAFA2DE00A14FDE /* UIHUDCustomView.m in Sources */,
 				C158DA051B83178500795B62 /* ConfigSystem.m in Sources */,
 				C1D353381B85C6F3003AC2FB /* ConfigEditHouseData.m in Sources */,
 				C1D353581B85C6F3003AC2FB /* REFrostedViewController.m in Sources */,

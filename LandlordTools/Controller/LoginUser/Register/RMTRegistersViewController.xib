@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -345,9 +345,6 @@
                                     <exclude reference="NNy-xZ-bmv"/>
                                 </mask>
                                 <mask key="constraints">
-                                    <exclude reference="7dH-Mn-w7w"/>
-                                    <exclude reference="99f-M7-kQX"/>
-                                    <exclude reference="nzy-BL-LNd"/>
                                     <exclude reference="Ea0-Le-fNY"/>
                                     <exclude reference="Mmz-M8-ChQ"/>
                                     <exclude reference="X5v-FC-DSB"/>
@@ -366,6 +363,9 @@
                                     <exclude reference="p1Z-xK-Mqk"/>
                                     <exclude reference="UPr-Y7-TL9"/>
                                     <exclude reference="h0N-Be-KMp"/>
+                                    <exclude reference="7dH-Mn-w7w"/>
+                                    <exclude reference="99f-M7-kQX"/>
+                                    <exclude reference="nzy-BL-LNd"/>
                                     <exclude reference="qSE-80-G8H"/>
                                 </mask>
                             </variation>
@@ -380,9 +380,6 @@
                                     <include reference="NNy-xZ-bmv"/>
                                 </mask>
                                 <mask key="constraints">
-                                    <include reference="7dH-Mn-w7w"/>
-                                    <include reference="99f-M7-kQX"/>
-                                    <include reference="nzy-BL-LNd"/>
                                     <include reference="Ea0-Le-fNY"/>
                                     <include reference="Mmz-M8-ChQ"/>
                                     <include reference="X5v-FC-DSB"/>
@@ -401,6 +398,9 @@
                                     <include reference="p1Z-xK-Mqk"/>
                                     <include reference="UPr-Y7-TL9"/>
                                     <include reference="h0N-Be-KMp"/>
+                                    <include reference="7dH-Mn-w7w"/>
+                                    <include reference="99f-M7-kQX"/>
+                                    <include reference="nzy-BL-LNd"/>
                                     <include reference="qSE-80-G8H"/>
                                 </mask>
                             </variation>

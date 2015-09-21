@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddLastMonthDataControll">
             <connections>
+                <outlet property="HUDView" destination="6fb-wf-Loe" id="uiR-Xh-wsm"/>
                 <outlet property="everyMothLabel" destination="Q38-En-BBh" id="Tj2-n5-1SN"/>
                 <outlet property="lastMothBt" destination="1zl-yr-0me" id="ucQ-EF-pBi"/>
                 <outlet property="messageImageView" destination="b0t-XM-5QZ" id="FpP-NG-DQJ"/>
@@ -539,28 +540,50 @@
                         </mask>
                     </variation>
                 </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fb-wf-Loe" customClass="UIHUDCustomView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="w3m-Pq-aiT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9FK-Sb-46u"/>
+                <constraint firstAttribute="trailing" secondItem="6fb-wf-Loe" secondAttribute="trailing" id="Btx-VI-Nbl"/>
+                <constraint firstItem="6fb-wf-Loe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="GEi-ue-AEj"/>
+                <constraint firstAttribute="bottom" secondItem="6fb-wf-Loe" secondAttribute="bottom" id="GVd-aU-Bj0"/>
                 <constraint firstItem="w3m-Pq-aiT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="NDm-Pi-Gg8"/>
+                <constraint firstItem="6fb-wf-Loe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Xyv-D6-94x"/>
                 <constraint firstAttribute="bottom" secondItem="w3m-Pq-aiT" secondAttribute="bottom" id="sSX-OS-lCS"/>
                 <constraint firstAttribute="trailing" secondItem="w3m-Pq-aiT" secondAttribute="trailing" id="x36-Ec-RNN"/>
             </constraints>
             <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="6fb-wf-Loe"/>
+                </mask>
                 <mask key="constraints">
                     <exclude reference="9FK-Sb-46u"/>
                     <exclude reference="NDm-Pi-Gg8"/>
                     <exclude reference="sSX-OS-lCS"/>
                     <exclude reference="x36-Ec-RNN"/>
+                    <exclude reference="Btx-VI-Nbl"/>
+                    <exclude reference="GEi-ue-AEj"/>
+                    <exclude reference="GVd-aU-Bj0"/>
+                    <exclude reference="Xyv-D6-94x"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="6fb-wf-Loe"/>
+                </mask>
                 <mask key="constraints">
                     <include reference="9FK-Sb-46u"/>
                     <include reference="NDm-Pi-Gg8"/>
                     <include reference="sSX-OS-lCS"/>
                     <include reference="x36-Ec-RNN"/>
+                    <include reference="Btx-VI-Nbl"/>
+                    <include reference="GEi-ue-AEj"/>
+                    <include reference="GVd-aU-Bj0"/>
+                    <include reference="Xyv-D6-94x"/>
                 </mask>
             </variation>
         </view>
