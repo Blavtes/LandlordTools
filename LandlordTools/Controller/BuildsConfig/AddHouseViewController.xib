@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -216,6 +216,10 @@
                             <exclude reference="wQY-Kn-YJX"/>
                         </mask>
                         <mask key="constraints">
+                            <exclude reference="B17-5a-aiA"/>
+                            <exclude reference="OFj-IP-nDy"/>
+                            <exclude reference="iZx-Dt-lw6"/>
+                            <exclude reference="oFI-eb-JtQ"/>
                             <exclude reference="HTH-D7-Z4w"/>
                             <exclude reference="ZJK-aV-88y"/>
                             <exclude reference="y8B-fN-ZIf"/>
@@ -223,10 +227,6 @@
                             <exclude reference="960-p5-1ku"/>
                             <exclude reference="KbE-Ny-OuN"/>
                             <exclude reference="kDf-tT-7FR"/>
-                            <exclude reference="B17-5a-aiA"/>
-                            <exclude reference="OFj-IP-nDy"/>
-                            <exclude reference="iZx-Dt-lw6"/>
-                            <exclude reference="oFI-eb-JtQ"/>
                         </mask>
                     </variation>
                     <variation key="heightClass=regular-widthClass=compact">
@@ -236,6 +236,10 @@
                             <include reference="wQY-Kn-YJX"/>
                         </mask>
                         <mask key="constraints">
+                            <include reference="B17-5a-aiA"/>
+                            <include reference="OFj-IP-nDy"/>
+                            <include reference="iZx-Dt-lw6"/>
+                            <include reference="oFI-eb-JtQ"/>
                             <include reference="HTH-D7-Z4w"/>
                             <include reference="ZJK-aV-88y"/>
                             <include reference="y8B-fN-ZIf"/>
@@ -243,10 +247,6 @@
                             <include reference="960-p5-1ku"/>
                             <include reference="KbE-Ny-OuN"/>
                             <include reference="kDf-tT-7FR"/>
-                            <include reference="B17-5a-aiA"/>
-                            <include reference="OFj-IP-nDy"/>
-                            <include reference="iZx-Dt-lw6"/>
-                            <include reference="oFI-eb-JtQ"/>
                         </mask>
                     </variation>
                 </view>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -180,22 +180,14 @@
                                 </mask>
                             </variation>
                         </view>
-                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8e0-ze-41z">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="ZQS-wy-Dyf" firstAttribute="top" secondItem="5iY-rq-AdO" secondAttribute="top" id="4OA-5B-XTx"/>
-                        <constraint firstAttribute="bottom" secondItem="8e0-ze-41z" secondAttribute="bottom" id="QSk-Jv-yqQ"/>
-                        <constraint firstItem="8e0-ze-41z" firstAttribute="leading" secondItem="5iY-rq-AdO" secondAttribute="leading" id="V83-zs-YyT"/>
                         <constraint firstItem="gC9-ZL-B6Z" firstAttribute="top" secondItem="ZQS-wy-Dyf" secondAttribute="bottom" id="ViA-rP-2lv"/>
-                        <constraint firstItem="8e0-ze-41z" firstAttribute="top" secondItem="ZQS-wy-Dyf" secondAttribute="bottom" id="WBU-kp-5LN"/>
                         <constraint firstAttribute="bottom" secondItem="gC9-ZL-B6Z" secondAttribute="bottom" id="Xjx-q7-y0d"/>
                         <constraint firstAttribute="trailing" secondItem="ZQS-wy-Dyf" secondAttribute="trailing" id="bFr-lw-J6r"/>
                         <constraint firstAttribute="trailing" secondItem="gC9-ZL-B6Z" secondAttribute="trailing" id="crn-Ve-6aE"/>
-                        <constraint firstAttribute="trailing" secondItem="8e0-ze-41z" secondAttribute="trailing" id="hXG-zQ-hWR"/>
                         <constraint firstItem="gC9-ZL-B6Z" firstAttribute="leading" secondItem="5iY-rq-AdO" secondAttribute="leading" id="wc8-42-PFT"/>
                         <constraint firstItem="ZQS-wy-Dyf" firstAttribute="leading" secondItem="5iY-rq-AdO" secondAttribute="leading" id="zpn-pf-DcC"/>
                     </constraints>
@@ -203,13 +195,8 @@
                         <mask key="subviews">
                             <exclude reference="ZQS-wy-Dyf"/>
                             <exclude reference="gC9-ZL-B6Z"/>
-                            <exclude reference="8e0-ze-41z"/>
                         </mask>
                         <mask key="constraints">
-                            <exclude reference="QSk-Jv-yqQ"/>
-                            <exclude reference="V83-zs-YyT"/>
-                            <exclude reference="WBU-kp-5LN"/>
-                            <exclude reference="hXG-zQ-hWR"/>
                             <exclude reference="4OA-5B-XTx"/>
                             <exclude reference="bFr-lw-J6r"/>
                             <exclude reference="zpn-pf-DcC"/>
@@ -223,13 +210,8 @@
                         <mask key="subviews">
                             <include reference="ZQS-wy-Dyf"/>
                             <include reference="gC9-ZL-B6Z"/>
-                            <include reference="8e0-ze-41z"/>
                         </mask>
                         <mask key="constraints">
-                            <include reference="QSk-Jv-yqQ"/>
-                            <include reference="V83-zs-YyT"/>
-                            <include reference="WBU-kp-5LN"/>
-                            <include reference="hXG-zQ-hWR"/>
                             <include reference="4OA-5B-XTx"/>
                             <include reference="bFr-lw-J6r"/>
                             <include reference="zpn-pf-DcC"/>
@@ -243,9 +225,6 @@
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nWU-Jo-eQ8" customClass="UIHUDCustomView">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                        <rect key="frame" x="0.0" y="32" width="400" height="736"/>
-                    </variation>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
